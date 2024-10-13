@@ -1,0 +1,150 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var2071 0)
+(declare-sort var904 0)
+(declare-sort var1829 0)
+(declare-sort var408 0)
+(declare-sort var2260 0)
+(declare-sort var3698 0)
+(declare-sort var3068 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun var1829_getOtherAmbiguityCheck/14743516 () Int)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun var408_image/1589855987 (var2071) String)
+(declare-fun getLine/-753183392 (var2071) Int)
+(define-fun append/-1001720160 ((s String) (tail Int)) String (str.++ s (str.from_int tail)))
+(declare-fun getColumn/1743199486 (var2071) Int)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun var2260_warning/37978134 (String) void)
+(declare-fun println/1773605060 (var3698 String) void)
+(declare-fun var408_image/-1353368249 (var904) String)
+(declare-const null-var2071 var2071)
+(declare-const null-var904 var904)
+(declare-const var3068-err var3698)
+(declare-const var2290 var2071) ; Statement: r1 := @parameter0: org.javacc.parser.Expansion 
+(assert (not (= var2290 null-var2071)))
+(declare-const var1058 var2071) ; Statement: r50 := @parameter1: org.javacc.parser.Expansion 
+(assert (not (= var1058 null-var2071)))
+(define-const var2567 var904 null-var904) ; Statement: r60 = null 
+(define-const var488 Int 1) ; Statement: i8 = 1 
+(assert true) ; Non Conditional
+(define-const var1137 Int var1829_getOtherAmbiguityCheck/14743516) ; Statement: $i0 = staticinvoke <org.javacc.parser.Options: int getOtherAmbiguityCheck()>() 
+ ; Statement: if i8 > $i0 goto $i1 = staticinvoke <org.javacc.parser.Options: int getOtherAmbiguityCheck()>() 
+(assert (> var488 var1137)) ; Cond: i8 > $i0 
+(define-const var2360 Int var1829_getOtherAmbiguityCheck/14743516) ; Statement: $i1 = staticinvoke <org.javacc.parser.Options: int getOtherAmbiguityCheck()>() 
+ ; Statement: if i8 <= $i1 goto (branch) 
+(assert (not (<= var488 var2360))) ; Negate: Cond: i8 <= $i1  
+(define-const var381 String String-init) ; Statement: $r24 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var381)) ; Statement: specialinvoke $r24.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var381!1 String)
+(assert (= var381!1 ""))
+(assert true)
+(define-const var1733 String (append/672562846 var381!1 "Choice conflict in ")) ; Statement: $r26 = virtualinvoke $r24.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Choice conflict in ") 
+(declare-const var381!2 String)
+(assert (= var381!2 (str.++ var381!1 "Choice conflict in ")))
+(define-const var960 String (var408_image/1589855987 var2290)) ; Statement: $r25 = staticinvoke <org.javacc.parser.LookaheadCalc: java.lang.String image(org.javacc.parser.Expansion)>(r1) 
+(assert true)
+(define-const var1925 String (append/672562846 var1733 var960)) ; Statement: $r27 = virtualinvoke $r26.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r25) 
+(declare-const var1733!1 String)
+(assert (= var1733!1 (str.++ var1733 var960)))
+(assert true)
+(define-const var1089 String (append/672562846 var1925 " construct at line ")) ; Statement: $r28 = virtualinvoke $r27.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" construct at line ") 
+(declare-const var1925!1 String)
+(assert (= var1925!1 (str.++ var1925 " construct at line ")))
+(assert true)
+(define-const var1803 Int (getLine/-753183392 var2290)) ; Statement: $i4 = virtualinvoke r1.<org.javacc.parser.Expansion: int getLine()>() 
+(assert true)
+(define-const var993 String (append/-1001720160 var1089 var1803)) ; Statement: $r29 = virtualinvoke $r28.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i4) 
+(declare-const var1089!1 String)
+(assert (str.prefixof var1089 var1089!1))
+(assert true)
+(define-const var2502 String (append/672562846 var993 ", column ")) ; Statement: $r30 = virtualinvoke $r29.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", column ") 
+(declare-const var993!1 String)
+(assert (= var993!1 (str.++ var993 ", column ")))
+(assert true)
+(define-const var397 Int (getColumn/1743199486 var2290)) ; Statement: $i5 = virtualinvoke r1.<org.javacc.parser.Expansion: int getColumn()>() 
+(assert true)
+(define-const var2988 String (append/-1001720160 var2502 var397)) ; Statement: $r31 = virtualinvoke $r30.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i5) 
+(declare-const var2502!1 String)
+(assert (str.prefixof var2502 var2502!1))
+(assert true)
+(define-const var710 String (append/672562846 var2988 ".")) ; Statement: $r32 = virtualinvoke $r31.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".") 
+(declare-const var2988!1 String)
+(assert (= var2988!1 (str.++ var2988 ".")))
+(assert true)
+(define-const var1425 String (toString/-2075883882 var710)) ; Statement: $r33 = virtualinvoke $r32.<java.lang.StringBuilder: java.lang.String toString()>() 
+;(assert (var2260_warning/37978134 var1425)) ; Statement: staticinvoke <org.javacc.parser.JavaCCErrors: void warning(java.lang.String)>($r33) 
+
+(declare-const var1425!1 String)
+(define-const var2248 var3698 var3068-err) ; Statement: $r34 = <java.lang.System: java.io.PrintStream err> 
+(assert true)
+;(assert (println/1773605060 var2248 "         Expansion nested within construct and expansion following construct")) ; Statement: virtualinvoke $r34.<java.io.PrintStream: void println(java.lang.String)>("         Expansion nested within construct and expansion following construct") 
+
+(declare-const var2248!1 var3698)
+(declare-const var2333 String)
+(define-const var3582 var3698 var3068-err) ; Statement: $r36 = <java.lang.System: java.io.PrintStream err> 
+(define-const var1109 String String-init) ; Statement: $r35 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var1109)) ; Statement: specialinvoke $r35.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var1109!1 String)
+(assert (= var1109!1 ""))
+(assert true)
+(define-const var3144 String (append/672562846 var1109!1 "         have common prefixes, one of which is: ")) ; Statement: $r38 = virtualinvoke $r35.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("         have common prefixes, one of which is: ") 
+(declare-const var1109!2 String)
+(assert (= var1109!2 (str.++ var1109!1 "         have common prefixes, one of which is: ")))
+(define-const var840 String (var408_image/-1353368249 var2567)) ; Statement: $r37 = staticinvoke <org.javacc.parser.LookaheadCalc: java.lang.String image(org.javacc.parser.MatchInfo)>(r60) 
+(assert true)
+(define-const var1312 String (append/672562846 var3144 var840)) ; Statement: $r39 = virtualinvoke $r38.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r37) 
+(declare-const var3144!1 String)
+(assert (= var3144!1 (str.++ var3144 var840)))
+(assert true)
+(define-const var1832 String (toString/-2075883882 var1312)) ; Statement: $r40 = virtualinvoke $r39.<java.lang.StringBuilder: java.lang.String toString()>() 
+(assert true)
+;(assert (println/1773605060 var3582 var1832)) ; Statement: virtualinvoke $r36.<java.io.PrintStream: void println(java.lang.String)>($r40) 
+
+(declare-const var3582!1 var3698)
+(declare-const var1832!1 String)
+(define-const var104 var3698 var3068-err) ; Statement: $r42 = <java.lang.System: java.io.PrintStream err> 
+(define-const var3083 String String-init) ; Statement: $r41 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var3083)) ; Statement: specialinvoke $r41.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var3083!1 String)
+(assert (= var3083!1 ""))
+(assert true)
+(define-const var3132 String (append/672562846 var3083!1 "         Consider using a lookahead of ")) ; Statement: $r43 = virtualinvoke $r41.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("         Consider using a lookahead of ") 
+(declare-const var3083!2 String)
+(assert (= var3083!2 (str.++ var3083!1 "         Consider using a lookahead of ")))
+(assert true)
+(define-const var407 String (append/-1001720160 var3132 var488)) ; Statement: $r44 = virtualinvoke $r43.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i8) 
+(declare-const var3132!1 String)
+(assert (str.prefixof var3132 var3132!1))
+(assert true)
+(define-const var3481 String (append/672562846 var407 " or more for nested expansion.")) ; Statement: $r45 = virtualinvoke $r44.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" or more for nested expansion.") 
+(declare-const var407!1 String)
+(assert (= var407!1 (str.++ var407 " or more for nested expansion.")))
+(assert true)
+(define-const var1589 String (toString/-2075883882 var3481)) ; Statement: $r46 = virtualinvoke $r45.<java.lang.StringBuilder: java.lang.String toString()>() 
+(assert true)
+;(assert (println/1773605060 var104 var1589)) ; Statement: virtualinvoke $r42.<java.io.PrintStream: void println(java.lang.String)>($r46) 
+
+(declare-const var104!1 var3698)
+(declare-const var1589!1 String)
+ ; Statement: goto [?= return] 
+(assert true) ; Non Conditional
+ ; Statement: return 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {var1829_getOtherAmbiguityCheck/14743516=([], int), String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), var408_image/1589855987=([org.javacc.parser.Expansion], java.lang.String), getLine/-753183392=([org.javacc.parser.Expansion], int), append/-1001720160=([java.lang.StringBuilder, int], java.lang.StringBuilder), getColumn/1743199486=([org.javacc.parser.Expansion], int), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), var2260_warning/37978134=([java.lang.String], void), println/1773605060=([java.io.PrintStream, java.lang.String], void), var408_image/-1353368249=([org.javacc.parser.MatchInfo], java.lang.String)}
+; {var2071=org.javacc.parser.Expansion, var2290=r1, var1058=r50, var904=org.javacc.parser.MatchInfo, var2567=r60, var488=i8, var1829=org.javacc.parser.Options, var1137=$i0, var2360=$i1, var381=$r24, var1733=$r26, var408=org.javacc.parser.LookaheadCalc, var960=$r25, var1925=$r27, var1089=$r28, var1803=$i4, var993=$r29, var2502=$r30, var397=$i5, var2988=$r31, var710=$r32, var1425=$r33, var2260=org.javacc.parser.JavaCCErrors, var3698=java.io.PrintStream, var3068=java.lang.System, var2248=$r34, var2333="         Expansion nested within construct and expansion following construct", var3582=$r36, var1109=$r35, var3144=$r38, var840=$r37, var1312=$r39, var1832=$r40, var104=$r42, var3083=$r41, var3132=$r43, var407=$r44, var3481=$r45, var1589=$r46}
+; {org.javacc.parser.Expansion=var2071, r1=var2290, r50=var1058, org.javacc.parser.MatchInfo=var904, r60=var2567, i8=var488, org.javacc.parser.Options=var1829, $i0=var1137, $i1=var2360, $r24=var381, $r26=var1733, org.javacc.parser.LookaheadCalc=var408, $r25=var960, $r27=var1925, $r28=var1089, $i4=var1803, $r29=var993, $r30=var2502, $i5=var397, $r31=var2988, $r32=var710, $r33=var1425, org.javacc.parser.JavaCCErrors=var2260, java.io.PrintStream=var3698, java.lang.System=var3068, $r34=var2248, "         Expansion nested within construct and expansion following construct"=var2333, $r36=var3582, $r35=var1109, $r38=var3144, $r37=var840, $r39=var1312, $r40=var1832, $r42=var104, $r41=var3083, $r43=var3132, $r44=var407, $r45=var3481, $r46=var1589}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>;	<java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>;	<java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 3,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 9,"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>": 3,"<java.lang.StringBuilder: java.lang.String toString()>": 3}
+;stmts r1 := @parameter0: org.javacc.parser.Expansion;	r50 := @parameter1: org.javacc.parser.Expansion;	r60 = null;	i8 = 1;	$i0 = staticinvoke <org.javacc.parser.Options: int getOtherAmbiguityCheck()>();	if i8 > $i0 goto $i1 = staticinvoke <org.javacc.parser.Options: int getOtherAmbiguityCheck()>();	$i1 = staticinvoke <org.javacc.parser.Options: int getOtherAmbiguityCheck()>();	if i8 <= $i1 goto (branch);	$r24 = new java.lang.StringBuilder;	specialinvoke $r24.<java.lang.StringBuilder: void <init>()>();	$r26 = virtualinvoke $r24.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Choice conflict in ");	$r25 = staticinvoke <org.javacc.parser.LookaheadCalc: java.lang.String image(org.javacc.parser.Expansion)>(r1);	$r27 = virtualinvoke $r26.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r25);	$r28 = virtualinvoke $r27.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" construct at line ");	$i4 = virtualinvoke r1.<org.javacc.parser.Expansion: int getLine()>();	$r29 = virtualinvoke $r28.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i4);	$r30 = virtualinvoke $r29.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", column ");	$i5 = virtualinvoke r1.<org.javacc.parser.Expansion: int getColumn()>();	$r31 = virtualinvoke $r30.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i5);	$r32 = virtualinvoke $r31.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".");	$r33 = virtualinvoke $r32.<java.lang.StringBuilder: java.lang.String toString()>();	staticinvoke <org.javacc.parser.JavaCCErrors: void warning(java.lang.String)>($r33);	$r34 = <java.lang.System: java.io.PrintStream err>;	virtualinvoke $r34.<java.io.PrintStream: void println(java.lang.String)>("         Expansion nested within construct and expansion following construct");	$r36 = <java.lang.System: java.io.PrintStream err>;	$r35 = new java.lang.StringBuilder;	specialinvoke $r35.<java.lang.StringBuilder: void <init>()>();	$r38 = virtualinvoke $r35.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("         have common prefixes, one of which is: ");	$r37 = staticinvoke <org.javacc.parser.LookaheadCalc: java.lang.String image(org.javacc.parser.MatchInfo)>(r60);	$r39 = virtualinvoke $r38.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r37);	$r40 = virtualinvoke $r39.<java.lang.StringBuilder: java.lang.String toString()>();	virtualinvoke $r36.<java.io.PrintStream: void println(java.lang.String)>($r40);	$r42 = <java.lang.System: java.io.PrintStream err>;	$r41 = new java.lang.StringBuilder;	specialinvoke $r41.<java.lang.StringBuilder: void <init>()>();	$r43 = virtualinvoke $r41.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("         Consider using a lookahead of ");	$r44 = virtualinvoke $r43.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i8);	$r45 = virtualinvoke $r44.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" or more for nested expansion.");	$r46 = virtualinvoke $r45.<java.lang.StringBuilder: java.lang.String toString()>();	virtualinvoke $r42.<java.io.PrintStream: void println(java.lang.String)>($r46);	goto [?= return];	return
+;block_num 5

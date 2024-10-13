@@ -1,0 +1,91 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var2523 0)
+(declare-sort var113 0)
+(declare-sort var2130 0)
+(declare-sort var137 0)
+(declare-sort var915 0)
+(declare-sort var2820 0)
+(declare-sort var3247 0)
+(declare-sort var2714 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun jj_consume_token/-1662239344 (var2523 Int) var113)
+(declare-fun Expression/1135211635 (var2523) var2130)
+(declare-fun isLiteral/-1876674223 (var2130) Bool)
+(declare-fun var915-init () var915)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun getCanonicalForm/-1714059646 (var2820) String)
+(declare-fun cast-from-var2130-to-var2820 (var2130) var2820)
+(declare-fun append/-1031950772 (String var3247) String)
+(declare-fun cast-from-var137-to-var3247 (var137) var3247)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun <init>/21255981 (var915 String var2820 var2714) void)
+(declare-fun cast-from-var137-to-var2714 (var137) var2714)
+(declare-const null-var2523 var2523)
+(declare-const null-var137 var137)
+(declare-const var1820 var2523) ; Statement: r0 := @this: freemarker.core.FMParser 
+(assert (not (= var1820 null-var2523)))
+(assert true)
+(define-const var1491 var113 (jj_consume_token/-1662239344 var1820 29)) ; Statement: r1 = specialinvoke r0.<freemarker.core.FMParser: freemarker.core.Token jj_consume_token(int)>(29) 
+(assert true)
+(define-const var2981 var2130 (Expression/1135211635 var1820)) ; Statement: r2 = virtualinvoke r0.<freemarker.core.FMParser: freemarker.core.Expression Expression()>() 
+(assert true)
+;(assert (jj_consume_token/-1662239344 var1820 148)) ; Statement: specialinvoke r0.<freemarker.core.FMParser: freemarker.core.Token jj_consume_token(int)>(148) 
+
+(declare-const var1820!1 var2523)
+(declare-const var130 Int)
+(assert true)
+(define-const var2393 Bool (isLiteral/-1876674223 var2981)) ; Statement: $z0 = virtualinvoke r2.<freemarker.core.Expression: boolean isLiteral()>() 
+ ; Statement: if $z0 != 0 goto r3 = virtualinvoke r2.<freemarker.core.Expression: freemarker.template.TemplateModel eval(freemarker.core.Environment)>(null) 
+(assert (not (not (= (ite var2393 1 0) 0)))) ; Negate: Cond: $z0 != 0  
+(declare-const var2564 var137) ; Statement: $r76 := @caughtexception 
+(assert (not (= var2564 null-var137)))
+(define-const var1387 var915 var915-init) ; Statement: $r77 = new freemarker.core.ParseException 
+(define-const var1040 String String-init) ; Statement: $r78 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var1040)) ; Statement: specialinvoke $r78.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var1040!1 String)
+(assert (= var1040!1 ""))
+(assert true)
+(define-const var426 String (append/672562846 var1040!1 "Could not evaluate expression (on parse-time): ")) ; Statement: $r80 = virtualinvoke $r78.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Could not evaluate expression (on parse-time): ") 
+(declare-const var1040!2 String)
+(assert (= var1040!2 (str.++ var1040!1 "Could not evaluate expression (on parse-time): ")))
+(assert true)
+(define-const var1702 String (getCanonicalForm/-1714059646 (cast-from-var2130-to-var2820 var2981))) ; Statement: $r79 = virtualinvoke r2.<freemarker.core.Expression: java.lang.String getCanonicalForm()>() 
+(assert true)
+(define-const var1951 String (append/672562846 var426 var1702)) ; Statement: $r81 = virtualinvoke $r80.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r79) 
+(declare-const var426!1 String)
+(assert (= var426!1 (str.++ var426 var1702)))
+(assert true)
+(define-const var2204 String (append/672562846 var1951 "\nUnderlying cause: ")) ; Statement: $r82 = virtualinvoke $r81.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\nUnderlying cause: ") 
+(declare-const var1951!1 String)
+(assert (= var1951!1 (str.++ var1951 "\nUnderlying cause: ")))
+(assert true)
+(define-const var3590 String (append/-1031950772 var2204 (cast-from-var137-to-var3247 var2564))) ; Statement: $r83 = virtualinvoke $r82.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r76) 
+(declare-const var2204!1 String)
+(assert (str.prefixof var2204 var2204!1))
+(assert true)
+(define-const var3189 String (toString/-2075883882 var3590)) ; Statement: $r84 = virtualinvoke $r83.<java.lang.StringBuilder: java.lang.String toString()>() 
+(assert true)
+;(assert (<init>/21255981 var1387 var3189 (cast-from-var2130-to-var2820 var2981) (cast-from-var137-to-var2714 var2564))) ; Statement: specialinvoke $r77.<freemarker.core.ParseException: void <init>(java.lang.String,freemarker.core.TemplateObject,java.lang.Throwable)>($r84, r2, $r76) 
+
+(declare-const var1387!1 var915)
+(declare-const var3189!1 String)
+(declare-const var2981!1 var2130)
+(declare-const var2564!1 var137)
+ ; Statement: throw $r77 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {jj_consume_token/-1662239344=([freemarker.core.FMParser, int], freemarker.core.Token), Expression/1135211635=([freemarker.core.FMParser], freemarker.core.Expression), isLiteral/-1876674223=([freemarker.core.Expression], boolean), var915-init=([], freemarker.core.ParseException), String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), getCanonicalForm/-1714059646=([freemarker.core.TemplateObject], java.lang.String), cast-from-var2130-to-var2820=([freemarker.core.Expression], freemarker.core.TemplateObject), append/-1031950772=([java.lang.StringBuilder, java.lang.Object], java.lang.StringBuilder), cast-from-var137-to-var3247=([java.lang.Exception], java.lang.Object), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), <init>/21255981=([freemarker.core.ParseException, java.lang.String, freemarker.core.TemplateObject, java.lang.Throwable], void), cast-from-var137-to-var2714=([java.lang.Exception], java.lang.Throwable)}
+; {var2523=freemarker.core.FMParser, var1820=r0, var113=freemarker.core.Token, var1491=r1, var2130=freemarker.core.Expression, var2981=r2, var130=148, var2393=$z0, var137=java.lang.Exception, var2564=$r76, var915=freemarker.core.ParseException, var1387=$r77, var1040=$r78, var426=$r80, var2820=freemarker.core.TemplateObject, var1702=$r79, var1951=$r81, var2204=$r82, var3247=java.lang.Object, var3590=$r83, var3189=$r84, var2714=java.lang.Throwable}
+; {freemarker.core.FMParser=var2523, r0=var1820, freemarker.core.Token=var113, r1=var1491, freemarker.core.Expression=var2130, r2=var2981, 148=var130, $z0=var2393, java.lang.Exception=var137, $r76=var2564, freemarker.core.ParseException=var915, $r77=var1387, $r78=var1040, $r80=var426, freemarker.core.TemplateObject=var2820, $r79=var1702, $r81=var1951, $r82=var2204, java.lang.Object=var3247, $r83=var3590, $r84=var3189, java.lang.Throwable=var2714}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 3,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 1,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r0 := @this: freemarker.core.FMParser;	r1 = specialinvoke r0.<freemarker.core.FMParser: freemarker.core.Token jj_consume_token(int)>(29);	r2 = virtualinvoke r0.<freemarker.core.FMParser: freemarker.core.Expression Expression()>();	specialinvoke r0.<freemarker.core.FMParser: freemarker.core.Token jj_consume_token(int)>(148);	$z0 = virtualinvoke r2.<freemarker.core.Expression: boolean isLiteral()>();	if $z0 != 0 goto r3 = virtualinvoke r2.<freemarker.core.Expression: freemarker.template.TemplateModel eval(freemarker.core.Environment)>(null);	$r76 := @caughtexception;	$r77 = new freemarker.core.ParseException;	$r78 = new java.lang.StringBuilder;	specialinvoke $r78.<java.lang.StringBuilder: void <init>()>();	$r80 = virtualinvoke $r78.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Could not evaluate expression (on parse-time): ");	$r79 = virtualinvoke r2.<freemarker.core.Expression: java.lang.String getCanonicalForm()>();	$r81 = virtualinvoke $r80.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r79);	$r82 = virtualinvoke $r81.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\nUnderlying cause: ");	$r83 = virtualinvoke $r82.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r76);	$r84 = virtualinvoke $r83.<java.lang.StringBuilder: java.lang.String toString()>();	specialinvoke $r77.<freemarker.core.ParseException: void <init>(java.lang.String,freemarker.core.TemplateObject,java.lang.Throwable)>($r84, r2, $r76);	throw $r77
+;block_num 2

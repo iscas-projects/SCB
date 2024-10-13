@@ -1,0 +1,86 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var721 0)
+(declare-sort var1792 0)
+(declare-sort var1754 0)
+(declare-sort var2871 0)
+(declare-sort var2919 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun packageAccess/-1753201611 (var721) var1792)
+(declare-fun append/-1031950772 (String var1754) String)
+(declare-fun cast-from-var1792-to-var1754 (var1792) var1754)
+(declare-fun relationships/-1753201611 (var721) var2871)
+(declare-fun cast-from-var2871-to-var1754 (var2871) var1754)
+(declare-fun packageProperties/-1753201611 (var721) var2919)
+(declare-fun cast-from-var2919-to-var1754 (var2919) var1754)
+(declare-fun isDirty/-1753201611 (var721) Bool)
+(declare-fun append/-388390247 (String Bool) String)
+(declare-fun append/-1166366385 (String Int) String)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-const null-var721 var721)
+(declare-const var3571 var721) ; Statement: r1 := @this: org.apache.poi.openxml4j.opc.OPCPackage 
+(assert (not (= var3571 null-var721)))
+(define-const var1379 String String-init) ; Statement: $r0 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var1379)) ; Statement: specialinvoke $r0.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var1379!1 String)
+(assert (= var1379!1 ""))
+(assert true)
+(define-const var1973 String (append/672562846 var1379!1 "OPCPackage{packageAccess=")) ; Statement: $r3 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("OPCPackage{packageAccess=") 
+(declare-const var1379!2 String)
+(assert (= var1379!2 (str.++ var1379!1 "OPCPackage{packageAccess=")))
+(define-const var3012 var1792 (packageAccess/-1753201611 var3571)) ; Statement: $r2 = r1.<org.apache.poi.openxml4j.opc.OPCPackage: org.apache.poi.openxml4j.opc.PackageAccess packageAccess> 
+(assert true)
+(define-const var1611 String (append/-1031950772 var1973 (cast-from-var1792-to-var1754 var3012))) ; Statement: $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r2) 
+(declare-const var1973!1 String)
+(assert (str.prefixof var1973 var1973!1))
+(assert true)
+(define-const var3907 String (append/672562846 var1611 ", relationships=")) ; Statement: $r6 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", relationships=") 
+(declare-const var1611!1 String)
+(assert (= var1611!1 (str.++ var1611 ", relationships=")))
+(define-const var1674 var2871 (relationships/-1753201611 var3571)) ; Statement: $r5 = r1.<org.apache.poi.openxml4j.opc.OPCPackage: org.apache.poi.openxml4j.opc.PackageRelationshipCollection relationships> 
+(assert true)
+(define-const var1789 String (append/-1031950772 var3907 (cast-from-var2871-to-var1754 var1674))) ; Statement: $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r5) 
+(declare-const var3907!1 String)
+(assert (str.prefixof var3907 var3907!1))
+(assert true)
+(define-const var744 String (append/672562846 var1789 ", packageProperties=")) ; Statement: $r9 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", packageProperties=") 
+(declare-const var1789!1 String)
+(assert (= var1789!1 (str.++ var1789 ", packageProperties=")))
+(define-const var2612 var2919 (packageProperties/-1753201611 var3571)) ; Statement: $r8 = r1.<org.apache.poi.openxml4j.opc.OPCPackage: org.apache.poi.openxml4j.opc.internal.PackagePropertiesPart packageProperties> 
+(assert true)
+(define-const var3054 String (append/-1031950772 var744 (cast-from-var2919-to-var1754 var2612))) ; Statement: $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r8) 
+(declare-const var744!1 String)
+(assert (str.prefixof var744 var744!1))
+(assert true)
+(define-const var201 String (append/672562846 var3054 ", isDirty=")) ; Statement: $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", isDirty=") 
+(declare-const var3054!1 String)
+(assert (= var3054!1 (str.++ var3054 ", isDirty=")))
+(define-const var1770 Bool (isDirty/-1753201611 var3571)) ; Statement: $z0 = r1.<org.apache.poi.openxml4j.opc.OPCPackage: boolean isDirty> 
+(assert true)
+(define-const var1482 String (append/-388390247 var201 var1770)) ; Statement: $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>($z0) 
+(declare-const var201!1 String)
+(assert (str.prefixof var201 var201!1))
+(assert true)
+(define-const var1731 String (append/-1166366385 var1482 125)) ; Statement: $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(125) 
+(declare-const var1482!1 String)
+(assert (str.prefixof var1482 var1482!1))
+(assert true)
+(define-const var444 String (toString/-2075883882 var1731)) ; Statement: $r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>() 
+ ; Statement: return $r14 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), packageAccess/-1753201611=([org.apache.poi.openxml4j.opc.OPCPackage], org.apache.poi.openxml4j.opc.PackageAccess), append/-1031950772=([java.lang.StringBuilder, java.lang.Object], java.lang.StringBuilder), cast-from-var1792-to-var1754=([org.apache.poi.openxml4j.opc.PackageAccess], java.lang.Object), relationships/-1753201611=([org.apache.poi.openxml4j.opc.OPCPackage], org.apache.poi.openxml4j.opc.PackageRelationshipCollection), cast-from-var2871-to-var1754=([org.apache.poi.openxml4j.opc.PackageRelationshipCollection], java.lang.Object), packageProperties/-1753201611=([org.apache.poi.openxml4j.opc.OPCPackage], org.apache.poi.openxml4j.opc.internal.PackagePropertiesPart), cast-from-var2919-to-var1754=([org.apache.poi.openxml4j.opc.internal.PackagePropertiesPart], java.lang.Object), isDirty/-1753201611=([org.apache.poi.openxml4j.opc.OPCPackage], boolean), append/-388390247=([java.lang.StringBuilder, boolean], java.lang.StringBuilder), append/-1166366385=([java.lang.StringBuilder, char], java.lang.StringBuilder), toString/-2075883882=([java.lang.StringBuilder], java.lang.String)}
+; {var721=org.apache.poi.openxml4j.opc.OPCPackage, var3571=r1, var1379=$r0, var1973=$r3, var1792=org.apache.poi.openxml4j.opc.PackageAccess, var3012=$r2, var1754=java.lang.Object, var1611=$r4, var3907=$r6, var2871=org.apache.poi.openxml4j.opc.PackageRelationshipCollection, var1674=$r5, var1789=$r7, var744=$r9, var2919=org.apache.poi.openxml4j.opc.internal.PackagePropertiesPart, var2612=$r8, var3054=$r10, var201=$r11, var1770=$z0, var1482=$r12, var1731=$r13, var444=$r14}
+; {org.apache.poi.openxml4j.opc.OPCPackage=var721, r1=var3571, $r0=var1379, $r3=var1973, org.apache.poi.openxml4j.opc.PackageAccess=var1792, $r2=var3012, java.lang.Object=var1754, $r4=var1611, $r6=var3907, org.apache.poi.openxml4j.opc.PackageRelationshipCollection=var2871, $r5=var1674, $r7=var1789, $r9=var744, org.apache.poi.openxml4j.opc.internal.PackagePropertiesPart=var2919, $r8=var2612, $r10=var3054, $r11=var201, $z0=var1770, $r12=var1482, $r13=var1731, $r14=var444}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(char)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 4,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 3,"<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(char)>": 1,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r1 := @this: org.apache.poi.openxml4j.opc.OPCPackage;	$r0 = new java.lang.StringBuilder;	specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();	$r3 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("OPCPackage{packageAccess=");	$r2 = r1.<org.apache.poi.openxml4j.opc.OPCPackage: org.apache.poi.openxml4j.opc.PackageAccess packageAccess>;	$r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r2);	$r6 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", relationships=");	$r5 = r1.<org.apache.poi.openxml4j.opc.OPCPackage: org.apache.poi.openxml4j.opc.PackageRelationshipCollection relationships>;	$r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r5);	$r9 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", packageProperties=");	$r8 = r1.<org.apache.poi.openxml4j.opc.OPCPackage: org.apache.poi.openxml4j.opc.internal.PackagePropertiesPart packageProperties>;	$r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r8);	$r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", isDirty=");	$z0 = r1.<org.apache.poi.openxml4j.opc.OPCPackage: boolean isDirty>;	$r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>($z0);	$r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(125);	$r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>();	return $r14
+;block_num 1

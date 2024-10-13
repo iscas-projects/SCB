@@ -1,0 +1,80 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var2057 0)
+(declare-sort var724 0)
+(declare-sort var3157 0)
+(declare-sort var2618 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun name/-2041681161 (var2057) String)
+(declare-fun append/-1166366385 (String Int) String)
+(declare-fun inheritable/-2041681161 (var2057) Bool)
+(declare-fun append/-388390247 (String Bool) String)
+(declare-fun metaAttribute/-2041681161 (var2057) var724)
+(declare-fun getValues/169398412 (var724) var3157)
+(declare-fun append/-1031950772 (String var2618) String)
+(declare-fun cast-from-var3157-to-var2618 (var3157) var2618)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-const null-var2057 var2057)
+(declare-const var3411 var2057) ; Statement: r1 := @this: org.hibernate.boot.model.source.spi.ToolingHint 
+(assert (not (= var3411 null-var2057)))
+(define-const var3361 String String-init) ; Statement: $r0 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var3361)) ; Statement: specialinvoke $r0.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var3361!1 String)
+(assert (= var3361!1 ""))
+(assert true)
+(define-const var887 String (append/672562846 var3361!1 "ToolingHint{name=\u0027")) ; Statement: $r3 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("ToolingHint{name=\'") 
+(declare-const var3361!2 String)
+(assert (= var3361!2 (str.++ var3361!1 "ToolingHint{name=\u0027")))
+(define-const var40 String (name/-2041681161 var3411)) ; Statement: $r2 = r1.<org.hibernate.boot.model.source.spi.ToolingHint: java.lang.String name> 
+(assert true)
+(define-const var3459 String (append/672562846 var887 var40)) ; Statement: $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2) 
+(declare-const var887!1 String)
+(assert (= var887!1 (str.++ var887 var40)))
+(assert true)
+(define-const var3746 String (append/-1166366385 var3459 39)) ; Statement: $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(39) 
+(declare-const var3459!1 String)
+(assert (str.prefixof var3459 var3459!1))
+(assert true)
+(define-const var2114 String (append/672562846 var3746 ", inheritable=")) ; Statement: $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", inheritable=") 
+(declare-const var3746!1 String)
+(assert (= var3746!1 (str.++ var3746 ", inheritable=")))
+(define-const var3339 Bool (inheritable/-2041681161 var3411)) ; Statement: $z0 = r1.<org.hibernate.boot.model.source.spi.ToolingHint: boolean inheritable> 
+(assert true)
+(define-const var1609 String (append/-388390247 var2114 var3339)) ; Statement: $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>($z0) 
+(declare-const var2114!1 String)
+(assert (str.prefixof var2114 var2114!1))
+(assert true)
+(define-const var3769 String (append/672562846 var1609 ", values=")) ; Statement: $r10 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", values=") 
+(declare-const var1609!1 String)
+(assert (= var1609!1 (str.++ var1609 ", values=")))
+(define-const var1536 var724 (metaAttribute/-2041681161 var3411)) ; Statement: $r8 = r1.<org.hibernate.boot.model.source.spi.ToolingHint: org.hibernate.mapping.MetaAttribute metaAttribute> 
+(assert true)
+(define-const var3516 var3157 (getValues/169398412 var1536)) ; Statement: $r9 = virtualinvoke $r8.<org.hibernate.mapping.MetaAttribute: java.util.List getValues()>() 
+(assert true)
+(define-const var168 String (append/-1031950772 var3769 (cast-from-var3157-to-var2618 var3516))) ; Statement: $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r9) 
+(declare-const var3769!1 String)
+(assert (str.prefixof var3769 var3769!1))
+(assert true)
+(define-const var3938 String (append/-1166366385 var168 125)) ; Statement: $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(125) 
+(declare-const var168!1 String)
+(assert (str.prefixof var168 var168!1))
+(assert true)
+(define-const var1402 String (toString/-2075883882 var3938)) ; Statement: $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>() 
+ ; Statement: return $r13 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), name/-2041681161=([org.hibernate.boot.model.source.spi.ToolingHint], java.lang.String), append/-1166366385=([java.lang.StringBuilder, char], java.lang.StringBuilder), inheritable/-2041681161=([org.hibernate.boot.model.source.spi.ToolingHint], boolean), append/-388390247=([java.lang.StringBuilder, boolean], java.lang.StringBuilder), metaAttribute/-2041681161=([org.hibernate.boot.model.source.spi.ToolingHint], org.hibernate.mapping.MetaAttribute), getValues/169398412=([org.hibernate.mapping.MetaAttribute], java.util.List), append/-1031950772=([java.lang.StringBuilder, java.lang.Object], java.lang.StringBuilder), cast-from-var3157-to-var2618=([java.util.List], java.lang.Object), toString/-2075883882=([java.lang.StringBuilder], java.lang.String)}
+; {var2057=org.hibernate.boot.model.source.spi.ToolingHint, var3411=r1, var3361=$r0, var887=$r3, var40=$r2, var3459=$r4, var3746=$r5, var2114=$r6, var3339=$z0, var1609=$r7, var3769=$r10, var724=org.hibernate.mapping.MetaAttribute, var1536=$r8, var3157=java.util.List, var3516=$r9, var2618=java.lang.Object, var168=$r11, var3938=$r12, var1402=$r13}
+; {org.hibernate.boot.model.source.spi.ToolingHint=var2057, r1=var3411, $r0=var3361, $r3=var887, $r2=var40, $r4=var3459, $r5=var3746, $r6=var2114, $z0=var3339, $r7=var1609, $r10=var3769, org.hibernate.mapping.MetaAttribute=var724, $r8=var1536, java.util.List=var3157, $r9=var3516, java.lang.Object=var2618, $r11=var168, $r12=var3938, $r13=var1402}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(char)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(char)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 4,"<java.lang.StringBuilder: java.lang.StringBuilder append(char)>": 2,"<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 1,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r1 := @this: org.hibernate.boot.model.source.spi.ToolingHint;	$r0 = new java.lang.StringBuilder;	specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();	$r3 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("ToolingHint{name=\'");	$r2 = r1.<org.hibernate.boot.model.source.spi.ToolingHint: java.lang.String name>;	$r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);	$r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(39);	$r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", inheritable=");	$z0 = r1.<org.hibernate.boot.model.source.spi.ToolingHint: boolean inheritable>;	$r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>($z0);	$r10 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", values=");	$r8 = r1.<org.hibernate.boot.model.source.spi.ToolingHint: org.hibernate.mapping.MetaAttribute metaAttribute>;	$r9 = virtualinvoke $r8.<org.hibernate.mapping.MetaAttribute: java.util.List getValues()>();	$r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r9);	$r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(125);	$r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>();	return $r13
+;block_num 1

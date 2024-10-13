@@ -1,0 +1,28 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var626 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(define-fun indexOf/-1037706067 ((s String) (c Int)) Int (str.indexof s (str.from_code c) 0))
+(define-fun substring/-1240304868 ((s String) (begin Int) (end Int)) String (str.substr s begin (- end begin)))
+(declare-const null-String String)
+(declare-const var2466 String) ; Statement: r0 := @parameter0: java.lang.String 
+(assert (not (= var2466 null-String)))
+(assert true)
+(define-const var2895 Int (indexOf/-1037706067 var2466 41)) ; Statement: $i0 = virtualinvoke r0.<java.lang.String: int indexOf(int)>(41) 
+(define-const var3608 Int (+ var2895 1)) ; Statement: $i1 = $i0 + 1 
+(assert (and true (and (>= 0 0) (>= (str.len var2466) var3608) (>= var3608 0))))
+(define-const var3640 String (substring/-1240304868 var2466 0 var3608)) ; Statement: $r1 = virtualinvoke r0.<java.lang.String: java.lang.String substring(int,int)>(0, $i1) 
+ ; Statement: return $r1 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {indexOf/-1037706067=([java.lang.String, int], int), substring/-1240304868=([java.lang.String, int, int], java.lang.String)}
+; {var2466=r0, var626=null_type, var2895=$i0, var3608=$i1, var3640=$r1}
+; {r0=var2466, null_type=var626, $i0=var2895, $i1=var3608, $r1=var3640}
+;seq <java.lang.String: int indexOf(int)>;	<java.lang.String: java.lang.String substring(int,int)>
+;cnt {"<java.lang.String: int indexOf(int)>": 1,"<java.lang.String: java.lang.String substring(int,int)>": 1}
+;stmts r0 := @parameter0: java.lang.String;	$i0 = virtualinvoke r0.<java.lang.String: int indexOf(int)>(41);	$i1 = $i0 + 1;	$r1 = virtualinvoke r0.<java.lang.String: java.lang.String substring(int,int)>(0, $i1);	return $r1
+;block_num 1

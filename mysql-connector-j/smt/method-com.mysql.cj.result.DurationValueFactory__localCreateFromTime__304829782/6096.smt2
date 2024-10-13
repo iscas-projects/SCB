@@ -1,0 +1,100 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var1678 0)
+(declare-sort var117 0)
+(declare-sort var1703 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(declare-fun getHours/912341727 (var117) Int)
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(define-fun append/-1001720160 ((s String) (tail Int)) String (str.++ s (str.from_int tail)))
+(declare-fun getMinutes/999217871 (var117) Int)
+(declare-fun getSeconds/-438810321 (var117) Int)
+(declare-fun getNanos/-1259022417 (var117) Int)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun var1703_parse/463494465 (String) var1703)
+(define-fun cast-from-String-to-String ((arg String)) String arg)
+(declare-const null-var1678 var1678)
+(declare-const null-var117 var117)
+(declare-const var614 var1678) ; Statement: r13 := @this: com.mysql.cj.result.DurationValueFactory 
+(assert (not (= var614 null-var1678)))
+(declare-const var174 var117) ; Statement: r1 := @parameter0: com.mysql.cj.protocol.InternalTime 
+(assert (not (= var174 null-var117)))
+(define-const var180 String String-init) ; Statement: $r0 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var180)) ; Statement: specialinvoke $r0.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var180!1 String)
+(assert (= var180!1 ""))
+(assert true)
+(define-const var3883 Int (getHours/912341727 var174)) ; Statement: $i0 = virtualinvoke r1.<com.mysql.cj.protocol.InternalTime: int getHours()>() 
+ ; Statement: if $i0 >= 0 goto $r14 = "PT" 
+(assert (>= var3883 0)) ; Cond: $i0 >= 0 
+(define-const var1984 String "PT") ; Statement: $r14 = "PT" 
+(assert true) ; Non Conditional
+(assert true)
+(define-const var1970 String (append/672562846 var180!1 var1984)) ; Statement: $r2 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r14) 
+(declare-const var180!2 String)
+(assert (= var180!2 (str.++ var180!1 var1984)))
+(assert true)
+(define-const var2913 Int (getHours/912341727 var174)) ; Statement: $i1 = virtualinvoke r1.<com.mysql.cj.protocol.InternalTime: int getHours()>() 
+ ; Statement: if $i1 >= 0 goto $i6 = virtualinvoke r1.<com.mysql.cj.protocol.InternalTime: int getHours()>() 
+(assert (>= var2913 0)) ; Cond: $i1 >= 0 
+(assert true)
+(define-const var2487 Int (getHours/912341727 var174)) ; Statement: $i6 = virtualinvoke r1.<com.mysql.cj.protocol.InternalTime: int getHours()>() 
+(assert true) ; Non Conditional
+(assert true)
+(define-const var3970 String (append/-1001720160 var1970 var2487)) ; Statement: $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i6) 
+(declare-const var1970!1 String)
+(assert (str.prefixof var1970 var1970!1))
+(assert true)
+(define-const var205 String (append/672562846 var3970 "H")) ; Statement: $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("H") 
+(declare-const var3970!1 String)
+(assert (= var3970!1 (str.++ var3970 "H")))
+(assert true)
+(define-const var2104 Int (getMinutes/999217871 var174)) ; Statement: $i2 = virtualinvoke r1.<com.mysql.cj.protocol.InternalTime: int getMinutes()>() 
+(assert true)
+(define-const var2233 String (append/-1001720160 var205 var2104)) ; Statement: $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2) 
+(declare-const var205!1 String)
+(assert (str.prefixof var205 var205!1))
+(assert true)
+(define-const var2949 String (append/672562846 var2233 "M")) ; Statement: $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("M") 
+(declare-const var2233!1 String)
+(assert (= var2233!1 (str.++ var2233 "M")))
+(assert true)
+(define-const var31 Int (getSeconds/-438810321 var174)) ; Statement: $i3 = virtualinvoke r1.<com.mysql.cj.protocol.InternalTime: int getSeconds()>() 
+(assert true)
+(define-const var256 String (append/-1001720160 var2949 var31)) ; Statement: $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3) 
+(declare-const var2949!1 String)
+(assert (str.prefixof var2949 var2949!1))
+(assert true)
+(define-const var2220 String (append/672562846 var256 ".")) ; Statement: $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".") 
+(declare-const var256!1 String)
+(assert (= var256!1 (str.++ var256 ".")))
+(assert true)
+(define-const var1929 Int (getNanos/-1259022417 var174)) ; Statement: $i4 = virtualinvoke r1.<com.mysql.cj.protocol.InternalTime: int getNanos()>() 
+(assert true)
+(define-const var538 String (append/-1001720160 var2220 var1929)) ; Statement: $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i4) 
+(declare-const var2220!1 String)
+(assert (str.prefixof var2220 var2220!1))
+(assert true)
+(define-const var29 String (append/672562846 var538 "S")) ; Statement: $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("S") 
+(declare-const var538!1 String)
+(assert (= var538!1 (str.++ var538 "S")))
+(assert true)
+(define-const var432 String (toString/-2075883882 var29)) ; Statement: $r12 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>() 
+(define-const var3143 var1703 (var1703_parse/463494465 (cast-from-String-to-String var432))) ; Statement: $r11 = staticinvoke <java.time.Duration: java.time.Duration parse(java.lang.CharSequence)>($r12) 
+ ; Statement: return $r11 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), getHours/912341727=([com.mysql.cj.protocol.InternalTime], int), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), append/-1001720160=([java.lang.StringBuilder, int], java.lang.StringBuilder), getMinutes/999217871=([com.mysql.cj.protocol.InternalTime], int), getSeconds/-438810321=([com.mysql.cj.protocol.InternalTime], int), getNanos/-1259022417=([com.mysql.cj.protocol.InternalTime], int), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), var1703_parse/463494465=([java.lang.CharSequence], java.time.Duration), cast-from-String-to-String=([java.lang.String], java.lang.CharSequence)}
+; {var1678=com.mysql.cj.result.DurationValueFactory, var614=r13, var117=com.mysql.cj.protocol.InternalTime, var174=r1, var180=$r0, var3883=$i0, var1984=$r14, var1970=$r2, var2913=$i1, var2487=$i6, var3970=$r3, var205=$r4, var2104=$i2, var2233=$r5, var2949=$r6, var31=$i3, var256=$r7, var2220=$r8, var1929=$i4, var538=$r9, var29=$r10, var432=$r12, var1703=java.time.Duration, var3143=$r11}
+; {com.mysql.cj.result.DurationValueFactory=var1678, r13=var614, com.mysql.cj.protocol.InternalTime=var117, r1=var174, $r0=var180, $i0=var3883, $r14=var1984, $r2=var1970, $i1=var2913, $i6=var2487, $r3=var3970, $r4=var205, $i2=var2104, $r5=var2233, $r6=var2949, $i3=var31, $r7=var256, $r8=var2220, $i4=var1929, $r9=var538, $r10=var29, $r12=var432, java.time.Duration=var1703, $r11=var3143}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 5,"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>": 4,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r13 := @this: com.mysql.cj.result.DurationValueFactory;	r1 := @parameter0: com.mysql.cj.protocol.InternalTime;	$r0 = new java.lang.StringBuilder;	specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();	$i0 = virtualinvoke r1.<com.mysql.cj.protocol.InternalTime: int getHours()>();	if $i0 >= 0 goto $r14 = "PT";	$r14 = "PT";	$r2 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r14);	$i1 = virtualinvoke r1.<com.mysql.cj.protocol.InternalTime: int getHours()>();	if $i1 >= 0 goto $i6 = virtualinvoke r1.<com.mysql.cj.protocol.InternalTime: int getHours()>();	$i6 = virtualinvoke r1.<com.mysql.cj.protocol.InternalTime: int getHours()>();	$r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i6);	$r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("H");	$i2 = virtualinvoke r1.<com.mysql.cj.protocol.InternalTime: int getMinutes()>();	$r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2);	$r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("M");	$i3 = virtualinvoke r1.<com.mysql.cj.protocol.InternalTime: int getSeconds()>();	$r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3);	$r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".");	$i4 = virtualinvoke r1.<com.mysql.cj.protocol.InternalTime: int getNanos()>();	$r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i4);	$r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("S");	$r12 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();	$r11 = staticinvoke <java.time.Duration: java.time.Duration parse(java.lang.CharSequence)>($r12);	return $r11
+;block_num 5

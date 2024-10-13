@@ -1,0 +1,80 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var187 0)
+(declare-sort var2391 0)
+(declare-sort var2844 0)
+(declare-sort var3498 0)
+(declare-sort var950 0)
+(declare-sort var1558 0)
+(declare-sort var2822 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(declare-fun var2844_getString/-1547297038 (String) String)
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun getMessageSize/-1212581225 (var2391) Int)
+(define-fun append/-1001720160 ((s String) (tail Int)) String (str.++ s (str.from_int tail)))
+(declare-fun getBuffer/-599094180 (var2391) var3498)
+(declare-fun array/-1311260030 (var3498) (Array Int Int))
+(declare-fun var950_dumpAsHex/-862480028 ((Array Int Int) Int) String)
+(declare-fun log/-375459336 (var187) var1558)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun var1558_logTrace/649884049 (var1558 var2822) void)
+(declare-fun cast-from-String-to-var2822 (String) var2822)
+(declare-const null-var187 var187)
+(declare-const null-var2391 var2391)
+(declare-const var3782 var187) ; Statement: r7 := @this: com.mysql.cj.protocol.a.TracingPacketReader 
+(assert (not (= var3782 null-var187)))
+(declare-const var3082 var2391) ; Statement: r2 := @parameter0: com.mysql.cj.protocol.a.NativePacketHeader 
+(assert (not (= var3082 null-var2391)))
+(define-const var2481 String String-init) ; Statement: $r0 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var2481)) ; Statement: specialinvoke $r0.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var2481!1 String)
+(assert (= var2481!1 ""))
+(define-const var724 String (var2844_getString/-1547297038 "PacketReader.3")) ; Statement: $r1 = staticinvoke <com.mysql.cj.Messages: java.lang.String getString(java.lang.String)>("PacketReader.3") 
+(assert true)
+;(assert (append/672562846 var2481!1 var724)) ; Statement: virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1) 
+(declare-const var2481!2 String)
+(assert (= var2481!2 (str.++ var2481!1 var724)))
+(assert true)
+(define-const var462 Int (getMessageSize/-1212581225 var3082)) ; Statement: $i0 = virtualinvoke r2.<com.mysql.cj.protocol.a.NativePacketHeader: int getMessageSize()>() 
+(assert true)
+;(assert (append/-1001720160 var2481!2 var462)) ; Statement: virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0) 
+(declare-const var2481!3 String)
+(assert (str.prefixof var2481!2 var2481!3))
+(define-const var2816 String (var2844_getString/-1547297038 "PacketReader.4")) ; Statement: $r3 = staticinvoke <com.mysql.cj.Messages: java.lang.String getString(java.lang.String)>("PacketReader.4") 
+(assert true)
+;(assert (append/672562846 var2481!3 var2816)) ; Statement: virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3) 
+(declare-const var2481!4 String)
+(assert (= var2481!4 (str.++ var2481!3 var2816)))
+(assert true)
+(define-const var522 var3498 (getBuffer/-599094180 var3082)) ; Statement: $r4 = virtualinvoke r2.<com.mysql.cj.protocol.a.NativePacketHeader: java.nio.ByteBuffer getBuffer()>() 
+(assert true)
+(define-const var723 (Array Int Int) (array/-1311260030 var522)) ; Statement: $r5 = virtualinvoke $r4.<java.nio.ByteBuffer: byte[] array()>() 
+(define-const var1436 String (var950_dumpAsHex/-862480028 var723 4)) ; Statement: $r6 = staticinvoke <com.mysql.cj.util.StringUtils: java.lang.String dumpAsHex(byte[],int)>($r5, 4) 
+(assert true)
+;(assert (append/672562846 var2481!4 var1436)) ; Statement: virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6) 
+(declare-const var2481!5 String)
+(assert (= var2481!5 (str.++ var2481!4 var1436)))
+(define-const var102 var1558 (log/-375459336 var3782)) ; Statement: $r8 = r7.<com.mysql.cj.protocol.a.TracingPacketReader: com.mysql.cj.log.Log log> 
+(assert true)
+(define-const var291 String (toString/-2075883882 var2481!5)) ; Statement: $r9 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.String toString()>() 
+;(assert (var1558_logTrace/649884049 var102 (cast-from-String-to-var2822 var291))) ; Statement: interfaceinvoke $r8.<com.mysql.cj.log.Log: void logTrace(java.lang.Object)>($r9) 
+
+(declare-const var102!1 var1558)
+(declare-const var291!1 String)
+ ; Statement: return r2 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), var2844_getString/-1547297038=([java.lang.String], java.lang.String), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), getMessageSize/-1212581225=([com.mysql.cj.protocol.a.NativePacketHeader], int), append/-1001720160=([java.lang.StringBuilder, int], java.lang.StringBuilder), getBuffer/-599094180=([com.mysql.cj.protocol.a.NativePacketHeader], java.nio.ByteBuffer), array/-1311260030=([java.nio.ByteBuffer], byte[]), var950_dumpAsHex/-862480028=([byte[], int], java.lang.String), log/-375459336=([com.mysql.cj.protocol.a.TracingPacketReader], com.mysql.cj.log.Log), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), var1558_logTrace/649884049=([com.mysql.cj.log.Log, java.lang.Object], void), cast-from-String-to-var2822=([java.lang.String], java.lang.Object)}
+; {var187=com.mysql.cj.protocol.a.TracingPacketReader, var3782=r7, var2391=com.mysql.cj.protocol.a.NativePacketHeader, var3082=r2, var2481=$r0, var2844=com.mysql.cj.Messages, var724=$r1, var462=$i0, var2816=$r3, var3498=java.nio.ByteBuffer, var522=$r4, var723=$r5, var950=com.mysql.cj.util.StringUtils, var1436=$r6, var1558=com.mysql.cj.log.Log, var102=$r8, var291=$r9, var2822=java.lang.Object}
+; {com.mysql.cj.protocol.a.TracingPacketReader=var187, r7=var3782, com.mysql.cj.protocol.a.NativePacketHeader=var2391, r2=var3082, $r0=var2481, com.mysql.cj.Messages=var2844, $r1=var724, $i0=var462, $r3=var2816, java.nio.ByteBuffer=var3498, $r4=var522, $r5=var723, com.mysql.cj.util.StringUtils=var950, $r6=var1436, com.mysql.cj.log.Log=var1558, $r8=var102, $r9=var291, java.lang.Object=var2822}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 3,"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>": 1,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r7 := @this: com.mysql.cj.protocol.a.TracingPacketReader;	r2 := @parameter0: com.mysql.cj.protocol.a.NativePacketHeader;	$r0 = new java.lang.StringBuilder;	specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();	$r1 = staticinvoke <com.mysql.cj.Messages: java.lang.String getString(java.lang.String)>("PacketReader.3");	virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);	$i0 = virtualinvoke r2.<com.mysql.cj.protocol.a.NativePacketHeader: int getMessageSize()>();	virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);	$r3 = staticinvoke <com.mysql.cj.Messages: java.lang.String getString(java.lang.String)>("PacketReader.4");	virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);	$r4 = virtualinvoke r2.<com.mysql.cj.protocol.a.NativePacketHeader: java.nio.ByteBuffer getBuffer()>();	$r5 = virtualinvoke $r4.<java.nio.ByteBuffer: byte[] array()>();	$r6 = staticinvoke <com.mysql.cj.util.StringUtils: java.lang.String dumpAsHex(byte[],int)>($r5, 4);	virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);	$r8 = r7.<com.mysql.cj.protocol.a.TracingPacketReader: com.mysql.cj.log.Log log>;	$r9 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.String toString()>();	interfaceinvoke $r8.<com.mysql.cj.log.Log: void logTrace(java.lang.Object)>($r9);	return r2
+;block_num 1

@@ -1,0 +1,85 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var1190 0)
+(declare-sort var556 0)
+(declare-sort var1473 0)
+(declare-sort var721 0)
+(declare-sort var42 0)
+(declare-sort var1485 0)
+(declare-sort var3769 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun getRuleInvocationStack/-1524047791 (var556 var721) var1473)
+(declare-fun cast-from-var1190-to-var721 (var1190) var721)
+(declare-fun var42_reverse/-626513658 (var1473) void)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun append/-1031950772 (String var1485) String)
+(declare-fun cast-from-var1473-to-var1485 (var1473) var1485)
+(declare-fun start/-167380679 (var1190) var3769)
+(declare-fun cast-from-var3769-to-var1485 (var3769) var1485)
+(declare-fun stop/-167380679 (var1190) var3769)
+(declare-fun append/-1166366385 (String Int) String)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-const null-var1190 var1190)
+(declare-const null-var556 var556)
+(declare-const var1331 var1190) ; Statement: r1 := @this: org.antlr.v4.runtime.ParserRuleContext 
+(assert (not (= var1331 null-var1190)))
+(declare-const var2858 var556) ; Statement: r0 := @parameter0: org.antlr.v4.runtime.Parser 
+(assert (not (= var2858 null-var556)))
+(assert true)
+(define-const var3213 var1473 (getRuleInvocationStack/-1524047791 var2858 (cast-from-var1190-to-var721 var1331))) ; Statement: r2 = virtualinvoke r0.<org.antlr.v4.runtime.Parser: java.util.List getRuleInvocationStack(org.antlr.v4.runtime.RuleContext)>(r1) 
+;(assert (var42_reverse/-626513658 var3213)) ; Statement: staticinvoke <java.util.Collections: void reverse(java.util.List)>(r2) 
+
+(declare-const var3213!1 var1473)
+(define-const var3383 String String-init) ; Statement: $r3 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var3383)) ; Statement: specialinvoke $r3.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var3383!1 String)
+(assert (= var3383!1 ""))
+(assert true)
+(define-const var1540 String (append/672562846 var3383!1 "ParserRuleContext")) ; Statement: $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("ParserRuleContext") 
+(declare-const var3383!2 String)
+(assert (= var3383!2 (str.++ var3383!1 "ParserRuleContext")))
+(assert true)
+(define-const var2471 String (append/-1031950772 var1540 (cast-from-var1473-to-var1485 var3213!1))) ; Statement: $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>(r2) 
+(declare-const var1540!1 String)
+(assert (str.prefixof var1540 var1540!1))
+(assert true)
+(define-const var1101 String (append/672562846 var2471 "{start=")) ; Statement: $r7 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("{start=") 
+(declare-const var2471!1 String)
+(assert (= var2471!1 (str.++ var2471 "{start=")))
+(define-const var1867 var3769 (start/-167380679 var1331)) ; Statement: $r6 = r1.<org.antlr.v4.runtime.ParserRuleContext: org.antlr.v4.runtime.Token start> 
+(assert true)
+(define-const var309 String (append/-1031950772 var1101 (cast-from-var3769-to-var1485 var1867))) ; Statement: $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r6) 
+(declare-const var1101!1 String)
+(assert (str.prefixof var1101 var1101!1))
+(assert true)
+(define-const var2741 String (append/672562846 var309 ", stop=")) ; Statement: $r10 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", stop=") 
+(declare-const var309!1 String)
+(assert (= var309!1 (str.++ var309 ", stop=")))
+(define-const var1889 var3769 (stop/-167380679 var1331)) ; Statement: $r9 = r1.<org.antlr.v4.runtime.ParserRuleContext: org.antlr.v4.runtime.Token stop> 
+(assert true)
+(define-const var3610 String (append/-1031950772 var2741 (cast-from-var3769-to-var1485 var1889))) ; Statement: $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r9) 
+(declare-const var2741!1 String)
+(assert (str.prefixof var2741 var2741!1))
+(assert true)
+(define-const var1251 String (append/-1166366385 var3610 125)) ; Statement: $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(125) 
+(declare-const var3610!1 String)
+(assert (str.prefixof var3610 var3610!1))
+(assert true)
+(define-const var3356 String (toString/-2075883882 var1251)) ; Statement: $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>() 
+ ; Statement: return $r13 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {getRuleInvocationStack/-1524047791=([org.antlr.v4.runtime.Parser, org.antlr.v4.runtime.RuleContext], java.util.List), cast-from-var1190-to-var721=([org.antlr.v4.runtime.ParserRuleContext], org.antlr.v4.runtime.RuleContext), var42_reverse/-626513658=([java.util.List], void), String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), append/-1031950772=([java.lang.StringBuilder, java.lang.Object], java.lang.StringBuilder), cast-from-var1473-to-var1485=([java.util.List], java.lang.Object), start/-167380679=([org.antlr.v4.runtime.ParserRuleContext], org.antlr.v4.runtime.Token), cast-from-var3769-to-var1485=([org.antlr.v4.runtime.Token], java.lang.Object), stop/-167380679=([org.antlr.v4.runtime.ParserRuleContext], org.antlr.v4.runtime.Token), append/-1166366385=([java.lang.StringBuilder, char], java.lang.StringBuilder), toString/-2075883882=([java.lang.StringBuilder], java.lang.String)}
+; {var1190=org.antlr.v4.runtime.ParserRuleContext, var1331=r1, var556=org.antlr.v4.runtime.Parser, var2858=r0, var1473=java.util.List, var721=org.antlr.v4.runtime.RuleContext, var3213=r2, var42=java.util.Collections, var3383=$r3, var1540=$r4, var1485=java.lang.Object, var2471=$r5, var1101=$r7, var3769=org.antlr.v4.runtime.Token, var1867=$r6, var309=$r8, var2741=$r10, var1889=$r9, var3610=$r11, var1251=$r12, var3356=$r13}
+; {org.antlr.v4.runtime.ParserRuleContext=var1190, r1=var1331, org.antlr.v4.runtime.Parser=var556, r0=var2858, java.util.List=var1473, org.antlr.v4.runtime.RuleContext=var721, r2=var3213, java.util.Collections=var42, $r3=var3383, $r4=var1540, java.lang.Object=var1485, $r5=var2471, $r7=var1101, org.antlr.v4.runtime.Token=var3769, $r6=var1867, $r8=var309, $r10=var2741, $r9=var1889, $r11=var3610, $r12=var1251, $r13=var3356}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(char)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 3,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 3,"<java.lang.StringBuilder: java.lang.StringBuilder append(char)>": 1,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r1 := @this: org.antlr.v4.runtime.ParserRuleContext;	r0 := @parameter0: org.antlr.v4.runtime.Parser;	r2 = virtualinvoke r0.<org.antlr.v4.runtime.Parser: java.util.List getRuleInvocationStack(org.antlr.v4.runtime.RuleContext)>(r1);	staticinvoke <java.util.Collections: void reverse(java.util.List)>(r2);	$r3 = new java.lang.StringBuilder;	specialinvoke $r3.<java.lang.StringBuilder: void <init>()>();	$r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("ParserRuleContext");	$r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>(r2);	$r7 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("{start=");	$r6 = r1.<org.antlr.v4.runtime.ParserRuleContext: org.antlr.v4.runtime.Token start>;	$r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r6);	$r10 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", stop=");	$r9 = r1.<org.antlr.v4.runtime.ParserRuleContext: org.antlr.v4.runtime.Token stop>;	$r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r9);	$r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(125);	$r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>();	return $r13
+;block_num 1

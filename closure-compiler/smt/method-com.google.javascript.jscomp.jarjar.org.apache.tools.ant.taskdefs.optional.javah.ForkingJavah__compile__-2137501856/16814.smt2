@@ -1,0 +1,117 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var76 0)
+(declare-sort var3309 0)
+(declare-sort var2901 0)
+(declare-sort var1954 0)
+(declare-sort var549 0)
+(declare-sort var2459 0)
+(declare-sort var1555 0)
+(declare-sort var282 0)
+(declare-sort var3998 0)
+(declare-sort var898 0)
+(declare-sort var3079 0)
+(declare-sort var1818 0)
+(declare-sort var1596 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun var1954_setupJavahCommand/-1936325530 (var3309) var2901)
+(declare-fun getProject/416672769 (var2459) var549)
+(declare-fun cast-from-var3309-to-var2459 (var3309) var2459)
+(declare-fun var1555_getJdkExecutable/-166449481 (String) String)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun log/456963423 (var282 String Int) void)
+(declare-fun cast-from-var3309-to-var282 (var3309) var282)
+(declare-fun setExecutable/491986901 (var2901 String) void)
+(declare-fun getCommandline/-1775513496 (var2901) (Array Int String))
+(declare-fun var3998-init () var3998)
+(declare-fun var898-init () var898)
+(declare-fun var1818-init () var1818)
+(declare-fun <init>/-191906322 (var1818 String var1596) void)
+(declare-fun cast-from-var3079-to-var1596 (var3079) var1596)
+(declare-const null-var76 var76)
+(declare-const null-var3309 var3309)
+(declare-const null-var3079 var3079)
+(declare-const var385 var76) ; Statement: r19 := @this: com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.javah.ForkingJavah 
+(assert (not (= var385 null-var76)))
+(declare-const var132 var3309) ; Statement: r0 := @parameter0: com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.Javah 
+(assert (not (= var132 null-var3309)))
+(define-const var1899 var2901 (var1954_setupJavahCommand/-1936325530 var132)) ; Statement: r1 = staticinvoke <com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.javah.SunJavah: com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline setupJavahCommand(com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.Javah)>(r0) 
+(assert true)
+(define-const var2547 var549 (getProject/416672769 (cast-from-var3309-to-var2459 var132))) ; Statement: r2 = virtualinvoke r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.Javah: com.google.javascript.jscomp.jarjar.org.apache.tools.ant.Project getProject()>() 
+(define-const var2720 String (var1555_getJdkExecutable/-166449481 "javah")) ; Statement: r3 = staticinvoke <com.google.javascript.jscomp.jarjar.org.apache.tools.ant.util.JavaEnvUtils: java.lang.String getJdkExecutable(java.lang.String)>("javah") 
+(define-const var2592 String String-init) ; Statement: $r4 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var2592)) ; Statement: specialinvoke $r4.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var2592!1 String)
+(assert (= var2592!1 ""))
+(assert true)
+(define-const var3214 String (append/672562846 var2592!1 "Running ")) ; Statement: $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Running ") 
+(declare-const var2592!2 String)
+(assert (= var2592!2 (str.++ var2592!1 "Running ")))
+(assert true)
+(define-const var3146 String (append/672562846 var3214 var2720)) ; Statement: $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r3) 
+(declare-const var3214!1 String)
+(assert (= var3214!1 (str.++ var3214 var2720)))
+(assert true)
+(define-const var766 String (toString/-2075883882 var3146)) ; Statement: $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>() 
+(assert true)
+;(assert (log/456963423 (cast-from-var3309-to-var282 var132) var766 3)) ; Statement: virtualinvoke r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.Javah: void log(java.lang.String,int)>($r7, 3) 
+
+(declare-const var132!1 var3309)
+(declare-const var766!1 String)
+(declare-const var1914 Int)
+(assert true)
+;(assert (setExecutable/491986901 var1899 var2720)) ; Statement: virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline: void setExecutable(java.lang.String)>(r3) 
+
+(declare-const var1899!1 var2901)
+(declare-const var2720!1 String)
+(assert true)
+(define-const var1227 (Array Int String) (getCommandline/-1775513496 var1899!1)) ; Statement: r8 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline: java.lang.String[] getCommandline()>() 
+(define-const var809 var3998 var3998-init) ; Statement: $r9 = new com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.Execute 
+(define-const var3330 var898 var898-init) ; Statement: $r10 = new com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.LogStreamHandler 
+(assert true) ; Handling Exception: java.lang.Throwable 
+(declare-const var1743 var3079) ; Statement: $r12 := @caughtexception 
+(assert (not (= var1743 null-var3079)))
+(define-const var1617 var1818 var1818-init) ; Statement: $r13 = new com.google.javascript.jscomp.jarjar.org.apache.tools.ant.BuildException 
+(define-const var3130 String String-init) ; Statement: $r14 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var3130)) ; Statement: specialinvoke $r14.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var3130!1 String)
+(assert (= var3130!1 ""))
+(assert true)
+(define-const var123 String (append/672562846 var3130!1 "Error running ")) ; Statement: $r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Error running ") 
+(declare-const var3130!2 String)
+(assert (= var3130!2 (str.++ var3130!1 "Error running ")))
+(assert true)
+(define-const var3672 String (append/672562846 var123 var2720!1)) ; Statement: $r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r3) 
+(declare-const var123!1 String)
+(assert (= var123!1 (str.++ var123 var2720!1)))
+(assert true)
+(define-const var2389 String (append/672562846 var3672 " -maybe it is not on the path")) ; Statement: $r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" -maybe it is not on the path") 
+(declare-const var3672!1 String)
+(assert (= var3672!1 (str.++ var3672 " -maybe it is not on the path")))
+(assert true)
+(define-const var2949 String (toString/-2075883882 var2389)) ; Statement: $r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.String toString()>() 
+(assert true)
+;(assert (<init>/-191906322 var1617 var2949 (cast-from-var3079-to-var1596 var1743))) ; Statement: specialinvoke $r13.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.BuildException: void <init>(java.lang.String,java.lang.Throwable)>($r18, $r12) 
+
+(declare-const var1617!1 var1818)
+(declare-const var2949!1 String)
+(declare-const var1743!1 var3079)
+ ; Statement: throw $r13 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {var1954_setupJavahCommand/-1936325530=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.Javah], com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline), getProject/416672769=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.ProjectComponent], com.google.javascript.jscomp.jarjar.org.apache.tools.ant.Project), cast-from-var3309-to-var2459=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.Javah], com.google.javascript.jscomp.jarjar.org.apache.tools.ant.ProjectComponent), var1555_getJdkExecutable/-166449481=([java.lang.String], java.lang.String), String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), log/456963423=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.Task, java.lang.String, int], void), cast-from-var3309-to-var282=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.Javah], com.google.javascript.jscomp.jarjar.org.apache.tools.ant.Task), setExecutable/491986901=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline, java.lang.String], void), getCommandline/-1775513496=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline], java.lang.String[]), var3998-init=([], com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.Execute), var898-init=([], com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.LogStreamHandler), var1818-init=([], com.google.javascript.jscomp.jarjar.org.apache.tools.ant.BuildException), <init>/-191906322=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.BuildException, java.lang.String, java.lang.Throwable], void), cast-from-var3079-to-var1596=([java.io.IOException], java.lang.Throwable)}
+; {var76=com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.javah.ForkingJavah, var385=r19, var3309=com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.Javah, var132=r0, var2901=com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline, var1954=com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.javah.SunJavah, var1899=r1, var549=com.google.javascript.jscomp.jarjar.org.apache.tools.ant.Project, var2459=com.google.javascript.jscomp.jarjar.org.apache.tools.ant.ProjectComponent, var2547=r2, var1555=com.google.javascript.jscomp.jarjar.org.apache.tools.ant.util.JavaEnvUtils, var2720=r3, var2592=$r4, var3214=$r5, var3146=$r6, var766=$r7, var282=com.google.javascript.jscomp.jarjar.org.apache.tools.ant.Task, var1914=3, var1227=r8, var3998=com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.Execute, var809=$r9, var898=com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.LogStreamHandler, var3330=$r10, var3079=java.io.IOException, var1743=$r12, var1818=com.google.javascript.jscomp.jarjar.org.apache.tools.ant.BuildException, var1617=$r13, var3130=$r14, var123=$r15, var3672=$r16, var2389=$r17, var2949=$r18, var1596=java.lang.Throwable}
+; {com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.javah.ForkingJavah=var76, r19=var385, com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.Javah=var3309, r0=var132, com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline=var2901, com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.javah.SunJavah=var1954, r1=var1899, com.google.javascript.jscomp.jarjar.org.apache.tools.ant.Project=var549, com.google.javascript.jscomp.jarjar.org.apache.tools.ant.ProjectComponent=var2459, r2=var2547, com.google.javascript.jscomp.jarjar.org.apache.tools.ant.util.JavaEnvUtils=var1555, r3=var2720, $r4=var2592, $r5=var3214, $r6=var3146, $r7=var766, com.google.javascript.jscomp.jarjar.org.apache.tools.ant.Task=var282, 3=var1914, r8=var1227, com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.Execute=var3998, $r9=var809, com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.LogStreamHandler=var898, $r10=var3330, java.io.IOException=var3079, $r12=var1743, com.google.javascript.jscomp.jarjar.org.apache.tools.ant.BuildException=var1818, $r13=var1617, $r14=var3130, $r15=var123, $r16=var3672, $r17=var2389, $r18=var2949, java.lang.Throwable=var1596}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>;	<java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 2,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 5,"<java.lang.StringBuilder: java.lang.String toString()>": 2}
+;stmts r19 := @this: com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.javah.ForkingJavah;	r0 := @parameter0: com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.Javah;	r1 = staticinvoke <com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.javah.SunJavah: com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline setupJavahCommand(com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.Javah)>(r0);	r2 = virtualinvoke r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.Javah: com.google.javascript.jscomp.jarjar.org.apache.tools.ant.Project getProject()>();	r3 = staticinvoke <com.google.javascript.jscomp.jarjar.org.apache.tools.ant.util.JavaEnvUtils: java.lang.String getJdkExecutable(java.lang.String)>("javah");	$r4 = new java.lang.StringBuilder;	specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();	$r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Running ");	$r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r3);	$r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();	virtualinvoke r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.Javah: void log(java.lang.String,int)>($r7, 3);	virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline: void setExecutable(java.lang.String)>(r3);	r8 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline: java.lang.String[] getCommandline()>();	$r9 = new com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.Execute;	$r10 = new com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.LogStreamHandler;	$r12 := @caughtexception;	$r13 = new com.google.javascript.jscomp.jarjar.org.apache.tools.ant.BuildException;	$r14 = new java.lang.StringBuilder;	specialinvoke $r14.<java.lang.StringBuilder: void <init>()>();	$r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Error running ");	$r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r3);	$r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" -maybe it is not on the path");	$r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.String toString()>();	specialinvoke $r13.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.BuildException: void <init>(java.lang.String,java.lang.Throwable)>($r18, $r12);	throw $r13
+;block_num 2

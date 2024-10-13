@@ -1,0 +1,83 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var1806 0)
+(declare-sort var2902 0)
+(declare-sort var826 0)
+(declare-sort var794 0)
+(declare-sort var3686 0)
+(declare-sort var2788 0)
+(declare-sort var2872 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun targetLabel/-313536297 (var1806) var2902)
+(declare-fun getStack/1306054097 (var2902) var826)
+(declare-fun getLocalVariableTypesCopy/-899999524 (var826) var794)
+(declare-fun append/-1031950772 (String var3686) String)
+(declare-fun cast-from-var794-to-var3686 (var794) var3686)
+(declare-fun stackStoreSpec/-313536297 (var1806) (Array Int Int))
+(declare-fun var2788_toString/1240813769 ((Array Int Int)) String)
+(declare-fun returnValueType/-313536297 (var1806) var2872)
+(declare-fun cast-from-var2872-to-var3686 (var2872) var3686)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-const null-var1806 var1806)
+(declare-const var2384 var1806) ; Statement: r1 := @this: jdk.nashorn.internal.codegen.CodeGenerator$ContinuationInfo 
+(assert (not (= var2384 null-var1806)))
+(define-const var1540 String String-init) ; Statement: $r0 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var1540)) ; Statement: specialinvoke $r0.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var1540!1 String)
+(assert (= var1540!1 ""))
+(assert true)
+(define-const var751 String (append/672562846 var1540!1 "[localVariableTypes=")) ; Statement: $r5 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[localVariableTypes=") 
+(declare-const var1540!2 String)
+(assert (= var1540!2 (str.++ var1540!1 "[localVariableTypes=")))
+(define-const var1969 var2902 (targetLabel/-313536297 var2384)) ; Statement: $r2 = r1.<jdk.nashorn.internal.codegen.CodeGenerator$ContinuationInfo: jdk.nashorn.internal.codegen.Label targetLabel> 
+(assert true)
+(define-const var3936 var826 (getStack/1306054097 var1969)) ; Statement: $r3 = virtualinvoke $r2.<jdk.nashorn.internal.codegen.Label: jdk.nashorn.internal.codegen.Label$Stack getStack()>() 
+(assert true)
+(define-const var3013 var794 (getLocalVariableTypesCopy/-899999524 var3936)) ; Statement: $r4 = virtualinvoke $r3.<jdk.nashorn.internal.codegen.Label$Stack: java.util.List getLocalVariableTypesCopy()>() 
+(assert true)
+(define-const var19 String (append/-1031950772 var751 (cast-from-var794-to-var3686 var3013))) ; Statement: $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r4) 
+(declare-const var751!1 String)
+(assert (str.prefixof var751 var751!1))
+(assert true)
+(define-const var1023 String (append/672562846 var19 ", stackStoreSpec=")) ; Statement: $r9 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", stackStoreSpec=") 
+(declare-const var19!1 String)
+(assert (= var19!1 (str.++ var19 ", stackStoreSpec=")))
+(define-const var2742 (Array Int Int) (stackStoreSpec/-313536297 var2384)) ; Statement: $r7 = r1.<jdk.nashorn.internal.codegen.CodeGenerator$ContinuationInfo: int[] stackStoreSpec> 
+(define-const var383 String (var2788_toString/1240813769 var2742)) ; Statement: $r8 = staticinvoke <java.util.Arrays: java.lang.String toString(int[])>($r7) 
+(assert true)
+(define-const var1368 String (append/672562846 var1023 var383)) ; Statement: $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8) 
+(declare-const var1023!1 String)
+(assert (= var1023!1 (str.++ var1023 var383)))
+(assert true)
+(define-const var2884 String (append/672562846 var1368 ", returnValueType=")) ; Statement: $r12 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", returnValueType=") 
+(declare-const var1368!1 String)
+(assert (= var1368!1 (str.++ var1368 ", returnValueType=")))
+(define-const var2646 var2872 (returnValueType/-313536297 var2384)) ; Statement: $r11 = r1.<jdk.nashorn.internal.codegen.CodeGenerator$ContinuationInfo: jdk.nashorn.internal.codegen.types.Type returnValueType> 
+(assert true)
+(define-const var2584 String (append/-1031950772 var2884 (cast-from-var2872-to-var3686 var2646))) ; Statement: $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r11) 
+(declare-const var2884!1 String)
+(assert (str.prefixof var2884 var2884!1))
+(assert true)
+(define-const var3320 String (append/672562846 var2584 "]")) ; Statement: $r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("]") 
+(declare-const var2584!1 String)
+(assert (= var2584!1 (str.++ var2584 "]")))
+(assert true)
+(define-const var889 String (toString/-2075883882 var3320)) ; Statement: $r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>() 
+ ; Statement: return $r15 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), targetLabel/-313536297=([jdk.nashorn.internal.codegen.CodeGenerator$ContinuationInfo], jdk.nashorn.internal.codegen.Label), getStack/1306054097=([jdk.nashorn.internal.codegen.Label], jdk.nashorn.internal.codegen.Label$Stack), getLocalVariableTypesCopy/-899999524=([jdk.nashorn.internal.codegen.Label$Stack], java.util.List), append/-1031950772=([java.lang.StringBuilder, java.lang.Object], java.lang.StringBuilder), cast-from-var794-to-var3686=([java.util.List], java.lang.Object), stackStoreSpec/-313536297=([jdk.nashorn.internal.codegen.CodeGenerator$ContinuationInfo], int[]), var2788_toString/1240813769=([int[]], java.lang.String), returnValueType/-313536297=([jdk.nashorn.internal.codegen.CodeGenerator$ContinuationInfo], jdk.nashorn.internal.codegen.types.Type), cast-from-var2872-to-var3686=([jdk.nashorn.internal.codegen.types.Type], java.lang.Object), toString/-2075883882=([java.lang.StringBuilder], java.lang.String)}
+; {var1806=jdk.nashorn.internal.codegen.CodeGenerator$ContinuationInfo, var2384=r1, var1540=$r0, var751=$r5, var2902=jdk.nashorn.internal.codegen.Label, var1969=$r2, var826=jdk.nashorn.internal.codegen.Label$Stack, var3936=$r3, var794=java.util.List, var3013=$r4, var3686=java.lang.Object, var19=$r6, var1023=$r9, var2742=$r7, var2788=java.util.Arrays, var383=$r8, var1368=$r10, var2884=$r12, var2872=jdk.nashorn.internal.codegen.types.Type, var2646=$r11, var2584=$r13, var3320=$r14, var889=$r15}
+; {jdk.nashorn.internal.codegen.CodeGenerator$ContinuationInfo=var1806, r1=var2384, $r0=var1540, $r5=var751, jdk.nashorn.internal.codegen.Label=var2902, $r2=var1969, jdk.nashorn.internal.codegen.Label$Stack=var826, $r3=var3936, java.util.List=var794, $r4=var3013, java.lang.Object=var3686, $r6=var19, $r9=var1023, $r7=var2742, java.util.Arrays=var2788, $r8=var383, $r10=var1368, $r12=var2884, jdk.nashorn.internal.codegen.types.Type=var2872, $r11=var2646, $r13=var2584, $r14=var3320, $r15=var889}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.util.Arrays: java.lang.String toString(int[])>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 5,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 2,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r1 := @this: jdk.nashorn.internal.codegen.CodeGenerator$ContinuationInfo;	$r0 = new java.lang.StringBuilder;	specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();	$r5 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[localVariableTypes=");	$r2 = r1.<jdk.nashorn.internal.codegen.CodeGenerator$ContinuationInfo: jdk.nashorn.internal.codegen.Label targetLabel>;	$r3 = virtualinvoke $r2.<jdk.nashorn.internal.codegen.Label: jdk.nashorn.internal.codegen.Label$Stack getStack()>();	$r4 = virtualinvoke $r3.<jdk.nashorn.internal.codegen.Label$Stack: java.util.List getLocalVariableTypesCopy()>();	$r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r4);	$r9 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", stackStoreSpec=");	$r7 = r1.<jdk.nashorn.internal.codegen.CodeGenerator$ContinuationInfo: int[] stackStoreSpec>;	$r8 = staticinvoke <java.util.Arrays: java.lang.String toString(int[])>($r7);	$r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);	$r12 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", returnValueType=");	$r11 = r1.<jdk.nashorn.internal.codegen.CodeGenerator$ContinuationInfo: jdk.nashorn.internal.codegen.types.Type returnValueType>;	$r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r11);	$r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("]");	$r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>();	return $r15
+;block_num 1

@@ -1,0 +1,137 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var3977 0)
+(declare-sort var1098 0)
+(declare-sort var2643 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun getEventType/-1535808990 (var3977) Int)
+(define-fun cast-from-Int-to-Int ((arg Int)) Int arg)
+(declare-fun message/-1616942791 (var3977) String)
+(declare-fun var1098-init () var1098)
+(declare-fun eventCreationTime/-1616942791 (var3977) Int)
+(declare-fun <init>/593337323 (var1098 Int) void)
+(declare-fun append/-1031950772 (String var2643) String)
+(declare-fun cast-from-var1098-to-var2643 (var1098) var2643)
+(declare-fun eventDuration/-1616942791 (var3977) Int)
+(declare-fun append/-901862667 (String Int) String)
+(declare-fun connectionId/-1616942791 (var3977) Int)
+(declare-fun statementId/-1616942791 (var3977) Int)
+(define-fun append/-1001720160 ((s String) (tail Int)) String (str.++ s (str.from_int tail)))
+(declare-fun resultSetId/-1616942791 (var3977) Int)
+(declare-fun eventCreationPointDesc/-1616942791 (var3977) String)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-const null-var3977 var3977)
+(declare-const var974 var3977) ; Statement: r1 := @this: com.mysql.cj.log.ProfilerEventImpl 
+(assert (not (= var974 null-var3977)))
+(define-const var270 String String-init) ; Statement: $r6 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var270)) ; Statement: specialinvoke $r6.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var270!1 String)
+(assert (= var270!1 ""))
+(assert true)
+;(assert (append/672562846 var270!1 "[")) ; Statement: virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[") 
+(declare-const var270!2 String)
+(assert (= var270!2 (str.++ var270!1 "[")))
+(assert true)
+(define-const var2653 Int (getEventType/-1535808990 var974)) ; Statement: $b0 = virtualinvoke r1.<com.mysql.cj.log.ProfilerEventImpl: byte getEventType()>() 
+(define-const var2259 Int (cast-from-Int-to-Int var2653)) ; Statement: $i6 = (int) $b0 
+ ; Statement: tableswitch($i6) {     case 0: goto virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("USAGE ADVISOR");     case 1: goto virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("CONSTRUCT");     case 2: goto virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("PREPARE");     case 3: goto virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("QUERY");     case 4: goto virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("EXECUTE");     case 5: goto virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("FETCH");     case 6: goto virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SLOW QUERY");     default: goto virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("UNKNOWN"); } 
+(assert (and (= var2259 6) (and (not (= var2259 5)) (and (not (= var2259 4)) (and (not (= var2259 3)) (and (not (= var2259 2)) (and (not (= var2259 1)) (and (not (= var2259 0)) true)))))))) ; Intersect: Cond: $i6 == 6  and Intersect: Negate: Cond: $i6 == 5   and Intersect: Negate: Cond: $i6 == 4   and Intersect: Negate: Cond: $i6 == 3   and Intersect: Negate: Cond: $i6 == 2   and Intersect: Negate: Cond: $i6 == 1   and Intersect: Negate: Cond: $i6 == 0   and Non Conditional       
+(assert true)
+;(assert (append/672562846 var270!2 "SLOW QUERY")) ; Statement: virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SLOW QUERY") 
+(declare-const var270!3 String)
+(assert (= var270!3 (str.++ var270!2 "SLOW QUERY")))
+ ; Statement: goto [?= virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("] ")] 
+(assert true) ; Non Conditional
+(assert true)
+;(assert (append/672562846 var270!3 "] ")) ; Statement: virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("] ") 
+(declare-const var270!4 String)
+(assert (= var270!4 (str.++ var270!3 "] ")))
+(define-const var3155 String (message/-1616942791 var974)) ; Statement: $r2 = r1.<com.mysql.cj.log.ProfilerEventImpl: java.lang.String message> 
+(assert true)
+;(assert (append/672562846 var270!4 var3155)) ; Statement: virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2) 
+(declare-const var270!5 String)
+(assert (= var270!5 (str.++ var270!4 var3155)))
+(assert true)
+;(assert (append/672562846 var270!5 " [Created on: ")) ; Statement: virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" [Created on: ") 
+(declare-const var270!6 String)
+(assert (= var270!6 (str.++ var270!5 " [Created on: ")))
+(define-const var711 var1098 var1098-init) ; Statement: $r7 = new java.util.Date 
+(define-const var3631 Int (eventCreationTime/-1616942791 var974)) ; Statement: $l1 = r1.<com.mysql.cj.log.ProfilerEventImpl: long eventCreationTime> 
+(assert true)
+;(assert (<init>/593337323 var711 var3631)) ; Statement: specialinvoke $r7.<java.util.Date: void <init>(long)>($l1) 
+
+(declare-const var711!1 var1098)
+(declare-const var3631!1 Int)
+(assert true)
+;(assert (append/-1031950772 var270!6 (cast-from-var1098-to-var2643 var711!1))) ; Statement: virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r7) 
+(declare-const var270!7 String)
+(assert (str.prefixof var270!6 var270!7))
+(assert true)
+;(assert (append/672562846 var270!7 ", duration: ")) ; Statement: virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", duration: ") 
+(declare-const var270!8 String)
+(assert (= var270!8 (str.++ var270!7 ", duration: ")))
+(define-const var939 Int (eventDuration/-1616942791 var974)) ; Statement: $l2 = r1.<com.mysql.cj.log.ProfilerEventImpl: long eventDuration> 
+(assert true)
+;(assert (append/-901862667 var270!8 var939)) ; Statement: virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l2) 
+(declare-const var270!9 String)
+(assert (str.prefixof var270!8 var270!9))
+(assert true)
+;(assert (append/672562846 var270!9 ", connection-id: ")) ; Statement: virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", connection-id: ") 
+(declare-const var270!10 String)
+(assert (= var270!10 (str.++ var270!9 ", connection-id: ")))
+(define-const var1713 Int (connectionId/-1616942791 var974)) ; Statement: $l3 = r1.<com.mysql.cj.log.ProfilerEventImpl: long connectionId> 
+(assert true)
+;(assert (append/-901862667 var270!10 var1713)) ; Statement: virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l3) 
+(declare-const var270!11 String)
+(assert (str.prefixof var270!10 var270!11))
+(assert true)
+;(assert (append/672562846 var270!11 ", statement-id: ")) ; Statement: virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", statement-id: ") 
+(declare-const var270!12 String)
+(assert (= var270!12 (str.++ var270!11 ", statement-id: ")))
+(define-const var2072 Int (statementId/-1616942791 var974)) ; Statement: $i4 = r1.<com.mysql.cj.log.ProfilerEventImpl: int statementId> 
+(assert true)
+;(assert (append/-1001720160 var270!12 var2072)) ; Statement: virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i4) 
+(declare-const var270!13 String)
+(assert (str.prefixof var270!12 var270!13))
+(assert true)
+;(assert (append/672562846 var270!13 ", resultset-id: ")) ; Statement: virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", resultset-id: ") 
+(declare-const var270!14 String)
+(assert (= var270!14 (str.++ var270!13 ", resultset-id: ")))
+(define-const var530 Int (resultSetId/-1616942791 var974)) ; Statement: $i5 = r1.<com.mysql.cj.log.ProfilerEventImpl: int resultSetId> 
+(assert true)
+;(assert (append/-1001720160 var270!14 var530)) ; Statement: virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i5) 
+(declare-const var270!15 String)
+(assert (str.prefixof var270!14 var270!15))
+(assert true)
+;(assert (append/672562846 var270!15 ",")) ; Statement: virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",") 
+(declare-const var270!16 String)
+(assert (= var270!16 (str.++ var270!15 ",")))
+(define-const var576 String (eventCreationPointDesc/-1616942791 var974)) ; Statement: $r4 = r1.<com.mysql.cj.log.ProfilerEventImpl: java.lang.String eventCreationPointDesc> 
+(assert true)
+;(assert (append/672562846 var270!16 var576)) ; Statement: virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4) 
+(declare-const var270!17 String)
+(assert (= var270!17 (str.++ var270!16 var576)))
+(assert true)
+;(assert (append/672562846 var270!17 "]")) ; Statement: virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("]") 
+(declare-const var270!18 String)
+(assert (= var270!18 (str.++ var270!17 "]")))
+(assert true)
+(define-const var583 String (toString/-2075883882 var270!18)) ; Statement: $r5 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>() 
+ ; Statement: return $r5 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), getEventType/-1535808990=([com.mysql.cj.log.ProfilerEventImpl], byte), cast-from-Int-to-Int=([byte], int), message/-1616942791=([com.mysql.cj.log.ProfilerEventImpl], java.lang.String), var1098-init=([], java.util.Date), eventCreationTime/-1616942791=([com.mysql.cj.log.ProfilerEventImpl], long), <init>/593337323=([java.util.Date, long], void), append/-1031950772=([java.lang.StringBuilder, java.lang.Object], java.lang.StringBuilder), cast-from-var1098-to-var2643=([java.util.Date], java.lang.Object), eventDuration/-1616942791=([com.mysql.cj.log.ProfilerEventImpl], long), append/-901862667=([java.lang.StringBuilder, long], java.lang.StringBuilder), connectionId/-1616942791=([com.mysql.cj.log.ProfilerEventImpl], long), statementId/-1616942791=([com.mysql.cj.log.ProfilerEventImpl], int), append/-1001720160=([java.lang.StringBuilder, int], java.lang.StringBuilder), resultSetId/-1616942791=([com.mysql.cj.log.ProfilerEventImpl], int), eventCreationPointDesc/-1616942791=([com.mysql.cj.log.ProfilerEventImpl], java.lang.String), toString/-2075883882=([java.lang.StringBuilder], java.lang.String)}
+; {var3977=com.mysql.cj.log.ProfilerEventImpl, var974=r1, var270=$r6, var2653=$b0, var2259=$i6, var3155=$r2, var1098=java.util.Date, var711=$r7, var3631=$l1, var2643=java.lang.Object, var939=$l2, var1713=$l3, var2072=$i4, var530=$i5, var576=$r4, var583=$r5}
+; {com.mysql.cj.log.ProfilerEventImpl=var3977, r1=var974, $r6=var270, $b0=var2653, $i6=var2259, $r2=var3155, java.util.Date=var1098, $r7=var711, $l1=var3631, java.lang.Object=var2643, $l2=var939, $l3=var1713, $i4=var2072, $i5=var530, $r4=var576, $r5=var583}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(long)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(long)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 12,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(long)>": 2,"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>": 2,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r1 := @this: com.mysql.cj.log.ProfilerEventImpl;	$r6 = new java.lang.StringBuilder;	specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();	virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[");	$b0 = virtualinvoke r1.<com.mysql.cj.log.ProfilerEventImpl: byte getEventType()>();	$i6 = (int) $b0;	tableswitch($i6) {     case 0: goto virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("USAGE ADVISOR");     case 1: goto virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("CONSTRUCT");     case 2: goto virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("PREPARE");     case 3: goto virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("QUERY");     case 4: goto virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("EXECUTE");     case 5: goto virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("FETCH");     case 6: goto virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SLOW QUERY");     default: goto virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("UNKNOWN"); };	virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SLOW QUERY");	goto [?= virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("] ")];	virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("] ");	$r2 = r1.<com.mysql.cj.log.ProfilerEventImpl: java.lang.String message>;	virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);	virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" [Created on: ");	$r7 = new java.util.Date;	$l1 = r1.<com.mysql.cj.log.ProfilerEventImpl: long eventCreationTime>;	specialinvoke $r7.<java.util.Date: void <init>(long)>($l1);	virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r7);	virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", duration: ");	$l2 = r1.<com.mysql.cj.log.ProfilerEventImpl: long eventDuration>;	virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l2);	virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", connection-id: ");	$l3 = r1.<com.mysql.cj.log.ProfilerEventImpl: long connectionId>;	virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l3);	virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", statement-id: ");	$i4 = r1.<com.mysql.cj.log.ProfilerEventImpl: int statementId>;	virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i4);	virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", resultset-id: ");	$i5 = r1.<com.mysql.cj.log.ProfilerEventImpl: int resultSetId>;	virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i5);	virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");	$r4 = r1.<com.mysql.cj.log.ProfilerEventImpl: java.lang.String eventCreationPointDesc>;	virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);	virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("]");	$r5 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();	return $r5
+;block_num 3

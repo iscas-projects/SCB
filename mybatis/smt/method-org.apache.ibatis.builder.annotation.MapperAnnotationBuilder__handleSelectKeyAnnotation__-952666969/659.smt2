@@ -1,0 +1,155 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var1026 0)
+(declare-sort var48 0)
+(declare-sort var1763 0)
+(declare-sort var2728 0)
+(declare-sort var2552 0)
+(declare-sort var2550 0)
+(declare-sort var787 0)
+(declare-sort var2062 0)
+(declare-sort var2650 0)
+(declare-sort var1843 0)
+(declare-sort var760 0)
+(declare-sort var2501 0)
+(declare-sort var3958 0)
+(declare-sort var1932 0)
+(declare-sort var3536 0)
+(declare-sort var1795 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun var48_resultType/390302281 (var48) ClassObject)
+(declare-fun var48_statementType/1328798574 (var48) var2552)
+(declare-fun var48_keyProperty/-2017190237 (var48) String)
+(declare-fun var48_keyColumn/576569410 (var48) String)
+(declare-fun var48_before/636828101 (var48) Bool)
+(declare-fun var48_databaseId/-979740851 (var48) String)
+(define-fun isEmpty/-1285796103 ((s String)) Bool (= (str.len s) 0))
+(declare-fun buildSqlSource/1129554691 (var1026 var2062 ClassObject var2728 var2650) var787)
+(declare-fun cast-from-var48-to-var2062 (var48) var2062)
+(declare-fun assistant/-1562462879 (var1026) var760)
+(declare-fun addMappedStatement/-1285273847 (var760 String var787 var2552 var1843 Int Int String ClassObject String ClassObject var2501 Bool Bool Bool var3958 String String String var2728 String Bool) var3536)
+(declare-fun cast-from-var2550-to-var3958 (var2550) var3958)
+(declare-fun applyCurrentNamespace/296309646 (var760 String Bool) String)
+(declare-fun configuration/-1562462879 (var1026) var1932)
+(declare-fun getMappedStatement/409192812 (var1932 String Bool) var3536)
+(declare-fun var1795-init () var1795)
+(declare-fun <init>/1628235659 (var1795 var3536 Bool) void)
+(declare-fun addKeyGenerator/696433339 (var1932 String var3958) void)
+(declare-fun cast-from-var1795-to-var3958 (var1795) var3958)
+(declare-const null-var1026 var1026)
+(declare-const null-var48 var48)
+(declare-const null-String String)
+(declare-const null-ClassObject ClassObject)
+(declare-const null-var2728 var2728)
+(declare-const var2550-INSTANCE var2550)
+(declare-const null-NullType var1763)
+(declare-const null-var2650 var2650)
+(declare-const var1843-SELECT var1843)
+(declare-const null-Int Int)
+(declare-const null-var2501 var2501)
+(declare-const var2590 var1026) ; Statement: r11 := @this: org.apache.ibatis.builder.annotation.MapperAnnotationBuilder 
+(assert (not (= var2590 null-var1026)))
+(declare-const var47 var48) ; Statement: r4 := @parameter0: org.apache.ibatis.annotations.SelectKey 
+(assert (not (= var47 null-var48)))
+(declare-const var1152 String) ; Statement: r1 := @parameter1: java.lang.String 
+(assert (not (= var1152 null-String)))
+(declare-const var465 ClassObject) ; Statement: r12 := @parameter2: java.lang.Class 
+(assert (not (= var465 null-ClassObject)))
+(declare-const var211 var2728) ; Statement: r13 := @parameter3: org.apache.ibatis.scripting.LanguageDriver 
+(assert (not (= var211 null-var2728)))
+(define-const var3970 String String-init) ; Statement: $r0 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var3970)) ; Statement: specialinvoke $r0.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var3970!1 String)
+(assert (= var3970!1 ""))
+(assert true)
+(define-const var563 String (append/672562846 var3970!1 var1152)) ; Statement: $r2 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1) 
+(declare-const var3970!2 String)
+(assert (= var3970!2 (str.++ var3970!1 var1152)))
+(assert true)
+(define-const var1334 String (append/672562846 var563 "!selectKey")) ; Statement: $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("!selectKey") 
+(declare-const var563!1 String)
+(assert (= var563!1 (str.++ var563 "!selectKey")))
+(assert true)
+(define-const var1340 String (toString/-2075883882 var1334)) ; Statement: r23 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>() 
+(define-const var1038 ClassObject (var48_resultType/390302281 var47)) ; Statement: r5 = interfaceinvoke r4.<org.apache.ibatis.annotations.SelectKey: java.lang.Class resultType()>() 
+(define-const var3023 var2552 (var48_statementType/1328798574 var47)) ; Statement: r6 = interfaceinvoke r4.<org.apache.ibatis.annotations.SelectKey: org.apache.ibatis.mapping.StatementType statementType()>() 
+(define-const var562 String (var48_keyProperty/-2017190237 var47)) ; Statement: r7 = interfaceinvoke r4.<org.apache.ibatis.annotations.SelectKey: java.lang.String keyProperty()>() 
+(define-const var752 String (var48_keyColumn/576569410 var47)) ; Statement: r8 = interfaceinvoke r4.<org.apache.ibatis.annotations.SelectKey: java.lang.String keyColumn()>() 
+(define-const var948 Bool (var48_before/636828101 var47)) ; Statement: z0 = interfaceinvoke r4.<org.apache.ibatis.annotations.SelectKey: boolean before()>() 
+(define-const var1089 var2550 var2550-INSTANCE) ; Statement: r9 = <org.apache.ibatis.executor.keygen.NoKeyGenerator: org.apache.ibatis.executor.keygen.NoKeyGenerator INSTANCE> 
+(define-const var997 String (var48_databaseId/-979740851 var47)) ; Statement: $r10 = interfaceinvoke r4.<org.apache.ibatis.annotations.SelectKey: java.lang.String databaseId()>() 
+(assert true)
+(define-const var2141 Bool (isEmpty/-1285796103 var997)) ; Statement: $z1 = virtualinvoke $r10.<java.lang.String: boolean isEmpty()>() 
+ ; Statement: if $z1 == 0 goto $r24 = interfaceinvoke r4.<org.apache.ibatis.annotations.SelectKey: java.lang.String databaseId()>() 
+(assert (not (= (ite var2141 1 0) 0))) ; Negate: Cond: $z1 == 0  
+(define-const var3363 String null-String) ; Statement: $r24 = null 
+ ; Statement: goto [?= $r19 = specialinvoke r11.<org.apache.ibatis.builder.'annotation'.MapperAnnotationBuilder: org.apache.ibatis.mapping.SqlSource buildSqlSource(java.lang.'annotation'.Annotation,java.lang.Class,org.apache.ibatis.scripting.LanguageDriver,java.lang.reflect.Method)>(r4, r12, r13, null)] 
+(assert true) ; Non Conditional
+(assert true)
+(define-const var2254 var787 (buildSqlSource/1129554691 var2590 (cast-from-var48-to-var2062 var47) var465 var211 null-var2650)) ; Statement: $r19 = specialinvoke r11.<org.apache.ibatis.builder.'annotation'.MapperAnnotationBuilder: org.apache.ibatis.mapping.SqlSource buildSqlSource(java.lang.'annotation'.Annotation,java.lang.Class,org.apache.ibatis.scripting.LanguageDriver,java.lang.reflect.Method)>(r4, r12, r13, null) 
+(define-const var3189 var1843 var1843-SELECT) ; Statement: $r20 = <org.apache.ibatis.mapping.SqlCommandType: org.apache.ibatis.mapping.SqlCommandType SELECT> 
+(define-const var3324 var760 (assistant/-1562462879 var2590)) ; Statement: $r14 = r11.<org.apache.ibatis.builder.'annotation'.MapperAnnotationBuilder: org.apache.ibatis.builder.MapperBuilderAssistant assistant> 
+(assert true)
+;(assert (addMappedStatement/-1285273847 var3324 var1340 var2254 var3023 var3189 null-Int null-Int null-String var465 null-String var1038 null-var2501 (ite (= 1 0) true false) (ite (= 1 0) true false) (ite (= 1 0) true false) (cast-from-var2550-to-var3958 var1089) var562 var752 var3363 var211 null-String (ite (= 1 0) true false))) ; Statement: virtualinvoke $r14.<org.apache.ibatis.builder.MapperBuilderAssistant: org.apache.ibatis.mapping.MappedStatement addMappedStatement(java.lang.String,org.apache.ibatis.mapping.SqlSource,org.apache.ibatis.mapping.StatementType,org.apache.ibatis.mapping.SqlCommandType,java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.Class,java.lang.String,java.lang.Class,org.apache.ibatis.mapping.ResultSetType,boolean,boolean,boolean,org.apache.ibatis.executor.keygen.KeyGenerator,java.lang.String,java.lang.String,java.lang.String,org.apache.ibatis.scripting.LanguageDriver,java.lang.String,boolean)>(r23, $r19, r6, $r20, null, null, null, r12, null, r5, null, 0, 0, 0, r9, r7, r8, $r24, r13, null, 0) 
+
+(declare-const var3324!1 var760)
+(declare-const var1340!1 String)
+(declare-const var2254!1 var787)
+(declare-const var3023!1 var2552)
+(declare-const var3189!1 var1843)
+(declare-const var531 var1763)
+(declare-const var531!1 var1763)
+(declare-const var531!2 var1763)
+(declare-const var465!1 ClassObject)
+(declare-const var531!3 var1763)
+(declare-const var1038!1 ClassObject)
+(declare-const var531!4 var1763)
+(declare-const var218 Int)
+(declare-const var218!1 Int)
+(declare-const var218!2 Int)
+(declare-const var1089!1 var2550)
+(declare-const var562!1 String)
+(declare-const var752!1 String)
+(declare-const var3363!1 String)
+(declare-const var211!1 var2728)
+(declare-const var531!5 var1763)
+(declare-const var218!3 Int)
+(define-const var1355 var760 (assistant/-1562462879 var2590)) ; Statement: $r15 = r11.<org.apache.ibatis.builder.'annotation'.MapperAnnotationBuilder: org.apache.ibatis.builder.MapperBuilderAssistant assistant> 
+(assert true)
+(define-const var545 String (applyCurrentNamespace/296309646 var1355 var1340!1 (ite (= 1 0) true false))) ; Statement: $r21 = virtualinvoke $r15.<org.apache.ibatis.builder.MapperBuilderAssistant: java.lang.String applyCurrentNamespace(java.lang.String,boolean)>(r23, 0) 
+(define-const var2044 var1932 (configuration/-1562462879 var2590)) ; Statement: $r16 = r11.<org.apache.ibatis.builder.'annotation'.MapperAnnotationBuilder: org.apache.ibatis.session.Configuration configuration> 
+(assert true)
+(define-const var2487 var3536 (getMappedStatement/409192812 var2044 var545 (ite (= 1 0) true false))) ; Statement: $r22 = virtualinvoke $r16.<org.apache.ibatis.session.Configuration: org.apache.ibatis.mapping.MappedStatement getMappedStatement(java.lang.String,boolean)>($r21, 0) 
+(define-const var3062 var1795 var1795-init) ; Statement: $r17 = new org.apache.ibatis.executor.keygen.SelectKeyGenerator 
+(assert true)
+;(assert (<init>/1628235659 var3062 var2487 var948)) ; Statement: specialinvoke $r17.<org.apache.ibatis.executor.keygen.SelectKeyGenerator: void <init>(org.apache.ibatis.mapping.MappedStatement,boolean)>($r22, z0) 
+
+(declare-const var3062!1 var1795)
+(declare-const var2487!1 var3536)
+(declare-const var948!1 Bool)
+(define-const var2160 var1932 (configuration/-1562462879 var2590)) ; Statement: $r18 = r11.<org.apache.ibatis.builder.'annotation'.MapperAnnotationBuilder: org.apache.ibatis.session.Configuration configuration> 
+(assert true)
+;(assert (addKeyGenerator/696433339 var2160 var545 (cast-from-var1795-to-var3958 var3062!1))) ; Statement: virtualinvoke $r18.<org.apache.ibatis.session.Configuration: void addKeyGenerator(java.lang.String,org.apache.ibatis.executor.keygen.KeyGenerator)>($r21, $r17) 
+
+(declare-const var2160!1 var1932)
+(declare-const var545!1 String)
+(declare-const var3062!2 var1795)
+ ; Statement: return $r17 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), var48_resultType/390302281=([org.apache.ibatis.annotations.SelectKey], java.lang.Class), var48_statementType/1328798574=([org.apache.ibatis.annotations.SelectKey], org.apache.ibatis.mapping.StatementType), var48_keyProperty/-2017190237=([org.apache.ibatis.annotations.SelectKey], java.lang.String), var48_keyColumn/576569410=([org.apache.ibatis.annotations.SelectKey], java.lang.String), var48_before/636828101=([org.apache.ibatis.annotations.SelectKey], boolean), var48_databaseId/-979740851=([org.apache.ibatis.annotations.SelectKey], java.lang.String), isEmpty/-1285796103=([java.lang.String], boolean), buildSqlSource/1129554691=([org.apache.ibatis.builder.annotation.MapperAnnotationBuilder, java.lang.annotation.Annotation, java.lang.Class, org.apache.ibatis.scripting.LanguageDriver, java.lang.reflect.Method], org.apache.ibatis.mapping.SqlSource), cast-from-var48-to-var2062=([org.apache.ibatis.annotations.SelectKey], java.lang.annotation.Annotation), assistant/-1562462879=([org.apache.ibatis.builder.annotation.MapperAnnotationBuilder], org.apache.ibatis.builder.MapperBuilderAssistant), addMappedStatement/-1285273847=([org.apache.ibatis.builder.MapperBuilderAssistant, java.lang.String, org.apache.ibatis.mapping.SqlSource, org.apache.ibatis.mapping.StatementType, org.apache.ibatis.mapping.SqlCommandType, java.lang.Integer, java.lang.Integer, java.lang.String, java.lang.Class, java.lang.String, java.lang.Class, org.apache.ibatis.mapping.ResultSetType, boolean, boolean, boolean, org.apache.ibatis.executor.keygen.KeyGenerator, java.lang.String, java.lang.String, java.lang.String, org.apache.ibatis.scripting.LanguageDriver, java.lang.String, boolean], org.apache.ibatis.mapping.MappedStatement), cast-from-var2550-to-var3958=([org.apache.ibatis.executor.keygen.NoKeyGenerator], org.apache.ibatis.executor.keygen.KeyGenerator), applyCurrentNamespace/296309646=([org.apache.ibatis.builder.MapperBuilderAssistant, java.lang.String, boolean], java.lang.String), configuration/-1562462879=([org.apache.ibatis.builder.annotation.MapperAnnotationBuilder], org.apache.ibatis.session.Configuration), getMappedStatement/409192812=([org.apache.ibatis.session.Configuration, java.lang.String, boolean], org.apache.ibatis.mapping.MappedStatement), var1795-init=([], org.apache.ibatis.executor.keygen.SelectKeyGenerator), <init>/1628235659=([org.apache.ibatis.executor.keygen.SelectKeyGenerator, org.apache.ibatis.mapping.MappedStatement, boolean], void), addKeyGenerator/696433339=([org.apache.ibatis.session.Configuration, java.lang.String, org.apache.ibatis.executor.keygen.KeyGenerator], void), cast-from-var1795-to-var3958=([org.apache.ibatis.executor.keygen.SelectKeyGenerator], org.apache.ibatis.executor.keygen.KeyGenerator)}
+; {var1026=org.apache.ibatis.builder.annotation.MapperAnnotationBuilder, var2590=r11, var48=org.apache.ibatis.annotations.SelectKey, var47=r4, var1152=r1, var1763=null_type, var465=r12, var2728=org.apache.ibatis.scripting.LanguageDriver, var211=r13, var3970=$r0, var563=$r2, var1334=$r3, var1340=r23, var1038=r5, var2552=org.apache.ibatis.mapping.StatementType, var3023=r6, var562=r7, var752=r8, var948=z0, var2550=org.apache.ibatis.executor.keygen.NoKeyGenerator, var1089=r9, var997=$r10, var2141=$z1, var3363=$r24, var787=org.apache.ibatis.mapping.SqlSource, var2062=java.lang.annotation.Annotation, var2650=java.lang.reflect.Method, var2254=$r19, var1843=org.apache.ibatis.mapping.SqlCommandType, var3189=$r20, var760=org.apache.ibatis.builder.MapperBuilderAssistant, var3324=$r14, var2501=org.apache.ibatis.mapping.ResultSetType, var3958=org.apache.ibatis.executor.keygen.KeyGenerator, var531=null, var218=0, var1355=$r15, var545=$r21, var1932=org.apache.ibatis.session.Configuration, var2044=$r16, var3536=org.apache.ibatis.mapping.MappedStatement, var2487=$r22, var1795=org.apache.ibatis.executor.keygen.SelectKeyGenerator, var3062=$r17, var2160=$r18}
+; {org.apache.ibatis.builder.annotation.MapperAnnotationBuilder=var1026, r11=var2590, org.apache.ibatis.annotations.SelectKey=var48, r4=var47, r1=var1152, null_type=var1763, r12=var465, org.apache.ibatis.scripting.LanguageDriver=var2728, r13=var211, $r0=var3970, $r2=var563, $r3=var1334, r23=var1340, r5=var1038, org.apache.ibatis.mapping.StatementType=var2552, r6=var3023, r7=var562, r8=var752, z0=var948, org.apache.ibatis.executor.keygen.NoKeyGenerator=var2550, r9=var1089, $r10=var997, $z1=var2141, $r24=var3363, org.apache.ibatis.mapping.SqlSource=var787, java.lang.annotation.Annotation=var2062, java.lang.reflect.Method=var2650, $r19=var2254, org.apache.ibatis.mapping.SqlCommandType=var1843, $r20=var3189, org.apache.ibatis.builder.MapperBuilderAssistant=var760, $r14=var3324, org.apache.ibatis.mapping.ResultSetType=var2501, org.apache.ibatis.executor.keygen.KeyGenerator=var3958, null=var531, 0=var218, $r15=var1355, $r21=var545, org.apache.ibatis.session.Configuration=var1932, $r16=var2044, org.apache.ibatis.mapping.MappedStatement=var3536, $r22=var2487, org.apache.ibatis.executor.keygen.SelectKeyGenerator=var1795, $r17=var3062, $r18=var2160}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>;	<java.lang.String: boolean isEmpty()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 2,"<java.lang.StringBuilder: java.lang.String toString()>": 1,"<java.lang.String: boolean isEmpty()>": 1}
+;stmts r11 := @this: org.apache.ibatis.builder.annotation.MapperAnnotationBuilder;	r4 := @parameter0: org.apache.ibatis.annotations.SelectKey;	r1 := @parameter1: java.lang.String;	r12 := @parameter2: java.lang.Class;	r13 := @parameter3: org.apache.ibatis.scripting.LanguageDriver;	$r0 = new java.lang.StringBuilder;	specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();	$r2 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1);	$r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("!selectKey");	r23 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();	r5 = interfaceinvoke r4.<org.apache.ibatis.annotations.SelectKey: java.lang.Class resultType()>();	r6 = interfaceinvoke r4.<org.apache.ibatis.annotations.SelectKey: org.apache.ibatis.mapping.StatementType statementType()>();	r7 = interfaceinvoke r4.<org.apache.ibatis.annotations.SelectKey: java.lang.String keyProperty()>();	r8 = interfaceinvoke r4.<org.apache.ibatis.annotations.SelectKey: java.lang.String keyColumn()>();	z0 = interfaceinvoke r4.<org.apache.ibatis.annotations.SelectKey: boolean before()>();	r9 = <org.apache.ibatis.executor.keygen.NoKeyGenerator: org.apache.ibatis.executor.keygen.NoKeyGenerator INSTANCE>;	$r10 = interfaceinvoke r4.<org.apache.ibatis.annotations.SelectKey: java.lang.String databaseId()>();	$z1 = virtualinvoke $r10.<java.lang.String: boolean isEmpty()>();	if $z1 == 0 goto $r24 = interfaceinvoke r4.<org.apache.ibatis.annotations.SelectKey: java.lang.String databaseId()>();	$r24 = null;	goto [?= $r19 = specialinvoke r11.<org.apache.ibatis.builder.'annotation'.MapperAnnotationBuilder: org.apache.ibatis.mapping.SqlSource buildSqlSource(java.lang.'annotation'.Annotation,java.lang.Class,org.apache.ibatis.scripting.LanguageDriver,java.lang.reflect.Method)>(r4, r12, r13, null)];	$r19 = specialinvoke r11.<org.apache.ibatis.builder.'annotation'.MapperAnnotationBuilder: org.apache.ibatis.mapping.SqlSource buildSqlSource(java.lang.'annotation'.Annotation,java.lang.Class,org.apache.ibatis.scripting.LanguageDriver,java.lang.reflect.Method)>(r4, r12, r13, null);	$r20 = <org.apache.ibatis.mapping.SqlCommandType: org.apache.ibatis.mapping.SqlCommandType SELECT>;	$r14 = r11.<org.apache.ibatis.builder.'annotation'.MapperAnnotationBuilder: org.apache.ibatis.builder.MapperBuilderAssistant assistant>;	virtualinvoke $r14.<org.apache.ibatis.builder.MapperBuilderAssistant: org.apache.ibatis.mapping.MappedStatement addMappedStatement(java.lang.String,org.apache.ibatis.mapping.SqlSource,org.apache.ibatis.mapping.StatementType,org.apache.ibatis.mapping.SqlCommandType,java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.Class,java.lang.String,java.lang.Class,org.apache.ibatis.mapping.ResultSetType,boolean,boolean,boolean,org.apache.ibatis.executor.keygen.KeyGenerator,java.lang.String,java.lang.String,java.lang.String,org.apache.ibatis.scripting.LanguageDriver,java.lang.String,boolean)>(r23, $r19, r6, $r20, null, null, null, r12, null, r5, null, 0, 0, 0, r9, r7, r8, $r24, r13, null, 0);	$r15 = r11.<org.apache.ibatis.builder.'annotation'.MapperAnnotationBuilder: org.apache.ibatis.builder.MapperBuilderAssistant assistant>;	$r21 = virtualinvoke $r15.<org.apache.ibatis.builder.MapperBuilderAssistant: java.lang.String applyCurrentNamespace(java.lang.String,boolean)>(r23, 0);	$r16 = r11.<org.apache.ibatis.builder.'annotation'.MapperAnnotationBuilder: org.apache.ibatis.session.Configuration configuration>;	$r22 = virtualinvoke $r16.<org.apache.ibatis.session.Configuration: org.apache.ibatis.mapping.MappedStatement getMappedStatement(java.lang.String,boolean)>($r21, 0);	$r17 = new org.apache.ibatis.executor.keygen.SelectKeyGenerator;	specialinvoke $r17.<org.apache.ibatis.executor.keygen.SelectKeyGenerator: void <init>(org.apache.ibatis.mapping.MappedStatement,boolean)>($r22, z0);	$r18 = r11.<org.apache.ibatis.builder.'annotation'.MapperAnnotationBuilder: org.apache.ibatis.session.Configuration configuration>;	virtualinvoke $r18.<org.apache.ibatis.session.Configuration: void addKeyGenerator(java.lang.String,org.apache.ibatis.executor.keygen.KeyGenerator)>($r21, $r17);	return $r17
+;block_num 3

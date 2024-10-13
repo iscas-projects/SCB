@@ -1,0 +1,110 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var1736 0)
+(declare-sort var2991 0)
+(declare-sort var1652 0)
+(declare-sort var1622 0)
+(declare-sort var2245 0)
+(declare-sort var1756 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun getFirstRow/1410679095 (var1652) Int)
+(declare-fun append/-1031950772 (String var1622) String)
+(declare-fun cast-from-Int-to-var1622 (Int) var1622)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun getMaxOrLimit/1324675775 (var2245 var1652) Int)
+(declare-fun cast-from-var1736-to-var2245 (var1736) var2245)
+(define-fun append/-1001720160 ((s String) (tail Int)) String (str.++ s (str.from_int tail)))
+(define-fun length/-134980193 ((s String)) Int (str.len s))
+(declare-fun <init>/543593434 (String Int) void)
+(declare-fun var1756_hasFirstRow/-2097898482 (var1652) Bool)
+(declare-fun var1756_hasMaxRows/-417356089 (var1652) Bool)
+(declare-const null-var1736 var1736)
+(declare-const null-String String)
+(declare-const null-var1652 var1652)
+(declare-const var1093 var1736) ; Statement: r7 := @this: org.hibernate.dialect.Ingres9Dialect$1 
+(assert (not (= var1093 null-var1736)))
+(declare-const var62 String) ; Statement: r13 := @parameter0: java.lang.String 
+(assert (not (= var62 null-String)))
+(declare-const var3596 var1652) ; Statement: r1 := @parameter1: org.hibernate.engine.spi.RowSelection 
+(assert (not (= var3596 null-var1652)))
+(define-const var1147 String String-init) ; Statement: $r0 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var1147)) ; Statement: specialinvoke $r0.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var1147!1 String)
+(assert (= var1147!1 ""))
+(assert true)
+(define-const var2581 String (append/672562846 var1147!1 " offset ")) ; Statement: $r3 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" offset ") 
+(declare-const var1147!2 String)
+(assert (= var1147!2 (str.++ var1147!1 " offset ")))
+(assert true)
+(define-const var843 Int (getFirstRow/1410679095 var3596)) ; Statement: $r2 = virtualinvoke r1.<org.hibernate.engine.spi.RowSelection: java.lang.Integer getFirstRow()>() 
+(assert true)
+(define-const var3921 String (append/-1031950772 var2581 (cast-from-Int-to-var1622 var843))) ; Statement: $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r2) 
+(declare-const var2581!1 String)
+(assert (str.prefixof var2581 var2581!1))
+(assert true)
+(define-const var541 String (toString/-2075883882 var3921)) ; Statement: r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>() 
+(define-const var93 String String-init) ; Statement: $r6 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var93)) ; Statement: specialinvoke $r6.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var93!1 String)
+(assert (= var93!1 ""))
+(assert true)
+(define-const var1282 String (append/672562846 var93!1 " fetch first ")) ; Statement: $r8 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" fetch first ") 
+(declare-const var93!2 String)
+(assert (= var93!2 (str.++ var93!1 " fetch first ")))
+(assert true)
+(define-const var1194 Int (getMaxOrLimit/1324675775 (cast-from-var1736-to-var2245 var1093) var3596)) ; Statement: $i0 = virtualinvoke r7.<org.hibernate.dialect.Ingres9Dialect$1: int getMaxOrLimit(org.hibernate.engine.spi.RowSelection)>(r1) 
+(assert true)
+(define-const var888 String (append/-1001720160 var1282 var1194)) ; Statement: $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0) 
+(declare-const var1282!1 String)
+(assert (str.prefixof var1282 var1282!1))
+(assert true)
+(define-const var3923 String (append/672562846 var888 " rows only")) ; Statement: $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" rows only") 
+(declare-const var888!1 String)
+(assert (= var888!1 (str.++ var888 " rows only")))
+(assert true)
+(define-const var2114 String (toString/-2075883882 var3923)) ; Statement: r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>() 
+(define-const var1713 String String-init) ; Statement: $r12 = new java.lang.StringBuilder 
+(assert true)
+(define-const var2599 Int (length/-134980193 var62)) ; Statement: $i2 = virtualinvoke r13.<java.lang.String: int length()>() 
+(assert true)
+(define-const var420 Int (length/-134980193 var541)) ; Statement: $i1 = virtualinvoke r5.<java.lang.String: int length()>() 
+(define-const var2379 Int (+ var2599 var420)) ; Statement: $i4 = $i2 + $i1 
+(assert true)
+(define-const var3793 Int (length/-134980193 var2114)) ; Statement: $i3 = virtualinvoke r11.<java.lang.String: int length()>() 
+(define-const var2106 Int (+ var2379 var3793)) ; Statement: $i5 = $i4 + $i3 
+(assert true)
+;(assert (<init>/543593434 var1713 var2106)) ; Statement: specialinvoke $r12.<java.lang.StringBuilder: void <init>(int)>($i5) 
+
+(declare-const var1713!1 String)
+(declare-const var2106!1 Int)
+(assert true)
+(define-const var1875 String (append/672562846 var1713!1 var62)) ; Statement: r14 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r13) 
+(declare-const var1713!2 String)
+(assert (= var1713!2 (str.++ var1713!1 var62)))
+(define-const var3717 Bool (var1756_hasFirstRow/-2097898482 var3596)) ; Statement: $z0 = staticinvoke <org.hibernate.dialect.pagination.LimitHelper: boolean hasFirstRow(org.hibernate.engine.spi.RowSelection)>(r1) 
+ ; Statement: if $z0 == 0 goto $z1 = staticinvoke <org.hibernate.dialect.pagination.LimitHelper: boolean hasMaxRows(org.hibernate.engine.spi.RowSelection)>(r1) 
+(assert (= (ite var3717 1 0) 0)) ; Cond: $z0 == 0 
+(define-const var884 Bool (var1756_hasMaxRows/-417356089 var3596)) ; Statement: $z1 = staticinvoke <org.hibernate.dialect.pagination.LimitHelper: boolean hasMaxRows(org.hibernate.engine.spi.RowSelection)>(r1) 
+ ; Statement: if $z1 == 0 goto $r15 = virtualinvoke r14.<java.lang.StringBuilder: java.lang.String toString()>() 
+(assert (= (ite var884 1 0) 0)) ; Cond: $z1 == 0 
+(assert true)
+(define-const var2411 String (toString/-2075883882 var1875)) ; Statement: $r15 = virtualinvoke r14.<java.lang.StringBuilder: java.lang.String toString()>() 
+ ; Statement: return $r15 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), getFirstRow/1410679095=([org.hibernate.engine.spi.RowSelection], java.lang.Integer), append/-1031950772=([java.lang.StringBuilder, java.lang.Object], java.lang.StringBuilder), cast-from-Int-to-var1622=([java.lang.Integer], java.lang.Object), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), getMaxOrLimit/1324675775=([org.hibernate.dialect.pagination.AbstractLimitHandler, org.hibernate.engine.spi.RowSelection], int), cast-from-var1736-to-var2245=([org.hibernate.dialect.Ingres9Dialect$1], org.hibernate.dialect.pagination.AbstractLimitHandler), append/-1001720160=([java.lang.StringBuilder, int], java.lang.StringBuilder), length/-134980193=([java.lang.String], int), <init>/543593434=([java.lang.StringBuilder, int], void), var1756_hasFirstRow/-2097898482=([org.hibernate.engine.spi.RowSelection], boolean), var1756_hasMaxRows/-417356089=([org.hibernate.engine.spi.RowSelection], boolean)}
+; {var1736=org.hibernate.dialect.Ingres9Dialect$1, var1093=r7, var62=r13, var2991=null_type, var1652=org.hibernate.engine.spi.RowSelection, var3596=r1, var1147=$r0, var2581=$r3, var843=$r2, var1622=java.lang.Object, var3921=$r4, var541=r5, var93=$r6, var1282=$r8, var2245=org.hibernate.dialect.pagination.AbstractLimitHandler, var1194=$i0, var888=$r9, var3923=$r10, var2114=r11, var1713=$r12, var2599=$i2, var420=$i1, var2379=$i4, var3793=$i3, var2106=$i5, var1875=r14, var1756=org.hibernate.dialect.pagination.LimitHelper, var3717=$z0, var884=$z1, var2411=$r15}
+; {org.hibernate.dialect.Ingres9Dialect$1=var1736, r7=var1093, r13=var62, null_type=var2991, org.hibernate.engine.spi.RowSelection=var1652, r1=var3596, $r0=var1147, $r3=var2581, $r2=var843, java.lang.Object=var1622, $r4=var3921, r5=var541, $r6=var93, $r8=var1282, org.hibernate.dialect.pagination.AbstractLimitHandler=var2245, $i0=var1194, $r9=var888, $r10=var3923, r11=var2114, $r12=var1713, $i2=var2599, $i1=var420, $i4=var2379, $i3=var3793, $i5=var2106, r14=var1875, org.hibernate.dialect.pagination.LimitHelper=var1756, $z0=var3717, $z1=var884, $r15=var2411}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.String toString()>;	<java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>;	<java.lang.String: int length()>;	<java.lang.String: int length()>;	<java.lang.String: int length()>;	<java.lang.StringBuilder: void <init>(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 2,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 4,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 1,"<java.lang.StringBuilder: java.lang.String toString()>": 3,"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>": 1,"<java.lang.String: int length()>": 3,"<java.lang.StringBuilder: void <init>(int)>": 1}
+;stmts r7 := @this: org.hibernate.dialect.Ingres9Dialect$1;	r13 := @parameter0: java.lang.String;	r1 := @parameter1: org.hibernate.engine.spi.RowSelection;	$r0 = new java.lang.StringBuilder;	specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();	$r3 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" offset ");	$r2 = virtualinvoke r1.<org.hibernate.engine.spi.RowSelection: java.lang.Integer getFirstRow()>();	$r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r2);	r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();	$r6 = new java.lang.StringBuilder;	specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();	$r8 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" fetch first ");	$i0 = virtualinvoke r7.<org.hibernate.dialect.Ingres9Dialect$1: int getMaxOrLimit(org.hibernate.engine.spi.RowSelection)>(r1);	$r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);	$r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" rows only");	r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();	$r12 = new java.lang.StringBuilder;	$i2 = virtualinvoke r13.<java.lang.String: int length()>();	$i1 = virtualinvoke r5.<java.lang.String: int length()>();	$i4 = $i2 + $i1;	$i3 = virtualinvoke r11.<java.lang.String: int length()>();	$i5 = $i4 + $i3;	specialinvoke $r12.<java.lang.StringBuilder: void <init>(int)>($i5);	r14 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r13);	$z0 = staticinvoke <org.hibernate.dialect.pagination.LimitHelper: boolean hasFirstRow(org.hibernate.engine.spi.RowSelection)>(r1);	if $z0 == 0 goto $z1 = staticinvoke <org.hibernate.dialect.pagination.LimitHelper: boolean hasMaxRows(org.hibernate.engine.spi.RowSelection)>(r1);	$z1 = staticinvoke <org.hibernate.dialect.pagination.LimitHelper: boolean hasMaxRows(org.hibernate.engine.spi.RowSelection)>(r1);	if $z1 == 0 goto $r15 = virtualinvoke r14.<java.lang.StringBuilder: java.lang.String toString()>();	$r15 = virtualinvoke r14.<java.lang.StringBuilder: java.lang.String toString()>();	return $r15
+;block_num 3

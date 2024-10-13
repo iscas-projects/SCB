@@ -1,0 +1,103 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var397 0)
+(declare-sort var884 0)
+(declare-sort var3345 0)
+(declare-sort var1597 0)
+(declare-sort var418 0)
+(declare-sort var606 0)
+(declare-sort var3865 0)
+(declare-sort var784 0)
+(declare-sort var149 0)
+(declare-sort var2582 0)
+(declare-sort var3046 0)
+(declare-sort var3593 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-const var149!class ClassObject)
+(declare-fun <init>/1690701317 (var1597 var884 var3345) void)
+(declare-fun cast-from-var397-to-var1597 (var397) var1597)
+(declare-fun factory/-113976271 (var418) var884)
+(declare-fun cast-from-var397-to-var418 (var397) var418)
+(declare-fun var884_getServiceRegistry/762402722 (var884) var606)
+(declare-fun var784_getService/-972330729 (var784 ClassObject) var3865)
+(declare-fun cast-from-var606-to-var784 (var606) var784)
+(declare-fun cast-from-var3865-to-var149 (var3865) var149)
+(declare-fun var149_getDialect/1253253595 (var149) var2582)
+(declare-fun supportsRowValueConstructorSyntaxInInList/-2052866003 (var2582) Bool)
+(declare-fun var3046-init () var3046)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun getClass/1258963082 (var3593) ClassObject)
+(declare-fun cast-from-var397-to-var3593 (var397) var3593)
+(declare-fun getSimpleName/-390194377 (ClassObject) String)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun <init>/-630064361 (var3046 String) void)
+(declare-const null-var397 var397)
+(declare-const null-var884 var884)
+(declare-const null-var3345 var3345)
+(declare-const var786 var397) ; Statement: r0 := @this: org.hibernate.hql.spi.id.inline.InlineIdsSubSelectValuesListUpdateHandlerImpl 
+(assert (not (= var786 null-var397)))
+(declare-const var1687 var884) ; Statement: r1 := @parameter0: org.hibernate.engine.spi.SessionFactoryImplementor 
+(assert (not (= var1687 null-var884)))
+(declare-const var3188 var3345) ; Statement: r2 := @parameter1: org.hibernate.hql.internal.ast.HqlSqlWalker 
+(assert (not (= var3188 null-var3345)))
+(assert true)
+;(assert (<init>/1690701317 (cast-from-var397-to-var1597 var786) var1687 var3188)) ; Statement: specialinvoke r0.<org.hibernate.hql.spi.id.inline.AbstractInlineIdsUpdateHandlerImpl: void <init>(org.hibernate.engine.spi.SessionFactoryImplementor,org.hibernate.hql.internal.ast.HqlSqlWalker)>(r1, r2) 
+
+(declare-const var786!1 var397)
+(declare-const var1687!1 var884)
+(declare-const var3188!1 var3345)
+(assert true)
+(define-const var1975 var884 (factory/-113976271 (cast-from-var397-to-var418 var786!1))) ; Statement: $r3 = virtualinvoke r0.<org.hibernate.hql.spi.id.inline.InlineIdsSubSelectValuesListUpdateHandlerImpl: org.hibernate.engine.spi.SessionFactoryImplementor factory()>() 
+(define-const var134 var606 (var884_getServiceRegistry/762402722 var1975)) ; Statement: $r4 = interfaceinvoke $r3.<org.hibernate.engine.spi.SessionFactoryImplementor: org.hibernate.service.spi.ServiceRegistryImplementor getServiceRegistry()>() 
+(define-const var3659 var3865 (var784_getService/-972330729 (cast-from-var606-to-var784 var134) var149!class)) ; Statement: $r5 = interfaceinvoke $r4.<org.hibernate.service.spi.ServiceRegistryImplementor: org.hibernate.service.Service getService(java.lang.Class)>(class "Lorg/hibernate/engine/jdbc/spi/JdbcServices;") 
+(define-const var1087 var149 (cast-from-var3865-to-var149 var3659)) ; Statement: $r6 = (org.hibernate.engine.jdbc.spi.JdbcServices) $r5 
+(define-const var1474 var2582 (var149_getDialect/1253253595 var1087)) ; Statement: r7 = interfaceinvoke $r6.<org.hibernate.engine.jdbc.spi.JdbcServices: org.hibernate.dialect.Dialect getDialect()>() 
+(assert true)
+(define-const var683 Bool (supportsRowValueConstructorSyntaxInInList/-2052866003 var1474)) ; Statement: $z0 = virtualinvoke r7.<org.hibernate.dialect.Dialect: boolean supportsRowValueConstructorSyntaxInInList()>() 
+ ; Statement: if $z0 != 0 goto $z1 = virtualinvoke r7.<org.hibernate.dialect.Dialect: boolean supportsValuesList()>() 
+(assert (not (not (= (ite var683 1 0) 0)))) ; Negate: Cond: $z0 != 0  
+(define-const var1473 var3046 var3046-init) ; Statement: $r16 = new java.lang.UnsupportedOperationException 
+(define-const var1391 String String-init) ; Statement: $r17 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var1391)) ; Statement: specialinvoke $r17.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var1391!1 String)
+(assert (= var1391!1 ""))
+(assert true)
+(define-const var2145 String (append/672562846 var1391!1 "The ")) ; Statement: $r20 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("The ") 
+(declare-const var1391!2 String)
+(assert (= var1391!2 (str.++ var1391!1 "The ")))
+(assert true)
+(define-const var2352 ClassObject (getClass/1258963082 (cast-from-var397-to-var3593 var786!1))) ; Statement: $r18 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>() 
+(assert true)
+(define-const var3877 String (getSimpleName/-390194377 var2352)) ; Statement: $r19 = virtualinvoke $r18.<java.lang.Class: java.lang.String getSimpleName()>() 
+(assert true)
+(define-const var1528 String (append/672562846 var2145 var3877)) ; Statement: $r21 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r19) 
+(declare-const var2145!1 String)
+(assert (= var2145!1 (str.++ var2145 var3877)))
+(assert true)
+(define-const var3925 String (append/672562846 var1528 " can only be used with Dialects that support IN clause row-value expressions (for composite identifiers)!")) ; Statement: $r22 = virtualinvoke $r21.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" can only be used with Dialects that support IN clause row-value expressions (for composite identifiers)!") 
+(declare-const var1528!1 String)
+(assert (= var1528!1 (str.++ var1528 " can only be used with Dialects that support IN clause row-value expressions (for composite identifiers)!")))
+(assert true)
+(define-const var1019 String (toString/-2075883882 var3925)) ; Statement: $r23 = virtualinvoke $r22.<java.lang.StringBuilder: java.lang.String toString()>() 
+(assert true)
+;(assert (<init>/-630064361 var1473 var1019)) ; Statement: specialinvoke $r16.<java.lang.UnsupportedOperationException: void <init>(java.lang.String)>($r23) 
+
+(declare-const var1473!1 var3046)
+(declare-const var1019!1 String)
+ ; Statement: throw $r16 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {<init>/1690701317=([org.hibernate.hql.spi.id.inline.AbstractInlineIdsUpdateHandlerImpl, org.hibernate.engine.spi.SessionFactoryImplementor, org.hibernate.hql.internal.ast.HqlSqlWalker], void), cast-from-var397-to-var1597=([org.hibernate.hql.spi.id.inline.InlineIdsSubSelectValuesListUpdateHandlerImpl], org.hibernate.hql.spi.id.inline.AbstractInlineIdsUpdateHandlerImpl), factory/-113976271=([org.hibernate.hql.spi.id.AbstractTableBasedBulkIdHandler], org.hibernate.engine.spi.SessionFactoryImplementor), cast-from-var397-to-var418=([org.hibernate.hql.spi.id.inline.InlineIdsSubSelectValuesListUpdateHandlerImpl], org.hibernate.hql.spi.id.AbstractTableBasedBulkIdHandler), var884_getServiceRegistry/762402722=([org.hibernate.engine.spi.SessionFactoryImplementor], org.hibernate.service.spi.ServiceRegistryImplementor), var784_getService/-972330729=([org.hibernate.service.ServiceRegistry, java.lang.Class], org.hibernate.service.Service), cast-from-var606-to-var784=([org.hibernate.service.spi.ServiceRegistryImplementor], org.hibernate.service.ServiceRegistry), cast-from-var3865-to-var149=([org.hibernate.service.Service], org.hibernate.engine.jdbc.spi.JdbcServices), var149_getDialect/1253253595=([org.hibernate.engine.jdbc.spi.JdbcServices], org.hibernate.dialect.Dialect), supportsRowValueConstructorSyntaxInInList/-2052866003=([org.hibernate.dialect.Dialect], boolean), var3046-init=([], java.lang.UnsupportedOperationException), String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), getClass/1258963082=([java.lang.Object], java.lang.Class), cast-from-var397-to-var3593=([org.hibernate.hql.spi.id.inline.InlineIdsSubSelectValuesListUpdateHandlerImpl], java.lang.Object), getSimpleName/-390194377=([java.lang.Class], java.lang.String), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), <init>/-630064361=([java.lang.UnsupportedOperationException, java.lang.String], void)}
+; {var397=org.hibernate.hql.spi.id.inline.InlineIdsSubSelectValuesListUpdateHandlerImpl, var786=r0, var884=org.hibernate.engine.spi.SessionFactoryImplementor, var1687=r1, var3345=org.hibernate.hql.internal.ast.HqlSqlWalker, var3188=r2, var1597=org.hibernate.hql.spi.id.inline.AbstractInlineIdsUpdateHandlerImpl, var418=org.hibernate.hql.spi.id.AbstractTableBasedBulkIdHandler, var1975=$r3, var606=org.hibernate.service.spi.ServiceRegistryImplementor, var134=$r4, var3865=org.hibernate.service.Service, var784=org.hibernate.service.ServiceRegistry, var149=org.hibernate.engine.jdbc.spi.JdbcServices, var3659=$r5, var1087=$r6, var2582=org.hibernate.dialect.Dialect, var1474=r7, var683=$z0, var3046=java.lang.UnsupportedOperationException, var1473=$r16, var1391=$r17, var2145=$r20, var3593=java.lang.Object, var2352=$r18, var3877=$r19, var1528=$r21, var3925=$r22, var1019=$r23}
+; {org.hibernate.hql.spi.id.inline.InlineIdsSubSelectValuesListUpdateHandlerImpl=var397, r0=var786, org.hibernate.engine.spi.SessionFactoryImplementor=var884, r1=var1687, org.hibernate.hql.internal.ast.HqlSqlWalker=var3345, r2=var3188, org.hibernate.hql.spi.id.inline.AbstractInlineIdsUpdateHandlerImpl=var1597, org.hibernate.hql.spi.id.AbstractTableBasedBulkIdHandler=var418, $r3=var1975, org.hibernate.service.spi.ServiceRegistryImplementor=var606, $r4=var134, org.hibernate.service.Service=var3865, org.hibernate.service.ServiceRegistry=var784, org.hibernate.engine.jdbc.spi.JdbcServices=var149, $r5=var3659, $r6=var1087, org.hibernate.dialect.Dialect=var2582, r7=var1474, $z0=var683, java.lang.UnsupportedOperationException=var3046, $r16=var1473, $r17=var1391, $r20=var2145, java.lang.Object=var3593, $r18=var2352, $r19=var3877, $r21=var1528, $r22=var3925, $r23=var1019}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 3,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r0 := @this: org.hibernate.hql.spi.id.inline.InlineIdsSubSelectValuesListUpdateHandlerImpl;	r1 := @parameter0: org.hibernate.engine.spi.SessionFactoryImplementor;	r2 := @parameter1: org.hibernate.hql.internal.ast.HqlSqlWalker;	specialinvoke r0.<org.hibernate.hql.spi.id.inline.AbstractInlineIdsUpdateHandlerImpl: void <init>(org.hibernate.engine.spi.SessionFactoryImplementor,org.hibernate.hql.internal.ast.HqlSqlWalker)>(r1, r2);	$r3 = virtualinvoke r0.<org.hibernate.hql.spi.id.inline.InlineIdsSubSelectValuesListUpdateHandlerImpl: org.hibernate.engine.spi.SessionFactoryImplementor factory()>();	$r4 = interfaceinvoke $r3.<org.hibernate.engine.spi.SessionFactoryImplementor: org.hibernate.service.spi.ServiceRegistryImplementor getServiceRegistry()>();	$r5 = interfaceinvoke $r4.<org.hibernate.service.spi.ServiceRegistryImplementor: org.hibernate.service.Service getService(java.lang.Class)>(class "Lorg/hibernate/engine/jdbc/spi/JdbcServices;");	$r6 = (org.hibernate.engine.jdbc.spi.JdbcServices) $r5;	r7 = interfaceinvoke $r6.<org.hibernate.engine.jdbc.spi.JdbcServices: org.hibernate.dialect.Dialect getDialect()>();	$z0 = virtualinvoke r7.<org.hibernate.dialect.Dialect: boolean supportsRowValueConstructorSyntaxInInList()>();	if $z0 != 0 goto $z1 = virtualinvoke r7.<org.hibernate.dialect.Dialect: boolean supportsValuesList()>();	$r16 = new java.lang.UnsupportedOperationException;	$r17 = new java.lang.StringBuilder;	specialinvoke $r17.<java.lang.StringBuilder: void <init>()>();	$r20 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("The ");	$r18 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>();	$r19 = virtualinvoke $r18.<java.lang.Class: java.lang.String getSimpleName()>();	$r21 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r19);	$r22 = virtualinvoke $r21.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" can only be used with Dialects that support IN clause row-value expressions (for composite identifiers)!");	$r23 = virtualinvoke $r22.<java.lang.StringBuilder: java.lang.String toString()>();	specialinvoke $r16.<java.lang.UnsupportedOperationException: void <init>(java.lang.String)>($r23);	throw $r16
+;block_num 2

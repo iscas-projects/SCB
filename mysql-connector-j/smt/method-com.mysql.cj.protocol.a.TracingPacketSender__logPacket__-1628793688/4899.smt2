@@ -1,0 +1,105 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var1400 0)
+(declare-sort var2174 0)
+(declare-sort var1968 0)
+(declare-sort var1649 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun host/-346442902 (var1400) String)
+(declare-fun serverThreadId/-346442902 (var1400) Int)
+(declare-fun append/-901862667 (String Int) String)
+(define-fun append/-1001720160 ((s String) (tail Int)) String (str.++ s (str.from_int tail)))
+(define-fun cast-from-Int-to-Int ((arg Int)) Int arg)
+(declare-fun var2174_dumpAsHex/-862480028 ((Array Int Int) Int) String)
+(declare-fun log/-346442902 (var1400) var1968)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun var1968_logTrace/649884049 (var1968 var1649) void)
+(declare-fun cast-from-String-to-var1649 (String) var1649)
+(declare-const null-var1400 var1400)
+(declare-const null-__Array__Int__Int__ (Array Int Int))
+(declare-const null-Int Int)
+(declare-const var2095 var1400) ; Statement: r1 := @this: com.mysql.cj.protocol.a.TracingPacketSender 
+(assert (not (= var2095 null-var1400)))
+(declare-const var1974 (Array Int Int)) ; Statement: r3 := @parameter0: byte[] 
+(assert (not (= var1974 null-__Array__Int__Int__)))
+(declare-const var1123 Int) ; Statement: i1 := @parameter1: int 
+(assert (not (= var1123 null-Int)))
+(declare-const var1873 Int) ; Statement: b2 := @parameter2: byte 
+(assert (not (= var1873 null-Int)))
+(define-const var1645 String String-init) ; Statement: $r7 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var1645)) ; Statement: specialinvoke $r7.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var1645!1 String)
+(assert (= var1645!1 ""))
+(assert true)
+;(assert (append/672562846 var1645!1 "send packet payload:\n")) ; Statement: virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("send packet payload:\n") 
+(declare-const var1645!2 String)
+(assert (= var1645!2 (str.++ var1645!1 "send packet payload:\n")))
+(assert true)
+;(assert (append/672562846 var1645!2 "host: \u0027")) ; Statement: virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("host: \'") 
+(declare-const var1645!3 String)
+(assert (= var1645!3 (str.++ var1645!2 "host: \u0027")))
+(define-const var403 String (host/-346442902 var2095)) ; Statement: $r2 = r1.<com.mysql.cj.protocol.a.TracingPacketSender: java.lang.String host> 
+(assert true)
+;(assert (append/672562846 var1645!3 var403)) ; Statement: virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2) 
+(declare-const var1645!4 String)
+(assert (= var1645!4 (str.++ var1645!3 var403)))
+(assert true)
+;(assert (append/672562846 var1645!4 "\u0027 serverThreadId: \u0027")) ; Statement: virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\' serverThreadId: \'") 
+(declare-const var1645!5 String)
+(assert (= var1645!5 (str.++ var1645!4 "\u0027 serverThreadId: \u0027")))
+(define-const var1632 Int (serverThreadId/-346442902 var2095)) ; Statement: $l0 = r1.<com.mysql.cj.protocol.a.TracingPacketSender: long serverThreadId> 
+(assert true)
+;(assert (append/-901862667 var1645!5 var1632)) ; Statement: virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l0) 
+(declare-const var1645!6 String)
+(assert (str.prefixof var1645!5 var1645!6))
+(assert true)
+;(assert (append/672562846 var1645!6 "\u0027 packetLen: \u0027")) ; Statement: virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\' packetLen: \'") 
+(declare-const var1645!7 String)
+(assert (= var1645!7 (str.++ var1645!6 "\u0027 packetLen: \u0027")))
+(assert true)
+;(assert (append/-1001720160 var1645!7 var1123)) ; Statement: virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i1) 
+(declare-const var1645!8 String)
+(assert (str.prefixof var1645!7 var1645!8))
+(assert true)
+;(assert (append/672562846 var1645!8 "\u0027 packetSequence: \u0027")) ; Statement: virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\' packetSequence: \'") 
+(declare-const var1645!9 String)
+(assert (= var1645!9 (str.++ var1645!8 "\u0027 packetSequence: \u0027")))
+(define-const var1579 Int (cast-from-Int-to-Int var1873)) ; Statement: $i3 = (int) b2 
+(assert true)
+;(assert (append/-1001720160 var1645!9 var1579)) ; Statement: virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3) 
+(declare-const var1645!10 String)
+(assert (str.prefixof var1645!9 var1645!10))
+(assert true)
+;(assert (append/672562846 var1645!10 "\u0027\n")) ; Statement: virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'\n") 
+(declare-const var1645!11 String)
+(assert (= var1645!11 (str.++ var1645!10 "\u0027\n")))
+(define-const var2742 String (var2174_dumpAsHex/-862480028 var1974 var1123)) ; Statement: $r4 = staticinvoke <com.mysql.cj.util.StringUtils: java.lang.String dumpAsHex(byte[],int)>(r3, i1) 
+(assert true)
+;(assert (append/672562846 var1645!11 var2742)) ; Statement: virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4) 
+(declare-const var1645!12 String)
+(assert (= var1645!12 (str.++ var1645!11 var2742)))
+(define-const var1779 var1968 (log/-346442902 var2095)) ; Statement: $r5 = r1.<com.mysql.cj.protocol.a.TracingPacketSender: com.mysql.cj.log.Log log> 
+(assert true)
+(define-const var901 String (toString/-2075883882 var1645!12)) ; Statement: $r6 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>() 
+;(assert (var1968_logTrace/649884049 var1779 (cast-from-String-to-var1649 var901))) ; Statement: interfaceinvoke $r5.<com.mysql.cj.log.Log: void logTrace(java.lang.Object)>($r6) 
+
+(declare-const var1779!1 var1968)
+(declare-const var901!1 String)
+ ; Statement: return 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), host/-346442902=([com.mysql.cj.protocol.a.TracingPacketSender], java.lang.String), serverThreadId/-346442902=([com.mysql.cj.protocol.a.TracingPacketSender], long), append/-901862667=([java.lang.StringBuilder, long], java.lang.StringBuilder), append/-1001720160=([java.lang.StringBuilder, int], java.lang.StringBuilder), cast-from-Int-to-Int=([byte], int), var2174_dumpAsHex/-862480028=([byte[], int], java.lang.String), log/-346442902=([com.mysql.cj.protocol.a.TracingPacketSender], com.mysql.cj.log.Log), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), var1968_logTrace/649884049=([com.mysql.cj.log.Log, java.lang.Object], void), cast-from-String-to-var1649=([java.lang.String], java.lang.Object)}
+; {var1400=com.mysql.cj.protocol.a.TracingPacketSender, var2095=r1, var1974=r3, var1123=i1, var1873=b2, var1645=$r7, var403=$r2, var1632=$l0, var1579=$i3, var2174=com.mysql.cj.util.StringUtils, var2742=$r4, var1968=com.mysql.cj.log.Log, var1779=$r5, var901=$r6, var1649=java.lang.Object}
+; {com.mysql.cj.protocol.a.TracingPacketSender=var1400, r1=var2095, r3=var1974, i1=var1123, b2=var1873, $r7=var1645, $r2=var403, $l0=var1632, $i3=var1579, com.mysql.cj.util.StringUtils=var2174, $r4=var2742, com.mysql.cj.log.Log=var1968, $r5=var1779, $r6=var901, java.lang.Object=var1649}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(long)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 8,"<java.lang.StringBuilder: java.lang.StringBuilder append(long)>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>": 2,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r1 := @this: com.mysql.cj.protocol.a.TracingPacketSender;	r3 := @parameter0: byte[];	i1 := @parameter1: int;	b2 := @parameter2: byte;	$r7 = new java.lang.StringBuilder;	specialinvoke $r7.<java.lang.StringBuilder: void <init>()>();	virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("send packet payload:\n");	virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("host: \'");	$r2 = r1.<com.mysql.cj.protocol.a.TracingPacketSender: java.lang.String host>;	virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);	virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\' serverThreadId: \'");	$l0 = r1.<com.mysql.cj.protocol.a.TracingPacketSender: long serverThreadId>;	virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l0);	virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\' packetLen: \'");	virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i1);	virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\' packetSequence: \'");	$i3 = (int) b2;	virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3);	virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'\n");	$r4 = staticinvoke <com.mysql.cj.util.StringUtils: java.lang.String dumpAsHex(byte[],int)>(r3, i1);	virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r4);	$r5 = r1.<com.mysql.cj.protocol.a.TracingPacketSender: com.mysql.cj.log.Log log>;	$r6 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();	interfaceinvoke $r5.<com.mysql.cj.log.Log: void logTrace(java.lang.Object)>($r6);	return
+;block_num 1

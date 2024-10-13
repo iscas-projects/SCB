@@ -1,0 +1,96 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var196 0)
+(declare-sort var246 0)
+(declare-sort var1935 0)
+(declare-sort var1531 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun getName/-1958580599 (ClassObject) String)
+(declare-fun var246-init () var246)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun getClassLoader/-563698447 (ClassObject) var1935)
+(declare-fun toString/-522406933 (var1531) String)
+(declare-fun cast-from-var1935-to-var1531 (var1935) var1531)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun <init>/875830710 (var246 String) void)
+(declare-const null-var196 var196)
+(declare-const null-ClassObject ClassObject)
+(declare-const var2827 var196) ; Statement: r26 := @this: org.hibernate.internal.AbstractSharedSessionContract 
+(assert (not (= var2827 null-var196)))
+(declare-const var718 ClassObject) ; Statement: r0 := @parameter0: java.lang.Class 
+(assert (not (= var718 null-ClassObject)))
+(declare-const var3623 ClassObject) ; Statement: r2 := @parameter1: java.lang.Class 
+(assert (not (= var3623 null-ClassObject)))
+(assert true)
+(define-const var982 String (getName/-1958580599 var718)) ; Statement: r1 = virtualinvoke r0.<java.lang.Class: java.lang.String getName()>() 
+(assert true)
+(define-const var771 String (getName/-1958580599 var3623)) ; Statement: r3 = virtualinvoke r2.<java.lang.Class: java.lang.String getName()>() 
+(assert true)
+(define-const var243 Bool (= var982 var771)) ; Statement: $z0 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>(r3) 
+ ; Statement: if $z0 == 0 goto $r4 = new java.lang.IllegalArgumentException 
+(assert (not (= (ite var243 1 0) 0))) ; Negate: Cond: $z0 == 0  
+(define-const var2160 var246 var246-init) ; Statement: $r12 = new java.lang.IllegalArgumentException 
+(define-const var3870 String String-init) ; Statement: $r13 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var3870)) ; Statement: specialinvoke $r13.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var3870!1 String)
+(assert (= var3870!1 ""))
+(assert true)
+(define-const var3462 String (append/672562846 var3870!1 "Type specified for TypedQuery [")) ; Statement: $r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Type specified for TypedQuery [") 
+(declare-const var3870!2 String)
+(assert (= var3870!2 (str.++ var3870!1 "Type specified for TypedQuery [")))
+(assert true)
+(define-const var914 String (append/672562846 var3462 var982)) ; Statement: $r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1) 
+(declare-const var3462!1 String)
+(assert (= var3462!1 (str.++ var3462 var982)))
+(assert true)
+(define-const var3247 String (append/672562846 var914 "] is incompatible with the query return type of the same name. Both classes have the same name but are different as they have been loaded respectively by Classloaders ")) ; Statement: $r18 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("] is incompatible with the query return type of the same name. Both classes have the same name but are different as they have been loaded respectively by Classloaders ") 
+(declare-const var914!1 String)
+(assert (= var914!1 (str.++ var914 "] is incompatible with the query return type of the same name. Both classes have the same name but are different as they have been loaded respectively by Classloaders ")))
+(assert true)
+(define-const var3793 var1935 (getClassLoader/-563698447 var718)) ; Statement: $r16 = virtualinvoke r0.<java.lang.Class: java.lang.ClassLoader getClassLoader()>() 
+(assert true)
+(define-const var2860 String (toString/-522406933 (cast-from-var1935-to-var1531 var3793))) ; Statement: $r17 = virtualinvoke $r16.<java.lang.Object: java.lang.String toString()>() 
+(assert true)
+(define-const var3596 String (append/672562846 var3247 var2860)) ; Statement: $r19 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r17) 
+(declare-const var3247!1 String)
+(assert (= var3247!1 (str.++ var3247 var2860)))
+(assert true)
+(define-const var431 String (append/672562846 var3596 ", ")) ; Statement: $r22 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", ") 
+(declare-const var3596!1 String)
+(assert (= var3596!1 (str.++ var3596 ", ")))
+(assert true)
+(define-const var639 var1935 (getClassLoader/-563698447 var3623)) ; Statement: $r20 = virtualinvoke r2.<java.lang.Class: java.lang.ClassLoader getClassLoader()>() 
+(assert true)
+(define-const var543 String (toString/-522406933 (cast-from-var1935-to-var1531 var639))) ; Statement: $r21 = virtualinvoke $r20.<java.lang.Object: java.lang.String toString()>() 
+(assert true)
+(define-const var2152 String (append/672562846 var431 var543)) ; Statement: $r23 = virtualinvoke $r22.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r21) 
+(declare-const var431!1 String)
+(assert (= var431!1 (str.++ var431 var543)))
+(assert true)
+(define-const var3269 String (append/672562846 var2152 ". This suggests a classloader bug in the Runtime executing Hibernate ORM, or in the integration code.")) ; Statement: $r24 = virtualinvoke $r23.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(". This suggests a classloader bug in the Runtime executing Hibernate ORM, or in the integration code.") 
+(declare-const var2152!1 String)
+(assert (= var2152!1 (str.++ var2152 ". This suggests a classloader bug in the Runtime executing Hibernate ORM, or in the integration code.")))
+(assert true)
+(define-const var1652 String (toString/-2075883882 var3269)) ; Statement: $r25 = virtualinvoke $r24.<java.lang.StringBuilder: java.lang.String toString()>() 
+(assert true)
+;(assert (<init>/875830710 var2160 var1652)) ; Statement: specialinvoke $r12.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r25) 
+
+(declare-const var2160!1 var246)
+(declare-const var1652!1 String)
+ ; Statement: return $r12 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {getName/-1958580599=([java.lang.Class], java.lang.String), var246-init=([], java.lang.IllegalArgumentException), String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), getClassLoader/-563698447=([java.lang.Class], java.lang.ClassLoader), toString/-522406933=([java.lang.Object], java.lang.String), cast-from-var1935-to-var1531=([java.lang.ClassLoader], java.lang.Object), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), <init>/875830710=([java.lang.IllegalArgumentException, java.lang.String], void)}
+; {var196=org.hibernate.internal.AbstractSharedSessionContract, var2827=r26, var718=r0, var3623=r2, var982=r1, var771=r3, var243=$z0, var246=java.lang.IllegalArgumentException, var2160=$r12, var3870=$r13, var3462=$r14, var914=$r15, var3247=$r18, var1935=java.lang.ClassLoader, var3793=$r16, var1531=java.lang.Object, var2860=$r17, var3596=$r19, var431=$r22, var639=$r20, var543=$r21, var2152=$r23, var3269=$r24, var1652=$r25}
+; {org.hibernate.internal.AbstractSharedSessionContract=var196, r26=var2827, r0=var718, r2=var3623, r1=var982, r3=var771, $z0=var243, java.lang.IllegalArgumentException=var246, $r12=var2160, $r13=var3870, $r14=var3462, $r15=var914, $r18=var3247, java.lang.ClassLoader=var1935, $r16=var3793, java.lang.Object=var1531, $r17=var2860, $r19=var3596, $r22=var431, $r20=var639, $r21=var543, $r23=var2152, $r24=var3269, $r25=var1652}
+;seq <java.lang.String: boolean equals(java.lang.Object)>;	<java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.Object: java.lang.String toString()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.Object: java.lang.String toString()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.String: boolean equals(java.lang.Object)>": 1,"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 7,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r26 := @this: org.hibernate.internal.AbstractSharedSessionContract;	r0 := @parameter0: java.lang.Class;	r2 := @parameter1: java.lang.Class;	r1 = virtualinvoke r0.<java.lang.Class: java.lang.String getName()>();	r3 = virtualinvoke r2.<java.lang.Class: java.lang.String getName()>();	$z0 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>(r3);	if $z0 == 0 goto $r4 = new java.lang.IllegalArgumentException;	$r12 = new java.lang.IllegalArgumentException;	$r13 = new java.lang.StringBuilder;	specialinvoke $r13.<java.lang.StringBuilder: void <init>()>();	$r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Type specified for TypedQuery [");	$r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1);	$r18 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("] is incompatible with the query return type of the same name. Both classes have the same name but are different as they have been loaded respectively by Classloaders ");	$r16 = virtualinvoke r0.<java.lang.Class: java.lang.ClassLoader getClassLoader()>();	$r17 = virtualinvoke $r16.<java.lang.Object: java.lang.String toString()>();	$r19 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r17);	$r22 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", ");	$r20 = virtualinvoke r2.<java.lang.Class: java.lang.ClassLoader getClassLoader()>();	$r21 = virtualinvoke $r20.<java.lang.Object: java.lang.String toString()>();	$r23 = virtualinvoke $r22.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r21);	$r24 = virtualinvoke $r23.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(". This suggests a classloader bug in the Runtime executing Hibernate ORM, or in the integration code.");	$r25 = virtualinvoke $r24.<java.lang.StringBuilder: java.lang.String toString()>();	specialinvoke $r12.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r25);	return $r12
+;block_num 2

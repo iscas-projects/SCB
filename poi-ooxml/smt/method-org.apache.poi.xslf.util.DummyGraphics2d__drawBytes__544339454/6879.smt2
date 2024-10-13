@@ -1,0 +1,112 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var2360 0)
+(declare-sort var2595 0)
+(declare-sort var320 0)
+(declare-sort var2590 0)
+(declare-sort var3913 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun var2595_toString/1677581628 ((Array Int Int)) String)
+(define-fun append/-1001720160 ((s String) (tail Int)) String (str.++ s (str.from_int tail)))
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun log/-1110529256 (var2360) var320)
+(declare-fun println/1773605060 (var320 String) void)
+(declare-fun g2D/-1110529256 (var2360) var2590)
+(declare-fun drawBytes/-2009454585 (var3913 (Array Int Int) Int Int Int Int) void)
+(declare-fun cast-from-var2590-to-var3913 (var2590) var3913)
+(declare-const null-var2360 var2360)
+(declare-const null-__Array__Int__Int__ (Array Int Int))
+(declare-const null-Int Int)
+(declare-const var1561 var2360) ; Statement: r14 := @this: org.apache.poi.xslf.util.DummyGraphics2d 
+(assert (not (= var1561 null-var2360)))
+(declare-const var2781 (Array Int Int)) ; Statement: r1 := @parameter0: byte[] 
+(assert (not (= var2781 null-__Array__Int__Int__)))
+(declare-const var676 Int) ; Statement: i0 := @parameter1: int 
+(assert (not (= var676 null-Int)))
+(declare-const var614 Int) ; Statement: i1 := @parameter2: int 
+(assert (not (= var614 null-Int)))
+(declare-const var2318 Int) ; Statement: i2 := @parameter3: int 
+(assert (not (= var2318 null-Int)))
+(declare-const var3802 Int) ; Statement: i3 := @parameter4: int 
+(assert (not (= var3802 null-Int)))
+(define-const var2465 String String-init) ; Statement: $r0 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var2465)) ; Statement: specialinvoke $r0.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var2465!1 String)
+(assert (= var2465!1 ""))
+(assert true)
+(define-const var1229 String (append/672562846 var2465!1 "drawBytes(byte[],int,int,int,int):\n  data = ")) ; Statement: $r3 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("drawBytes(byte[],int,int,int,int):\n  data = ") 
+(declare-const var2465!2 String)
+(assert (= var2465!2 (str.++ var2465!1 "drawBytes(byte[],int,int,int,int):\n  data = ")))
+(define-const var2832 String (var2595_toString/1677581628 var2781)) ; Statement: $r2 = staticinvoke <java.util.Arrays: java.lang.String toString(byte[])>(r1) 
+(assert true)
+(define-const var1718 String (append/672562846 var1229 var2832)) ; Statement: $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2) 
+(declare-const var1229!1 String)
+(assert (= var1229!1 (str.++ var1229 var2832)))
+(assert true)
+(define-const var1224 String (append/672562846 var1718 "\n  offset = ")) ; Statement: $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n  offset = ") 
+(declare-const var1718!1 String)
+(assert (= var1718!1 (str.++ var1718 "\n  offset = ")))
+(assert true)
+(define-const var1013 String (append/-1001720160 var1224 var676)) ; Statement: $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i0) 
+(declare-const var1224!1 String)
+(assert (str.prefixof var1224 var1224!1))
+(assert true)
+(define-const var3024 String (append/672562846 var1013 "\n  length = ")) ; Statement: $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n  length = ") 
+(declare-const var1013!1 String)
+(assert (= var1013!1 (str.++ var1013 "\n  length = ")))
+(assert true)
+(define-const var310 String (append/-1001720160 var3024 var614)) ; Statement: $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i1) 
+(declare-const var3024!1 String)
+(assert (str.prefixof var3024 var3024!1))
+(assert true)
+(define-const var2351 String (append/672562846 var310 "\n  x = ")) ; Statement: $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n  x = ") 
+(declare-const var310!1 String)
+(assert (= var310!1 (str.++ var310 "\n  x = ")))
+(assert true)
+(define-const var3725 String (append/-1001720160 var2351 var2318)) ; Statement: $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i2) 
+(declare-const var2351!1 String)
+(assert (str.prefixof var2351 var2351!1))
+(assert true)
+(define-const var2945 String (append/672562846 var3725 "\n  y = ")) ; Statement: $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n  y = ") 
+(declare-const var3725!1 String)
+(assert (= var3725!1 (str.++ var3725 "\n  y = ")))
+(assert true)
+(define-const var3415 String (append/-1001720160 var2945 var3802)) ; Statement: $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i3) 
+(declare-const var2945!1 String)
+(assert (str.prefixof var2945 var2945!1))
+(assert true)
+(define-const var583 String (toString/-2075883882 var3415)) ; Statement: r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>() 
+(define-const var1969 var320 (log/-1110529256 var1561)) ; Statement: $r15 = r14.<org.apache.poi.xslf.util.DummyGraphics2d: java.io.PrintStream log> 
+(assert true)
+;(assert (println/1773605060 var1969 var583)) ; Statement: virtualinvoke $r15.<java.io.PrintStream: void println(java.lang.String)>(r13) 
+
+(declare-const var1969!1 var320)
+(declare-const var583!1 String)
+(define-const var3595 var2590 (g2D/-1110529256 var1561)) ; Statement: $r16 = r14.<org.apache.poi.xslf.util.DummyGraphics2d: java.awt.Graphics2D g2D> 
+(assert true)
+;(assert (drawBytes/-2009454585 (cast-from-var2590-to-var3913 var3595) var2781 var676 var614 var2318 var3802)) ; Statement: virtualinvoke $r16.<java.awt.Graphics2D: void drawBytes(byte[],int,int,int,int)>(r1, i0, i1, i2, i3) 
+
+(declare-const var3595!1 var2590)
+(declare-const var2781!1 (Array Int Int))
+(declare-const var676!1 Int)
+(declare-const var614!1 Int)
+(declare-const var2318!1 Int)
+(declare-const var3802!1 Int)
+ ; Statement: return 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), var2595_toString/1677581628=([byte[]], java.lang.String), append/-1001720160=([java.lang.StringBuilder, int], java.lang.StringBuilder), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), log/-1110529256=([org.apache.poi.xslf.util.DummyGraphics2d], java.io.PrintStream), println/1773605060=([java.io.PrintStream, java.lang.String], void), g2D/-1110529256=([org.apache.poi.xslf.util.DummyGraphics2d], java.awt.Graphics2D), drawBytes/-2009454585=([java.awt.Graphics, byte[], int, int, int, int], void), cast-from-var2590-to-var3913=([java.awt.Graphics2D], java.awt.Graphics)}
+; {var2360=org.apache.poi.xslf.util.DummyGraphics2d, var1561=r14, var2781=r1, var676=i0, var614=i1, var2318=i2, var3802=i3, var2465=$r0, var1229=$r3, var2595=java.util.Arrays, var2832=$r2, var1718=$r4, var1224=$r5, var1013=$r6, var3024=$r7, var310=$r8, var2351=$r9, var3725=$r10, var2945=$r11, var3415=$r12, var583=r13, var320=java.io.PrintStream, var1969=$r15, var2590=java.awt.Graphics2D, var3595=$r16, var3913=java.awt.Graphics}
+; {org.apache.poi.xslf.util.DummyGraphics2d=var2360, r14=var1561, r1=var2781, i0=var676, i1=var614, i2=var2318, i3=var3802, $r0=var2465, $r3=var1229, java.util.Arrays=var2595, $r2=var2832, $r4=var1718, $r5=var1224, $r6=var1013, $r7=var3024, $r8=var310, $r9=var2351, $r10=var3725, $r11=var2945, $r12=var3415, r13=var583, java.io.PrintStream=var320, $r15=var1969, java.awt.Graphics2D=var2590, $r16=var3595, java.awt.Graphics=var3913}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.util.Arrays: java.lang.String toString(byte[])>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 6,"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>": 4,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r14 := @this: org.apache.poi.xslf.util.DummyGraphics2d;	r1 := @parameter0: byte[];	i0 := @parameter1: int;	i1 := @parameter2: int;	i2 := @parameter3: int;	i3 := @parameter4: int;	$r0 = new java.lang.StringBuilder;	specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();	$r3 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("drawBytes(byte[],int,int,int,int):\n  data = ");	$r2 = staticinvoke <java.util.Arrays: java.lang.String toString(byte[])>(r1);	$r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);	$r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n  offset = ");	$r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i0);	$r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n  length = ");	$r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i1);	$r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n  x = ");	$r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i2);	$r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\n  y = ");	$r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i3);	r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>();	$r15 = r14.<org.apache.poi.xslf.util.DummyGraphics2d: java.io.PrintStream log>;	virtualinvoke $r15.<java.io.PrintStream: void println(java.lang.String)>(r13);	$r16 = r14.<org.apache.poi.xslf.util.DummyGraphics2d: java.awt.Graphics2D g2D>;	virtualinvoke $r16.<java.awt.Graphics2D: void drawBytes(byte[],int,int,int,int)>(r1, i0, i1, i2, i3);	return
+;block_num 1

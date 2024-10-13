@@ -1,0 +1,113 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var727 0)
+(declare-sort var1779 0)
+(declare-sort var1449 0)
+(declare-sort var2770 0)
+(declare-sort var3125 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun val$os/-1058345579 (var727) var2770)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(declare-fun append/-1031950772 (String var3125) String)
+(declare-fun cast-from-var1779-to-var3125 (var1779) var3125)
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun getShapeType/1228188388 (var1779) String)
+(declare-fun getSymbolName/-1963903848 (var1779) String)
+(declare-fun getMasterShape/441731818 (var1779) var1779)
+(declare-fun getTextAsString/-1386458357 (var1779) String)
+(define-fun is-whitespace ((char String)) Bool (< (str.to_code char) 33))
+(define-fun-rec trim-left ((s String)) String (ite (= s "") "" (ite (is-whitespace (str.substr s 0 1)) (trim-left (str.substr s 1 (- (str.len s) 1))) s)))
+(define-fun-rec trim-right ((s String)) String (ite (= s "") "" (ite (is-whitespace (str.substr s (- (str.len s) 1) 1)) (trim-right (str.substr s 0 (- (str.len s) 1))) s)))
+(define-fun trim/-847153721 ((s String)) String (trim-right (trim-left s)))
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun println/1773605060 (var2770 String) void)
+(declare-const null-var727 var727)
+(declare-const null-var1779 var1779)
+(declare-const null-var1449 var1449)
+(declare-const null-Int Int)
+(declare-const var3553 var727) ; Statement: r0 := @this: org.apache.poi.xdgf.util.HierarchyPrinter$1 
+(assert (not (= var3553 null-var727)))
+(declare-const var3873 var1779) ; Statement: r3 := @parameter0: org.apache.poi.xdgf.usermodel.XDGFShape 
+(assert (not (= var3873 null-var1779)))
+(declare-const var1469 var1449) ; Statement: r20 := @parameter1: java.awt.geom.AffineTransform 
+(assert (not (= var1469 null-var1449)))
+(declare-const var375 Int) ; Statement: i0 := @parameter2: int 
+(assert (not (= var375 null-Int)))
+(define-const var481 Int 0) ; Statement: i1 = 0 
+(assert true) ; Non Conditional
+ ; Statement: if i1 >= i0 goto $r2 = r0.<org.apache.poi.xdgf.util.HierarchyPrinter$1: java.io.PrintStream val$os> 
+(assert (>= var481 var375)) ; Cond: i1 >= i0 
+(define-const var2325 var2770 (val$os/-1058345579 var3553)) ; Statement: $r2 = r0.<org.apache.poi.xdgf.util.HierarchyPrinter$1: java.io.PrintStream val$os> 
+(define-const var914 String String-init) ; Statement: $r1 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var914)) ; Statement: specialinvoke $r1.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var914!1 String)
+(assert (= var914!1 ""))
+(assert true)
+(define-const var906 String (append/-1031950772 var914!1 (cast-from-var1779-to-var3125 var3873))) ; Statement: $r4 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>(r3) 
+(declare-const var914!2 String)
+(assert (str.prefixof var914!1 var914!2))
+(assert true)
+(define-const var3296 String (append/672562846 var906 " [")) ; Statement: $r6 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" [") 
+(declare-const var906!1 String)
+(assert (= var906!1 (str.++ var906 " [")))
+(assert true)
+(define-const var1894 String (getShapeType/1228188388 var3873)) ; Statement: $r5 = virtualinvoke r3.<org.apache.poi.xdgf.usermodel.XDGFShape: java.lang.String getShapeType()>() 
+(assert true)
+(define-const var162 String (append/672562846 var3296 var1894)) ; Statement: $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5) 
+(declare-const var3296!1 String)
+(assert (= var3296!1 (str.++ var3296 var1894)))
+(assert true)
+(define-const var209 String (append/672562846 var162 ", ")) ; Statement: $r9 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", ") 
+(declare-const var162!1 String)
+(assert (= var162!1 (str.++ var162 ", ")))
+(assert true)
+(define-const var2553 String (getSymbolName/-1963903848 var3873)) ; Statement: $r8 = virtualinvoke r3.<org.apache.poi.xdgf.usermodel.XDGFShape: java.lang.String getSymbolName()>() 
+(assert true)
+(define-const var1166 String (append/672562846 var209 var2553)) ; Statement: $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8) 
+(declare-const var209!1 String)
+(assert (= var209!1 (str.++ var209 var2553)))
+(assert true)
+(define-const var3676 String (append/672562846 var1166 "] ")) ; Statement: $r12 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("] ") 
+(declare-const var1166!1 String)
+(assert (= var1166!1 (str.++ var1166 "] ")))
+(assert true)
+(define-const var3322 var1779 (getMasterShape/441731818 var3873)) ; Statement: $r11 = virtualinvoke r3.<org.apache.poi.xdgf.usermodel.XDGFShape: org.apache.poi.xdgf.usermodel.XDGFShape getMasterShape()>() 
+(assert true)
+(define-const var3610 String (append/-1031950772 var3676 (cast-from-var1779-to-var3125 var3322))) ; Statement: $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r11) 
+(declare-const var3676!1 String)
+(assert (str.prefixof var3676 var3676!1))
+(assert true)
+(define-const var2737 String (append/672562846 var3610 " ")) ; Statement: $r16 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ") 
+(declare-const var3610!1 String)
+(assert (= var3610!1 (str.++ var3610 " ")))
+(assert true)
+(define-const var3558 String (getTextAsString/-1386458357 var3873)) ; Statement: $r14 = virtualinvoke r3.<org.apache.poi.xdgf.usermodel.XDGFShape: java.lang.String getTextAsString()>() 
+(assert true)
+(define-const var3008 String (trim/-847153721 var3558)) ; Statement: $r15 = virtualinvoke $r14.<java.lang.String: java.lang.String trim()>() 
+(assert true)
+(define-const var2008 String (append/672562846 var2737 var3008)) ; Statement: $r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r15) 
+(declare-const var2737!1 String)
+(assert (= var2737!1 (str.++ var2737 var3008)))
+(assert true)
+(define-const var2652 String (toString/-2075883882 var2008)) ; Statement: $r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.String toString()>() 
+(assert true)
+;(assert (println/1773605060 var2325 var2652)) ; Statement: virtualinvoke $r2.<java.io.PrintStream: void println(java.lang.String)>($r18) 
+
+(declare-const var2325!1 var2770)
+(declare-const var2652!1 String)
+ ; Statement: return 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {val$os/-1058345579=([org.apache.poi.xdgf.util.HierarchyPrinter$1], java.io.PrintStream), String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/-1031950772=([java.lang.StringBuilder, java.lang.Object], java.lang.StringBuilder), cast-from-var1779-to-var3125=([org.apache.poi.xdgf.usermodel.XDGFShape], java.lang.Object), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), getShapeType/1228188388=([org.apache.poi.xdgf.usermodel.XDGFShape], java.lang.String), getSymbolName/-1963903848=([org.apache.poi.xdgf.usermodel.XDGFShape], java.lang.String), getMasterShape/441731818=([org.apache.poi.xdgf.usermodel.XDGFShape], org.apache.poi.xdgf.usermodel.XDGFShape), getTextAsString/-1386458357=([org.apache.poi.xdgf.usermodel.XDGFShape], java.lang.String), trim/-847153721=([java.lang.String], java.lang.String), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), println/1773605060=([java.io.PrintStream, java.lang.String], void)}
+; {var727=org.apache.poi.xdgf.util.HierarchyPrinter$1, var3553=r0, var1779=org.apache.poi.xdgf.usermodel.XDGFShape, var3873=r3, var1449=java.awt.geom.AffineTransform, var1469=r20, var375=i0, var481=i1, var2770=java.io.PrintStream, var2325=$r2, var914=$r1, var3125=java.lang.Object, var906=$r4, var3296=$r6, var1894=$r5, var162=$r7, var209=$r9, var2553=$r8, var1166=$r10, var3676=$r12, var3322=$r11, var3610=$r13, var2737=$r16, var3558=$r14, var3008=$r15, var2008=$r17, var2652=$r18}
+; {org.apache.poi.xdgf.util.HierarchyPrinter$1=var727, r0=var3553, org.apache.poi.xdgf.usermodel.XDGFShape=var1779, r3=var3873, java.awt.geom.AffineTransform=var1449, r20=var1469, i0=var375, i1=var481, java.io.PrintStream=var2770, $r2=var2325, $r1=var914, java.lang.Object=var3125, $r4=var906, $r6=var3296, $r5=var1894, $r7=var162, $r9=var209, $r8=var2553, $r10=var1166, $r12=var3676, $r11=var3322, $r13=var3610, $r16=var2737, $r14=var3558, $r15=var3008, $r17=var2008, $r18=var2652}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.String: java.lang.String trim()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 2,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 7,"<java.lang.String: java.lang.String trim()>": 1,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r0 := @this: org.apache.poi.xdgf.util.HierarchyPrinter$1;	r3 := @parameter0: org.apache.poi.xdgf.usermodel.XDGFShape;	r20 := @parameter1: java.awt.geom.AffineTransform;	i0 := @parameter2: int;	i1 = 0;	if i1 >= i0 goto $r2 = r0.<org.apache.poi.xdgf.util.HierarchyPrinter$1: java.io.PrintStream val$os>;	$r2 = r0.<org.apache.poi.xdgf.util.HierarchyPrinter$1: java.io.PrintStream val$os>;	$r1 = new java.lang.StringBuilder;	specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();	$r4 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>(r3);	$r6 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" [");	$r5 = virtualinvoke r3.<org.apache.poi.xdgf.usermodel.XDGFShape: java.lang.String getShapeType()>();	$r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);	$r9 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", ");	$r8 = virtualinvoke r3.<org.apache.poi.xdgf.usermodel.XDGFShape: java.lang.String getSymbolName()>();	$r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);	$r12 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("] ");	$r11 = virtualinvoke r3.<org.apache.poi.xdgf.usermodel.XDGFShape: org.apache.poi.xdgf.usermodel.XDGFShape getMasterShape()>();	$r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r11);	$r16 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");	$r14 = virtualinvoke r3.<org.apache.poi.xdgf.usermodel.XDGFShape: java.lang.String getTextAsString()>();	$r15 = virtualinvoke $r14.<java.lang.String: java.lang.String trim()>();	$r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r15);	$r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.String toString()>();	virtualinvoke $r2.<java.io.PrintStream: void println(java.lang.String)>($r18);	return
+;block_num 3

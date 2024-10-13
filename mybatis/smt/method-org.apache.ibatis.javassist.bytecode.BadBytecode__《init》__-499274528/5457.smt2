@@ -1,0 +1,82 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var138 0)
+(declare-sort var2282 0)
+(declare-sort var3029 0)
+(declare-sort var213 0)
+(declare-sort var3105 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(declare-fun toString/-649440832 (var2282) String)
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun getConstPool/-519828148 (var2282) var213)
+(declare-fun getClassName/1405287941 (var213) String)
+(declare-fun getMessage/849299655 (var3029) String)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun <init>/-167142807 (var3105 String var3029) void)
+(declare-fun cast-from-var138-to-var3105 (var138) var3105)
+(declare-const null-var138 var138)
+(declare-const null-var2282 var2282)
+(declare-const null-var3029 var3029)
+(declare-const var3977 var138) ; Statement: r0 := @this: org.apache.ibatis.javassist.bytecode.BadBytecode 
+(assert (not (= var3977 null-var138)))
+(declare-const var3406 var2282) ; Statement: r2 := @parameter0: org.apache.ibatis.javassist.bytecode.MethodInfo 
+(assert (not (= var3406 null-var2282)))
+(declare-const var2839 var3029) ; Statement: r9 := @parameter1: java.lang.Throwable 
+(assert (not (= var2839 null-var3029)))
+(define-const var2914 String String-init) ; Statement: $r1 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var2914)) ; Statement: specialinvoke $r1.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var2914!1 String)
+(assert (= var2914!1 ""))
+(assert true)
+(define-const var3123 String (toString/-649440832 var3406)) ; Statement: $r3 = virtualinvoke r2.<org.apache.ibatis.javassist.bytecode.MethodInfo: java.lang.String toString()>() 
+(assert true)
+(define-const var2033 String (append/672562846 var2914!1 var3123)) ; Statement: $r4 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3) 
+(declare-const var2914!2 String)
+(assert (= var2914!2 (str.++ var2914!1 var3123)))
+(assert true)
+(define-const var1591 String (append/672562846 var2033 " in ")) ; Statement: $r7 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" in ") 
+(declare-const var2033!1 String)
+(assert (= var2033!1 (str.++ var2033 " in ")))
+(assert true)
+(define-const var2935 var213 (getConstPool/-519828148 var3406)) ; Statement: $r5 = virtualinvoke r2.<org.apache.ibatis.javassist.bytecode.MethodInfo: org.apache.ibatis.javassist.bytecode.ConstPool getConstPool()>() 
+(assert true)
+(define-const var1852 String (getClassName/1405287941 var2935)) ; Statement: $r6 = virtualinvoke $r5.<org.apache.ibatis.javassist.bytecode.ConstPool: java.lang.String getClassName()>() 
+(assert true)
+(define-const var2699 String (append/672562846 var1591 var1852)) ; Statement: $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6) 
+(declare-const var1591!1 String)
+(assert (= var1591!1 (str.++ var1591 var1852)))
+(assert true)
+(define-const var1386 String (append/672562846 var2699 ": ")) ; Statement: $r11 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(": ") 
+(declare-const var2699!1 String)
+(assert (= var2699!1 (str.++ var2699 ": ")))
+(assert true)
+(define-const var1921 String (getMessage/849299655 var2839)) ; Statement: $r10 = virtualinvoke r9.<java.lang.Throwable: java.lang.String getMessage()>() 
+(assert true)
+(define-const var1444 String (append/672562846 var1386 var1921)) ; Statement: $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r10) 
+(declare-const var1386!1 String)
+(assert (= var1386!1 (str.++ var1386 var1921)))
+(assert true)
+(define-const var3370 String (toString/-2075883882 var1444)) ; Statement: $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>() 
+(assert true)
+;(assert (<init>/-167142807 (cast-from-var138-to-var3105 var3977) var3370 var2839)) ; Statement: specialinvoke r0.<java.lang.Exception: void <init>(java.lang.String,java.lang.Throwable)>($r13, r9) 
+
+(declare-const var3977!1 var138)
+(declare-const var3370!1 String)
+(declare-const var2839!1 var3029)
+ ; Statement: return 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), toString/-649440832=([org.apache.ibatis.javassist.bytecode.MethodInfo], java.lang.String), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), getConstPool/-519828148=([org.apache.ibatis.javassist.bytecode.MethodInfo], org.apache.ibatis.javassist.bytecode.ConstPool), getClassName/1405287941=([org.apache.ibatis.javassist.bytecode.ConstPool], java.lang.String), getMessage/849299655=([java.lang.Throwable], java.lang.String), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), <init>/-167142807=([java.lang.Exception, java.lang.String, java.lang.Throwable], void), cast-from-var138-to-var3105=([org.apache.ibatis.javassist.bytecode.BadBytecode], java.lang.Exception)}
+; {var138=org.apache.ibatis.javassist.bytecode.BadBytecode, var3977=r0, var2282=org.apache.ibatis.javassist.bytecode.MethodInfo, var3406=r2, var3029=java.lang.Throwable, var2839=r9, var2914=$r1, var3123=$r3, var2033=$r4, var1591=$r7, var213=org.apache.ibatis.javassist.bytecode.ConstPool, var2935=$r5, var1852=$r6, var2699=$r8, var1386=$r11, var1921=$r10, var1444=$r12, var3370=$r13, var3105=java.lang.Exception}
+; {org.apache.ibatis.javassist.bytecode.BadBytecode=var138, r0=var3977, org.apache.ibatis.javassist.bytecode.MethodInfo=var2282, r2=var3406, java.lang.Throwable=var3029, r9=var2839, $r1=var2914, $r3=var3123, $r4=var2033, $r7=var1591, org.apache.ibatis.javassist.bytecode.ConstPool=var213, $r5=var2935, $r6=var1852, $r8=var2699, $r11=var1386, $r10=var1921, $r12=var1444, $r13=var3370, java.lang.Exception=var3105}
+;seq <java.lang.StringBuilder: void <init>()>;	<org.apache.ibatis.javassist.bytecode.MethodInfo: java.lang.String toString()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 5,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r0 := @this: org.apache.ibatis.javassist.bytecode.BadBytecode;	r2 := @parameter0: org.apache.ibatis.javassist.bytecode.MethodInfo;	r9 := @parameter1: java.lang.Throwable;	$r1 = new java.lang.StringBuilder;	specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();	$r3 = virtualinvoke r2.<org.apache.ibatis.javassist.bytecode.MethodInfo: java.lang.String toString()>();	$r4 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);	$r7 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" in ");	$r5 = virtualinvoke r2.<org.apache.ibatis.javassist.bytecode.MethodInfo: org.apache.ibatis.javassist.bytecode.ConstPool getConstPool()>();	$r6 = virtualinvoke $r5.<org.apache.ibatis.javassist.bytecode.ConstPool: java.lang.String getClassName()>();	$r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);	$r11 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(": ");	$r10 = virtualinvoke r9.<java.lang.Throwable: java.lang.String getMessage()>();	$r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r10);	$r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>();	specialinvoke r0.<java.lang.Exception: void <init>(java.lang.String,java.lang.Throwable)>($r13, r9);	return
+;block_num 1

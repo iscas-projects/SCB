@@ -1,0 +1,125 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var2824 0)
+(declare-sort var314 0)
+(declare-sort var368 0)
+(declare-sort var332 0)
+(declare-sort var3447 0)
+(declare-sort var3223 0)
+(declare-sort var2711 0)
+(declare-sort var2346 0)
+(declare-sort var2465 0)
+(declare-sort var926 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun valueColumnName/-1676129200 (var2824) String)
+(declare-fun var332_qualify/-1563731603 (String String) String)
+(declare-fun append/-1166366385 (String Int) String)
+(declare-fun segmentColumnName/-1676129200 (var2824) String)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun var3447-init () var3447)
+(declare-fun <init>/1431403754 (var3447 var3223) void)
+(declare-fun setAliasSpecificLockMode/1659607680 (var3447 String var3223) var3447)
+(declare-fun arr-String-init () (Array Int String))
+(declare-fun var2346_singletonMap/2043092013 (var2465 var2465) var2711)
+(declare-fun cast-from-String-to-var2465 (String) var2465)
+(declare-fun cast-from-__Array__Int__String__-to-var2465 ((Array Int String)) var2465)
+(declare-fun var368_getDialect/-253498657 (var368) var926)
+(declare-fun applyLocksToSql/1844452883 (var926 String var3447 var2711) String)
+(declare-const null-var2824 var2824)
+(declare-const null-String String)
+(declare-const null-var368 var368)
+(declare-const var3223-PESSIMISTIC_WRITE var3223)
+(declare-const null-__Array__Int__String__ (Array Int String))
+(declare-const var533 var2824) ; Statement: r1 := @this: org.hibernate.id.enhanced.TableGenerator 
+(assert (not (= var533 null-var2824)))
+(declare-const var568 String) ; Statement: r6 := @parameter0: java.lang.String 
+(assert (not (= var568 null-String)))
+(declare-const var1967 var368) ; Statement: r23 := @parameter1: org.hibernate.boot.model.relational.SqlStringGenerationContext 
+(assert (not (= var1967 null-var368)))
+(define-const var2584 String String-init) ; Statement: $r0 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var2584)) ; Statement: specialinvoke $r0.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var2584!1 String)
+(assert (= var2584!1 ""))
+(assert true)
+(define-const var3214 String (append/672562846 var2584!1 "select ")) ; Statement: $r4 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("select ") 
+(declare-const var2584!2 String)
+(assert (= var2584!2 (str.++ var2584!1 "select ")))
+(define-const var752 String (valueColumnName/-1676129200 var533)) ; Statement: $r2 = r1.<org.hibernate.id.enhanced.TableGenerator: java.lang.String valueColumnName> 
+(define-const var1769 String (var332_qualify/-1563731603 "tbl" var752)) ; Statement: $r3 = staticinvoke <org.hibernate.internal.util.StringHelper: java.lang.String qualify(java.lang.String,java.lang.String)>("tbl", $r2) 
+(assert true)
+(define-const var3975 String (append/672562846 var3214 var1769)) ; Statement: $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3) 
+(declare-const var3214!1 String)
+(assert (= var3214!1 (str.++ var3214 var1769)))
+(assert true)
+(define-const var2816 String (append/672562846 var3975 " from ")) ; Statement: $r7 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" from ") 
+(declare-const var3975!1 String)
+(assert (= var3975!1 (str.++ var3975 " from ")))
+(assert true)
+(define-const var3764 String (append/672562846 var2816 var568)) ; Statement: $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r6) 
+(declare-const var2816!1 String)
+(assert (= var2816!1 (str.++ var2816 var568)))
+(assert true)
+(define-const var2754 String (append/-1166366385 var3764 32)) ; Statement: $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(32) 
+(declare-const var3764!1 String)
+(assert (str.prefixof var3764 var3764!1))
+(assert true)
+(define-const var3307 String (append/672562846 var2754 "tbl")) ; Statement: $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("tbl") 
+(declare-const var2754!1 String)
+(assert (= var2754!1 (str.++ var2754 "tbl")))
+(assert true)
+(define-const var316 String (append/672562846 var3307 " where ")) ; Statement: $r13 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" where ") 
+(declare-const var3307!1 String)
+(assert (= var3307!1 (str.++ var3307 " where ")))
+(define-const var675 String (segmentColumnName/-1676129200 var533)) ; Statement: $r11 = r1.<org.hibernate.id.enhanced.TableGenerator: java.lang.String segmentColumnName> 
+(define-const var2947 String (var332_qualify/-1563731603 "tbl" var675)) ; Statement: $r12 = staticinvoke <org.hibernate.internal.util.StringHelper: java.lang.String qualify(java.lang.String,java.lang.String)>("tbl", $r11) 
+(assert true)
+(define-const var2483 String (append/672562846 var316 var2947)) ; Statement: $r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r12) 
+(declare-const var316!1 String)
+(assert (= var316!1 (str.++ var316 var2947)))
+(assert true)
+(define-const var1693 String (append/672562846 var2483 "=?")) ; Statement: $r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("=?") 
+(declare-const var2483!1 String)
+(assert (= var2483!1 (str.++ var2483 "=?")))
+(assert true)
+(define-const var117 String (toString/-2075883882 var1693)) ; Statement: r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>() 
+(define-const var3946 var3447 var3447-init) ; Statement: $r17 = new org.hibernate.LockOptions 
+(define-const var2332 var3223 var3223-PESSIMISTIC_WRITE) ; Statement: $r18 = <org.hibernate.LockMode: org.hibernate.LockMode PESSIMISTIC_WRITE> 
+(assert true)
+;(assert (<init>/1431403754 var3946 var2332)) ; Statement: specialinvoke $r17.<org.hibernate.LockOptions: void <init>(org.hibernate.LockMode)>($r18) 
+
+(declare-const var3946!1 var3447)
+(declare-const var2332!1 var3223)
+(define-const var577 var3223 var3223-PESSIMISTIC_WRITE) ; Statement: $r19 = <org.hibernate.LockMode: org.hibernate.LockMode PESSIMISTIC_WRITE> 
+(assert true)
+;(assert (setAliasSpecificLockMode/1659607680 var3946!1 "tbl" var577)) ; Statement: virtualinvoke $r17.<org.hibernate.LockOptions: org.hibernate.LockOptions setAliasSpecificLockMode(java.lang.String,org.hibernate.LockMode)>("tbl", $r19) 
+
+(declare-const var3946!2 var3447)
+(declare-const var1521 String)
+(declare-const var577!1 var3223)
+(define-const var2877 (Array Int String) arr-String-init) ; Statement: $r20 = newarray (java.lang.String)[1] 
+(define-const var3984 String (valueColumnName/-1676129200 var533)) ; Statement: $r21 = r1.<org.hibernate.id.enhanced.TableGenerator: java.lang.String valueColumnName> 
+(declare-const var2877!1 (Array Int String))
+(assert (not (= var2877!1 null-__Array__Int__String__)))
+(assert (= (select var2877!1 0) var3984)) ; Statement: $r20[0] = $r21 
+(define-const var2564 var2711 (var2346_singletonMap/2043092013 (cast-from-String-to-var2465 "tbl") (cast-from-__Array__Int__String__-to-var2465 var2877!1))) ; Statement: r22 = staticinvoke <java.util.Collections: java.util.Map singletonMap(java.lang.Object,java.lang.Object)>("tbl", $r20) 
+(define-const var605 var926 (var368_getDialect/-253498657 var1967)) ; Statement: $r24 = interfaceinvoke r23.<org.hibernate.boot.model.relational.SqlStringGenerationContext: org.hibernate.dialect.Dialect getDialect()>() 
+(assert true)
+(define-const var2077 String (applyLocksToSql/1844452883 var605 var117 var3946!2 var2564)) ; Statement: $r25 = virtualinvoke $r24.<org.hibernate.dialect.Dialect: java.lang.String applyLocksToSql(java.lang.String,org.hibernate.LockOptions,java.util.Map)>(r16, $r17, r22) 
+ ; Statement: return $r25 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), valueColumnName/-1676129200=([org.hibernate.id.enhanced.TableGenerator], java.lang.String), var332_qualify/-1563731603=([java.lang.String, java.lang.String], java.lang.String), append/-1166366385=([java.lang.StringBuilder, char], java.lang.StringBuilder), segmentColumnName/-1676129200=([org.hibernate.id.enhanced.TableGenerator], java.lang.String), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), var3447-init=([], org.hibernate.LockOptions), <init>/1431403754=([org.hibernate.LockOptions, org.hibernate.LockMode], void), setAliasSpecificLockMode/1659607680=([org.hibernate.LockOptions, java.lang.String, org.hibernate.LockMode], org.hibernate.LockOptions), arr-String-init=([], java.lang.String[]), var2346_singletonMap/2043092013=([java.lang.Object, java.lang.Object], java.util.Map), cast-from-String-to-var2465=([java.lang.String], java.lang.Object), cast-from-__Array__Int__String__-to-var2465=([java.lang.String[]], java.lang.Object), var368_getDialect/-253498657=([org.hibernate.boot.model.relational.SqlStringGenerationContext], org.hibernate.dialect.Dialect), applyLocksToSql/1844452883=([org.hibernate.dialect.Dialect, java.lang.String, org.hibernate.LockOptions, java.util.Map], java.lang.String)}
+; {var2824=org.hibernate.id.enhanced.TableGenerator, var533=r1, var568=r6, var314=null_type, var368=org.hibernate.boot.model.relational.SqlStringGenerationContext, var1967=r23, var2584=$r0, var3214=$r4, var752=$r2, var332=org.hibernate.internal.util.StringHelper, var1769=$r3, var3975=$r5, var2816=$r7, var3764=$r8, var2754=$r9, var3307=$r10, var316=$r13, var675=$r11, var2947=$r12, var2483=$r14, var1693=$r15, var117=r16, var3447=org.hibernate.LockOptions, var3946=$r17, var3223=org.hibernate.LockMode, var2332=$r18, var577=$r19, var1521="tbl", var2877=$r20, var3984=$r21, var2711=java.util.Map, var2346=java.util.Collections, var2465=java.lang.Object, var2564=r22, var926=org.hibernate.dialect.Dialect, var605=$r24, var2077=$r25}
+; {org.hibernate.id.enhanced.TableGenerator=var2824, r1=var533, r6=var568, null_type=var314, org.hibernate.boot.model.relational.SqlStringGenerationContext=var368, r23=var1967, $r0=var2584, $r4=var3214, $r2=var752, org.hibernate.internal.util.StringHelper=var332, $r3=var1769, $r5=var3975, $r7=var2816, $r8=var3764, $r9=var2754, $r10=var3307, $r13=var316, $r11=var675, $r12=var2947, $r14=var2483, $r15=var1693, r16=var117, org.hibernate.LockOptions=var3447, $r17=var3946, org.hibernate.LockMode=var3223, $r18=var2332, $r19=var577, "tbl"=var1521, $r20=var2877, $r21=var3984, java.util.Map=var2711, java.util.Collections=var2346, java.lang.Object=var2465, r22=var2564, org.hibernate.dialect.Dialect=var926, $r24=var605, $r25=var2077}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(char)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 8,"<java.lang.StringBuilder: java.lang.StringBuilder append(char)>": 1,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r1 := @this: org.hibernate.id.enhanced.TableGenerator;	r6 := @parameter0: java.lang.String;	r23 := @parameter1: org.hibernate.boot.model.relational.SqlStringGenerationContext;	$r0 = new java.lang.StringBuilder;	specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();	$r4 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("select ");	$r2 = r1.<org.hibernate.id.enhanced.TableGenerator: java.lang.String valueColumnName>;	$r3 = staticinvoke <org.hibernate.internal.util.StringHelper: java.lang.String qualify(java.lang.String,java.lang.String)>("tbl", $r2);	$r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);	$r7 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" from ");	$r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r6);	$r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(32);	$r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("tbl");	$r13 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" where ");	$r11 = r1.<org.hibernate.id.enhanced.TableGenerator: java.lang.String segmentColumnName>;	$r12 = staticinvoke <org.hibernate.internal.util.StringHelper: java.lang.String qualify(java.lang.String,java.lang.String)>("tbl", $r11);	$r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r12);	$r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("=?");	r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();	$r17 = new org.hibernate.LockOptions;	$r18 = <org.hibernate.LockMode: org.hibernate.LockMode PESSIMISTIC_WRITE>;	specialinvoke $r17.<org.hibernate.LockOptions: void <init>(org.hibernate.LockMode)>($r18);	$r19 = <org.hibernate.LockMode: org.hibernate.LockMode PESSIMISTIC_WRITE>;	virtualinvoke $r17.<org.hibernate.LockOptions: org.hibernate.LockOptions setAliasSpecificLockMode(java.lang.String,org.hibernate.LockMode)>("tbl", $r19);	$r20 = newarray (java.lang.String)[1];	$r21 = r1.<org.hibernate.id.enhanced.TableGenerator: java.lang.String valueColumnName>;	$r20[0] = $r21;	r22 = staticinvoke <java.util.Collections: java.util.Map singletonMap(java.lang.Object,java.lang.Object)>("tbl", $r20);	$r24 = interfaceinvoke r23.<org.hibernate.boot.model.relational.SqlStringGenerationContext: org.hibernate.dialect.Dialect getDialect()>();	$r25 = virtualinvoke $r24.<org.hibernate.dialect.Dialect: java.lang.String applyLocksToSql(java.lang.String,org.hibernate.LockOptions,java.util.Map)>(r16, $r17, r22);	return $r25
+;block_num 1

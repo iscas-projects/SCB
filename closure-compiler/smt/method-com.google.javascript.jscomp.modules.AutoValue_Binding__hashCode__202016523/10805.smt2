@@ -1,0 +1,87 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var149 0)
+(declare-sort var3915 0)
+(declare-sort var92 0)
+(declare-sort var3749 0)
+(declare-sort var1094 0)
+(declare-sort var2745 0)
+(declare-sort var1175 0)
+(declare-sort var66 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun metadata/1302857860 (var149) var3915)
+(declare-fun hashCode/-1924871451 (var3915) Int)
+(declare-fun sourceNode/1302857860 (var149) var92)
+(declare-fun hashCode/1739917532 (var3749) Int)
+(declare-fun cast-from-var92-to-var3749 (var92) var3749)
+(declare-fun originatingExport/1302857860 (var149) var1094)
+(declare-fun cast-from-var1094-to-var3749 (var1094) var3749)
+(declare-fun isModuleNamespace/1302857860 (var149) Bool)
+(declare-fun closureNamespace/1302857860 (var149) String)
+(declare-fun hashCode/-467973558 (String) Int)
+(declare-fun createdBy/1302857860 (var149) var1175)
+(declare-fun hashCode/385986394 (var66) Int)
+(declare-fun cast-from-var1175-to-var66 (var1175) var66)
+(declare-const null-var149 var149)
+(declare-const null-var92 var92)
+(declare-const null-var1094 var1094)
+(declare-const null-String String)
+(declare-const var900 var149) ; Statement: r0 := @this: com.google.javascript.jscomp.modules.AutoValue_Binding 
+(assert (not (= var900 null-var149)))
+(define-const var2172 var3915 (metadata/1302857860 var900)) ; Statement: $r1 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: com.google.javascript.jscomp.modules.ModuleMetadataMap$ModuleMetadata metadata> 
+(assert true)
+(define-const var125 Int (hashCode/-1924871451 var2172)) ; Statement: $i0 = virtualinvoke $r1.<com.google.javascript.jscomp.modules.ModuleMetadataMap$ModuleMetadata: int hashCode()>() 
+(define-const var2868 Int (bv2nat (bvxor ((_ int2bv 64) 1000003) ((_ int2bv 64) var125)))) ; Statement: i11 = 1000003 ^ $i0 
+(define-const var2949 Int (* var2868 1000003)) ; Statement: i12 = i11 * 1000003 
+(define-const var1469 var92 (sourceNode/1302857860 var900)) ; Statement: $r2 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: com.google.javascript.rhino.Node sourceNode> 
+ ; Statement: if $r2 != null goto $r3 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: com.google.javascript.rhino.Node sourceNode> 
+(assert (not (= var1469 null-var92))) ; Cond: $r2 != null 
+(define-const var1423 var92 (sourceNode/1302857860 var900)) ; Statement: $r3 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: com.google.javascript.rhino.Node sourceNode> 
+(assert true)
+(define-const var1545 Int (hashCode/1739917532 (cast-from-var92-to-var3749 var1423))) ; Statement: $i13 = virtualinvoke $r3.<java.lang.Object: int hashCode()>() 
+(assert true) ; Non Conditional
+(define-const var3905 Int (bv2nat (bvxor ((_ int2bv 64) var2949) ((_ int2bv 64) var1545)))) ; Statement: $i9 = i12 ^ $i13 
+(define-const var2126 Int (* var3905 1000003)) ; Statement: $i10 = $i9 * 1000003 
+(define-const var3654 var1094 (originatingExport/1302857860 var900)) ; Statement: $r4 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: com.google.javascript.jscomp.modules.Export originatingExport> 
+ ; Statement: if $r4 != null goto $r5 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: com.google.javascript.jscomp.modules.Export originatingExport> 
+(assert (not (= var3654 null-var1094))) ; Cond: $r4 != null 
+(define-const var495 var1094 (originatingExport/1302857860 var900)) ; Statement: $r5 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: com.google.javascript.jscomp.modules.Export originatingExport> 
+(assert true)
+(define-const var2546 Int (hashCode/1739917532 (cast-from-var1094-to-var3749 var495))) ; Statement: $i14 = virtualinvoke $r5.<java.lang.Object: int hashCode()>() 
+(assert true) ; Non Conditional
+(define-const var1287 Int (bv2nat (bvxor ((_ int2bv 64) var2126) ((_ int2bv 64) var2546)))) ; Statement: $i7 = $i10 ^ $i14 
+(define-const var1763 Int (* var1287 1000003)) ; Statement: $i8 = $i7 * 1000003 
+(define-const var3249 Bool (isModuleNamespace/1302857860 var900)) ; Statement: $z0 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: boolean isModuleNamespace> 
+ ; Statement: if $z0 == 0 goto $s15 = 1237 
+(assert (= (ite var3249 1 0) 0)) ; Cond: $z0 == 0 
+(define-const var3370 Int 1237) ; Statement: $s15 = 1237 
+(assert true) ; Non Conditional
+(define-const var2327 Int (bv2nat (bvxor ((_ int2bv 64) var1763) ((_ int2bv 64) var3370)))) ; Statement: $i5 = $i8 ^ $s15 
+(define-const var2863 Int (* var2327 1000003)) ; Statement: $i6 = $i5 * 1000003 
+(define-const var2464 String (closureNamespace/1302857860 var900)) ; Statement: $r6 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: java.lang.String closureNamespace> 
+ ; Statement: if $r6 != null goto $r7 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: java.lang.String closureNamespace> 
+(assert (not (= var2464 null-String))) ; Cond: $r6 != null 
+(define-const var1219 String (closureNamespace/1302857860 var900)) ; Statement: $r7 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: java.lang.String closureNamespace> 
+(assert true)
+(define-const var211 Int (hashCode/-467973558 var1219)) ; Statement: $i16 = virtualinvoke $r7.<java.lang.String: int hashCode()>() 
+(assert true) ; Non Conditional
+(define-const var2081 Int (bv2nat (bvxor ((_ int2bv 64) var2863) ((_ int2bv 64) var211)))) ; Statement: $i2 = $i6 ^ $i16 
+(define-const var1857 Int (* var2081 1000003)) ; Statement: $i3 = $i2 * 1000003 
+(define-const var3142 var1175 (createdBy/1302857860 var900)) ; Statement: $r8 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: com.google.javascript.jscomp.modules.Binding$CreatedBy createdBy> 
+(assert true)
+(define-const var1774 Int (hashCode/385986394 (cast-from-var1175-to-var66 var3142))) ; Statement: $i1 = virtualinvoke $r8.<com.google.javascript.jscomp.modules.Binding$CreatedBy: int hashCode()>() 
+(define-const var49 Int (bv2nat (bvxor ((_ int2bv 64) var1857) ((_ int2bv 64) var1774)))) ; Statement: $i4 = $i3 ^ $i1 
+ ; Statement: return $i4 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {metadata/1302857860=([com.google.javascript.jscomp.modules.AutoValue_Binding], com.google.javascript.jscomp.modules.ModuleMetadataMap$ModuleMetadata), hashCode/-1924871451=([com.google.javascript.jscomp.modules.ModuleMetadataMap$ModuleMetadata], int), sourceNode/1302857860=([com.google.javascript.jscomp.modules.AutoValue_Binding], com.google.javascript.rhino.Node), hashCode/1739917532=([java.lang.Object], int), cast-from-var92-to-var3749=([com.google.javascript.rhino.Node], java.lang.Object), originatingExport/1302857860=([com.google.javascript.jscomp.modules.AutoValue_Binding], com.google.javascript.jscomp.modules.Export), cast-from-var1094-to-var3749=([com.google.javascript.jscomp.modules.Export], java.lang.Object), isModuleNamespace/1302857860=([com.google.javascript.jscomp.modules.AutoValue_Binding], boolean), closureNamespace/1302857860=([com.google.javascript.jscomp.modules.AutoValue_Binding], java.lang.String), hashCode/-467973558=([java.lang.String], int), createdBy/1302857860=([com.google.javascript.jscomp.modules.AutoValue_Binding], com.google.javascript.jscomp.modules.Binding$CreatedBy), hashCode/385986394=([java.lang.Enum], int), cast-from-var1175-to-var66=([com.google.javascript.jscomp.modules.Binding$CreatedBy], java.lang.Enum)}
+; {var149=com.google.javascript.jscomp.modules.AutoValue_Binding, var900=r0, var3915=com.google.javascript.jscomp.modules.ModuleMetadataMap$ModuleMetadata, var2172=$r1, var125=$i0, var2868=i11, var2949=i12, var92=com.google.javascript.rhino.Node, var1469=$r2, var1423=$r3, var3749=java.lang.Object, var1545=$i13, var3905=$i9, var2126=$i10, var1094=com.google.javascript.jscomp.modules.Export, var3654=$r4, var495=$r5, var2546=$i14, var1287=$i7, var1763=$i8, var3249=$z0, var3370=$s15, var2327=$i5, var2863=$i6, var2464=$r6, var2745=null_type, var1219=$r7, var211=$i16, var2081=$i2, var1857=$i3, var1175=com.google.javascript.jscomp.modules.Binding$CreatedBy, var3142=$r8, var66=java.lang.Enum, var1774=$i1, var49=$i4}
+; {com.google.javascript.jscomp.modules.AutoValue_Binding=var149, r0=var900, com.google.javascript.jscomp.modules.ModuleMetadataMap$ModuleMetadata=var3915, $r1=var2172, $i0=var125, i11=var2868, i12=var2949, com.google.javascript.rhino.Node=var92, $r2=var1469, $r3=var1423, java.lang.Object=var3749, $i13=var1545, $i9=var3905, $i10=var2126, com.google.javascript.jscomp.modules.Export=var1094, $r4=var3654, $r5=var495, $i14=var2546, $i7=var1287, $i8=var1763, $z0=var3249, $s15=var3370, $i5=var2327, $i6=var2863, $r6=var2464, null_type=var2745, $r7=var1219, $i16=var211, $i2=var2081, $i3=var1857, com.google.javascript.jscomp.modules.Binding$CreatedBy=var1175, $r8=var3142, java.lang.Enum=var66, $i1=var1774, $i4=var49}
+;seq <java.lang.String: int hashCode()>
+;cnt {"<java.lang.String: int hashCode()>": 1}
+;stmts r0 := @this: com.google.javascript.jscomp.modules.AutoValue_Binding;	$r1 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: com.google.javascript.jscomp.modules.ModuleMetadataMap$ModuleMetadata metadata>;	$i0 = virtualinvoke $r1.<com.google.javascript.jscomp.modules.ModuleMetadataMap$ModuleMetadata: int hashCode()>();	i11 = 1000003 ^ $i0;	i12 = i11 * 1000003;	$r2 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: com.google.javascript.rhino.Node sourceNode>;	if $r2 != null goto $r3 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: com.google.javascript.rhino.Node sourceNode>;	$r3 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: com.google.javascript.rhino.Node sourceNode>;	$i13 = virtualinvoke $r3.<java.lang.Object: int hashCode()>();	$i9 = i12 ^ $i13;	$i10 = $i9 * 1000003;	$r4 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: com.google.javascript.jscomp.modules.Export originatingExport>;	if $r4 != null goto $r5 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: com.google.javascript.jscomp.modules.Export originatingExport>;	$r5 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: com.google.javascript.jscomp.modules.Export originatingExport>;	$i14 = virtualinvoke $r5.<java.lang.Object: int hashCode()>();	$i7 = $i10 ^ $i14;	$i8 = $i7 * 1000003;	$z0 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: boolean isModuleNamespace>;	if $z0 == 0 goto $s15 = 1237;	$s15 = 1237;	$i5 = $i8 ^ $s15;	$i6 = $i5 * 1000003;	$r6 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: java.lang.String closureNamespace>;	if $r6 != null goto $r7 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: java.lang.String closureNamespace>;	$r7 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: java.lang.String closureNamespace>;	$i16 = virtualinvoke $r7.<java.lang.String: int hashCode()>();	$i2 = $i6 ^ $i16;	$i3 = $i2 * 1000003;	$r8 = r0.<com.google.javascript.jscomp.modules.AutoValue_Binding: com.google.javascript.jscomp.modules.Binding$CreatedBy createdBy>;	$i1 = virtualinvoke $r8.<com.google.javascript.jscomp.modules.Binding$CreatedBy: int hashCode()>();	$i4 = $i3 ^ $i1;	return $i4
+;block_num 9

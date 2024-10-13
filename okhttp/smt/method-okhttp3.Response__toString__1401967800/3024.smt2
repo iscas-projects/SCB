@@ -1,0 +1,88 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var954 0)
+(declare-sort var2347 0)
+(declare-sort var769 0)
+(declare-sort var1551 0)
+(declare-sort var955 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun protocol/293179168 (var954) var2347)
+(declare-fun append/-1031950772 (String var769) String)
+(declare-fun cast-from-var2347-to-var769 (var2347) var769)
+(declare-fun code/293179168 (var954) Int)
+(define-fun append/-1001720160 ((s String) (tail Int)) String (str.++ s (str.from_int tail)))
+(declare-fun message/293179168 (var954) String)
+(declare-fun request/293179168 (var954) var1551)
+(declare-fun url/-1276526496 (var1551) var955)
+(declare-fun cast-from-var955-to-var769 (var955) var769)
+(declare-fun append/-1166366385 (String Int) String)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-const null-var954 var954)
+(declare-const var1617 var954) ; Statement: r1 := @this: okhttp3.Response 
+(assert (not (= var1617 null-var954)))
+(define-const var1372 String String-init) ; Statement: $r0 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var1372)) ; Statement: specialinvoke $r0.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var1372!1 String)
+(assert (= var1372!1 ""))
+(assert true)
+(define-const var2299 String (append/672562846 var1372!1 "Response{protocol=")) ; Statement: $r3 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Response{protocol=") 
+(declare-const var1372!2 String)
+(assert (= var1372!2 (str.++ var1372!1 "Response{protocol=")))
+(define-const var3568 var2347 (protocol/293179168 var1617)) ; Statement: $r2 = r1.<okhttp3.Response: okhttp3.Protocol protocol> 
+(assert true)
+(define-const var1965 String (append/-1031950772 var2299 (cast-from-var2347-to-var769 var3568))) ; Statement: $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r2) 
+(declare-const var2299!1 String)
+(assert (str.prefixof var2299 var2299!1))
+(assert true)
+(define-const var3693 String (append/672562846 var1965 ", code=")) ; Statement: $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", code=") 
+(declare-const var1965!1 String)
+(assert (= var1965!1 (str.++ var1965 ", code=")))
+(define-const var1222 Int (code/293179168 var1617)) ; Statement: $i0 = r1.<okhttp3.Response: int code> 
+(assert true)
+(define-const var3880 String (append/-1001720160 var3693 var1222)) ; Statement: $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0) 
+(declare-const var3693!1 String)
+(assert (str.prefixof var3693 var3693!1))
+(assert true)
+(define-const var2933 String (append/672562846 var3880 ", message=")) ; Statement: $r8 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", message=") 
+(declare-const var3880!1 String)
+(assert (= var3880!1 (str.++ var3880 ", message=")))
+(define-const var2116 String (message/293179168 var1617)) ; Statement: $r7 = r1.<okhttp3.Response: java.lang.String message> 
+(assert true)
+(define-const var2354 String (append/672562846 var2933 var2116)) ; Statement: $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7) 
+(declare-const var2933!1 String)
+(assert (= var2933!1 (str.++ var2933 var2116)))
+(assert true)
+(define-const var325 String (append/672562846 var2354 ", url=")) ; Statement: $r12 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", url=") 
+(declare-const var2354!1 String)
+(assert (= var2354!1 (str.++ var2354 ", url=")))
+(define-const var1448 var1551 (request/293179168 var1617)) ; Statement: $r10 = r1.<okhttp3.Response: okhttp3.Request request> 
+(assert true)
+(define-const var2831 var955 (url/-1276526496 var1448)) ; Statement: $r11 = virtualinvoke $r10.<okhttp3.Request: okhttp3.HttpUrl url()>() 
+(assert true)
+(define-const var3660 String (append/-1031950772 var325 (cast-from-var955-to-var769 var2831))) ; Statement: $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r11) 
+(declare-const var325!1 String)
+(assert (str.prefixof var325 var325!1))
+(assert true)
+(define-const var3161 String (append/-1166366385 var3660 125)) ; Statement: $r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(125) 
+(declare-const var3660!1 String)
+(assert (str.prefixof var3660 var3660!1))
+(assert true)
+(define-const var2702 String (toString/-2075883882 var3161)) ; Statement: $r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>() 
+ ; Statement: return $r15 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), protocol/293179168=([okhttp3.Response], okhttp3.Protocol), append/-1031950772=([java.lang.StringBuilder, java.lang.Object], java.lang.StringBuilder), cast-from-var2347-to-var769=([okhttp3.Protocol], java.lang.Object), code/293179168=([okhttp3.Response], int), append/-1001720160=([java.lang.StringBuilder, int], java.lang.StringBuilder), message/293179168=([okhttp3.Response], java.lang.String), request/293179168=([okhttp3.Response], okhttp3.Request), url/-1276526496=([okhttp3.Request], okhttp3.HttpUrl), cast-from-var955-to-var769=([okhttp3.HttpUrl], java.lang.Object), append/-1166366385=([java.lang.StringBuilder, char], java.lang.StringBuilder), toString/-2075883882=([java.lang.StringBuilder], java.lang.String)}
+; {var954=okhttp3.Response, var1617=r1, var1372=$r0, var2299=$r3, var2347=okhttp3.Protocol, var3568=$r2, var769=java.lang.Object, var1965=$r4, var3693=$r5, var1222=$i0, var3880=$r6, var2933=$r8, var2116=$r7, var2354=$r9, var325=$r12, var1551=okhttp3.Request, var1448=$r10, var955=okhttp3.HttpUrl, var2831=$r11, var3660=$r13, var3161=$r14, var2702=$r15}
+; {okhttp3.Response=var954, r1=var1617, $r0=var1372, $r3=var2299, okhttp3.Protocol=var2347, $r2=var3568, java.lang.Object=var769, $r4=var1965, $r5=var3693, $i0=var1222, $r6=var3880, $r8=var2933, $r7=var2116, $r9=var2354, $r12=var325, okhttp3.Request=var1551, $r10=var1448, okhttp3.HttpUrl=var955, $r11=var2831, $r13=var3660, $r14=var3161, $r15=var2702}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(char)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 5,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 2,"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(char)>": 1,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r1 := @this: okhttp3.Response;	$r0 = new java.lang.StringBuilder;	specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();	$r3 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Response{protocol=");	$r2 = r1.<okhttp3.Response: okhttp3.Protocol protocol>;	$r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r2);	$r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", code=");	$i0 = r1.<okhttp3.Response: int code>;	$r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);	$r8 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", message=");	$r7 = r1.<okhttp3.Response: java.lang.String message>;	$r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);	$r12 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", url=");	$r10 = r1.<okhttp3.Response: okhttp3.Request request>;	$r11 = virtualinvoke $r10.<okhttp3.Request: okhttp3.HttpUrl url()>();	$r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r11);	$r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(125);	$r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>();	return $r15
+;block_num 1

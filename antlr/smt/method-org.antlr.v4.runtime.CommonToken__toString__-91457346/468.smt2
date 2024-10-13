@@ -1,0 +1,137 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var1 0)
+(declare-sort var3460 0)
+(declare-sort var3329 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun channel/74511955 (var1) Int)
+(declare-fun getText/1496174688 (var1) String)
+(declare-fun type/74511955 (var1) Int)
+(declare-fun String_valueOf/1240665136 (Int) String)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun getTokenIndex/-1875838924 (var1) Int)
+(define-fun append/-1001720160 ((s String) (tail Int)) String (str.++ s (str.from_int tail)))
+(declare-fun start/74511955 (var1) Int)
+(declare-fun stop/74511955 (var1) Int)
+(declare-fun line/74511955 (var1) Int)
+(declare-fun getCharPositionInLine/-602222603 (var1) Int)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-const null-var1 var1)
+(declare-const null-var3460 var3460)
+(declare-const null-String String)
+(declare-const var332 var1) ; Statement: r0 := @this: org.antlr.v4.runtime.CommonToken 
+(assert (not (= var332 null-var1)))
+(declare-const var1263 var3460) ; Statement: r1 := @parameter0: org.antlr.v4.runtime.Recognizer 
+(assert (not (= var1263 null-var3460)))
+(define-const var3542 String "") ; Statement: r26 = "" 
+(define-const var3294 Int (channel/74511955 var332)) ; Statement: $i0 = r0.<org.antlr.v4.runtime.CommonToken: int channel> 
+ ; Statement: if $i0 <= 0 goto $r25 = virtualinvoke r0.<org.antlr.v4.runtime.CommonToken: java.lang.String getText()>() 
+(assert (<= var3294 0)) ; Cond: $i0 <= 0 
+(assert true)
+(define-const var3211 String (getText/1496174688 var332)) ; Statement: $r25 = virtualinvoke r0.<org.antlr.v4.runtime.CommonToken: java.lang.String getText()>() 
+ ; Statement: if $r25 == null goto r29 = "<no text>" 
+(assert (= var3211 null-String)) ; Cond: $r25 == null 
+(define-const var2760 String "<no text>") ; Statement: r29 = "<no text>" 
+(assert true) ; Non Conditional
+(define-const var506 Int (type/74511955 var332)) ; Statement: $i1 = r0.<org.antlr.v4.runtime.CommonToken: int type> 
+(define-const var2346 String (String_valueOf/1240665136 var506)) ; Statement: r30 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i1) 
+ ; Statement: if r1 == null goto $r2 = new java.lang.StringBuilder 
+(assert (= var1263 null-var3460)) ; Cond: r1 == null 
+(define-const var62 String String-init) ; Statement: $r2 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var62)) ; Statement: specialinvoke $r2.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var62!1 String)
+(assert (= var62!1 ""))
+(assert true)
+(define-const var2929 String (append/672562846 var62!1 "[@")) ; Statement: $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[@") 
+(declare-const var62!2 String)
+(assert (= var62!2 (str.++ var62!1 "[@")))
+(assert true)
+(define-const var347 Int (getTokenIndex/-1875838924 var332)) ; Statement: $i2 = virtualinvoke r0.<org.antlr.v4.runtime.CommonToken: int getTokenIndex()>() 
+(assert true)
+(define-const var3644 String (append/-1001720160 var2929 var347)) ; Statement: $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2) 
+(declare-const var2929!1 String)
+(assert (str.prefixof var2929 var2929!1))
+(assert true)
+(define-const var2318 String (append/672562846 var3644 ",")) ; Statement: $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",") 
+(declare-const var3644!1 String)
+(assert (= var3644!1 (str.++ var3644 ",")))
+(define-const var3062 Int (start/74511955 var332)) ; Statement: $i3 = r0.<org.antlr.v4.runtime.CommonToken: int start> 
+(assert true)
+(define-const var3317 String (append/-1001720160 var2318 var3062)) ; Statement: $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3) 
+(declare-const var2318!1 String)
+(assert (str.prefixof var2318 var2318!1))
+(assert true)
+(define-const var1879 String (append/672562846 var3317 ":")) ; Statement: $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":") 
+(declare-const var3317!1 String)
+(assert (= var3317!1 (str.++ var3317 ":")))
+(define-const var2311 Int (stop/74511955 var332)) ; Statement: $i4 = r0.<org.antlr.v4.runtime.CommonToken: int stop> 
+(assert true)
+(define-const var3286 String (append/-1001720160 var1879 var2311)) ; Statement: $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i4) 
+(declare-const var1879!1 String)
+(assert (str.prefixof var1879 var1879!1))
+(assert true)
+(define-const var3665 String (append/672562846 var3286 "=\u0027")) ; Statement: $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("=\'") 
+(declare-const var3286!1 String)
+(assert (= var3286!1 (str.++ var3286 "=\u0027")))
+(assert true)
+(define-const var3923 String (append/672562846 var3665 var2760)) ; Statement: $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r29) 
+(declare-const var3665!1 String)
+(assert (= var3665!1 (str.++ var3665 var2760)))
+(assert true)
+(define-const var3946 String (append/672562846 var3923 "\u0027,<")) ; Statement: $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\',<") 
+(declare-const var3923!1 String)
+(assert (= var3923!1 (str.++ var3923 "\u0027,<")))
+(assert true)
+(define-const var2109 String (append/672562846 var3946 var2346)) ; Statement: $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r30) 
+(declare-const var3946!1 String)
+(assert (= var3946!1 (str.++ var3946 var2346)))
+(assert true)
+(define-const var972 String (append/672562846 var2109 ">")) ; Statement: $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(">") 
+(declare-const var2109!1 String)
+(assert (= var2109!1 (str.++ var2109 ">")))
+(assert true)
+(define-const var3281 String (append/672562846 var972 var3542)) ; Statement: $r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r26) 
+(declare-const var972!1 String)
+(assert (= var972!1 (str.++ var972 var3542)))
+(assert true)
+(define-const var1445 String (append/672562846 var3281 ",")) ; Statement: $r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",") 
+(declare-const var3281!1 String)
+(assert (= var3281!1 (str.++ var3281 ",")))
+(define-const var1693 Int (line/74511955 var332)) ; Statement: $i5 = r0.<org.antlr.v4.runtime.CommonToken: int line> 
+(assert true)
+(define-const var2900 String (append/-1001720160 var1445 var1693)) ; Statement: $r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i5) 
+(declare-const var1445!1 String)
+(assert (str.prefixof var1445 var1445!1))
+(assert true)
+(define-const var1777 String (append/672562846 var2900 ":")) ; Statement: $r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":") 
+(declare-const var2900!1 String)
+(assert (= var2900!1 (str.++ var2900 ":")))
+(assert true)
+(define-const var2698 Int (getCharPositionInLine/-602222603 var332)) ; Statement: $i6 = virtualinvoke r0.<org.antlr.v4.runtime.CommonToken: int getCharPositionInLine()>() 
+(assert true)
+(define-const var1766 String (append/-1001720160 var1777 var2698)) ; Statement: $r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i6) 
+(declare-const var1777!1 String)
+(assert (str.prefixof var1777 var1777!1))
+(assert true)
+(define-const var1262 String (append/672562846 var1766 "]")) ; Statement: $r19 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("]") 
+(declare-const var1766!1 String)
+(assert (= var1766!1 (str.++ var1766 "]")))
+(assert true)
+(define-const var696 String (toString/-2075883882 var1262)) ; Statement: $r20 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.String toString()>() 
+ ; Statement: return $r20 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {channel/74511955=([org.antlr.v4.runtime.CommonToken], int), getText/1496174688=([org.antlr.v4.runtime.CommonToken], java.lang.String), type/74511955=([org.antlr.v4.runtime.CommonToken], int), String_valueOf/1240665136=([int], java.lang.String), String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), getTokenIndex/-1875838924=([org.antlr.v4.runtime.CommonToken], int), append/-1001720160=([java.lang.StringBuilder, int], java.lang.StringBuilder), start/74511955=([org.antlr.v4.runtime.CommonToken], int), stop/74511955=([org.antlr.v4.runtime.CommonToken], int), line/74511955=([org.antlr.v4.runtime.CommonToken], int), getCharPositionInLine/-602222603=([org.antlr.v4.runtime.CommonToken], int), toString/-2075883882=([java.lang.StringBuilder], java.lang.String)}
+; {var1=org.antlr.v4.runtime.CommonToken, var332=r0, var3460=org.antlr.v4.runtime.Recognizer, var1263=r1, var3542=r26, var3294=$i0, var3211=$r25, var3329=null_type, var2760=r29, var506=$i1, var2346=r30, var62=$r2, var2929=$r3, var347=$i2, var3644=$r4, var2318=$r5, var3062=$i3, var3317=$r6, var1879=$r7, var2311=$i4, var3286=$r8, var3665=$r9, var3923=$r10, var3946=$r11, var2109=$r12, var972=$r13, var3281=$r14, var1445=$r15, var1693=$i5, var2900=$r16, var1777=$r17, var2698=$i6, var1766=$r18, var1262=$r19, var696=$r20}
+; {org.antlr.v4.runtime.CommonToken=var1, r0=var332, org.antlr.v4.runtime.Recognizer=var3460, r1=var1263, r26=var3542, $i0=var3294, $r25=var3211, null_type=var3329, r29=var2760, $i1=var506, r30=var2346, $r2=var62, $r3=var2929, $i2=var347, $r4=var3644, $r5=var2318, $i3=var3062, $r6=var3317, $r7=var1879, $i4=var2311, $r8=var3286, $r9=var3665, $r10=var3923, $r11=var3946, $r12=var2109, $r13=var972, $r14=var3281, $r15=var1445, $i5=var1693, $r16=var2900, $r17=var1777, $i6=var2698, $r18=var1766, $r19=var1262, $r20=var696}
+;seq <java.lang.String: java.lang.String valueOf(int)>;	<java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.String: java.lang.String valueOf(int)>": 1,"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 12,"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>": 5,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r0 := @this: org.antlr.v4.runtime.CommonToken;	r1 := @parameter0: org.antlr.v4.runtime.Recognizer;	r26 = "";	$i0 = r0.<org.antlr.v4.runtime.CommonToken: int channel>;	if $i0 <= 0 goto $r25 = virtualinvoke r0.<org.antlr.v4.runtime.CommonToken: java.lang.String getText()>();	$r25 = virtualinvoke r0.<org.antlr.v4.runtime.CommonToken: java.lang.String getText()>();	if $r25 == null goto r29 = "<no text>";	r29 = "<no text>";	$i1 = r0.<org.antlr.v4.runtime.CommonToken: int type>;	r30 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i1);	if r1 == null goto $r2 = new java.lang.StringBuilder;	$r2 = new java.lang.StringBuilder;	specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();	$r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[@");	$i2 = virtualinvoke r0.<org.antlr.v4.runtime.CommonToken: int getTokenIndex()>();	$r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2);	$r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");	$i3 = r0.<org.antlr.v4.runtime.CommonToken: int start>;	$r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3);	$r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":");	$i4 = r0.<org.antlr.v4.runtime.CommonToken: int stop>;	$r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i4);	$r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("=\'");	$r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r29);	$r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\',<");	$r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r30);	$r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(">");	$r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r26);	$r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");	$i5 = r0.<org.antlr.v4.runtime.CommonToken: int line>;	$r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i5);	$r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":");	$i6 = virtualinvoke r0.<org.antlr.v4.runtime.CommonToken: int getCharPositionInLine()>();	$r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i6);	$r19 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("]");	$r20 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.String toString()>();	return $r20
+;block_num 5

@@ -1,0 +1,87 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var1009 0)
+(declare-sort var2302 0)
+(declare-sort var2384 0)
+(declare-sort var3145 0)
+(declare-sort var3841 0)
+(declare-sort var3048 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun field/-1318375070 (var1009) Int)
+(define-fun append/-1001720160 ((s String) (tail Int)) String (str.++ s (str.from_int tail)))
+(declare-fun locale/-1318375070 (var1009) var2302)
+(declare-fun append/-1031950772 (String var2384) String)
+(declare-fun cast-from-var2302-to-var2384 (var2302) var2384)
+(declare-fun lKeyValues/-1318375070 (var1009) var3145)
+(declare-fun cast-from-var3145-to-var2384 (var3145) var2384)
+(declare-fun pattern/443652580 (var3048) var3841)
+(declare-fun cast-from-var1009-to-var3048 (var1009) var3048)
+(declare-fun cast-from-var3841-to-var2384 (var3841) var2384)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-const null-var1009 var1009)
+(declare-const var3759 var1009) ; Statement: r1 := @this: org.apache.commons.lang3.time.FastDateParser$CaseInsensitiveTextStrategy 
+(assert (not (= var3759 null-var1009)))
+(define-const var3195 String String-init) ; Statement: $r0 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var3195)) ; Statement: specialinvoke $r0.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var3195!1 String)
+(assert (= var3195!1 ""))
+(assert true)
+(define-const var2885 String (append/672562846 var3195!1 "CaseInsensitiveTextStrategy [field=")) ; Statement: $r2 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("CaseInsensitiveTextStrategy [field=") 
+(declare-const var3195!2 String)
+(assert (= var3195!2 (str.++ var3195!1 "CaseInsensitiveTextStrategy [field=")))
+(define-const var3109 Int (field/-1318375070 var3759)) ; Statement: $i0 = r1.<org.apache.commons.lang3.time.FastDateParser$CaseInsensitiveTextStrategy: int field> 
+(assert true)
+(define-const var317 String (append/-1001720160 var2885 var3109)) ; Statement: $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0) 
+(declare-const var2885!1 String)
+(assert (str.prefixof var2885 var2885!1))
+(assert true)
+(define-const var362 String (append/672562846 var317 ", locale=")) ; Statement: $r5 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", locale=") 
+(declare-const var317!1 String)
+(assert (= var317!1 (str.++ var317 ", locale=")))
+(define-const var2943 var2302 (locale/-1318375070 var3759)) ; Statement: $r4 = r1.<org.apache.commons.lang3.time.FastDateParser$CaseInsensitiveTextStrategy: java.util.Locale locale> 
+(assert true)
+(define-const var1222 String (append/-1031950772 var362 (cast-from-var2302-to-var2384 var2943))) ; Statement: $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r4) 
+(declare-const var362!1 String)
+(assert (str.prefixof var362 var362!1))
+(assert true)
+(define-const var1733 String (append/672562846 var1222 ", lKeyValues=")) ; Statement: $r8 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", lKeyValues=") 
+(declare-const var1222!1 String)
+(assert (= var1222!1 (str.++ var1222 ", lKeyValues=")))
+(define-const var3044 var3145 (lKeyValues/-1318375070 var3759)) ; Statement: $r7 = r1.<org.apache.commons.lang3.time.FastDateParser$CaseInsensitiveTextStrategy: java.util.Map lKeyValues> 
+(assert true)
+(define-const var2401 String (append/-1031950772 var1733 (cast-from-var3145-to-var2384 var3044))) ; Statement: $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r7) 
+(declare-const var1733!1 String)
+(assert (str.prefixof var1733 var1733!1))
+(assert true)
+(define-const var1539 String (append/672562846 var2401 ", pattern=")) ; Statement: $r11 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", pattern=") 
+(declare-const var2401!1 String)
+(assert (= var2401!1 (str.++ var2401 ", pattern=")))
+(define-const var1272 var3841 (pattern/443652580 (cast-from-var1009-to-var3048 var3759))) ; Statement: $r10 = r1.<org.apache.commons.lang3.time.FastDateParser$CaseInsensitiveTextStrategy: java.util.regex.Pattern pattern> 
+(assert true)
+(define-const var344 String (append/-1031950772 var1539 (cast-from-var3841-to-var2384 var1272))) ; Statement: $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r10) 
+(declare-const var1539!1 String)
+(assert (str.prefixof var1539 var1539!1))
+(assert true)
+(define-const var2730 String (append/672562846 var344 "]")) ; Statement: $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("]") 
+(declare-const var344!1 String)
+(assert (= var344!1 (str.++ var344 "]")))
+(assert true)
+(define-const var2088 String (toString/-2075883882 var2730)) ; Statement: $r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>() 
+ ; Statement: return $r14 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), field/-1318375070=([org.apache.commons.lang3.time.FastDateParser$CaseInsensitiveTextStrategy], int), append/-1001720160=([java.lang.StringBuilder, int], java.lang.StringBuilder), locale/-1318375070=([org.apache.commons.lang3.time.FastDateParser$CaseInsensitiveTextStrategy], java.util.Locale), append/-1031950772=([java.lang.StringBuilder, java.lang.Object], java.lang.StringBuilder), cast-from-var2302-to-var2384=([java.util.Locale], java.lang.Object), lKeyValues/-1318375070=([org.apache.commons.lang3.time.FastDateParser$CaseInsensitiveTextStrategy], java.util.Map), cast-from-var3145-to-var2384=([java.util.Map], java.lang.Object), pattern/443652580=([org.apache.commons.lang3.time.FastDateParser$PatternStrategy], java.util.regex.Pattern), cast-from-var1009-to-var3048=([org.apache.commons.lang3.time.FastDateParser$CaseInsensitiveTextStrategy], org.apache.commons.lang3.time.FastDateParser$PatternStrategy), cast-from-var3841-to-var2384=([java.util.regex.Pattern], java.lang.Object), toString/-2075883882=([java.lang.StringBuilder], java.lang.String)}
+; {var1009=org.apache.commons.lang3.time.FastDateParser$CaseInsensitiveTextStrategy, var3759=r1, var3195=$r0, var2885=$r2, var3109=$i0, var317=$r3, var362=$r5, var2302=java.util.Locale, var2943=$r4, var2384=java.lang.Object, var1222=$r6, var1733=$r8, var3145=java.util.Map, var3044=$r7, var2401=$r9, var1539=$r11, var3841=java.util.regex.Pattern, var3048=org.apache.commons.lang3.time.FastDateParser$PatternStrategy, var1272=$r10, var344=$r12, var2730=$r13, var2088=$r14}
+; {org.apache.commons.lang3.time.FastDateParser$CaseInsensitiveTextStrategy=var1009, r1=var3759, $r0=var3195, $r2=var2885, $i0=var3109, $r3=var317, $r5=var362, java.util.Locale=var2302, $r4=var2943, java.lang.Object=var2384, $r6=var1222, $r8=var1733, java.util.Map=var3145, $r7=var3044, $r9=var2401, $r11=var1539, java.util.regex.Pattern=var3841, org.apache.commons.lang3.time.FastDateParser$PatternStrategy=var3048, $r10=var1272, $r12=var344, $r13=var2730, $r14=var2088}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 5,"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 3,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r1 := @this: org.apache.commons.lang3.time.FastDateParser$CaseInsensitiveTextStrategy;	$r0 = new java.lang.StringBuilder;	specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();	$r2 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("CaseInsensitiveTextStrategy [field=");	$i0 = r1.<org.apache.commons.lang3.time.FastDateParser$CaseInsensitiveTextStrategy: int field>;	$r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);	$r5 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", locale=");	$r4 = r1.<org.apache.commons.lang3.time.FastDateParser$CaseInsensitiveTextStrategy: java.util.Locale locale>;	$r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r4);	$r8 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", lKeyValues=");	$r7 = r1.<org.apache.commons.lang3.time.FastDateParser$CaseInsensitiveTextStrategy: java.util.Map lKeyValues>;	$r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r7);	$r11 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", pattern=");	$r10 = r1.<org.apache.commons.lang3.time.FastDateParser$CaseInsensitiveTextStrategy: java.util.regex.Pattern pattern>;	$r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r10);	$r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("]");	$r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>();	return $r14
+;block_num 1

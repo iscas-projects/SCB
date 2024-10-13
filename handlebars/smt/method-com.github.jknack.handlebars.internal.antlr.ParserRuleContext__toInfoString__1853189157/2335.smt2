@@ -1,0 +1,85 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var259 0)
+(declare-sort var3196 0)
+(declare-sort var967 0)
+(declare-sort var1690 0)
+(declare-sort var2083 0)
+(declare-sort var2853 0)
+(declare-sort var1997 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun getRuleInvocationStack/1756232775 (var3196 var1690) var967)
+(declare-fun cast-from-var259-to-var1690 (var259) var1690)
+(declare-fun var2083_reverse/-626513658 (var967) void)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun append/-1031950772 (String var2853) String)
+(declare-fun cast-from-var967-to-var2853 (var967) var2853)
+(declare-fun start/1874176084 (var259) var1997)
+(declare-fun cast-from-var1997-to-var2853 (var1997) var2853)
+(declare-fun stop/1874176084 (var259) var1997)
+(declare-fun append/-1166366385 (String Int) String)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-const null-var259 var259)
+(declare-const null-var3196 var3196)
+(declare-const var2731 var259) ; Statement: r1 := @this: com.github.jknack.handlebars.internal.antlr.ParserRuleContext 
+(assert (not (= var2731 null-var259)))
+(declare-const var3662 var3196) ; Statement: r0 := @parameter0: com.github.jknack.handlebars.internal.antlr.Parser 
+(assert (not (= var3662 null-var3196)))
+(assert true)
+(define-const var739 var967 (getRuleInvocationStack/1756232775 var3662 (cast-from-var259-to-var1690 var2731))) ; Statement: r2 = virtualinvoke r0.<com.github.jknack.handlebars.internal.antlr.Parser: java.util.List getRuleInvocationStack(com.github.jknack.handlebars.internal.antlr.RuleContext)>(r1) 
+;(assert (var2083_reverse/-626513658 var739)) ; Statement: staticinvoke <java.util.Collections: void reverse(java.util.List)>(r2) 
+
+(declare-const var739!1 var967)
+(define-const var2818 String String-init) ; Statement: $r3 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var2818)) ; Statement: specialinvoke $r3.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var2818!1 String)
+(assert (= var2818!1 ""))
+(assert true)
+(define-const var501 String (append/672562846 var2818!1 "ParserRuleContext")) ; Statement: $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("ParserRuleContext") 
+(declare-const var2818!2 String)
+(assert (= var2818!2 (str.++ var2818!1 "ParserRuleContext")))
+(assert true)
+(define-const var2483 String (append/-1031950772 var501 (cast-from-var967-to-var2853 var739!1))) ; Statement: $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>(r2) 
+(declare-const var501!1 String)
+(assert (str.prefixof var501 var501!1))
+(assert true)
+(define-const var2014 String (append/672562846 var2483 "{start=")) ; Statement: $r7 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("{start=") 
+(declare-const var2483!1 String)
+(assert (= var2483!1 (str.++ var2483 "{start=")))
+(define-const var1271 var1997 (start/1874176084 var2731)) ; Statement: $r6 = r1.<com.github.jknack.handlebars.internal.antlr.ParserRuleContext: com.github.jknack.handlebars.internal.antlr.Token start> 
+(assert true)
+(define-const var445 String (append/-1031950772 var2014 (cast-from-var1997-to-var2853 var1271))) ; Statement: $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r6) 
+(declare-const var2014!1 String)
+(assert (str.prefixof var2014 var2014!1))
+(assert true)
+(define-const var3162 String (append/672562846 var445 ", stop=")) ; Statement: $r10 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", stop=") 
+(declare-const var445!1 String)
+(assert (= var445!1 (str.++ var445 ", stop=")))
+(define-const var2866 var1997 (stop/1874176084 var2731)) ; Statement: $r9 = r1.<com.github.jknack.handlebars.internal.antlr.ParserRuleContext: com.github.jknack.handlebars.internal.antlr.Token stop> 
+(assert true)
+(define-const var780 String (append/-1031950772 var3162 (cast-from-var1997-to-var2853 var2866))) ; Statement: $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r9) 
+(declare-const var3162!1 String)
+(assert (str.prefixof var3162 var3162!1))
+(assert true)
+(define-const var1814 String (append/-1166366385 var780 125)) ; Statement: $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(125) 
+(declare-const var780!1 String)
+(assert (str.prefixof var780 var780!1))
+(assert true)
+(define-const var1143 String (toString/-2075883882 var1814)) ; Statement: $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>() 
+ ; Statement: return $r13 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {getRuleInvocationStack/1756232775=([com.github.jknack.handlebars.internal.antlr.Parser, com.github.jknack.handlebars.internal.antlr.RuleContext], java.util.List), cast-from-var259-to-var1690=([com.github.jknack.handlebars.internal.antlr.ParserRuleContext], com.github.jknack.handlebars.internal.antlr.RuleContext), var2083_reverse/-626513658=([java.util.List], void), String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), append/-1031950772=([java.lang.StringBuilder, java.lang.Object], java.lang.StringBuilder), cast-from-var967-to-var2853=([java.util.List], java.lang.Object), start/1874176084=([com.github.jknack.handlebars.internal.antlr.ParserRuleContext], com.github.jknack.handlebars.internal.antlr.Token), cast-from-var1997-to-var2853=([com.github.jknack.handlebars.internal.antlr.Token], java.lang.Object), stop/1874176084=([com.github.jknack.handlebars.internal.antlr.ParserRuleContext], com.github.jknack.handlebars.internal.antlr.Token), append/-1166366385=([java.lang.StringBuilder, char], java.lang.StringBuilder), toString/-2075883882=([java.lang.StringBuilder], java.lang.String)}
+; {var259=com.github.jknack.handlebars.internal.antlr.ParserRuleContext, var2731=r1, var3196=com.github.jknack.handlebars.internal.antlr.Parser, var3662=r0, var967=java.util.List, var1690=com.github.jknack.handlebars.internal.antlr.RuleContext, var739=r2, var2083=java.util.Collections, var2818=$r3, var501=$r4, var2853=java.lang.Object, var2483=$r5, var2014=$r7, var1997=com.github.jknack.handlebars.internal.antlr.Token, var1271=$r6, var445=$r8, var3162=$r10, var2866=$r9, var780=$r11, var1814=$r12, var1143=$r13}
+; {com.github.jknack.handlebars.internal.antlr.ParserRuleContext=var259, r1=var2731, com.github.jknack.handlebars.internal.antlr.Parser=var3196, r0=var3662, java.util.List=var967, com.github.jknack.handlebars.internal.antlr.RuleContext=var1690, r2=var739, java.util.Collections=var2083, $r3=var2818, $r4=var501, java.lang.Object=var2853, $r5=var2483, $r7=var2014, com.github.jknack.handlebars.internal.antlr.Token=var1997, $r6=var1271, $r8=var445, $r10=var3162, $r9=var2866, $r11=var780, $r12=var1814, $r13=var1143}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(char)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 3,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 3,"<java.lang.StringBuilder: java.lang.StringBuilder append(char)>": 1,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r1 := @this: com.github.jknack.handlebars.internal.antlr.ParserRuleContext;	r0 := @parameter0: com.github.jknack.handlebars.internal.antlr.Parser;	r2 = virtualinvoke r0.<com.github.jknack.handlebars.internal.antlr.Parser: java.util.List getRuleInvocationStack(com.github.jknack.handlebars.internal.antlr.RuleContext)>(r1);	staticinvoke <java.util.Collections: void reverse(java.util.List)>(r2);	$r3 = new java.lang.StringBuilder;	specialinvoke $r3.<java.lang.StringBuilder: void <init>()>();	$r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("ParserRuleContext");	$r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>(r2);	$r7 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("{start=");	$r6 = r1.<com.github.jknack.handlebars.internal.antlr.ParserRuleContext: com.github.jknack.handlebars.internal.antlr.Token start>;	$r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r6);	$r10 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", stop=");	$r9 = r1.<com.github.jknack.handlebars.internal.antlr.ParserRuleContext: com.github.jknack.handlebars.internal.antlr.Token stop>;	$r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r9);	$r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(125);	$r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>();	return $r13
+;block_num 1

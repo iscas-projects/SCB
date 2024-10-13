@@ -1,0 +1,65 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var2660 0)
+(declare-sort var3412 0)
+(declare-sort var653 0)
+(declare-sort var977 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(declare-fun getClass/1258963082 (var3412) ClassObject)
+(declare-fun cast-from-var2660-to-var3412 (var2660) var3412)
+(declare-fun getName/-1958580599 (ClassObject) String)
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun append/-1166366385 (String Int) String)
+(declare-fun getPersister/561804582 (var2660) var653)
+(declare-fun var977_getEntityName/-1914780628 (var977) String)
+(declare-fun cast-from-var653-to-var977 (var653) var977)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-const null-var2660 var2660)
+(declare-const var568 var2660) ; Statement: r1 := @this: org.hibernate.loader.AbstractEntityJoinWalker 
+(assert (not (= var568 null-var2660)))
+(define-const var1473 String String-init) ; Statement: $r0 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var1473)) ; Statement: specialinvoke $r0.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var1473!1 String)
+(assert (= var1473!1 ""))
+(assert true)
+(define-const var483 ClassObject (getClass/1258963082 (cast-from-var2660-to-var3412 var568))) ; Statement: $r2 = virtualinvoke r1.<java.lang.Object: java.lang.Class getClass()>() 
+(assert true)
+(define-const var1151 String (getName/-1958580599 var483)) ; Statement: $r3 = virtualinvoke $r2.<java.lang.Class: java.lang.String getName()>() 
+(assert true)
+(define-const var2747 String (append/672562846 var1473!1 var1151)) ; Statement: $r4 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3) 
+(declare-const var1473!2 String)
+(assert (= var1473!2 (str.++ var1473!1 var1151)))
+(assert true)
+(define-const var1550 String (append/-1166366385 var2747 40)) ; Statement: $r7 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(40) 
+(declare-const var2747!1 String)
+(assert (str.prefixof var2747 var2747!1))
+(assert true)
+(define-const var818 var653 (getPersister/561804582 var568)) ; Statement: $r5 = virtualinvoke r1.<org.hibernate.loader.AbstractEntityJoinWalker: org.hibernate.persister.entity.Loadable getPersister()>() 
+(define-const var1137 String (var977_getEntityName/-1914780628 (cast-from-var653-to-var977 var818))) ; Statement: $r6 = interfaceinvoke $r5.<org.hibernate.persister.entity.Loadable: java.lang.String getEntityName()>() 
+(assert true)
+(define-const var723 String (append/672562846 var1550 var1137)) ; Statement: $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6) 
+(declare-const var1550!1 String)
+(assert (= var1550!1 (str.++ var1550 var1137)))
+(assert true)
+(define-const var2492 String (append/-1166366385 var723 41)) ; Statement: $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(41) 
+(declare-const var723!1 String)
+(assert (str.prefixof var723 var723!1))
+(assert true)
+(define-const var2485 String (toString/-2075883882 var2492)) ; Statement: $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>() 
+ ; Statement: return $r10 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), getClass/1258963082=([java.lang.Object], java.lang.Class), cast-from-var2660-to-var3412=([org.hibernate.loader.AbstractEntityJoinWalker], java.lang.Object), getName/-1958580599=([java.lang.Class], java.lang.String), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), append/-1166366385=([java.lang.StringBuilder, char], java.lang.StringBuilder), getPersister/561804582=([org.hibernate.loader.AbstractEntityJoinWalker], org.hibernate.persister.entity.Loadable), var977_getEntityName/-1914780628=([org.hibernate.persister.entity.EntityPersister], java.lang.String), cast-from-var653-to-var977=([org.hibernate.persister.entity.Loadable], org.hibernate.persister.entity.EntityPersister), toString/-2075883882=([java.lang.StringBuilder], java.lang.String)}
+; {var2660=org.hibernate.loader.AbstractEntityJoinWalker, var568=r1, var1473=$r0, var3412=java.lang.Object, var483=$r2, var1151=$r3, var2747=$r4, var1550=$r7, var653=org.hibernate.persister.entity.Loadable, var818=$r5, var977=org.hibernate.persister.entity.EntityPersister, var1137=$r6, var723=$r8, var2492=$r9, var2485=$r10}
+; {org.hibernate.loader.AbstractEntityJoinWalker=var2660, r1=var568, $r0=var1473, java.lang.Object=var3412, $r2=var483, $r3=var1151, $r4=var2747, $r7=var1550, org.hibernate.persister.entity.Loadable=var653, $r5=var818, org.hibernate.persister.entity.EntityPersister=var977, $r6=var1137, $r8=var723, $r9=var2492, $r10=var2485}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(char)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(char)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 2,"<java.lang.StringBuilder: java.lang.StringBuilder append(char)>": 2,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r1 := @this: org.hibernate.loader.AbstractEntityJoinWalker;	$r0 = new java.lang.StringBuilder;	specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();	$r2 = virtualinvoke r1.<java.lang.Object: java.lang.Class getClass()>();	$r3 = virtualinvoke $r2.<java.lang.Class: java.lang.String getName()>();	$r4 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);	$r7 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(40);	$r5 = virtualinvoke r1.<org.hibernate.loader.AbstractEntityJoinWalker: org.hibernate.persister.entity.Loadable getPersister()>();	$r6 = interfaceinvoke $r5.<org.hibernate.persister.entity.Loadable: java.lang.String getEntityName()>();	$r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);	$r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(41);	$r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();	return $r10
+;block_num 1

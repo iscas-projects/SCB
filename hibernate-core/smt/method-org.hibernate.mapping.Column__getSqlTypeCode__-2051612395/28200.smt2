@@ -1,0 +1,101 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var2130 0)
+(declare-sort var225 0)
+(declare-sort var1157 0)
+(declare-sort var1295 0)
+(declare-sort var3246 0)
+(declare-sort var1133 0)
+(declare-sort var2946 0)
+(declare-sort var3901 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun getValue/1519110415 (var2130) var1157)
+(declare-fun var1157_getType/951709402 (var1157) var1295)
+(declare-fun var1133-init () var1133)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun name/568060284 (var2130) String)
+(declare-fun getClass/1258963082 (var2946) ClassObject)
+(declare-fun cast-from-var1295-to-var2946 (var1295) var2946)
+(declare-fun getName/-1958580599 (ClassObject) String)
+(declare-fun cast-from-var3246-to-var2946 (var3246) var2946)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun <init>/796187277 (var1133 String var3901) void)
+(declare-fun cast-from-var3246-to-var3901 (var3246) var3901)
+(declare-fun cast-from-var1133-to-var3901 (var1133) var3901)
+(declare-const null-var2130 var2130)
+(declare-const null-var225 var225)
+(declare-const null-var3246 var3246)
+(declare-const var985 var2130) ; Statement: r0 := @this: org.hibernate.mapping.Column 
+(assert (not (= var985 null-var2130)))
+(declare-const var3673 var225) ; Statement: r3 := @parameter0: org.hibernate.engine.spi.Mapping 
+(assert (not (= var3673 null-var225)))
+(assert true)
+(define-const var2871 var1157 (getValue/1519110415 var985)) ; Statement: $r1 = virtualinvoke r0.<org.hibernate.mapping.Column: org.hibernate.mapping.Value getValue()>() 
+(define-const var2320 var1295 (var1157_getType/951709402 var2871)) ; Statement: r2 = interfaceinvoke $r1.<org.hibernate.mapping.Value: org.hibernate.type.Type getType()>() 
+(assert true) ; Handling Exception: java.lang.Throwable 
+(declare-const var1182 var3246) ; Statement: $r15 := @caughtexception 
+(assert (not (= var1182 null-var3246)))
+(define-const var1553 var1133 var1133-init) ; Statement: $r33 = new org.hibernate.MappingException 
+(define-const var3424 String String-init) ; Statement: $r32 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var3424)) ; Statement: specialinvoke $r32.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var3424!1 String)
+(assert (= var3424!1 ""))
+(assert true)
+(define-const var3548 String (append/672562846 var3424!1 "Could not determine type for column ")) ; Statement: $r19 = virtualinvoke $r32.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Could not determine type for column ") 
+(declare-const var3424!2 String)
+(assert (= var3424!2 (str.++ var3424!1 "Could not determine type for column ")))
+(define-const var2044 String (name/568060284 var985)) ; Statement: $r18 = r0.<org.hibernate.mapping.Column: java.lang.String name> 
+(assert true)
+(define-const var1668 String (append/672562846 var3548 var2044)) ; Statement: $r20 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r18) 
+(declare-const var3548!1 String)
+(assert (= var3548!1 (str.++ var3548 var2044)))
+(assert true)
+(define-const var245 String (append/672562846 var1668 " of type ")) ; Statement: $r23 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" of type ") 
+(declare-const var1668!1 String)
+(assert (= var1668!1 (str.++ var1668 " of type ")))
+(assert true)
+(define-const var3908 ClassObject (getClass/1258963082 (cast-from-var1295-to-var2946 var2320))) ; Statement: $r21 = virtualinvoke r2.<java.lang.Object: java.lang.Class getClass()>() 
+(assert true)
+(define-const var1578 String (getName/-1958580599 var3908)) ; Statement: $r22 = virtualinvoke $r21.<java.lang.Class: java.lang.String getName()>() 
+(assert true)
+(define-const var3334 String (append/672562846 var245 var1578)) ; Statement: $r24 = virtualinvoke $r23.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r22) 
+(declare-const var245!1 String)
+(assert (= var245!1 (str.++ var245 var1578)))
+(assert true)
+(define-const var1375 String (append/672562846 var3334 ": ")) ; Statement: $r27 = virtualinvoke $r24.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(": ") 
+(declare-const var3334!1 String)
+(assert (= var3334!1 (str.++ var3334 ": ")))
+(assert true)
+(define-const var2113 ClassObject (getClass/1258963082 (cast-from-var3246-to-var2946 var1182))) ; Statement: $r25 = virtualinvoke $r15.<java.lang.Object: java.lang.Class getClass()>() 
+(assert true)
+(define-const var1853 String (getName/-1958580599 var2113)) ; Statement: $r26 = virtualinvoke $r25.<java.lang.Class: java.lang.String getName()>() 
+(assert true)
+(define-const var85 String (append/672562846 var1375 var1853)) ; Statement: $r28 = virtualinvoke $r27.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r26) 
+(declare-const var1375!1 String)
+(assert (= var1375!1 (str.++ var1375 var1853)))
+(assert true)
+(define-const var317 String (toString/-2075883882 var85)) ; Statement: $r29 = virtualinvoke $r28.<java.lang.StringBuilder: java.lang.String toString()>() 
+(assert true)
+;(assert (<init>/796187277 var1553 var317 (cast-from-var3246-to-var3901 var1182))) ; Statement: specialinvoke $r33.<org.hibernate.MappingException: void <init>(java.lang.String,java.lang.Throwable)>($r29, $r15) 
+
+(declare-const var1553!1 var1133)
+(declare-const var317!1 String)
+(declare-const var1182!1 var3246)
+(define-const var3278 var3901 (cast-from-var1133-to-var3901 var1553!1)) ; Statement: $r35 = (java.lang.Throwable) $r33 
+ ; Statement: throw $r35 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {getValue/1519110415=([org.hibernate.mapping.Column], org.hibernate.mapping.Value), var1157_getType/951709402=([org.hibernate.mapping.Value], org.hibernate.type.Type), var1133-init=([], org.hibernate.MappingException), String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), name/568060284=([org.hibernate.mapping.Column], java.lang.String), getClass/1258963082=([java.lang.Object], java.lang.Class), cast-from-var1295-to-var2946=([org.hibernate.type.Type], java.lang.Object), getName/-1958580599=([java.lang.Class], java.lang.String), cast-from-var3246-to-var2946=([java.lang.Exception], java.lang.Object), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), <init>/796187277=([org.hibernate.MappingException, java.lang.String, java.lang.Throwable], void), cast-from-var3246-to-var3901=([java.lang.Exception], java.lang.Throwable), cast-from-var1133-to-var3901=([org.hibernate.MappingException], java.lang.Throwable)}
+; {var2130=org.hibernate.mapping.Column, var985=r0, var225=org.hibernate.engine.spi.Mapping, var3673=r3, var1157=org.hibernate.mapping.Value, var2871=$r1, var1295=org.hibernate.type.Type, var2320=r2, var3246=java.lang.Exception, var1182=$r15, var1133=org.hibernate.MappingException, var1553=$r33, var3424=$r32, var3548=$r19, var2044=$r18, var1668=$r20, var245=$r23, var2946=java.lang.Object, var3908=$r21, var1578=$r22, var3334=$r24, var1375=$r27, var2113=$r25, var1853=$r26, var85=$r28, var317=$r29, var3901=java.lang.Throwable, var3278=$r35}
+; {org.hibernate.mapping.Column=var2130, r0=var985, org.hibernate.engine.spi.Mapping=var225, r3=var3673, org.hibernate.mapping.Value=var1157, $r1=var2871, org.hibernate.type.Type=var1295, r2=var2320, java.lang.Exception=var3246, $r15=var1182, org.hibernate.MappingException=var1133, $r33=var1553, $r32=var3424, $r19=var3548, $r18=var2044, $r20=var1668, $r23=var245, java.lang.Object=var2946, $r21=var3908, $r22=var1578, $r24=var3334, $r27=var1375, $r25=var2113, $r26=var1853, $r28=var85, $r29=var317, java.lang.Throwable=var3901, $r35=var3278}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 6,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r0 := @this: org.hibernate.mapping.Column;	r3 := @parameter0: org.hibernate.engine.spi.Mapping;	$r1 = virtualinvoke r0.<org.hibernate.mapping.Column: org.hibernate.mapping.Value getValue()>();	r2 = interfaceinvoke $r1.<org.hibernate.mapping.Value: org.hibernate.type.Type getType()>();	$r15 := @caughtexception;	$r33 = new org.hibernate.MappingException;	$r32 = new java.lang.StringBuilder;	specialinvoke $r32.<java.lang.StringBuilder: void <init>()>();	$r19 = virtualinvoke $r32.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Could not determine type for column ");	$r18 = r0.<org.hibernate.mapping.Column: java.lang.String name>;	$r20 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r18);	$r23 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" of type ");	$r21 = virtualinvoke r2.<java.lang.Object: java.lang.Class getClass()>();	$r22 = virtualinvoke $r21.<java.lang.Class: java.lang.String getName()>();	$r24 = virtualinvoke $r23.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r22);	$r27 = virtualinvoke $r24.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(": ");	$r25 = virtualinvoke $r15.<java.lang.Object: java.lang.Class getClass()>();	$r26 = virtualinvoke $r25.<java.lang.Class: java.lang.String getName()>();	$r28 = virtualinvoke $r27.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r26);	$r29 = virtualinvoke $r28.<java.lang.StringBuilder: java.lang.String toString()>();	specialinvoke $r33.<org.hibernate.MappingException: void <init>(java.lang.String,java.lang.Throwable)>($r29, $r15);	$r35 = (java.lang.Throwable) $r33;	throw $r35
+;block_num 2

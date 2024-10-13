@@ -1,0 +1,88 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var2555 0)
+(declare-sort var72 0)
+(declare-sort var649 0)
+(declare-sort var3228 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun toStringExtraProperties/1011589088 (var2555) String)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(declare-fun getName/-959053322 (var2555) String)
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun getMimeType/937683475 (var2555) String)
+(declare-fun var72_jQuote/1315253176 (String) String)
+(declare-fun var649_getShortClassNameOfObject/16194974 (var3228 Bool) String)
+(declare-fun cast-from-var2555-to-var3228 (var2555) var3228)
+(define-fun length/-134980193 ((s String)) Int (str.len s))
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-const null-var2555 var2555)
+(declare-const var819 var2555) ; Statement: r0 := @this: freemarker.core.OutputFormat 
+(assert (not (= var819 null-var2555)))
+(assert true)
+(define-const var3471 String (toStringExtraProperties/1011589088 var819)) ; Statement: r1 = virtualinvoke r0.<freemarker.core.OutputFormat: java.lang.String toStringExtraProperties()>() 
+(define-const var417 String String-init) ; Statement: $r2 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var417)) ; Statement: specialinvoke $r2.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var417!1 String)
+(assert (= var417!1 ""))
+(assert true)
+(define-const var169 String (getName/-959053322 var819)) ; Statement: $r3 = virtualinvoke r0.<freemarker.core.OutputFormat: java.lang.String getName()>() 
+(assert true)
+(define-const var3775 String (append/672562846 var417!1 var169)) ; Statement: $r4 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3) 
+(declare-const var417!2 String)
+(assert (= var417!2 (str.++ var417!1 var169)))
+(assert true)
+(define-const var2121 String (append/672562846 var3775 "(mimeType=")) ; Statement: $r7 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("(mimeType=") 
+(declare-const var3775!1 String)
+(assert (= var3775!1 (str.++ var3775 "(mimeType=")))
+(assert true)
+(define-const var1496 String (getMimeType/937683475 var819)) ; Statement: $r5 = virtualinvoke r0.<freemarker.core.OutputFormat: java.lang.String getMimeType()>() 
+(define-const var3591 String (var72_jQuote/1315253176 var1496)) ; Statement: $r6 = staticinvoke <freemarker.template.utility.StringUtil: java.lang.String jQuote(java.lang.String)>($r5) 
+(assert true)
+(define-const var897 String (append/672562846 var2121 var3591)) ; Statement: $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6) 
+(declare-const var2121!1 String)
+(assert (= var2121!1 (str.++ var2121 var3591)))
+(assert true)
+(define-const var1707 String (append/672562846 var897 ", class=")) ; Statement: $r10 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", class=") 
+(declare-const var897!1 String)
+(assert (= var897!1 (str.++ var897 ", class=")))
+(define-const var3248 String (var649_getShortClassNameOfObject/16194974 (cast-from-var2555-to-var3228 var819) (ite (= 1 1) true false))) ; Statement: $r9 = staticinvoke <freemarker.template.utility.ClassUtil: java.lang.String getShortClassNameOfObject(java.lang.Object,boolean)>(r0, 1) 
+(assert true)
+(define-const var107 String (append/672562846 var1707 var3248)) ; Statement: $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9) 
+(declare-const var1707!1 String)
+(assert (= var1707!1 (str.++ var1707 var3248)))
+(assert true)
+(define-const var2902 Int (length/-134980193 var3471)) ; Statement: $i0 = virtualinvoke r1.<java.lang.String: int length()>() 
+ ; Statement: if $i0 == 0 goto $r16 = "" 
+(assert (= var2902 0)) ; Cond: $i0 == 0 
+(define-const var2814 String "") ; Statement: $r16 = "" 
+(assert true) ; Non Conditional
+(assert true)
+(define-const var465 String (append/672562846 var107 var2814)) ; Statement: $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r16) 
+(declare-const var107!1 String)
+(assert (= var107!1 (str.++ var107 var2814)))
+(assert true)
+(define-const var1640 String (append/672562846 var465 var3471)) ; Statement: $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1) 
+(declare-const var465!1 String)
+(assert (= var465!1 (str.++ var465 var3471)))
+(assert true)
+(define-const var3385 String (append/672562846 var1640 ")")) ; Statement: $r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(")") 
+(declare-const var1640!1 String)
+(assert (= var1640!1 (str.++ var1640 ")")))
+(assert true)
+(define-const var2230 String (toString/-2075883882 var3385)) ; Statement: $r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>() 
+ ; Statement: return $r15 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {toStringExtraProperties/1011589088=([freemarker.core.OutputFormat], java.lang.String), String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), getName/-959053322=([freemarker.core.OutputFormat], java.lang.String), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), getMimeType/937683475=([freemarker.core.OutputFormat], java.lang.String), var72_jQuote/1315253176=([java.lang.String], java.lang.String), var649_getShortClassNameOfObject/16194974=([java.lang.Object, boolean], java.lang.String), cast-from-var2555-to-var3228=([freemarker.core.OutputFormat], java.lang.Object), length/-134980193=([java.lang.String], int), toString/-2075883882=([java.lang.StringBuilder], java.lang.String)}
+; {var2555=freemarker.core.OutputFormat, var819=r0, var3471=r1, var417=$r2, var169=$r3, var3775=$r4, var2121=$r7, var1496=$r5, var72=freemarker.template.utility.StringUtil, var3591=$r6, var897=$r8, var1707=$r10, var649=freemarker.template.utility.ClassUtil, var3228=java.lang.Object, var3248=$r9, var107=$r11, var2902=$i0, var2814=$r16, var465=$r12, var1640=$r13, var3385=$r14, var2230=$r15}
+; {freemarker.core.OutputFormat=var2555, r0=var819, r1=var3471, $r2=var417, $r3=var169, $r4=var3775, $r7=var2121, $r5=var1496, freemarker.template.utility.StringUtil=var72, $r6=var3591, $r8=var897, $r10=var1707, freemarker.template.utility.ClassUtil=var649, java.lang.Object=var3228, $r9=var3248, $r11=var107, $i0=var2902, $r16=var2814, $r12=var465, $r13=var1640, $r14=var3385, $r15=var2230}
+;seq <freemarker.core.OutputFormat: java.lang.String toStringExtraProperties()>;	<java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.String: int length()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 8,"<java.lang.String: int length()>": 1,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r0 := @this: freemarker.core.OutputFormat;	r1 = virtualinvoke r0.<freemarker.core.OutputFormat: java.lang.String toStringExtraProperties()>();	$r2 = new java.lang.StringBuilder;	specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();	$r3 = virtualinvoke r0.<freemarker.core.OutputFormat: java.lang.String getName()>();	$r4 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);	$r7 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("(mimeType=");	$r5 = virtualinvoke r0.<freemarker.core.OutputFormat: java.lang.String getMimeType()>();	$r6 = staticinvoke <freemarker.template.utility.StringUtil: java.lang.String jQuote(java.lang.String)>($r5);	$r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);	$r10 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", class=");	$r9 = staticinvoke <freemarker.template.utility.ClassUtil: java.lang.String getShortClassNameOfObject(java.lang.Object,boolean)>(r0, 1);	$r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);	$i0 = virtualinvoke r1.<java.lang.String: int length()>();	if $i0 == 0 goto $r16 = "";	$r16 = "";	$r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r16);	$r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1);	$r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(")");	$r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>();	return $r15
+;block_num 3

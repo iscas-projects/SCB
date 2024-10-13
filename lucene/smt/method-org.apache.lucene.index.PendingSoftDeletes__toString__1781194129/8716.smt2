@@ -1,0 +1,91 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var2270 0)
+(declare-sort var2868 0)
+(declare-sort var2788 0)
+(declare-sort var1585 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun info/890683843 (var2788) var2868)
+(declare-fun cast-from-var2270-to-var2788 (var2270) var2788)
+(declare-fun append/-1031950772 (String var1585) String)
+(declare-fun cast-from-var2868-to-var1585 (var2868) var1585)
+(declare-fun pendingDeleteCount/890683843 (var2788) Int)
+(define-fun append/-1001720160 ((s String) (tail Int)) String (str.++ s (str.from_int tail)))
+(declare-fun field/1510472889 (var2270) String)
+(declare-fun dvGeneration/1510472889 (var2270) Int)
+(declare-fun append/-901862667 (String Int) String)
+(declare-fun hardDeletes/1510472889 (var2270) var2788)
+(declare-fun cast-from-var2788-to-var1585 (var2788) var1585)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-const null-var2270 var2270)
+(declare-const var2843 var2270) ; Statement: r1 := @this: org.apache.lucene.index.PendingSoftDeletes 
+(assert (not (= var2843 null-var2270)))
+(define-const var93 String String-init) ; Statement: $r0 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var93)) ; Statement: specialinvoke $r0.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var93!1 String)
+(assert (= var93!1 ""))
+(assert true)
+(define-const var3803 String (append/672562846 var93!1 "PendingSoftDeletes(seg=")) ; Statement: $r3 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("PendingSoftDeletes(seg=") 
+(declare-const var93!2 String)
+(assert (= var93!2 (str.++ var93!1 "PendingSoftDeletes(seg=")))
+(define-const var1435 var2868 (info/890683843 (cast-from-var2270-to-var2788 var2843))) ; Statement: $r2 = r1.<org.apache.lucene.index.PendingSoftDeletes: org.apache.lucene.index.SegmentCommitInfo info> 
+(assert true)
+;(assert (append/-1031950772 var3803 (cast-from-var2868-to-var1585 var1435))) ; Statement: virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r2) 
+(declare-const var3803!1 String)
+(assert (str.prefixof var3803 var3803!1))
+(assert true)
+(define-const var3573 String (append/672562846 var93!2 " numPendingDeletes=")) ; Statement: $r4 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" numPendingDeletes=") 
+(declare-const var93!3 String)
+(assert (= var93!3 (str.++ var93!2 " numPendingDeletes=")))
+(define-const var2225 Int (pendingDeleteCount/890683843 (cast-from-var2270-to-var2788 var2843))) ; Statement: $i0 = r1.<org.apache.lucene.index.PendingSoftDeletes: int pendingDeleteCount> 
+(assert true)
+;(assert (append/-1001720160 var3573 var2225)) ; Statement: virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0) 
+(declare-const var3573!1 String)
+(assert (str.prefixof var3573 var3573!1))
+(assert true)
+(define-const var3441 String (append/672562846 var93!3 " field=")) ; Statement: $r6 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" field=") 
+(declare-const var93!4 String)
+(assert (= var93!4 (str.++ var93!3 " field=")))
+(define-const var3535 String (field/1510472889 var2843)) ; Statement: $r5 = r1.<org.apache.lucene.index.PendingSoftDeletes: java.lang.String field> 
+(assert true)
+;(assert (append/672562846 var3441 var3535)) ; Statement: virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5) 
+(declare-const var3441!1 String)
+(assert (= var3441!1 (str.++ var3441 var3535)))
+(assert true)
+(define-const var1800 String (append/672562846 var93!4 " dvGeneration=")) ; Statement: $r7 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" dvGeneration=") 
+(declare-const var93!5 String)
+(assert (= var93!5 (str.++ var93!4 " dvGeneration=")))
+(define-const var1554 Int (dvGeneration/1510472889 var2843)) ; Statement: $l1 = r1.<org.apache.lucene.index.PendingSoftDeletes: long dvGeneration> 
+(assert true)
+;(assert (append/-901862667 var1800 var1554)) ; Statement: virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l1) 
+(declare-const var1800!1 String)
+(assert (str.prefixof var1800 var1800!1))
+(assert true)
+(define-const var1922 String (append/672562846 var93!5 " hardDeletes=")) ; Statement: $r9 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" hardDeletes=") 
+(declare-const var93!6 String)
+(assert (= var93!6 (str.++ var93!5 " hardDeletes=")))
+(define-const var3310 var2788 (hardDeletes/1510472889 var2843)) ; Statement: $r8 = r1.<org.apache.lucene.index.PendingSoftDeletes: org.apache.lucene.index.PendingDeletes hardDeletes> 
+(assert true)
+;(assert (append/-1031950772 var1922 (cast-from-var2788-to-var1585 var3310))) ; Statement: virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r8) 
+(declare-const var1922!1 String)
+(assert (str.prefixof var1922 var1922!1))
+(assert true)
+(define-const var26 String (toString/-2075883882 var93!6)) ; Statement: $r10 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.String toString()>() 
+ ; Statement: return $r10 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), info/890683843=([org.apache.lucene.index.PendingDeletes], org.apache.lucene.index.SegmentCommitInfo), cast-from-var2270-to-var2788=([org.apache.lucene.index.PendingSoftDeletes], org.apache.lucene.index.PendingDeletes), append/-1031950772=([java.lang.StringBuilder, java.lang.Object], java.lang.StringBuilder), cast-from-var2868-to-var1585=([org.apache.lucene.index.SegmentCommitInfo], java.lang.Object), pendingDeleteCount/890683843=([org.apache.lucene.index.PendingDeletes], int), append/-1001720160=([java.lang.StringBuilder, int], java.lang.StringBuilder), field/1510472889=([org.apache.lucene.index.PendingSoftDeletes], java.lang.String), dvGeneration/1510472889=([org.apache.lucene.index.PendingSoftDeletes], long), append/-901862667=([java.lang.StringBuilder, long], java.lang.StringBuilder), hardDeletes/1510472889=([org.apache.lucene.index.PendingSoftDeletes], org.apache.lucene.index.PendingDeletes), cast-from-var2788-to-var1585=([org.apache.lucene.index.PendingDeletes], java.lang.Object), toString/-2075883882=([java.lang.StringBuilder], java.lang.String)}
+; {var2270=org.apache.lucene.index.PendingSoftDeletes, var2843=r1, var93=$r0, var3803=$r3, var2868=org.apache.lucene.index.SegmentCommitInfo, var2788=org.apache.lucene.index.PendingDeletes, var1435=$r2, var1585=java.lang.Object, var3573=$r4, var2225=$i0, var3441=$r6, var3535=$r5, var1800=$r7, var1554=$l1, var1922=$r9, var3310=$r8, var26=$r10}
+; {org.apache.lucene.index.PendingSoftDeletes=var2270, r1=var2843, $r0=var93, $r3=var3803, org.apache.lucene.index.SegmentCommitInfo=var2868, org.apache.lucene.index.PendingDeletes=var2788, $r2=var1435, java.lang.Object=var1585, $r4=var3573, $i0=var2225, $r6=var3441, $r5=var3535, $r7=var1800, $l1=var1554, $r9=var1922, $r8=var3310, $r10=var26}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(long)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 6,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 2,"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(long)>": 1,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r1 := @this: org.apache.lucene.index.PendingSoftDeletes;	$r0 = new java.lang.StringBuilder;	specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();	$r3 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("PendingSoftDeletes(seg=");	$r2 = r1.<org.apache.lucene.index.PendingSoftDeletes: org.apache.lucene.index.SegmentCommitInfo info>;	virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r2);	$r4 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" numPendingDeletes=");	$i0 = r1.<org.apache.lucene.index.PendingSoftDeletes: int pendingDeleteCount>;	virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);	$r6 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" field=");	$r5 = r1.<org.apache.lucene.index.PendingSoftDeletes: java.lang.String field>;	virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);	$r7 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" dvGeneration=");	$l1 = r1.<org.apache.lucene.index.PendingSoftDeletes: long dvGeneration>;	virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l1);	$r9 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" hardDeletes=");	$r8 = r1.<org.apache.lucene.index.PendingSoftDeletes: org.apache.lucene.index.PendingDeletes hardDeletes>;	virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r8);	$r10 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.String toString()>();	return $r10
+;block_num 1

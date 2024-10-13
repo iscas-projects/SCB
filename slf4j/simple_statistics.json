@@ -1,0 +1,1442 @@
+[
+    {
+        "filename": "smt\\method-org.slf4j.helpers.MessageFormatter__doubleArrayAppend__72646957\\460.smt2",
+        "z3": {
+            "memory": 32231424,
+            "run_time": 0.1346132755279541,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  (define-fun var2593 () Int\r\n    0)\r\n  (define-fun var2276!2 () String\r\n    \"\")\r\n  (define-fun var3523 () (Array Int Float64)\r\n    ((as const (Array Int Float64)) (fp #b0 #b00001000000 #x0000000000001)))\r\n  (define-fun var2276!1 () String\r\n    \"\")\r\n  (define-fun var2452 () Int\r\n    (getLength-Arr-Float64-1 var3523))\r\n  (define-fun var2276 () String\r\n    \"\")\r\n  (define-fun null-String () String\r\n    \"A\")\r\n  (define-fun null-__Array__Int__Float64__ () (Array Int Float64)\r\n    ((as const (Array Int Float64)) (fp #b1 #b00000000000 #x0000000000002)))\r\n  (define-fun getLength-Arr-Float64-1 ((x!0 (Array Int Float64))) Int\r\n    0)\r\n  (define-fun append/-1166366385 ((x!0 String) (x!1 Int)) String\r\n    \"\")\r\n)\r\n(error \"line 31 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 15736832,
+            "run_time": 0.07741689682006836,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun append/-1166366385 ((BOUND_VARIABLE_7133 String) (BOUND_VARIABLE_7134 Int)) String \"\")\r\n(define-fun getLength-Arr-Float64-1 ((_arg_1 (Array Int (_ FloatingPoint 11 53)))) Int 0)\r\n(define-fun null-String () String \"A\")\r\n(define-fun null-__Array__Int__Float64__ () (Array Int (_ FloatingPoint 11 53)) (store ((as const (Array Int (_ FloatingPoint 11 53))) (fp #b1 #b00000000000 #b0000000000000000000000000000000000000000000000000000)) 0 (fp #b1 #b11111111111 #b0000000000000000000000000000000000000000000000000000)))\r\n(define-fun var2276 () String \"\")\r\n(define-fun var3523 () (Array Int (_ FloatingPoint 11 53)) (store ((as const (Array Int (_ FloatingPoint 11 53))) (fp #b0 #b00000000000 #b0000000000000000000000000000000000000000000000000000)) 0 (fp #b0 #b11111111111 #b0000000000000000000000000000000000000000000000000000)))\r\n(define-fun var2276!1 () String \"\")\r\n(define-fun var2276!2 () String \"\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 39137280,
+            "run_time": 0.19938182830810547,
+            "is_sat": "unknown",
+            "stdout": "unknown\n(error \"line 30 column 10: model is not available, did you forget to enable model generation with ''model=true'?\")\n(error \"line 31 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 124227584,
+            "run_time": 1.931274652481079,
+            "is_sat": "error",
+            "stdout": "error\r\n",
+            "stderr": "Loading C:\\Users\\yyzha\\Desktop\\jars\\dataset_w\\slf4j\\smt\\method-org.slf4j.helpers.MessageFormatter__doubleArrayAppend__72646957\\460.smt2 ...\r\n\r\nLoading OSTRICH 1.3.5, a solver for string constraints\r\n(c) Matthew Hague, Denghang Hu, Philipp Rmmer, 2018-2024\r\nWith contributions by Riccardo De Masellis, Zhilei Han, Oliver Markgraf.\r\nFor more information, see https://github.com/uuverifiers/ostrich\r\n\r\n\r\n1310ms\r\nSort Float64 not declared\r\n"
+        },
+        "undefined_function_count": 2,
+        "assertion_count": 8,
+        "api_sequence": [
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>": 2
+        },
+        "jimple_statements": [
+            "r0 := @parameter0: java.lang.StringBuilder",
+            "r1 := @parameter1: double[]",
+            "virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(91)",
+            "i0 = lengthof r1",
+            "i2 = 0",
+            "if i2 >= i0 goto virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(93)",
+            "virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(93)",
+            "return"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.helpers.MessageFormatter__floatArrayAppend__-801575147\\444.smt2",
+        "z3": {
+            "memory": 31850496,
+            "run_time": 0.16694116592407227,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  (define-fun var3177 () Int\r\n    0)\r\n  (define-fun null-__Array__Int__Float32__ () (Array Int Float32)\r\n    ((as const (Array Int Float32)) (fp #b1 #x01 #b10000000000000000000000)))\r\n  (define-fun var1581!2 () String\r\n    \"\")\r\n  (define-fun var1926 () Int\r\n    (getLength-Arr-Float32-1 var3010))\r\n  (define-fun null-String () String\r\n    \"A\")\r\n  (define-fun var3010 () (Array Int Float32)\r\n    ((as const (Array Int Float32)) (fp #b0 #x00 #b00000000000000000000001)))\r\n  (define-fun var1581!1 () String\r\n    \"\")\r\n  (define-fun var1581 () String\r\n    \"\")\r\n  (define-fun getLength-Arr-Float32-1 ((x!0 (Array Int Float32))) Int\r\n    0)\r\n  (define-fun append/-1166366385 ((x!0 String) (x!1 Int)) String\r\n    \"\")\r\n)\r\n(error \"line 31 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 13590528,
+            "run_time": 0.04518580436706543,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun append/-1166366385 ((BOUND_VARIABLE_4511 String) (BOUND_VARIABLE_4512 Int)) String \"\")\r\n(define-fun getLength-Arr-Float32-1 ((_arg_1 (Array Int (_ FloatingPoint 8 24)))) Int 0)\r\n(define-fun null-String () String \"A\")\r\n(define-fun null-__Array__Int__Float32__ () (Array Int (_ FloatingPoint 8 24)) (store ((as const (Array Int (_ FloatingPoint 8 24))) (fp #b1 #b00000000 #b00000000000000000000000)) 0 (fp #b1 #b11111111 #b00000000000000000000000)))\r\n(define-fun var1581 () String \"\")\r\n(define-fun var3010 () (Array Int (_ FloatingPoint 8 24)) (store ((as const (Array Int (_ FloatingPoint 8 24))) (fp #b0 #b00000000 #b00000000000000000000000)) 0 (fp #b0 #b11111111 #b00000000000000000000000)))\r\n(define-fun var1581!1 () String \"\")\r\n(define-fun var1581!2 () String \"\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 38903808,
+            "run_time": 0.19998788833618164,
+            "is_sat": "unknown",
+            "stdout": "unknown\n(error \"line 30 column 10: model is not available, did you forget to enable model generation with ''model=true'?\")\n(error \"line 31 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 125272064,
+            "run_time": 2.2464113235473633,
+            "is_sat": "error",
+            "stdout": "error\r\n",
+            "stderr": "Loading C:\\Users\\yyzha\\Desktop\\jars\\dataset_w\\slf4j\\smt\\method-org.slf4j.helpers.MessageFormatter__floatArrayAppend__-801575147\\444.smt2 ...\r\n\r\nLoading OSTRICH 1.3.5, a solver for string constraints\r\n(c) Matthew Hague, Denghang Hu, Philipp Rmmer, 2018-2024\r\nWith contributions by Riccardo De Masellis, Zhilei Han, Oliver Markgraf.\r\nFor more information, see https://github.com/uuverifiers/ostrich\r\n\r\n\r\n1479ms\r\nSort Float32 not declared\r\n"
+        },
+        "undefined_function_count": 2,
+        "assertion_count": 8,
+        "api_sequence": [
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>": 2
+        },
+        "jimple_statements": [
+            "r0 := @parameter0: java.lang.StringBuilder",
+            "r1 := @parameter1: float[]",
+            "virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(91)",
+            "i0 = lengthof r1",
+            "i2 = 0",
+            "if i2 >= i0 goto virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(93)",
+            "virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(93)",
+            "return"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.helpers.MessageFormatter__deeplyAppendParameter__273370889\\198.smt2",
+        "z3": {
+            "memory": 29540352,
+            "run_time": 0.09044075012207031,
+            "is_sat": "unsat",
+            "stdout": "unsat\r\n(error \"line 27 column 10: model is not available\")\r\n()\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 2064384,
+            "run_time": 0.04614138603210449,
+            "is_sat": "unsat",
+            "stdout": "unsat\r\n(error \"Cannot get model unless after a SAT or UNKNOWN response.\")\r\n(\r\n)\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 32309248,
+            "run_time": 0.15563488006591797,
+            "is_sat": "unsat",
+            "stdout": "unsat\n(error \"line 27 column 10: model is not available, did you forget to enable model generation with ''model=true'?\")\n()\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 140914688,
+            "run_time": 2.4778687953948975,
+            "is_sat": "unsat",
+            "stdout": "unsat\r\n(error \"no model available\")\r\n()\r\n",
+            "stderr": ""
+        },
+        "undefined_function_count": 0,
+        "assertion_count": 6,
+        "api_sequence": [
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 1
+        },
+        "jimple_statements": [
+            "r2 := @parameter0: java.lang.StringBuilder",
+            "r0 := @parameter1: java.lang.Object",
+            "r3 := @parameter2: java.util.Map",
+            "if r0 != null goto $r1 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>()",
+            "virtualinvoke r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"null\")",
+            "return"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.helpers.BasicMarker__hashCode__1864525725\\222.smt2",
+        "z3": {
+            "memory": 29954048,
+            "run_time": 0.17034697532653809,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  ;; universe for var2137:\r\n  ;;   var2137!val!0 var2137!val!1 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var2137!val!0 () var2137)\r\n  (declare-fun var2137!val!1 () var2137)\r\n  ;; cardinality constraint:\r\n  (forall ((x var2137)) (or (= x var2137!val!0) (= x var2137!val!1)))\r\n  ;; -----------\r\n  (define-fun var1403 () Int\r\n    (hashCode/-467973558 (name/2135993258 var1336)))\r\n  (define-fun var3865 () String\r\n    (name/2135993258 var1336))\r\n  (define-fun null-var2137 () var2137\r\n    var2137!val!1)\r\n  (define-fun var1336 () var2137\r\n    var2137!val!0)\r\n  (define-fun name/2135993258 ((x!0 var2137)) String\r\n    \"\")\r\n  (define-fun hashCode/-467973558 ((x!0 String)) Int\r\n    0)\r\n)\r\n(error \"line 19 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 8744960,
+            "run_time": 0.04539775848388672,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var2137 is 2\r\n; rep: (as @var2137_0 var2137)\r\n; rep: (as @var2137_1 var2137)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun name/2135993258 ((BOUND_VARIABLE_417 var2137)) String \"\")\r\n(define-fun hashCode/-467973558 ((BOUND_VARIABLE_420 String)) Int 0)\r\n(define-fun null-var2137 () var2137 (as @var2137_0 var2137))\r\n(define-fun var1336 () var2137 (as @var2137_1 var2137))\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 33837056,
+            "run_time": 0.10903573036193848,
+            "is_sat": "sat",
+            "stdout": "sat\n(\n  ;; universe for var2137:\n  ;;   var2137!val!0 var2137!val!1 \n  ;; -----------\n  ;; definitions for universe elements:\n  (declare-fun var2137!val!0 () var2137)\n  (declare-fun var2137!val!1 () var2137)\n  ;; cardinality constraint:\n  (forall ((x var2137)) (or (= x var2137!val!0) (= x var2137!val!1)))\n  ;; -----------\n  (define-fun var1403 () Int\n    (hashCode/-467973558 (name/2135993258 var1336)))\n  (define-fun var3865 () String\n    (name/2135993258 var1336))\n  (define-fun null-var2137 () var2137\n    var2137!val!1)\n  (define-fun var1336 () var2137\n    var2137!val!0)\n  (define-fun name/2135993258 ((x!0 var2137)) String\n    \"\")\n  (define-fun hashCode/-467973558 ((x!0 String)) Int\n    0)\n)\n(error \"line 19 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 130662400,
+            "run_time": 2.7192914485931396,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(model\r\n  (define-fun var1336 () var2137 var2137!4)\r\n  (define-fun null-var2137 () var2137 var2137!2)\r\n)\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": ""
+        },
+        "undefined_function_count": 2,
+        "assertion_count": 2,
+        "api_sequence": [
+            "<java.lang.String: int hashCode()>"
+        ],
+        "api_count": {
+            "<java.lang.String: int hashCode()>": 1
+        },
+        "jimple_statements": [
+            "r0 := @this: org.slf4j.helpers.BasicMarker",
+            "$r1 = r0.<org.slf4j.helpers.BasicMarker: java.lang.String name>",
+            "$i0 = virtualinvoke $r1.<java.lang.String: int hashCode()>()",
+            "return $i0"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.helpers.SubstituteLogger__hashCode__244264871\\632.smt2",
+        "z3": {
+            "memory": 31027200,
+            "run_time": 0.1007993221282959,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  ;; universe for var1102:\r\n  ;;   var1102!val!0 var1102!val!1 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var1102!val!0 () var1102)\r\n  (declare-fun var1102!val!1 () var1102)\r\n  ;; cardinality constraint:\r\n  (forall ((x var1102)) (or (= x var1102!val!0) (= x var1102!val!1)))\r\n  ;; -----------\r\n  (define-fun null-var1102 () var1102\r\n    var1102!val!1)\r\n  (define-fun var2639 () var1102\r\n    var1102!val!0)\r\n  (define-fun var1377 () Int\r\n    (hashCode/-467973558 (name/-383701400 var2639)))\r\n  (define-fun var3994 () String\r\n    (name/-383701400 var2639))\r\n  (define-fun hashCode/-467973558 ((x!0 String)) Int\r\n    0)\r\n  (define-fun name/-383701400 ((x!0 var1102)) String\r\n    \"\")\r\n)\r\n(error \"line 19 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 9912320,
+            "run_time": 0.06133008003234863,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var1102 is 2\r\n; rep: (as @var1102_0 var1102)\r\n; rep: (as @var1102_1 var1102)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun name/-383701400 ((BOUND_VARIABLE_417 var1102)) String \"\")\r\n(define-fun hashCode/-467973558 ((BOUND_VARIABLE_420 String)) Int 0)\r\n(define-fun null-var1102 () var1102 (as @var1102_0 var1102))\r\n(define-fun var2639 () var1102 (as @var1102_1 var1102))\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 36397056,
+            "run_time": 0.12169814109802246,
+            "is_sat": "sat",
+            "stdout": "sat\n(\n  ;; universe for var1102:\n  ;;   var1102!val!0 var1102!val!1 \n  ;; -----------\n  ;; definitions for universe elements:\n  (declare-fun var1102!val!0 () var1102)\n  (declare-fun var1102!val!1 () var1102)\n  ;; cardinality constraint:\n  (forall ((x var1102)) (or (= x var1102!val!0) (= x var1102!val!1)))\n  ;; -----------\n  (define-fun null-var1102 () var1102\n    var1102!val!1)\n  (define-fun var2639 () var1102\n    var1102!val!0)\n  (define-fun var1377 () Int\n    (hashCode/-467973558 (name/-383701400 var2639)))\n  (define-fun var3994 () String\n    (name/-383701400 var2639))\n  (define-fun hashCode/-467973558 ((x!0 String)) Int\n    0)\n  (define-fun name/-383701400 ((x!0 var1102)) String\n    \"\")\n)\n(error \"line 19 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 131350528,
+            "run_time": 2.826566457748413,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(model\r\n  (define-fun var2639 () var1102 var1102!4)\r\n  (define-fun null-var1102 () var1102 var1102!2)\r\n)\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": ""
+        },
+        "undefined_function_count": 2,
+        "assertion_count": 2,
+        "api_sequence": [
+            "<java.lang.String: int hashCode()>"
+        ],
+        "api_count": {
+            "<java.lang.String: int hashCode()>": 1
+        },
+        "jimple_statements": [
+            "r0 := @this: org.slf4j.helpers.SubstituteLogger",
+            "$r1 = r0.<org.slf4j.helpers.SubstituteLogger: java.lang.String name>",
+            "$i0 = virtualinvoke $r1.<java.lang.String: int hashCode()>()",
+            "return $i0"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.helpers.SubstituteLogger__equals__1654374287\\625.smt2",
+        "z3": {
+            "memory": 32022528,
+            "run_time": 0.09843778610229492,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  ;; universe for var3184:\r\n  ;;   var3184!val!0 var3184!val!1 var3184!val!2 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var3184!val!0 () var3184)\r\n  (declare-fun var3184!val!1 () var3184)\r\n  (declare-fun var3184!val!2 () var3184)\r\n  ;; cardinality constraint:\r\n  (forall ((x var3184))\r\n          (or (= x var3184!val!0) (= x var3184!val!1) (= x var3184!val!2)))\r\n  ;; -----------\r\n  ;; universe for var657:\r\n  ;;   var657!val!0 var657!val!1 var657!val!2 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var657!val!0 () var657)\r\n  (declare-fun var657!val!1 () var657)\r\n  (declare-fun var657!val!2 () var657)\r\n  ;; cardinality constraint:\r\n  (forall ((x var657))\r\n          (or (= x var657!val!0) (= x var657!val!1) (= x var657!val!2)))\r\n  ;; -----------\r\n  ;; universe for ClassObject:\r\n  ;;   ClassObject!val!0 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun ClassObject!val!0 () ClassObject)\r\n  ;; cardinality constraint:\r\n  (forall ((x ClassObject)) (= x ClassObject!val!0))\r\n  ;; -----------\r\n  (define-fun var3836 () var657\r\n    var657!val!0)\r\n  (define-fun var1570 () ClassObject\r\n    (getClass/1258963082 var3836))\r\n  (define-fun var1433 () String\r\n    (name/-383701400 var1967))\r\n  (define-fun null-var657 () var657\r\n    var657!val!1)\r\n  (define-fun var1951 () var3184\r\n    (cast-from-var657-to-var3184 var3836))\r\n  (define-fun var1967 () var3184\r\n    var3184!val!0)\r\n  (define-fun null-var3184 () var3184\r\n    var3184!val!1)\r\n  (define-fun var525 () ClassObject\r\n    (getClass/1258963082 (cast-from-var3184-to-var657 var1967)))\r\n  (define-fun var864 () String\r\n    (name/-383701400 (cast-from-var657-to-var3184 var3836)))\r\n  (define-fun var2262 () Bool\r\n    (= (name/-383701400 var1967)\r\n   (name/-383701400 (cast-from-var657-to-var3184 var3836))))\r\n  (define-fun cast-from-var657-to-var3184 ((x!0 var657)) var3184\r\n    var3184!val!2)\r\n  (define-fun cast-from-var3184-to-var657 ((x!0 var3184)) var657\r\n    var657!val!2)\r\n  (define-fun getClass/1258963082 ((x!0 var657)) ClassObject\r\n    ClassObject!val!0)\r\n  (define-fun name/-383701400 ((x!0 var3184)) String\r\n    (ite (= x!0 var3184!val!2) \"!1!\"\r\n      \"!0!\"))\r\n)\r\n(error \"line 39 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 9879552,
+            "run_time": 0.030560016632080078,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var3184 is 3\r\n; rep: (as @var3184_0 var3184)\r\n; rep: (as @var3184_1 var3184)\r\n; rep: (as @var3184_2 var3184)\r\n; cardinality of var657 is 3\r\n; rep: (as @var657_0 var657)\r\n; rep: (as @var657_1 var657)\r\n; rep: (as @var657_2 var657)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun cast-from-var3184-to-var657 ((_arg_1 var3184)) var657 (as @var657_2 var657))\r\n(define-fun getClass/1258963082 ((_arg_1 var657)) ClassObject (as @ClassObject_0 ClassObject))\r\n(define-fun cast-from-var657-to-var3184 ((_arg_1 var657)) var3184 (as @var3184_2 var3184))\r\n(define-fun name/-383701400 ((_arg_1 var3184)) String (ite (= (as @var3184_2 var3184) _arg_1) \"\" \"A\"))\r\n(define-fun null-var3184 () var3184 (as @var3184_0 var3184))\r\n(define-fun null-var657 () var657 (as @var657_0 var657))\r\n(define-fun var1967 () var3184 (as @var3184_1 var3184))\r\n(define-fun var3836 () var657 (as @var657_1 var657))\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 36573184,
+            "run_time": 0.13802242279052734,
+            "is_sat": "unknown",
+            "stdout": "unknown\n(error \"line 38 column 10: model is not available, did you forget to enable model generation with ''model=true'?\")\n(error \"line 39 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 165675008,
+            "run_time": 2.8964409828186035,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(model\r\n  (define-fun var3836 () var657 var657!8)\r\n  (define-fun var1967 () var3184 var3184!6)\r\n  (define-fun null-var657 () var657 var657!4)\r\n  (define-fun null-var3184 () var3184 var3184!2)\r\n  (define-fun var3184!24 () var3184 (cast-from-var657-to-var3184 var657!8))\r\n  (define-fun ClassObject!28 () ClassObject (getClass/1258963082 var657!20))\r\n  (define-fun ClassObject!28 () ClassObject (getClass/1258963082 var657!8))\r\n  (define-fun var657!20 () var657 (cast-from-var3184-to-var657 var3184!6))\r\n  (define-fun name/-383701400 ((x!0 var3184)) String (ite (= x!0 var3184!6) \"\\u{1}\" (ite (= x!0 var3184!24) \"\\u{0}\" \"\")))\r\n)\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": ""
+        },
+        "undefined_function_count": 4,
+        "assertion_count": 9,
+        "api_sequence": [
+            "<java.lang.String: boolean equals(java.lang.Object)>"
+        ],
+        "api_count": {
+            "<java.lang.String: boolean equals(java.lang.Object)>": 1
+        },
+        "jimple_statements": [
+            "r0 := @this: org.slf4j.helpers.SubstituteLogger",
+            "r1 := @parameter0: java.lang.Object",
+            "if r0 != r1 goto (branch)",
+            "if r1 == null goto return 0",
+            "$r3 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>()",
+            "$r2 = virtualinvoke r1.<java.lang.Object: java.lang.Class getClass()>()",
+            "if $r3 == $r2 goto r4 = (org.slf4j.helpers.SubstituteLogger) r1",
+            "r4 = (org.slf4j.helpers.SubstituteLogger) r1",
+            "$r6 = r0.<org.slf4j.helpers.SubstituteLogger: java.lang.String name>",
+            "$r5 = r4.<org.slf4j.helpers.SubstituteLogger: java.lang.String name>",
+            "$z0 = virtualinvoke $r6.<java.lang.String: boolean equals(java.lang.Object)>($r5)",
+            "if $z0 != 0 goto return 1",
+            "return 0"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.helpers.SubstituteLogger__equals__1654374287\\629.smt2",
+        "z3": {
+            "memory": 31420416,
+            "run_time": 0.09958505630493164,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  ;; universe for var1446:\r\n  ;;   var1446!val!0 var1446!val!2 var1446!val!1 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var1446!val!0 () var1446)\r\n  (declare-fun var1446!val!2 () var1446)\r\n  (declare-fun var1446!val!1 () var1446)\r\n  ;; cardinality constraint:\r\n  (forall ((x var1446))\r\n          (or (= x var1446!val!0) (= x var1446!val!2) (= x var1446!val!1)))\r\n  ;; -----------\r\n  ;; universe for var843:\r\n  ;;   var843!val!2 var843!val!0 var843!val!1 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var843!val!2 () var843)\r\n  (declare-fun var843!val!0 () var843)\r\n  (declare-fun var843!val!1 () var843)\r\n  ;; cardinality constraint:\r\n  (forall ((x var843))\r\n          (or (= x var843!val!2) (= x var843!val!0) (= x var843!val!1)))\r\n  ;; -----------\r\n  ;; universe for ClassObject:\r\n  ;;   ClassObject!val!0 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun ClassObject!val!0 () ClassObject)\r\n  ;; cardinality constraint:\r\n  (forall ((x ClassObject)) (= x ClassObject!val!0))\r\n  ;; -----------\r\n  (define-fun var1457 () ClassObject\r\n    (getClass/1258963082 var512))\r\n  (define-fun var3818 () var843\r\n    (cast-from-var1446-to-var843 var512))\r\n  (define-fun var3813 () ClassObject\r\n    (getClass/1258963082 (cast-from-var843-to-var1446 var3171)))\r\n  (define-fun var3171 () var843\r\n    var843!val!0)\r\n  (define-fun var2510 () String\r\n    (name/-383701400 (cast-from-var1446-to-var843 var512)))\r\n  (define-fun null-var843 () var843\r\n    var843!val!1)\r\n  (define-fun var512 () var1446\r\n    var1446!val!0)\r\n  (define-fun null-var1446 () var1446\r\n    var1446!val!1)\r\n  (define-fun var3935 () String\r\n    (name/-383701400 var3171))\r\n  (define-fun var3602 () Bool\r\n    (= (name/-383701400 var3171)\r\n   (name/-383701400 (cast-from-var1446-to-var843 var512))))\r\n  (define-fun cast-from-var843-to-var1446 ((x!0 var843)) var1446\r\n    var1446!val!2)\r\n  (define-fun name/-383701400 ((x!0 var843)) String\r\n    \"!0!\")\r\n  (define-fun getClass/1258963082 ((x!0 var1446)) ClassObject\r\n    ClassObject!val!0)\r\n  (define-fun cast-from-var1446-to-var843 ((x!0 var1446)) var843\r\n    var843!val!2)\r\n)\r\n(error \"line 39 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 9867264,
+            "run_time": 0.061203718185424805,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var843 is 3\r\n; rep: (as @var843_0 var843)\r\n; rep: (as @var843_1 var843)\r\n; rep: (as @var843_2 var843)\r\n; cardinality of var1446 is 3\r\n; rep: (as @var1446_0 var1446)\r\n; rep: (as @var1446_1 var1446)\r\n; rep: (as @var1446_2 var1446)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun cast-from-var843-to-var1446 ((_arg_1 var843)) var1446 (as @var1446_2 var1446))\r\n(define-fun getClass/1258963082 ((_arg_1 var1446)) ClassObject (as @ClassObject_0 ClassObject))\r\n(define-fun cast-from-var1446-to-var843 ((_arg_1 var1446)) var843 (as @var843_2 var843))\r\n(define-fun name/-383701400 ((_arg_1 var843)) String \"\")\r\n(define-fun null-var843 () var843 (as @var843_0 var843))\r\n(define-fun null-var1446 () var1446 (as @var1446_0 var1446))\r\n(define-fun var3171 () var843 (as @var843_1 var843))\r\n(define-fun var512 () var1446 (as @var1446_1 var1446))\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 36851712,
+            "run_time": 0.1371748447418213,
+            "is_sat": "unknown",
+            "stdout": "unknown\n(error \"line 38 column 10: model is not available, did you forget to enable model generation with ''model=true'?\")\n(error \"line 39 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 166735872,
+            "run_time": 2.9986841678619385,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(model\r\n  (define-fun var512 () var1446 var1446!8)\r\n  (define-fun var3171 () var843 var843!6)\r\n  (define-fun null-var1446 () var1446 var1446!4)\r\n  (define-fun null-var843 () var843 var843!2)\r\n  (define-fun var843!24 () var843 (cast-from-var1446-to-var843 var1446!8))\r\n  (define-fun ClassObject!26 () ClassObject (getClass/1258963082 var1446!20))\r\n  (define-fun ClassObject!26 () ClassObject (getClass/1258963082 var1446!8))\r\n  (define-fun var1446!20 () var1446 (cast-from-var843-to-var1446 var843!6))\r\n  (define-fun name/-383701400 ((x!0 var843)) String (ite (= x!0 var843!6) \"\\u{0}\" (ite (= x!0 var843!24) \"\\u{0}\" \"\")))\r\n)\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": ""
+        },
+        "undefined_function_count": 4,
+        "assertion_count": 9,
+        "api_sequence": [
+            "<java.lang.String: boolean equals(java.lang.Object)>"
+        ],
+        "api_count": {
+            "<java.lang.String: boolean equals(java.lang.Object)>": 1
+        },
+        "jimple_statements": [
+            "r0 := @this: org.slf4j.helpers.SubstituteLogger",
+            "r1 := @parameter0: java.lang.Object",
+            "if r0 != r1 goto (branch)",
+            "if r1 == null goto return 0",
+            "$r3 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>()",
+            "$r2 = virtualinvoke r1.<java.lang.Object: java.lang.Class getClass()>()",
+            "if $r3 == $r2 goto r4 = (org.slf4j.helpers.SubstituteLogger) r1",
+            "r4 = (org.slf4j.helpers.SubstituteLogger) r1",
+            "$r6 = r0.<org.slf4j.helpers.SubstituteLogger: java.lang.String name>",
+            "$r5 = r4.<org.slf4j.helpers.SubstituteLogger: java.lang.String name>",
+            "$z0 = virtualinvoke $r6.<java.lang.String: boolean equals(java.lang.Object)>($r5)",
+            "if $z0 != 0 goto return 1",
+            "return 1"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.helpers.MessageFormatter__intArrayAppend__1959159413\\379.smt2",
+        "z3": {
+            "memory": 31887360,
+            "run_time": 0.10589313507080078,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  (define-fun var2939!2 () String\r\n    \"\")\r\n  (define-fun var2808 () (Array Int Int)\r\n    ((as const (Array Int Int)) (- 1)))\r\n  (define-fun null-__Array__Int__Int__ () (Array Int Int)\r\n    (store ((as const (Array Int Int)) (- 1)) 0 0))\r\n  (define-fun var2939!1 () String\r\n    \"\")\r\n  (define-fun null-String () String\r\n    \"A\")\r\n  (define-fun var3431 () Int\r\n    0)\r\n  (define-fun var2939 () String\r\n    \"\")\r\n  (define-fun var1894 () Int\r\n    (getLength-Arr-Int-1 var2808))\r\n  (define-fun getLength-Arr-Int-1 ((x!0 (Array Int Int))) Int\r\n    0)\r\n  (define-fun append/-1166366385 ((x!0 String) (x!1 Int)) String\r\n    \"\")\r\n)\r\n(error \"line 31 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 8785920,
+            "run_time": 0.062347412109375,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun append/-1166366385 ((BOUND_VARIABLE_737 String) (BOUND_VARIABLE_738 Int)) String \"\")\r\n(define-fun getLength-Arr-Int-1 ((_arg_1 (Array Int Int))) Int 0)\r\n(define-fun null-String () String \"A\")\r\n(define-fun null-__Array__Int__Int__ () (Array Int Int) (store ((as const (Array Int Int)) 1) 0 (- 1)))\r\n(define-fun var2939 () String \"\")\r\n(define-fun var2808 () (Array Int Int) ((as const (Array Int Int)) 0))\r\n(define-fun var2939!1 () String \"\")\r\n(define-fun var2939!2 () String \"\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 38350848,
+            "run_time": 0.10805964469909668,
+            "is_sat": "unknown",
+            "stdout": "unknown\n(error \"line 30 column 10: model is not available, did you forget to enable model generation with ''model=true'?\")\n(error \"line 31 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 176230400,
+            "run_time": 3.155585765838623,
+            "is_sat": "error",
+            "stdout": "sat\r\nerror\r\n",
+            "stderr": "Loading C:\\Users\\yyzha\\Desktop\\jars\\dataset_w\\slf4j\\smt\\method-org.slf4j.helpers.MessageFormatter__intArrayAppend__1959159413\\379.smt2 ...\r\n\r\nLoading OSTRICH 1.3.5, a solver for string constraints\r\n(c) Matthew Hague, Denghang Hu, Philipp Rmmer, 2018-2024\r\nWith contributions by Riccardo De Masellis, Zhilei Han, Oliver Markgraf.\r\nFor more information, see https://github.com/uuverifiers/ostrich\r\n\r\n\r\nRunning backward propagation\r\n   Considered function applications:\r\n   var2939!2 =\r\n     concat(var2939!1, rhs)\r\n   var2939!1 =\r\n     concat(var2939, rhs)\r\n   ... sat\r\n\r\n2569ms\r\nInternal exception: java.util.NoSuchElementException: key not found: rhs\r\n"
+        },
+        "undefined_function_count": 2,
+        "assertion_count": 8,
+        "api_sequence": [
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>": 2
+        },
+        "jimple_statements": [
+            "r0 := @parameter0: java.lang.StringBuilder",
+            "r1 := @parameter1: int[]",
+            "virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(91)",
+            "i0 = lengthof r1",
+            "i3 = 0",
+            "if i3 >= i0 goto virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(93)",
+            "virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(93)",
+            "return"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.event.KeyValuePair__toString__1653630733\\8.smt2",
+        "z3": {
+            "memory": 30158848,
+            "run_time": 0.12907052040100098,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  ;; universe for var918:\r\n  ;;   var918!val!1 var918!val!0 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var918!val!1 () var918)\r\n  (declare-fun var918!val!0 () var918)\r\n  ;; cardinality constraint:\r\n  (forall ((x var918)) (or (= x var918!val!1) (= x var918!val!0)))\r\n  ;; -----------\r\n  (define-fun var1732 () var2889\r\n    (value/1106669109 var373))\r\n  (define-fun var2281 () String\r\n    String-init)\r\n  (define-fun null-var918 () var918\r\n    var918!val!1)\r\n  (define-fun var3502 () String\r\n    (String_valueOf/-333372740 (value/1106669109 var373)))\r\n  (define-fun var91 () String\r\n    (key/1106669109 var373))\r\n  (define-fun var373 () var918\r\n    var918!val!0)\r\n  (define-fun var2846 () String\r\n    (str.++ var2281!1\r\n        (String_valueOf/-333372740\r\n          (cast-from-String-to-var2889 (key/1106669109 var373)))\r\n        \"=\"\"\"\r\n        (String_valueOf/-333372740 (value/1106669109 var373))\r\n        \"\"\"\"))\r\n  (define-fun var296 () String\r\n    (str.++ var2281!1\r\n        (String_valueOf/-333372740\r\n          (cast-from-String-to-var2889 (key/1106669109 var373)))\r\n        \"=\"\"\"))\r\n  (define-fun <init>/1968657023 () String\r\n    \"\")\r\n  (define-fun var1220 () String\r\n    (String_valueOf/-333372740\r\n  (cast-from-String-to-var2889 (key/1106669109 var373))))\r\n  (define-fun var3595 () String\r\n    (str.++ var2281!1\r\n        (String_valueOf/-333372740\r\n          (cast-from-String-to-var2889 (key/1106669109 var373)))))\r\n  (define-fun var140 () String\r\n    (str.++ var2281!1\r\n        (String_valueOf/-333372740\r\n          (cast-from-String-to-var2889 (key/1106669109 var373)))\r\n        \"=\"\"\"\r\n        (String_valueOf/-333372740 (value/1106669109 var373))\r\n        \"\"\"\"))\r\n  (define-fun var1316 () String\r\n    (str.++ var2281!1\r\n        (String_valueOf/-333372740\r\n          (cast-from-String-to-var2889 (key/1106669109 var373)))\r\n        \"=\"\"\"\r\n        (String_valueOf/-333372740 (value/1106669109 var373))))\r\n  (define-fun var2281!2 () String\r\n    \"\")\r\n  (define-fun var1316!1 () String\r\n    \"=\"\"\"\"\")\r\n  (define-fun var2281!1 () String\r\n    \"\")\r\n  (define-fun var3595!1 () String\r\n    \"=\"\"\")\r\n  (define-fun var296!1 () String\r\n    \"=\"\"\")\r\n  (define-fun String-init () String\r\n    \"\")\r\n  (define-fun key/1106669109 ((x!0 var918)) String\r\n    \"\")\r\n  (define-fun cast-from-String-to-var2889 ((x!0 String)) var2889\r\n    var2889!val!0)\r\n  (define-fun String_valueOf/-333372740 ((x!0 var2889)) String\r\n    \"\")\r\n  (define-fun value/1106669109 ((x!0 var918)) var2889\r\n    var2889!val!0)\r\n)\r\n(error \"line 50 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 1638400,
+            "run_time": 0.03012847900390625,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var918 is 2\r\n; rep: (as @var918_0 var918)\r\n; rep: (as @var918_1 var918)\r\n; cardinality of var2889 is 1\r\n; rep: (as @var2889_0 var2889)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun String-init () String \"\")\r\n(define-fun key/1106669109 ((BOUND_VARIABLE_583 var918)) String \"\")\r\n(define-fun String_valueOf/-333372740 ((BOUND_VARIABLE_586 var2889)) String \"\")\r\n(define-fun cast-from-String-to-var2889 ((BOUND_VARIABLE_589 String)) var2889 (as @var2889_0 var2889))\r\n(define-fun value/1106669109 ((BOUND_VARIABLE_592 var918)) var2889 (as @var2889_0 var2889))\r\n(define-fun null-var918 () var918 (as @var918_0 var918))\r\n(define-fun var373 () var918 (as @var918_1 var918))\r\n(define-fun var2281!1 () String \"\")\r\n(define-fun var2281!2 () String \"\")\r\n(define-fun var3595!1 () String \"=\"\"\")\r\n(define-fun var296!1 () String \"=\"\"\")\r\n(define-fun var1316!1 () String \"=\"\"\"\"\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 34693120,
+            "run_time": 0.1559920310974121,
+            "is_sat": "sat",
+            "stdout": "sat\n(\n  ;; universe for var918:\n  ;;   var918!val!1 var918!val!0 \n  ;; -----------\n  ;; definitions for universe elements:\n  (declare-fun var918!val!1 () var918)\n  (declare-fun var918!val!0 () var918)\n  ;; cardinality constraint:\n  (forall ((x var918)) (or (= x var918!val!1) (= x var918!val!0)))\n  ;; -----------\n  (define-fun var91 () String\n    (key/1106669109 var373))\n  (define-fun null-var918 () var918\n    var918!val!1)\n  (define-fun var296 () String\n    (str.++ var2281!1\n        (String_valueOf/-333372740\n          (cast-from-String-to-var2889 (key/1106669109 var373)))\n        \"=\"\"\"))\n  (define-fun <init>/1968657023 () String\n    \"\")\n  (define-fun var373 () var918\n    var918!val!0)\n  (define-fun var3595 () String\n    (str.++ var2281!1\n        (String_valueOf/-333372740\n          (cast-from-String-to-var2889 (key/1106669109 var373)))))\n  (define-fun var1220 () String\n    (String_valueOf/-333372740\n  (cast-from-String-to-var2889 (key/1106669109 var373))))\n  (define-fun var1732 () var2889\n    (value/1106669109 var373))\n  (define-fun var140 () String\n    (str.++ var2281!1\n        (String_valueOf/-333372740\n          (cast-from-String-to-var2889 (key/1106669109 var373)))\n        \"=\"\"\"\n        (String_valueOf/-333372740 (value/1106669109 var373))\n        \"\"\"\"))\n  (define-fun var1316 () String\n    (str.++ var2281!1\n        (String_valueOf/-333372740\n          (cast-from-String-to-var2889 (key/1106669109 var373)))\n        \"=\"\"\"\n        (String_valueOf/-333372740 (value/1106669109 var373))))\n  (define-fun var3502 () String\n    (String_valueOf/-333372740 (value/1106669109 var373)))\n  (define-fun var2281 () String\n    String-init)\n  (define-fun var2846 () String\n    (str.++ var2281!1\n        (String_valueOf/-333372740\n          (cast-from-String-to-var2889 (key/1106669109 var373)))\n        \"=\"\"\"\n        (String_valueOf/-333372740 (value/1106669109 var373))\n        \"\"\"\"))\n  (define-fun var2281!2 () String\n    \"\")\n  (define-fun var1316!1 () String\n    \"=\"\"\"\"\")\n  (define-fun var2281!1 () String\n    \"\")\n  (define-fun var3595!1 () String\n    \"=\"\"\")\n  (define-fun var296!1 () String\n    \"=\"\"\")\n  (define-fun String-init () String\n    \"\")\n  (define-fun key/1106669109 ((x!0 var918)) String\n    \"\")\n  (define-fun cast-from-String-to-var2889 ((x!0 String)) var2889\n    var2889!val!0)\n  (define-fun String_valueOf/-333372740 ((x!0 var2889)) String\n    \"\")\n  (define-fun value/1106669109 ((x!0 var918)) var2889\n    var2889!val!0)\n)\n(error \"line 50 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 169779200,
+            "run_time": 3.241495370864868,
+            "is_sat": "error",
+            "stdout": "(error \"Internal exception: java.util.NoSuchElementException: key not found: var918/1\")\r\n(error \"no model available\")\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": "Loading C:\\Users\\yyzha\\Desktop\\jars\\dataset_w\\slf4j\\smt\\method-org.slf4j.event.KeyValuePair__toString__1653630733\\8.smt2 ...\r\n\r\nLoading OSTRICH 1.3.5, a solver for string constraints\r\n(c) Matthew Hague, Denghang Hu, Philipp Rmmer, 2018-2024\r\nWith contributions by Riccardo De Masellis, Zhilei Han, Oliver Markgraf.\r\nFor more information, see https://github.com/uuverifiers/ostrich\r\n\r\nWarning: assuming -length=on to handle length constraints\r\n\r\nRunning backward propagation\r\n   Considered function applications:\r\n   var1316!1 =\r\n     concat(all_23_5, \"\\u{0}22\")\r\n   var296!1 =\r\n     concat(all_20_6, all_20_4)\r\n   var3595!1 =\r\n     concat(var2281!2, \"=\\u{0}22\")\r\n   all_23_5 =\r\n     concat(all_23_8, all_20_4)\r\n   all_20_6 =\r\n     concat(var2281!2, \"=\\u{0}22\")\r\n   all_23_8 =\r\n     concat(var2281!2, \"=\\u{0}22\")\r\n\r\n2618ms\r\n"
+        },
+        "undefined_function_count": 5,
+        "assertion_count": 12,
+        "api_sequence": [
+            "<java.lang.StringBuilder: void <init>()>",
+            "<java.lang.String: java.lang.String valueOf(java.lang.Object)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.String: java.lang.String valueOf(java.lang.Object)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.String toString()>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: void <init>()>": 1,
+            "<java.lang.String: java.lang.String valueOf(java.lang.Object)>": 2,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 4,
+            "<java.lang.StringBuilder: java.lang.String toString()>": 1
+        },
+        "jimple_statements": [
+            "r1 := @this: org.slf4j.event.KeyValuePair",
+            "$r0 = new java.lang.StringBuilder",
+            "specialinvoke $r0.<java.lang.StringBuilder: void <init>()>()",
+            "$r2 = r1.<org.slf4j.event.KeyValuePair: java.lang.String key>",
+            "$r3 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r2)",
+            "$r4 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3)",
+            "$r7 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"=\\\"\")",
+            "$r5 = r1.<org.slf4j.event.KeyValuePair: java.lang.Object value>",
+            "$r6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r5)",
+            "$r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6)",
+            "$r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"\\\"\")",
+            "$r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>()",
+            "return $r10"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.helpers.Reporter__error__-1177226043\\295.smt2",
+        "z3": {
+            "memory": 32149504,
+            "run_time": 0.1046755313873291,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  ;; universe for var2497:\r\n  ;;   var2497!val!1 var2497!val!0 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var2497!val!1 () var2497)\r\n  (declare-fun var2497!val!0 () var2497)\r\n  ;; cardinality constraint:\r\n  (forall ((x var2497)) (or (= x var2497!val!1) (= x var2497!val!0)))\r\n  ;; -----------\r\n  (define-fun var3401 () var1736\r\n    var3158_getTarget/45029478)\r\n  (define-fun var815 () String\r\n    (str.++ var3731!1 \"SLF4J(E): \" var1926))\r\n  (define-fun var3498 () var1736\r\n    var3158_getTarget/45029478)\r\n  (define-fun null-var2497 () var2497\r\n    var2497!val!1)\r\n  (define-fun <init>/1968657023 () String\r\n    \"\")\r\n  (define-fun var3731 () String\r\n    String-init)\r\n  (define-fun var640 () String\r\n    (str.++ var3731!1 \"SLF4J(E): \" var1926))\r\n  (define-fun var2058 () var1736\r\n    var3158_getTarget/45029478)\r\n  (define-fun null-String () String\r\n    \"\")\r\n  (define-fun var1926 () String\r\n    \"A\")\r\n  (define-fun var1500 () String\r\n    (str.++ var3731!1 \"SLF4J(E): \"))\r\n  (define-fun var2643 () var2497\r\n    var2497!val!0)\r\n  (define-fun var3731!2 () String\r\n    \"SLF4J(E): \")\r\n  (define-fun var1500!1 () String\r\n    \"SLF4J(E): A\")\r\n  (define-fun var3731!1 () String\r\n    \"\")\r\n  (define-fun var3158_getTarget/45029478 () var1736\r\n    var1736!val!0)\r\n  (define-fun var3401!1 () var1736\r\n    var1736!val!0)\r\n  (define-fun var3498!1 () var1736\r\n    var1736!val!0)\r\n  (define-fun var1869 () String\r\n    \"\")\r\n  (define-fun var2058!1 () var1736\r\n    var1736!val!0)\r\n  (define-fun var2643!1 () var2497\r\n    var2497!val!1)\r\n  (define-fun var815!1 () String\r\n    \"\")\r\n  (define-fun String-init () String\r\n    \"\")\r\n  (define-fun println/1773605060 ((x!0 var1736) (x!1 String)) void\r\n    void!val!0)\r\n  (define-fun printStackTrace/-5210062 ((x!0 var2497) (x!1 var1736)) void\r\n    void!val!0)\r\n)\r\n(error \"line 60 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 9412608,
+            "run_time": 0.06096696853637695,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var1692 is 1\r\n; rep: (as @var1692_0 var1692)\r\n; cardinality of var2497 is 2\r\n; rep: (as @var2497_0 var2497)\r\n; rep: (as @var2497_1 var2497)\r\n; cardinality of var1736 is 1\r\n; rep: (as @var1736_0 var1736)\r\n; cardinality of var3158 is 1\r\n; rep: (as @var3158_0 var3158)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun var3158_getTarget/45029478 () var1736 (as @var1736_0 var1736))\r\n(define-fun String-init () String \"\")\r\n(define-fun println/1773605060 ((BOUND_VARIABLE_606 var1736) (BOUND_VARIABLE_607 String)) void (as @void_0 void))\r\n(define-fun printStackTrace/-5210062 ((BOUND_VARIABLE_610 var2497) (BOUND_VARIABLE_611 var1736)) void (as @void_0 void))\r\n(define-fun null-String () String \"A\")\r\n(define-fun null-var2497 () var2497 (as @var2497_0 var2497))\r\n(define-fun var1926 () String \"\")\r\n(define-fun var2643 () var2497 (as @var2497_1 var2497))\r\n(define-fun var3731!1 () String \"\")\r\n(define-fun var3731!2 () String \"SLF4J(E): \")\r\n(define-fun var1500!1 () String \"SLF4J(E): \")\r\n(define-fun var3401!1 () var1736 (as @var1736_0 var1736))\r\n(define-fun var815!1 () String \"\")\r\n(define-fun var2058!1 () var1736 (as @var1736_0 var1736))\r\n(define-fun var1869 () String \"\")\r\n(define-fun var2643!1 () var2497 (as @var2497_0 var2497))\r\n(define-fun var3498!1 () var1736 (as @var1736_0 var1736))\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 37445632,
+            "run_time": 0.18397164344787598,
+            "is_sat": "sat",
+            "stdout": "sat\n(\n  ;; universe for var2497:\n  ;;   var2497!val!1 var2497!val!0 \n  ;; -----------\n  ;; definitions for universe elements:\n  (declare-fun var2497!val!1 () var2497)\n  (declare-fun var2497!val!0 () var2497)\n  ;; cardinality constraint:\n  (forall ((x var2497)) (or (= x var2497!val!1) (= x var2497!val!0)))\n  ;; -----------\n  (define-fun var3731!1 () String\n    \"\")\n  (define-fun var1500!1 () String\n    \"SLF4J(E): \\u{0}\\u{0}\")\n  (define-fun var3731!2 () String\n    \"SLF4J(E): \")\n  (define-fun var3498 () var1736\n    var3158_getTarget/45029478)\n  (define-fun <init>/1968657023 () String\n    \"\")\n  (define-fun null-var2497 () var2497\n    var2497!val!1)\n  (define-fun var815 () String\n    (str.++ var3731!1 \"SLF4J(E): \" var1926))\n  (define-fun var3401 () var1736\n    var3158_getTarget/45029478)\n  (define-fun var3731 () String\n    String-init)\n  (define-fun var2058 () var1736\n    var3158_getTarget/45029478)\n  (define-fun var1926 () String\n    \"\\u{0}\\u{0}\")\n  (define-fun null-String () String\n    \"\\u{0}\")\n  (define-fun var2643 () var2497\n    var2497!val!0)\n  (define-fun var640 () String\n    (str.++ var3731!1 \"SLF4J(E): \" var1926))\n  (define-fun var1500 () String\n    (str.++ var3731!1 \"SLF4J(E): \"))\n  (define-fun var3158_getTarget/45029478 () var1736\n    var1736!val!0)\n  (define-fun var3401!1 () var1736\n    var1736!val!0)\n  (define-fun var3498!1 () var1736\n    var1736!val!0)\n  (define-fun var1869 () String\n    \"\")\n  (define-fun var2058!1 () var1736\n    var1736!val!0)\n  (define-fun var2643!1 () var2497\n    var2497!val!1)\n  (define-fun var815!1 () String\n    \"\")\n  (define-fun String-init () String\n    \"\")\n  (define-fun println/1773605060 ((x!0 var1736) (x!1 String)) void\n    void!val!0)\n  (define-fun printStackTrace/-5210062 ((x!0 var2497) (x!1 var1736)) void\n    void!val!0)\n)\n(error \"line 60 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 157597696,
+            "run_time": 3.061716318130493,
+            "is_sat": "error",
+            "stdout": "(error \"Internal exception: java.util.NoSuchElementException: key not found: var2497/1\")\r\n(error \"no model available\")\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": "Loading C:\\Users\\yyzha\\Desktop\\jars\\dataset_w\\slf4j\\smt\\method-org.slf4j.helpers.Reporter__error__-1177226043\\295.smt2 ...\r\n\r\nLoading OSTRICH 1.3.5, a solver for string constraints\r\n(c) Matthew Hague, Denghang Hu, Philipp Rmmer, 2018-2024\r\nWith contributions by Riccardo De Masellis, Zhilei Han, Oliver Markgraf.\r\nFor more information, see https://github.com/uuverifiers/ostrich\r\n\r\nWarning: assuming -length=on to handle length constraints\r\n\r\nRunning backward propagation\r\n   Considered function applications:\r\n   var1500!1 =\r\n     concat(\"SLF4J(E): \", var1926)\r\n\r\n2365ms\r\n"
+        },
+        "undefined_function_count": 4,
+        "assertion_count": 12,
+        "api_sequence": [
+            "<java.lang.StringBuilder: void <init>()>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.String toString()>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: void <init>()>": 1,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 2,
+            "<java.lang.StringBuilder: java.lang.String toString()>": 1
+        },
+        "jimple_statements": [
+            "r1 := @parameter0: java.lang.String",
+            "r7 := @parameter1: java.lang.Throwable",
+            "$r5 = staticinvoke <org.slf4j.helpers.Reporter: java.io.PrintStream getTarget()>()",
+            "$r0 = new java.lang.StringBuilder",
+            "specialinvoke $r0.<java.lang.StringBuilder: void <init>()>()",
+            "$r2 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"SLF4J(E): \")",
+            "$r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1)",
+            "$r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>()",
+            "virtualinvoke $r5.<java.io.PrintStream: void println(java.lang.String)>($r4)",
+            "$r6 = staticinvoke <org.slf4j.helpers.Reporter: java.io.PrintStream getTarget()>()",
+            "virtualinvoke $r6.<java.io.PrintStream: void println(java.lang.String)>(\"SLF4J(E): Reported exception:\")",
+            "$r8 = staticinvoke <org.slf4j.helpers.Reporter: java.io.PrintStream getTarget()>()",
+            "virtualinvoke r7.<java.lang.Throwable: void printStackTrace(java.io.PrintStream)>($r8)",
+            "return"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.helpers.MessageFormatter__safeObjectAppend__1680186807\\224.smt2",
+        "z3": {
+            "memory": 31399936,
+            "run_time": 0.1250765323638916,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  ;; universe for var430:\r\n  ;;   var430!val!1 var430!val!0 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var430!val!1 () var430)\r\n  (declare-fun var430!val!0 () var430)\r\n  ;; cardinality constraint:\r\n  (forall ((x var430)) (or (= x var430!val!1) (= x var430!val!0)))\r\n  ;; -----------\r\n  ;; universe for var941:\r\n  ;;   var941!val!0 var941!val!1 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var941!val!0 () var941)\r\n  (declare-fun var941!val!1 () var941)\r\n  ;; cardinality constraint:\r\n  (forall ((x var941)) (or (= x var941!val!0) (= x var941!val!1)))\r\n  ;; -----------\r\n  (define-fun var2218 () String\r\n    \"A\")\r\n  (define-fun null-var941 () var941\r\n    var941!val!1)\r\n  (define-fun var3303 () String\r\n    (getName/-1958580599 (getClass/1258963082 var1590)))\r\n  (define-fun var196 () String\r\n    (str.++ var3928!1 \"Failed toString() invocation on an object of type [\"))\r\n  (define-fun <init>/1968657023 () String\r\n    \"\")\r\n  (define-fun null-String () String\r\n    \"\")\r\n  (define-fun var1590 () var430\r\n    var430!val!0)\r\n  (define-fun var1896 () ClassObject\r\n    (getClass/1258963082 var1590))\r\n  (define-fun null-var430 () var430\r\n    var430!val!1)\r\n  (define-fun var3928 () String\r\n    String-init)\r\n  (define-fun var3803 () String\r\n    (str.++ var3928!1\r\n        \"Failed toString() invocation on an object of type [\"\r\n        (getName/-1958580599 (getClass/1258963082 var1590))))\r\n  (define-fun var1713 () String\r\n    (str.++ var3928!1\r\n        \"Failed toString() invocation on an object of type [\"\r\n        (getName/-1958580599 (getClass/1258963082 var1590))\r\n        \"]\"))\r\n  (define-fun var778 () var941\r\n    var941!val!0)\r\n  (define-fun var3280 () String\r\n    (str.++ var3928!1\r\n        \"Failed toString() invocation on an object of type [\"\r\n        (getName/-1958580599 (getClass/1258963082 var1590))\r\n        \"]\"))\r\n  (define-fun var2218!1 () String\r\n    \"A[FAILED toString()]\")\r\n  (define-fun var3803!1 () String\r\n    \"Failed toString() invocation on an object of type []\")\r\n  (define-fun var3928!2 () String\r\n    \"Failed toString() invocation on an object of type [\")\r\n  (define-fun var3928!1 () String\r\n    \"\")\r\n  (define-fun var196!1 () String\r\n    \"Failed toString() invocation on an object of type [\")\r\n  (define-fun var1713!1 () String\r\n    \"\")\r\n  (define-fun var778!1 () var941\r\n    var941!val!0)\r\n  (define-fun String-init () String\r\n    \"\")\r\n  (define-fun getClass/1258963082 ((x!0 var430)) ClassObject\r\n    ClassObject!val!0)\r\n  (define-fun getName/-1958580599 ((x!0 ClassObject)) String\r\n    \"\")\r\n  (define-fun var3004_error/-1177226043 ((x!0 String) (x!1 var941)) void\r\n    void!val!0)\r\n)\r\n(error \"line 62 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 9719808,
+            "run_time": 0.029948711395263672,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var430 is 2\r\n; rep: (as @var430_0 var430)\r\n; rep: (as @var430_1 var430)\r\n; cardinality of var941 is 2\r\n; rep: (as @var941_0 var941)\r\n; rep: (as @var941_1 var941)\r\n; cardinality of var3004 is 1\r\n; rep: (as @var3004_0 var3004)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun String-init () String \"\")\r\n(define-fun getClass/1258963082 ((BOUND_VARIABLE_643 var430)) ClassObject (as @ClassObject_0 ClassObject))\r\n(define-fun getName/-1958580599 ((BOUND_VARIABLE_646 ClassObject)) String \"\")\r\n(define-fun var3004_error/-1177226043 ((BOUND_VARIABLE_649 String) (BOUND_VARIABLE_650 var941)) void (as @void_0 void))\r\n(define-fun null-String () String \"A\")\r\n(define-fun null-var430 () var430 (as @var430_0 var430))\r\n(define-fun null-var941 () var941 (as @var941_0 var941))\r\n(define-fun var2218 () String \"\")\r\n(define-fun var1590 () var430 (as @var430_1 var430))\r\n(define-fun var778 () var941 (as @var941_1 var941))\r\n(define-fun var3928!1 () String \"\")\r\n(define-fun var3928!2 () String \"Failed toString() invocation on an object of type [\")\r\n(define-fun var196!1 () String \"Failed toString() invocation on an object of type [\")\r\n(define-fun var3803!1 () String \"Failed toString() invocation on an object of type []\")\r\n(define-fun var1713!1 () String \"\")\r\n(define-fun var778!1 () var941 (as @var941_0 var941))\r\n(define-fun var2218!1 () String \"[FAILED toString()]\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 37482496,
+            "run_time": 0.1080312728881836,
+            "is_sat": "sat",
+            "stdout": "sat\n(\n  ;; universe for var430:\n  ;;   var430!val!1 var430!val!0 \n  ;; -----------\n  ;; definitions for universe elements:\n  (declare-fun var430!val!1 () var430)\n  (declare-fun var430!val!0 () var430)\n  ;; cardinality constraint:\n  (forall ((x var430)) (or (= x var430!val!1) (= x var430!val!0)))\n  ;; -----------\n  ;; universe for var941:\n  ;;   var941!val!0 var941!val!1 \n  ;; -----------\n  ;; definitions for universe elements:\n  (declare-fun var941!val!0 () var941)\n  (declare-fun var941!val!1 () var941)\n  ;; cardinality constraint:\n  (forall ((x var941)) (or (= x var941!val!0) (= x var941!val!1)))\n  ;; -----------\n  (define-fun var196!1 () String\n    \"Failed toString() invocation on an object of type [\")\n  (define-fun var3928!1 () String\n    \"\")\n  (define-fun var3928!2 () String\n    \"Failed toString() invocation on an object of type [\")\n  (define-fun var3803!1 () String\n    \"Failed toString() invocation on an object of type []\")\n  (define-fun var3303 () String\n    (getName/-1958580599 (getClass/1258963082 var1590)))\n  (define-fun var2218!1 () String\n    \"\\u{0}\\u{0}[FAILED toString()]\")\n  (define-fun var2218 () String\n    \"\\u{0}\\u{0}\")\n  (define-fun <init>/1968657023 () String\n    \"\")\n  (define-fun var1896 () ClassObject\n    (getClass/1258963082 var1590))\n  (define-fun var3803 () String\n    (str.++ var3928!1\n        \"Failed toString() invocation on an object of type [\"\n        (getName/-1958580599 (getClass/1258963082 var1590))))\n  (define-fun null-var941 () var941\n    var941!val!1)\n  (define-fun null-String () String\n    \"\\u{0}\")\n  (define-fun var3928 () String\n    String-init)\n  (define-fun var1713 () String\n    (str.++ var3928!1\n        \"Failed toString() invocation on an object of type [\"\n        (getName/-1958580599 (getClass/1258963082 var1590))\n        \"]\"))\n  (define-fun null-var430 () var430\n    var430!val!1)\n  (define-fun var1590 () var430\n    var430!val!0)\n  (define-fun var3280 () String\n    (str.++ var3928!1\n        \"Failed toString() invocation on an object of type [\"\n        (getName/-1958580599 (getClass/1258963082 var1590))\n        \"]\"))\n  (define-fun var778 () var941\n    var941!val!0)\n  (define-fun var196 () String\n    (str.++ var3928!1 \"Failed toString() invocation on an object of type [\"))\n  (define-fun var1713!1 () String\n    \"\")\n  (define-fun var778!1 () var941\n    var941!val!0)\n  (define-fun String-init () String\n    \"\")\n  (define-fun getClass/1258963082 ((x!0 var430)) ClassObject\n    ClassObject!val!0)\n  (define-fun getName/-1958580599 ((x!0 ClassObject)) String\n    \"\")\n  (define-fun var3004_error/-1177226043 ((x!0 String) (x!1 var941)) void\n    void!val!0)\n)\n(error \"line 62 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 181043200,
+            "run_time": 3.232362985610962,
+            "is_sat": "error",
+            "stdout": "(error \"Internal exception: java.util.NoSuchElementException: key not found: var430/1\")\r\n(error \"no model available\")\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": "Loading C:\\Users\\yyzha\\Desktop\\jars\\dataset_w\\slf4j\\smt\\method-org.slf4j.helpers.MessageFormatter__safeObjectAppend__1680186807\\224.smt2 ...\r\n\r\nLoading OSTRICH 1.3.5, a solver for string constraints\r\n(c) Matthew Hague, Denghang Hu, Philipp Rmmer, 2018-2024\r\nWith contributions by Riccardo De Masellis, Zhilei Han, Oliver Markgraf.\r\nFor more information, see https://github.com/uuverifiers/ostrich\r\n\r\nWarning: assuming -length=on to handle length constraints\r\n\r\nRunning backward propagation\r\n   Considered function applications:\r\n   var3803!1 =\r\n     concat(all_29_3, \"]\")\r\n   var2218!1 =\r\n     concat(var2218, \"[FAILED toString()]\")\r\n   var196!1 =\r\n     concat(\"Failed toString() invocation on an object of type [\", all_26_2)\r\n   all_29_3 =\r\n     concat(\"Failed toString() invocation on an object of type [\", all_26_2)\r\n\r\n2593ms\r\n"
+        },
+        "undefined_function_count": 4,
+        "assertion_count": 18,
+        "api_sequence": [
+            "<java.lang.StringBuilder: void <init>()>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.String toString()>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: void <init>()>": 1,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 4,
+            "<java.lang.StringBuilder: java.lang.String toString()>": 1
+        },
+        "jimple_statements": [
+            "r1 := @parameter0: java.lang.StringBuilder",
+            "r0 := @parameter1: java.lang.Object",
+            "$r2 := @caughtexception",
+            "$r3 = new java.lang.StringBuilder",
+            "specialinvoke $r3.<java.lang.StringBuilder: void <init>()>()",
+            "$r6 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"Failed toString() invocation on an object of type [\")",
+            "$r4 = virtualinvoke r0.<java.lang.Object: java.lang.Class getClass()>()",
+            "$r5 = virtualinvoke $r4.<java.lang.Class: java.lang.String getName()>()",
+            "$r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5)",
+            "$r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"]\")",
+            "$r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>()",
+            "staticinvoke <org.slf4j.helpers.Reporter: void error(java.lang.String,java.lang.Throwable)>($r9, $r2)",
+            "virtualinvoke r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"[FAILED toString()]\")",
+            "return"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.helpers.MessageFormatter__shortArrayAppend__-373042411\\358.smt2",
+        "z3": {
+            "memory": 32083968,
+            "run_time": 0.08991456031799316,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  (define-fun var3797 () (Array Int Int)\r\n    ((as const (Array Int Int)) (- 1)))\r\n  (define-fun var3307 () Int\r\n    0)\r\n  (define-fun null-__Array__Int__Int__ () (Array Int Int)\r\n    (store ((as const (Array Int Int)) (- 1)) 0 0))\r\n  (define-fun var3791 () Int\r\n    (getLength-Arr-Int-1 var3797))\r\n  (define-fun var1161!2 () String\r\n    \"\")\r\n  (define-fun null-String () String\r\n    \"A\")\r\n  (define-fun var1161!1 () String\r\n    \"\")\r\n  (define-fun var1161 () String\r\n    \"\")\r\n  (define-fun getLength-Arr-Int-1 ((x!0 (Array Int Int))) Int\r\n    0)\r\n  (define-fun append/-1166366385 ((x!0 String) (x!1 Int)) String\r\n    \"\")\r\n)\r\n(error \"line 31 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 9355264,
+            "run_time": 0.06183147430419922,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun append/-1166366385 ((BOUND_VARIABLE_737 String) (BOUND_VARIABLE_738 Int)) String \"\")\r\n(define-fun getLength-Arr-Int-1 ((_arg_1 (Array Int Int))) Int 0)\r\n(define-fun null-String () String \"A\")\r\n(define-fun null-__Array__Int__Int__ () (Array Int Int) (store ((as const (Array Int Int)) 1) 0 (- 1)))\r\n(define-fun var1161 () String \"\")\r\n(define-fun var3797 () (Array Int Int) ((as const (Array Int Int)) 0))\r\n(define-fun var1161!1 () String \"\")\r\n(define-fun var1161!2 () String \"\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 38354944,
+            "run_time": 0.16960597038269043,
+            "is_sat": "unknown",
+            "stdout": "unknown\n(error \"line 30 column 10: model is not available, did you forget to enable model generation with ''model=true'?\")\n(error \"line 31 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 162328576,
+            "run_time": 3.185987949371338,
+            "is_sat": "error",
+            "stdout": "sat\r\nerror\r\n",
+            "stderr": "Loading C:\\Users\\yyzha\\Desktop\\jars\\dataset_w\\slf4j\\smt\\method-org.slf4j.helpers.MessageFormatter__shortArrayAppend__-373042411\\358.smt2 ...\r\n\r\nLoading OSTRICH 1.3.5, a solver for string constraints\r\n(c) Matthew Hague, Denghang Hu, Philipp Rmmer, 2018-2024\r\nWith contributions by Riccardo De Masellis, Zhilei Han, Oliver Markgraf.\r\nFor more information, see https://github.com/uuverifiers/ostrich\r\n\r\n\r\nRunning backward propagation\r\n   Considered function applications:\r\n   var1161!2 =\r\n     concat(var1161!1, rhs)\r\n   var1161!1 =\r\n     concat(var1161, rhs)\r\n   ... sat\r\n\r\n2524ms\r\nInternal exception: java.util.NoSuchElementException: key not found: rhs\r\n"
+        },
+        "undefined_function_count": 2,
+        "assertion_count": 8,
+        "api_sequence": [
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>": 2
+        },
+        "jimple_statements": [
+            "r0 := @parameter0: java.lang.StringBuilder",
+            "r1 := @parameter1: short[]",
+            "virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(91)",
+            "i0 = lengthof r1",
+            "i3 = 0",
+            "if i3 >= i0 goto virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(93)",
+            "virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(93)",
+            "return"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.event.Level__intToLevel__-483968000\\162.smt2",
+        "z3": {
+            "memory": 31793152,
+            "run_time": 0.12848782539367676,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  (define-fun var3390 () String\r\n    String-init)\r\n  (define-fun var2352 () String\r\n    (str.++ var3390!1 \"Level integer [\"))\r\n  (define-fun var373 () var501\r\n    var501-init)\r\n  (define-fun var2352!1 () String\r\n    \"Level integer [\")\r\n  (define-fun <init>/1968657023 () String\r\n    \"\")\r\n  (define-fun null-Int () Int\r\n    3)\r\n  (define-fun var3896 () Int\r\n    2)\r\n  (define-fun var624 () String\r\n    (str.++ var3390!1 \"Level integer [\" (str.from_int var3896)))\r\n  (define-fun var3866 () String\r\n    (str.++ var3390!1 \"Level integer [\" (str.from_int var3896) \"] not recognized.\"))\r\n  (define-fun var2226 () String\r\n    (str.++ var3390!1 \"Level integer [\" (str.from_int var3896) \"] not recognized.\"))\r\n  (define-fun var3390!1 () String\r\n    \"\")\r\n  (define-fun var3390!2 () String\r\n    \"Level integer [\")\r\n  (define-fun var624!1 () String\r\n    \"Level integer [2] not recognized.\")\r\n  (define-fun var373!1 () var501\r\n    var501!val!0)\r\n  (define-fun var2226!1 () String\r\n    \"\")\r\n  (define-fun String-init () String\r\n    \"\")\r\n  (define-fun var501-init () var501\r\n    var501!val!0)\r\n  (define-fun <init>/875830710 ((x!0 var501) (x!1 String)) void\r\n    void!val!0)\r\n)\r\n(error \"line 48 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 11993088,
+            "run_time": 0.046549320220947266,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var501 is 1\r\n; rep: (as @var501_0 var501)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun var501-init () var501 (as @var501_0 var501))\r\n(define-fun String-init () String \"\")\r\n(define-fun <init>/875830710 ((BOUND_VARIABLE_1009 var501) (BOUND_VARIABLE_1010 String)) void (as @void_0 void))\r\n(define-fun null-Int () Int (- 2))\r\n(define-fun var3896 () Int (- 1))\r\n(define-fun var3390!1 () String \"\")\r\n(define-fun var3390!2 () String \"Level integer [\")\r\n(define-fun var2352!1 () String \"Level integer [\")\r\n(define-fun var624!1 () String \"Level integer [] not recognized.\")\r\n(define-fun var373!1 () var501 (as @var501_0 var501))\r\n(define-fun var2226!1 () String \"\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 36675584,
+            "run_time": 0.12502145767211914,
+            "is_sat": "sat",
+            "stdout": "sat\n(\n  (define-fun var2352 () String\n    (str.++ var3390!1 \"Level integer [\"))\n  (define-fun <init>/1968657023 () String\n    \"\")\n  (define-fun var624 () String\n    (str.++ var3390!1 \"Level integer [\" (str.from_int var3896)))\n  (define-fun var373 () var501\n    var501-init)\n  (define-fun null-Int () Int\n    3)\n  (define-fun var3896 () Int\n    2)\n  (define-fun var3866 () String\n    (str.++ var3390!1 \"Level integer [\" (str.from_int var3896) \"] not recognized.\"))\n  (define-fun var624!1 () String\n    \"Level integer [2] not recognized.\")\n  (define-fun var2226 () String\n    (str.++ var3390!1 \"Level integer [\" (str.from_int var3896) \"] not recognized.\"))\n  (define-fun var2352!1 () String\n    \"Level integer [\")\n  (define-fun var3390 () String\n    String-init)\n  (define-fun var3390!1 () String\n    \"\")\n  (define-fun var3390!2 () String\n    \"Level integer [\")\n  (define-fun var373!1 () var501\n    var501!val!0)\n  (define-fun var2226!1 () String\n    \"\")\n  (define-fun String-init () String\n    \"\")\n  (define-fun var501-init () var501\n    var501!val!0)\n  (define-fun <init>/875830710 ((x!0 var501) (x!1 String)) void\n    void!val!0)\n)\n(error \"line 48 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 183779328,
+            "run_time": 3.460787296295166,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(model\r\n  (define-fun var624!1 () String \"Level integer [] not recognized.\")\r\n  (define-fun var2352!1 () String \"Level integer [\")\r\n  (define-fun var3390!2 () String \"Level integer [\")\r\n  (define-fun var3390!1 () String \"\")\r\n  (define-fun var3896 () Int (- 6))\r\n  (define-fun null-Int () Int 0)\r\n)\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": ""
+        },
+        "undefined_function_count": 3,
+        "assertion_count": 12,
+        "api_sequence": [
+            "<java.lang.StringBuilder: void <init>()>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.String toString()>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: void <init>()>": 1,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 2,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(int)>": 1,
+            "<java.lang.StringBuilder: java.lang.String toString()>": 1
+        },
+        "jimple_statements": [
+            "i0 := @parameter0: int",
+            "lookupswitch(i0) {     case 0: goto $r4 = <org.slf4j.event.Level: org.slf4j.event.Level TRACE>;     case 10: goto $r3 = <org.slf4j.event.Level: org.slf4j.event.Level DEBUG>;     case 20: goto $r2 = <org.slf4j.event.Level: org.slf4j.event.Level INFO>;     case 30: goto $r1 = <org.slf4j.event.Level: org.slf4j.event.Level WARN>;     case 40: goto $r0 = <org.slf4j.event.Level: org.slf4j.event.Level ERROR>;     default: goto $r5 = new java.lang.IllegalArgumentException; }",
+            "$r5 = new java.lang.IllegalArgumentException",
+            "$r6 = new java.lang.StringBuilder",
+            "specialinvoke $r6.<java.lang.StringBuilder: void <init>()>()",
+            "$r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"Level integer [\")",
+            "$r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i0)",
+            "$r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"] not recognized.\")",
+            "$r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>()",
+            "specialinvoke $r5.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r10)",
+            "throw $r5"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.helpers.MarkerIgnoringBase__toString__1463633040\\462.smt2",
+        "z3": {
+            "memory": 30150656,
+            "run_time": 0.16030526161193848,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  ;; universe for var3097:\r\n  ;;   var3097!val!1 var3097!val!0 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var3097!val!1 () var3097)\r\n  (declare-fun var3097!val!0 () var3097)\r\n  ;; cardinality constraint:\r\n  (forall ((x var3097)) (or (= x var3097!val!1) (= x var3097!val!0)))\r\n  ;; -----------\r\n  (define-fun null-var3097 () var3097\r\n    var3097!val!1)\r\n  (define-fun var2551 () ClassObject\r\n    (getClass/1258963082 (cast-from-var3097-to-var2937 var2569)))\r\n  (define-fun var274 () String\r\n    (getName/-77346371 var2569))\r\n  (define-fun var1443 () String\r\n    String-init)\r\n  (define-fun var1340 () String\r\n    (str.++ var1443!1\r\n        (getName/-1958580599\r\n          (getClass/1258963082 (cast-from-var3097-to-var2937 var2569)))\r\n        \"(\"\r\n        (getName/-77346371 var2569)))\r\n  (define-fun var2905 () String\r\n    (getName/-1958580599\r\n  (getClass/1258963082 (cast-from-var3097-to-var2937 var2569))))\r\n  (define-fun var3772 () String\r\n    (str.++ var1443!1\r\n        (getName/-1958580599\r\n          (getClass/1258963082 (cast-from-var3097-to-var2937 var2569)))\r\n        \"(\"\r\n        (getName/-77346371 var2569)\r\n        \")\"))\r\n  (define-fun <init>/1968657023 () String\r\n    \"\")\r\n  (define-fun var1988 () String\r\n    (str.++ var1443!1\r\n        (getName/-1958580599\r\n          (getClass/1258963082 (cast-from-var3097-to-var2937 var2569)))\r\n        \"(\"\r\n        (getName/-77346371 var2569)\r\n        \")\"))\r\n  (define-fun var782 () String\r\n    (str.++ var1443!1\r\n        (getName/-1958580599\r\n          (getClass/1258963082 (cast-from-var3097-to-var2937 var2569)))))\r\n  (define-fun var2569 () var3097\r\n    var3097!val!0)\r\n  (define-fun var1159 () String\r\n    (str.++ var1443!1\r\n        (getName/-1958580599\r\n          (getClass/1258963082 (cast-from-var3097-to-var2937 var2569)))\r\n        \"(\"))\r\n  (define-fun var1340!1 () String\r\n    \"()\")\r\n  (define-fun var1443!2 () String\r\n    \"\")\r\n  (define-fun var1159!1 () String\r\n    \"(\")\r\n  (define-fun var1443!1 () String\r\n    \"\")\r\n  (define-fun var782!1 () String\r\n    \"(\")\r\n  (define-fun String-init () String\r\n    \"\")\r\n  (define-fun cast-from-var3097-to-var2937 ((x!0 var3097)) var2937\r\n    var2937!val!0)\r\n  (define-fun getClass/1258963082 ((x!0 var2937)) ClassObject\r\n    ClassObject!val!0)\r\n  (define-fun getName/-1958580599 ((x!0 ClassObject)) String\r\n    \"\")\r\n  (define-fun getName/-77346371 ((x!0 var3097)) String\r\n    \"\")\r\n)\r\n(error \"line 52 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 8744960,
+            "run_time": 0.062150001525878906,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var3097 is 2\r\n; rep: (as @var3097_0 var3097)\r\n; rep: (as @var3097_1 var3097)\r\n; cardinality of var2937 is 1\r\n; rep: (as @var2937_0 var2937)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun String-init () String \"\")\r\n(define-fun getClass/1258963082 ((BOUND_VARIABLE_575 var2937)) ClassObject (as @ClassObject_0 ClassObject))\r\n(define-fun cast-from-var3097-to-var2937 ((BOUND_VARIABLE_578 var3097)) var2937 (as @var2937_0 var2937))\r\n(define-fun getName/-1958580599 ((BOUND_VARIABLE_581 ClassObject)) String \"\")\r\n(define-fun getName/-77346371 ((BOUND_VARIABLE_584 var3097)) String \"\")\r\n(define-fun null-var3097 () var3097 (as @var3097_0 var3097))\r\n(define-fun var2569 () var3097 (as @var3097_1 var3097))\r\n(define-fun var1443!1 () String \"\")\r\n(define-fun var1443!2 () String \"\")\r\n(define-fun var782!1 () String \"(\")\r\n(define-fun var1159!1 () String \"(\")\r\n(define-fun var1340!1 () String \"()\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 34000896,
+            "run_time": 0.10866093635559082,
+            "is_sat": "sat",
+            "stdout": "sat\n(\n  ;; universe for var3097:\n  ;;   var3097!val!1 var3097!val!0 \n  ;; -----------\n  ;; definitions for universe elements:\n  (declare-fun var3097!val!1 () var3097)\n  (declare-fun var3097!val!0 () var3097)\n  ;; cardinality constraint:\n  (forall ((x var3097)) (or (= x var3097!val!1) (= x var3097!val!0)))\n  ;; -----------\n  (define-fun null-var3097 () var3097\n    var3097!val!1)\n  (define-fun var1443 () String\n    String-init)\n  (define-fun var3772 () String\n    (str.++ var1443!1\n        (getName/-1958580599\n          (getClass/1258963082 (cast-from-var3097-to-var2937 var2569)))\n        \"(\"\n        (getName/-77346371 var2569)\n        \")\"))\n  (define-fun <init>/1968657023 () String\n    \"\")\n  (define-fun var2551 () ClassObject\n    (getClass/1258963082 (cast-from-var3097-to-var2937 var2569)))\n  (define-fun var782 () String\n    (str.++ var1443!1\n        (getName/-1958580599\n          (getClass/1258963082 (cast-from-var3097-to-var2937 var2569)))))\n  (define-fun var1988 () String\n    (str.++ var1443!1\n        (getName/-1958580599\n          (getClass/1258963082 (cast-from-var3097-to-var2937 var2569)))\n        \"(\"\n        (getName/-77346371 var2569)\n        \")\"))\n  (define-fun var2569 () var3097\n    var3097!val!0)\n  (define-fun var2905 () String\n    (getName/-1958580599\n  (getClass/1258963082 (cast-from-var3097-to-var2937 var2569))))\n  (define-fun var1159 () String\n    (str.++ var1443!1\n        (getName/-1958580599\n          (getClass/1258963082 (cast-from-var3097-to-var2937 var2569)))\n        \"(\"))\n  (define-fun var1340 () String\n    (str.++ var1443!1\n        (getName/-1958580599\n          (getClass/1258963082 (cast-from-var3097-to-var2937 var2569)))\n        \"(\"\n        (getName/-77346371 var2569)))\n  (define-fun var274 () String\n    (getName/-77346371 var2569))\n  (define-fun var1340!1 () String\n    \"()\")\n  (define-fun var1443!2 () String\n    \"\")\n  (define-fun var1159!1 () String\n    \"(\")\n  (define-fun var1443!1 () String\n    \"\")\n  (define-fun var782!1 () String\n    \"(\")\n  (define-fun String-init () String\n    \"\")\n  (define-fun cast-from-var3097-to-var2937 ((x!0 var3097)) var2937\n    var2937!val!0)\n  (define-fun getClass/1258963082 ((x!0 var2937)) ClassObject\n    ClassObject!val!0)\n  (define-fun getName/-1958580599 ((x!0 ClassObject)) String\n    \"\")\n  (define-fun getName/-77346371 ((x!0 var3097)) String\n    \"\")\n)\n(error \"line 52 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 179081216,
+            "run_time": 3.3690667152404785,
+            "is_sat": "error",
+            "stdout": "(error \"Internal exception: java.util.NoSuchElementException: key not found: var3097/1\")\r\n(error \"no model available\")\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": "Loading C:\\Users\\yyzha\\Desktop\\jars\\dataset_w\\slf4j\\smt\\method-org.slf4j.helpers.MarkerIgnoringBase__toString__1463633040\\462.smt2 ...\r\n\r\nLoading OSTRICH 1.3.5, a solver for string constraints\r\n(c) Matthew Hague, Denghang Hu, Philipp Rmmer, 2018-2024\r\nWith contributions by Riccardo De Masellis, Zhilei Han, Oliver Markgraf.\r\nFor more information, see https://github.com/uuverifiers/ostrich\r\n\r\nWarning: assuming -length=on to handle length constraints\r\n\r\nRunning backward propagation\r\n   Considered function applications:\r\n   var1340!1 =\r\n     concat(all_23_5, \")\")\r\n   var1159!1 =\r\n     concat(all_20_5, all_20_4)\r\n   var782!1 =\r\n     concat(var1443!2, \"(\")\r\n   all_23_5 =\r\n     concat(all_23_7, all_20_4)\r\n   all_20_5 =\r\n     concat(var1443!2, \"(\")\r\n   all_23_7 =\r\n     concat(var1443!2, \"(\")\r\n\r\n2778ms\r\n"
+        },
+        "undefined_function_count": 5,
+        "assertion_count": 15,
+        "api_sequence": [
+            "<java.lang.StringBuilder: void <init>()>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.String toString()>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: void <init>()>": 1,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 4,
+            "<java.lang.StringBuilder: java.lang.String toString()>": 1
+        },
+        "jimple_statements": [
+            "r1 := @this: org.slf4j.helpers.MarkerIgnoringBase",
+            "$r0 = new java.lang.StringBuilder",
+            "specialinvoke $r0.<java.lang.StringBuilder: void <init>()>()",
+            "$r2 = virtualinvoke r1.<java.lang.Object: java.lang.Class getClass()>()",
+            "$r3 = virtualinvoke $r2.<java.lang.Class: java.lang.String getName()>()",
+            "$r4 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3)",
+            "$r6 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"(\")",
+            "$r5 = virtualinvoke r1.<org.slf4j.helpers.MarkerIgnoringBase: java.lang.String getName()>()",
+            "$r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5)",
+            "$r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\")\")",
+            "$r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>()",
+            "return $r9"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.helpers.MessageFormatter__byteArrayAppend__-10349285\\312.smt2",
+        "z3": {
+            "memory": 31342592,
+            "run_time": 0.2167656421661377,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  (define-fun var2870 () (Array Int Int)\r\n    ((as const (Array Int Int)) (- 1)))\r\n  (define-fun var882 () Int\r\n    (getLength-Arr-Int-1 var2870))\r\n  (define-fun var3536!2 () String\r\n    \"\")\r\n  (define-fun var3536!1 () String\r\n    \"\")\r\n  (define-fun var3372 () Int\r\n    0)\r\n  (define-fun var3536 () String\r\n    \"\")\r\n  (define-fun null-__Array__Int__Int__ () (Array Int Int)\r\n    (store ((as const (Array Int Int)) (- 1)) 0 0))\r\n  (define-fun null-String () String\r\n    \"A\")\r\n  (define-fun getLength-Arr-Int-1 ((x!0 (Array Int Int))) Int\r\n    0)\r\n  (define-fun append/-1166366385 ((x!0 String) (x!1 Int)) String\r\n    \"\")\r\n)\r\n(error \"line 31 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 9433088,
+            "run_time": 0.04518580436706543,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun append/-1166366385 ((BOUND_VARIABLE_737 String) (BOUND_VARIABLE_738 Int)) String \"\")\r\n(define-fun getLength-Arr-Int-1 ((_arg_1 (Array Int Int))) Int 0)\r\n(define-fun null-String () String \"A\")\r\n(define-fun null-__Array__Int__Int__ () (Array Int Int) (store ((as const (Array Int Int)) 1) 0 (- 1)))\r\n(define-fun var3536 () String \"\")\r\n(define-fun var2870 () (Array Int Int) ((as const (Array Int Int)) 0))\r\n(define-fun var3536!1 () String \"\")\r\n(define-fun var3536!2 () String \"\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 38350848,
+            "run_time": 0.1992332935333252,
+            "is_sat": "unknown",
+            "stdout": "unknown\n(error \"line 30 column 10: model is not available, did you forget to enable model generation with ''model=true'?\")\n(error \"line 31 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 181833728,
+            "run_time": 3.664750814437866,
+            "is_sat": "error",
+            "stdout": "sat\r\nerror\r\n",
+            "stderr": "Loading C:\\Users\\yyzha\\Desktop\\jars\\dataset_w\\slf4j\\smt\\method-org.slf4j.helpers.MessageFormatter__byteArrayAppend__-10349285\\312.smt2 ...\r\n\r\nLoading OSTRICH 1.3.5, a solver for string constraints\r\n(c) Matthew Hague, Denghang Hu, Philipp Rmmer, 2018-2024\r\nWith contributions by Riccardo De Masellis, Zhilei Han, Oliver Markgraf.\r\nFor more information, see https://github.com/uuverifiers/ostrich\r\n\r\n\r\nRunning backward propagation\r\n   Considered function applications:\r\n   var3536!2 =\r\n     concat(var3536!1, rhs)\r\n   var3536!1 =\r\n     concat(var3536, rhs)\r\n   ... sat\r\n\r\n2959ms\r\nInternal exception: java.util.NoSuchElementException: key not found: rhs\r\n"
+        },
+        "undefined_function_count": 2,
+        "assertion_count": 8,
+        "api_sequence": [
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>": 2
+        },
+        "jimple_statements": [
+            "r0 := @parameter0: java.lang.StringBuilder",
+            "r1 := @parameter1: byte[]",
+            "virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(91)",
+            "i0 = lengthof r1",
+            "i3 = 0",
+            "if i3 >= i0 goto virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(93)",
+            "virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(93)",
+            "return"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.helpers.MessageFormatter__longArrayAppend__2057807875\\398.smt2",
+        "z3": {
+            "memory": 31956992,
+            "run_time": 0.10337471961975098,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  (define-fun var2701 () String\r\n    \"\")\r\n  (define-fun var2701!2 () String\r\n    \"\")\r\n  (define-fun var2701!1 () String\r\n    \"\")\r\n  (define-fun null-__Array__Int__Int__ () (Array Int Int)\r\n    (store ((as const (Array Int Int)) (- 1)) 0 0))\r\n  (define-fun var2874 () Int\r\n    (getLength-Arr-Int-1 var3475))\r\n  (define-fun var1053 () Int\r\n    0)\r\n  (define-fun null-String () String\r\n    \"A\")\r\n  (define-fun var3475 () (Array Int Int)\r\n    ((as const (Array Int Int)) (- 1)))\r\n  (define-fun getLength-Arr-Int-1 ((x!0 (Array Int Int))) Int\r\n    0)\r\n  (define-fun append/-1166366385 ((x!0 String) (x!1 Int)) String\r\n    \"\")\r\n)\r\n(error \"line 31 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 8822784,
+            "run_time": 0.062347412109375,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun append/-1166366385 ((BOUND_VARIABLE_737 String) (BOUND_VARIABLE_738 Int)) String \"\")\r\n(define-fun getLength-Arr-Int-1 ((_arg_1 (Array Int Int))) Int 0)\r\n(define-fun null-String () String \"A\")\r\n(define-fun null-__Array__Int__Int__ () (Array Int Int) (store ((as const (Array Int Int)) 1) 0 (- 1)))\r\n(define-fun var2701 () String \"\")\r\n(define-fun var3475 () (Array Int Int) ((as const (Array Int Int)) 0))\r\n(define-fun var2701!1 () String \"\")\r\n(define-fun var2701!2 () String \"\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 38346752,
+            "run_time": 0.2471141815185547,
+            "is_sat": "unknown",
+            "stdout": "unknown\n(error \"line 30 column 10: model is not available, did you forget to enable model generation with ''model=true'?\")\n(error \"line 31 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 158949376,
+            "run_time": 3.7740895748138428,
+            "is_sat": "error",
+            "stdout": "sat\r\nerror\r\n",
+            "stderr": "Loading C:\\Users\\yyzha\\Desktop\\jars\\dataset_w\\slf4j\\smt\\method-org.slf4j.helpers.MessageFormatter__longArrayAppend__2057807875\\398.smt2 ...\r\n\r\nLoading OSTRICH 1.3.5, a solver for string constraints\r\n(c) Matthew Hague, Denghang Hu, Philipp Rmmer, 2018-2024\r\nWith contributions by Riccardo De Masellis, Zhilei Han, Oliver Markgraf.\r\nFor more information, see https://github.com/uuverifiers/ostrich\r\n\r\n\r\nRunning backward propagation\r\n   Considered function applications:\r\n   var2701!2 =\r\n     concat(var2701!1, rhs)\r\n   var2701!1 =\r\n     concat(var2701, rhs)\r\n   ... sat\r\n\r\n3018ms\r\nInternal exception: java.util.NoSuchElementException: key not found: rhs\r\n"
+        },
+        "undefined_function_count": 2,
+        "assertion_count": 8,
+        "api_sequence": [
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>": 2
+        },
+        "jimple_statements": [
+            "r0 := @parameter0: java.lang.StringBuilder",
+            "r1 := @parameter1: long[]",
+            "virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(91)",
+            "i0 = lengthof r1",
+            "i3 = 0",
+            "if i3 >= i0 goto virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(93)",
+            "virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(93)",
+            "return"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.helpers.MessageFormatter__objectArrayAppend__-1564370419\\256.smt2",
+        "z3": {
+            "memory": 32124928,
+            "run_time": 0.14183282852172852,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  ;; universe for var1372:\r\n  ;;   var1372!val!0 var1372!val!1 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var1372!val!0 () var1372)\r\n  (declare-fun var1372!val!1 () var1372)\r\n  ;; cardinality constraint:\r\n  (forall ((x var1372)) (or (= x var1372!val!0) (= x var1372!val!1)))\r\n  ;; -----------\r\n  ;; universe for var1450:\r\n  ;;   var1450!val!0 var1450!val!2 var1450!val!1 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var1450!val!0 () var1450)\r\n  (declare-fun var1450!val!2 () var1450)\r\n  (declare-fun var1450!val!1 () var1450)\r\n  ;; cardinality constraint:\r\n  (forall ((x var1450))\r\n          (or (= x var1450!val!0) (= x var1450!val!2) (= x var1450!val!1)))\r\n  ;; -----------\r\n  (define-fun var642 () var1372\r\n    var1372!val!0)\r\n  (define-fun var1388 () String\r\n    \"\")\r\n  (define-fun null-var1372 () var1372\r\n    var1372!val!1)\r\n  (define-fun var1388!3 () String\r\n    \"...\")\r\n  (define-fun var450 () (Array Int var1450)\r\n    ((as const (Array Int var1450)) var1450!val!1))\r\n  (define-fun null-String () String\r\n    \"A\")\r\n  (define-fun var1934 () Bool\r\n    (var1372_containsKey/1715618542\r\n  var642\r\n  (cast-from-__Array__Int__var1450__-to-var1450 var450)))\r\n  (define-fun null-__Array__Int__var1450__ () (Array Int var1450)\r\n    ((as const (Array Int var1450)) var1450!val!2))\r\n  (define-fun var1388!1 () String\r\n    \"\")\r\n  (define-fun var1388!2 () String\r\n    \"...\")\r\n  (define-fun var1372_containsKey/1715618542 ((x!0 var1372) (x!1 var1450)) Bool\r\n    true)\r\n  (define-fun cast-from-__Array__Int__var1450__-to-var1450 ((x!0\r\n    (Array Int var1450))) var1450\r\n    var1450!val!0)\r\n  (define-fun append/-1166366385 ((x!0 String) (x!1 Int)) String\r\n    \"\")\r\n)\r\n(error \"line 41 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 13017088,
+            "run_time": 0.04518580436706543,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var1450 is 3\r\n; rep: (as @var1450_0 var1450)\r\n; rep: (as @var1450_1 var1450)\r\n; rep: (as @var1450_2 var1450)\r\n; cardinality of var1372 is 2\r\n; rep: (as @var1372_0 var1372)\r\n; rep: (as @var1372_1 var1372)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun append/-1166366385 ((BOUND_VARIABLE_1122 String) (BOUND_VARIABLE_1123 Int)) String \"\")\r\n(define-fun var1372_containsKey/1715618542 ((_arg_1 var1372) (_arg_2 var1450)) Bool true)\r\n(define-fun cast-from-__Array__Int__var1450__-to-var1450 ((_arg_1 (Array Int var1450))) var1450 (as @var1450_0 var1450))\r\n(define-fun null-String () String \"A\")\r\n(define-fun null-__Array__Int__var1450__ () (Array Int var1450) ((as const (Array Int var1450)) (as @var1450_1 var1450)))\r\n(define-fun null-var1372 () var1372 (as @var1372_0 var1372))\r\n(define-fun var1388 () String \"\")\r\n(define-fun var450 () (Array Int var1450) (store ((as const (Array Int var1450)) (as @var1450_0 var1450)) 0 (as @var1450_2 var1450)))\r\n(define-fun var642 () var1372 (as @var1372_1 var1372))\r\n(define-fun var1388!1 () String \"\")\r\n(define-fun var1388!2 () String \"...\")\r\n(define-fun var1388!3 () String \"...\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 38420480,
+            "run_time": 0.19945788383483887,
+            "is_sat": "unknown",
+            "stdout": "unknown\n(error \"line 40 column 10: model is not available, did you forget to enable model generation with ''model=true'?\")\n(error \"line 41 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 171810816,
+            "run_time": 3.82180118560791,
+            "is_sat": "error",
+            "stdout": "(error \"Internal exception: java.util.NoSuchElementException: key not found: var1372/1\")\r\n(error \"no model available\")\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": "Loading C:\\Users\\yyzha\\Desktop\\jars\\dataset_w\\slf4j\\smt\\method-org.slf4j.helpers.MessageFormatter__objectArrayAppend__-1564370419\\256.smt2 ...\r\n\r\nLoading OSTRICH 1.3.5, a solver for string constraints\r\n(c) Matthew Hague, Denghang Hu, Philipp Rmmer, 2018-2024\r\nWith contributions by Riccardo De Masellis, Zhilei Han, Oliver Markgraf.\r\nFor more information, see https://github.com/uuverifiers/ostrich\r\n\r\nWarning: assuming -length=on to handle length constraints\r\n\r\nRunning backward propagation\r\n   Considered function applications:\r\n   var1388!3 =\r\n     concat(var1388!2, rhs)\r\n   var1388!2 =\r\n     concat(var1388!1, \"...\")\r\n   var1388!1 =\r\n     concat(var1388, rhs)\r\n\r\n3097ms\r\n"
+        },
+        "undefined_function_count": 3,
+        "assertion_count": 11,
+        "api_sequence": [
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>": 2,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 1
+        },
+        "jimple_statements": [
+            "r0 := @parameter0: java.lang.StringBuilder",
+            "r2 := @parameter1: java.lang.Object[]",
+            "r1 := @parameter2: java.util.Map",
+            "virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(91)",
+            "$z0 = interfaceinvoke r1.<java.util.Map: boolean containsKey(java.lang.Object)>(r2)",
+            "if $z0 != 0 goto virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"...\")",
+            "virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"...\")",
+            "virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(93)",
+            "return"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.helpers.MessageFormatter__booleanArrayAppend__-1418608427\\283.smt2",
+        "z3": {
+            "memory": 31342592,
+            "run_time": 0.14267754554748535,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  (define-fun var1818 () String\r\n    \"\")\r\n  (define-fun var1449 () (Array Int Bool)\r\n    ((as const (Array Int Bool)) false))\r\n  (define-fun var3293 () Int\r\n    (getLength-Arr-Bool-1 var1449))\r\n  (define-fun null-__Array__Int__Bool__ () (Array Int Bool)\r\n    (store ((as const (Array Int Bool)) false) 0 true))\r\n  (define-fun null-String () String\r\n    \"A\")\r\n  (define-fun var1818!2 () String\r\n    \"\")\r\n  (define-fun var1818!1 () String\r\n    \"\")\r\n  (define-fun var3147 () Int\r\n    0)\r\n  (define-fun getLength-Arr-Bool-1 ((x!0 (Array Int Bool))) Int\r\n    0)\r\n  (define-fun append/-1166366385 ((x!0 String) (x!1 Int)) String\r\n    \"\")\r\n)\r\n(error \"line 31 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 8724480,
+            "run_time": 0.04544544219970703,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun append/-1166366385 ((BOUND_VARIABLE_721 String) (BOUND_VARIABLE_722 Int)) String \"\")\r\n(define-fun getLength-Arr-Bool-1 ((_arg_1 (Array Int Bool))) Int 0)\r\n(define-fun null-String () String \"A\")\r\n(define-fun null-__Array__Int__Bool__ () (Array Int Bool) ((as const (Array Int Bool)) true))\r\n(define-fun var1818 () String \"\")\r\n(define-fun var1449 () (Array Int Bool) ((as const (Array Int Bool)) false))\r\n(define-fun var1818!1 () String \"\")\r\n(define-fun var1818!2 () String \"\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 37797888,
+            "run_time": 0.29509401321411133,
+            "is_sat": "unknown",
+            "stdout": "unknown\n(error \"line 30 column 10: model is not available, did you forget to enable model generation with ''model=true'?\")\n(error \"line 31 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 163442688,
+            "run_time": 3.820291757583618,
+            "is_sat": "error",
+            "stdout": "sat\r\nerror\r\n",
+            "stderr": "Loading C:\\Users\\yyzha\\Desktop\\jars\\dataset_w\\slf4j\\smt\\method-org.slf4j.helpers.MessageFormatter__booleanArrayAppend__-1418608427\\283.smt2 ...\r\n\r\nLoading OSTRICH 1.3.5, a solver for string constraints\r\n(c) Matthew Hague, Denghang Hu, Philipp Rmmer, 2018-2024\r\nWith contributions by Riccardo De Masellis, Zhilei Han, Oliver Markgraf.\r\nFor more information, see https://github.com/uuverifiers/ostrich\r\n\r\n\r\nRunning backward propagation\r\n   Considered function applications:\r\n   var1818!2 =\r\n     concat(var1818!1, rhs)\r\n   var1818!1 =\r\n     concat(var1818, rhs)\r\n   ... sat\r\n\r\n2989ms\r\nInternal exception: java.util.NoSuchElementException: key not found: rhs\r\n"
+        },
+        "undefined_function_count": 2,
+        "assertion_count": 8,
+        "api_sequence": [
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>": 2
+        },
+        "jimple_statements": [
+            "r0 := @parameter0: java.lang.StringBuilder",
+            "r1 := @parameter1: boolean[]",
+            "virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(91)",
+            "i0 = lengthof r1",
+            "i2 = 0",
+            "if i2 >= i0 goto virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(93)",
+            "virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(93)",
+            "return"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.helpers.MessageFormatter__charArrayAppend__1195173303\\338.smt2",
+        "z3": {
+            "memory": 31301632,
+            "run_time": 0.10833024978637695,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  (define-fun var3116 () Int\r\n    0)\r\n  (define-fun var3021 () String\r\n    \"\")\r\n  (define-fun null-__Array__Int__Int__ () (Array Int Int)\r\n    (store ((as const (Array Int Int)) (- 1)) 0 0))\r\n  (define-fun var467 () Int\r\n    (getLength-Arr-Int-1 var3208))\r\n  (define-fun var3021!2 () String\r\n    \"\")\r\n  (define-fun null-String () String\r\n    \"A\")\r\n  (define-fun var3208 () (Array Int Int)\r\n    ((as const (Array Int Int)) (- 1)))\r\n  (define-fun var3021!1 () String\r\n    \"\")\r\n  (define-fun getLength-Arr-Int-1 ((x!0 (Array Int Int))) Int\r\n    0)\r\n  (define-fun append/-1166366385 ((x!0 String) (x!1 Int)) String\r\n    \"\")\r\n)\r\n(error \"line 31 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 8732672,
+            "run_time": 0.0464482307434082,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun append/-1166366385 ((BOUND_VARIABLE_737 String) (BOUND_VARIABLE_738 Int)) String \"\")\r\n(define-fun getLength-Arr-Int-1 ((_arg_1 (Array Int Int))) Int 0)\r\n(define-fun null-String () String \"A\")\r\n(define-fun null-__Array__Int__Int__ () (Array Int Int) (store ((as const (Array Int Int)) 1) 0 (- 1)))\r\n(define-fun var3021 () String \"\")\r\n(define-fun var3208 () (Array Int Int) ((as const (Array Int Int)) 0))\r\n(define-fun var3021!1 () String \"\")\r\n(define-fun var3021!2 () String \"\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 37789696,
+            "run_time": 0.29610323905944824,
+            "is_sat": "unknown",
+            "stdout": "unknown\n(error \"line 30 column 10: model is not available, did you forget to enable model generation with ''model=true'?\")\n(error \"line 31 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 158986240,
+            "run_time": 3.927884340286255,
+            "is_sat": "error",
+            "stdout": "sat\r\nerror\r\n",
+            "stderr": "Loading C:\\Users\\yyzha\\Desktop\\jars\\dataset_w\\slf4j\\smt\\method-org.slf4j.helpers.MessageFormatter__charArrayAppend__1195173303\\338.smt2 ...\r\n\r\nLoading OSTRICH 1.3.5, a solver for string constraints\r\n(c) Matthew Hague, Denghang Hu, Philipp Rmmer, 2018-2024\r\nWith contributions by Riccardo De Masellis, Zhilei Han, Oliver Markgraf.\r\nFor more information, see https://github.com/uuverifiers/ostrich\r\n\r\n\r\nRunning backward propagation\r\n   Considered function applications:\r\n   var3021!2 =\r\n     concat(var3021!1, rhs)\r\n   var3021!1 =\r\n     concat(var3021, rhs)\r\n   ... sat\r\n\r\n3095ms\r\nInternal exception: java.util.NoSuchElementException: key not found: rhs\r\n"
+        },
+        "undefined_function_count": 2,
+        "assertion_count": 8,
+        "api_sequence": [
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>": 2
+        },
+        "jimple_statements": [
+            "r0 := @parameter0: java.lang.StringBuilder",
+            "r1 := @parameter1: char[]",
+            "virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(91)",
+            "i0 = lengthof r1",
+            "i3 = 0",
+            "if i3 >= i0 goto virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(93)",
+            "virtualinvoke r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(93)",
+            "return"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.helpers.Reporter__error__1293771269\\321.smt2",
+        "z3": {
+            "memory": 32337920,
+            "run_time": 0.13790631294250488,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  (define-fun var3743 () String\r\n    (str.++ var3161!1 \"SLF4J(E): \" var1702))\r\n  (define-fun var1100 () var2406\r\n    var3824_getTarget/45029478)\r\n  (define-fun var1116 () String\r\n    (str.++ var3161!1 \"SLF4J(E): \" var1702))\r\n  (define-fun var441 () String\r\n    (str.++ var3161!1 \"SLF4J(E): \"))\r\n  (define-fun <init>/1968657023 () String\r\n    \"\")\r\n  (define-fun var1702 () String\r\n    \"A\")\r\n  (define-fun var3161 () String\r\n    String-init)\r\n  (define-fun null-String () String\r\n    \"\")\r\n  (define-fun var3161!1 () String\r\n    \"\")\r\n  (define-fun var441!1 () String\r\n    \"SLF4J(E): A\")\r\n  (define-fun var3161!2 () String\r\n    \"SLF4J(E): \")\r\n  (define-fun var3743!1 () String\r\n    \"\")\r\n  (define-fun var3824_getTarget/45029478 () var2406\r\n    var2406!val!0)\r\n  (define-fun var1100!1 () var2406\r\n    var2406!val!0)\r\n  (define-fun String-init () String\r\n    \"\")\r\n  (define-fun println/1773605060 ((x!0 var2406) (x!1 String)) void\r\n    void!val!0)\r\n)\r\n(error \"line 43 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 9879552,
+            "run_time": 0.061203718185424805,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var1476 is 1\r\n; rep: (as @var1476_0 var1476)\r\n; cardinality of var2406 is 1\r\n; rep: (as @var2406_0 var2406)\r\n; cardinality of var3824 is 1\r\n; rep: (as @var3824_0 var3824)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun var3824_getTarget/45029478 () var2406 (as @var2406_0 var2406))\r\n(define-fun String-init () String \"\")\r\n(define-fun println/1773605060 ((BOUND_VARIABLE_581 var2406) (BOUND_VARIABLE_582 String)) void (as @void_0 void))\r\n(define-fun null-String () String \"A\")\r\n(define-fun var1702 () String \"\")\r\n(define-fun var3161!1 () String \"\")\r\n(define-fun var3161!2 () String \"SLF4J(E): \")\r\n(define-fun var441!1 () String \"SLF4J(E): \")\r\n(define-fun var1100!1 () var2406 (as @var2406_0 var2406))\r\n(define-fun var3743!1 () String \"\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 37650432,
+            "run_time": 0.1371748447418213,
+            "is_sat": "sat",
+            "stdout": "sat\n(\n  (define-fun var3161!2 () String\n    \"SLF4J(E): \")\n  (define-fun var1702 () String\n    \"\\u{0}\\u{0}\")\n  (define-fun var441!1 () String\n    \"SLF4J(E): \\u{0}\\u{0}\")\n  (define-fun var3161!1 () String\n    \"\")\n  (define-fun var1116 () String\n    (str.++ var3161!1 \"SLF4J(E): \" var1702))\n  (define-fun null-String () String\n    \"\\u{0}\")\n  (define-fun var3743 () String\n    (str.++ var3161!1 \"SLF4J(E): \" var1702))\n  (define-fun var441 () String\n    (str.++ var3161!1 \"SLF4J(E): \"))\n  (define-fun <init>/1968657023 () String\n    \"\")\n  (define-fun var3161 () String\n    String-init)\n  (define-fun var1100 () var2406\n    var3824_getTarget/45029478)\n  (define-fun var3743!1 () String\n    \"\")\n  (define-fun var3824_getTarget/45029478 () var2406\n    var2406!val!0)\n  (define-fun var1100!1 () var2406\n    var2406!val!0)\n  (define-fun String-init () String\n    \"\")\n  (define-fun println/1773605060 ((x!0 var2406) (x!1 String)) void\n    void!val!0)\n)\n(error \"line 43 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 181174272,
+            "run_time": 4.0079076290130615,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(model\r\n  (define-fun var441!1 () String \"SLF4J(E): \")\r\n  (define-fun var3161!2 () String \"SLF4J(E): \")\r\n  (define-fun var3161!1 () String \"\")\r\n  (define-fun var1702 () String \"\")\r\n  (define-fun null-String () String \" \")\r\n)\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": ""
+        },
+        "undefined_function_count": 3,
+        "assertion_count": 9,
+        "api_sequence": [
+            "<java.lang.StringBuilder: void <init>()>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.String toString()>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: void <init>()>": 1,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 2,
+            "<java.lang.StringBuilder: java.lang.String toString()>": 1
+        },
+        "jimple_statements": [
+            "r1 := @parameter0: java.lang.String",
+            "$r5 = staticinvoke <org.slf4j.helpers.Reporter: java.io.PrintStream getTarget()>()",
+            "$r0 = new java.lang.StringBuilder",
+            "specialinvoke $r0.<java.lang.StringBuilder: void <init>()>()",
+            "$r2 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"SLF4J(E): \")",
+            "$r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1)",
+            "$r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>()",
+            "virtualinvoke $r5.<java.io.PrintStream: void println(java.lang.String)>($r4)",
+            "return"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.spi.DefaultLoggingEventBuilder__mergeMarkersAndKeyValuePairs__1953283342\\491.smt2",
+        "z3": {
+            "memory": 31383552,
+            "run_time": 0.15530776977539062,
+            "is_sat": "unsat",
+            "stdout": "unsat\r\n(error \"line 42 column 10: model is not available\")\r\n()\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 7094272,
+            "run_time": 0.296811580657959,
+            "is_sat": "unsat",
+            "stdout": "unsat\r\n(error \"Cannot get model unless after a SAT or UNKNOWN response.\")\r\n(\r\n)\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 35868672,
+            "run_time": 0.09276199340820312,
+            "is_sat": "unsat",
+            "stdout": "unsat\n(error \"line 42 column 10: model is not available, did you forget to enable model generation with ''model=true'?\")\n()\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 156917760,
+            "run_time": 1.0724377632141113,
+            "is_sat": "unsat",
+            "stdout": "unsat\r\n(error \"no model available\")\r\n()\r\n",
+            "stderr": ""
+        },
+        "undefined_function_count": 2,
+        "assertion_count": 9,
+        "api_sequence": [
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.String toString()>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 1,
+            "<java.lang.StringBuilder: java.lang.String toString()>": 1
+        },
+        "jimple_statements": [
+            "r14 := @this: org.slf4j.spi.DefaultLoggingEventBuilder",
+            "r0 := @parameter0: org.slf4j.event.LoggingEvent",
+            "r3 := @parameter1: java.lang.String",
+            "r15 = null",
+            "$r1 = interfaceinvoke r0.<org.slf4j.event.LoggingEvent: java.util.List getMarkers()>()",
+            "if $r1 == null goto $r2 = interfaceinvoke r0.<org.slf4j.event.LoggingEvent: java.util.List getKeyValuePairs()>()",
+            "$r2 = interfaceinvoke r0.<org.slf4j.event.LoggingEvent: java.util.List getKeyValuePairs()>()",
+            "if $r2 == null goto (branch)",
+            "if r15 == null goto return r3",
+            "virtualinvoke r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r3)",
+            "$r4 = virtualinvoke r15.<java.lang.StringBuilder: java.lang.String toString()>()",
+            "return $r4"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.spi.DefaultLoggingEventBuilder__mergeMarkersAndKeyValuePairs__1953283342\\501.smt2",
+        "z3": {
+            "memory": 31432704,
+            "run_time": 0.5073261260986328,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  ;; universe for var3180:\r\n  ;;   var3180!val!0 var3180!val!1 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var3180!val!0 () var3180)\r\n  (declare-fun var3180!val!1 () var3180)\r\n  ;; cardinality constraint:\r\n  (forall ((x var3180)) (or (= x var3180!val!0) (= x var3180!val!1)))\r\n  ;; -----------\r\n  ;; universe for var238:\r\n  ;;   var238!val!1 var238!val!0 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var238!val!1 () var238)\r\n  (declare-fun var238!val!0 () var238)\r\n  ;; cardinality constraint:\r\n  (forall ((x var238)) (or (= x var238!val!1) (= x var238!val!0)))\r\n  ;; -----------\r\n  ;; universe for var1045:\r\n  ;;   var1045!val!0 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var1045!val!0 () var1045)\r\n  ;; cardinality constraint:\r\n  (forall ((x var1045)) (= x var1045!val!0))\r\n  ;; -----------\r\n  (define-fun var3613 () var238\r\n    var238!val!0)\r\n  (define-fun var971 () var3180\r\n    var3180!val!0)\r\n  (define-fun var1602 () String\r\n    null-String)\r\n  (define-fun var3919 () var1045\r\n    (var238_getKeyValuePairs/971535184 var3613))\r\n  (define-fun null-var238 () var238\r\n    var238!val!1)\r\n  (define-fun null-String () String\r\n    \"!1!\")\r\n  (define-fun var3513 () String\r\n    \"!0!\")\r\n  (define-fun null-var3180 () var3180\r\n    var3180!val!1)\r\n  (define-fun var261 () var1045\r\n    (var238_getMarkers/1636966334 var3613))\r\n  (define-fun null-var1045 () var1045\r\n    var1045!val!0)\r\n  (define-fun var238_getKeyValuePairs/971535184 ((x!0 var238)) var1045\r\n    var1045!val!0)\r\n  (define-fun var238_getMarkers/1636966334 ((x!0 var238)) var1045\r\n    var1045!val!0)\r\n)\r\n(error \"line 35 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 1720320,
+            "run_time": 0.030388593673706055,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var3180 is 2\r\n; rep: (as @var3180_0 var3180)\r\n; rep: (as @var3180_1 var3180)\r\n; cardinality of var238 is 2\r\n; rep: (as @var238_0 var238)\r\n; rep: (as @var238_1 var238)\r\n; cardinality of var2281 is 1\r\n; rep: (as @var2281_0 var2281)\r\n; cardinality of var1045 is 1\r\n; rep: (as @var1045_0 var1045)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun var238_getMarkers/1636966334 ((_arg_1 var238)) var1045 (as @var1045_0 var1045))\r\n(define-fun var238_getKeyValuePairs/971535184 ((_arg_1 var238)) var1045 (as @var1045_0 var1045))\r\n(define-fun null-var3180 () var3180 (as @var3180_0 var3180))\r\n(define-fun null-var238 () var238 (as @var238_0 var238))\r\n(define-fun null-String () String \"A\")\r\n(define-fun null-var1045 () var1045 (as @var1045_0 var1045))\r\n(define-fun var971 () var3180 (as @var3180_1 var3180))\r\n(define-fun var3613 () var238 (as @var238_1 var238))\r\n(define-fun var3513 () String \"\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 37167104,
+            "run_time": 0.12496232986450195,
+            "is_sat": "sat",
+            "stdout": "sat\n(\n  ;; universe for var3180:\n  ;;   var3180!val!0 var3180!val!1 \n  ;; -----------\n  ;; definitions for universe elements:\n  (declare-fun var3180!val!0 () var3180)\n  (declare-fun var3180!val!1 () var3180)\n  ;; cardinality constraint:\n  (forall ((x var3180)) (or (= x var3180!val!0) (= x var3180!val!1)))\n  ;; -----------\n  ;; universe for var238:\n  ;;   var238!val!1 var238!val!0 \n  ;; -----------\n  ;; definitions for universe elements:\n  (declare-fun var238!val!1 () var238)\n  (declare-fun var238!val!0 () var238)\n  ;; cardinality constraint:\n  (forall ((x var238)) (or (= x var238!val!1) (= x var238!val!0)))\n  ;; -----------\n  ;; universe for var1045:\n  ;;   var1045!val!0 \n  ;; -----------\n  ;; definitions for universe elements:\n  (declare-fun var1045!val!0 () var1045)\n  ;; cardinality constraint:\n  (forall ((x var1045)) (= x var1045!val!0))\n  ;; -----------\n  (define-fun null-var1045 () var1045\n    var1045!val!0)\n  (define-fun var971 () var3180\n    var3180!val!0)\n  (define-fun var3613 () var238\n    var238!val!0)\n  (define-fun var3513 () String\n    \"\\u{0}\\u{0}\")\n  (define-fun null-String () String\n    \"\\u{0}\")\n  (define-fun null-var3180 () var3180\n    var3180!val!1)\n  (define-fun var1602 () String\n    null-String)\n  (define-fun null-var238 () var238\n    var238!val!1)\n  (define-fun var261 () var1045\n    (var238_getMarkers/1636966334 var3613))\n  (define-fun var3919 () var1045\n    (var238_getKeyValuePairs/971535184 var3613))\n  (define-fun var238_getKeyValuePairs/971535184 ((x!0 var238)) var1045\n    var1045!val!0)\n  (define-fun var238_getMarkers/1636966334 ((x!0 var238)) var1045\n    var1045!val!0)\n)\n(error \"line 35 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 161603584,
+            "run_time": 1.1798419952392578,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(model\r\n  (define-fun var3513 () String \"\\u{0}\")\r\n  (define-fun var3613 () var238 var238!10)\r\n  (define-fun var971 () var3180 var3180!8)\r\n  (define-fun null-var1045 () var1045 var1045!6)\r\n  (define-fun null-String () String \"\")\r\n  (define-fun null-var238 () var238 var238!4)\r\n  (define-fun null-var3180 () var3180 var3180!2)\r\n  (define-fun var1045!6 () var1045 (var238_getKeyValuePairs/971535184 var238!10))\r\n  (define-fun var1045!6 () var1045 (var238_getMarkers/1636966334 var238!10))\r\n)\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": ""
+        },
+        "undefined_function_count": 2,
+        "assertion_count": 6,
+        "api_sequence": [
+            ""
+        ],
+        "api_count": {},
+        "jimple_statements": [
+            "r14 := @this: org.slf4j.spi.DefaultLoggingEventBuilder",
+            "r0 := @parameter0: org.slf4j.event.LoggingEvent",
+            "r3 := @parameter1: java.lang.String",
+            "r15 = null",
+            "$r1 = interfaceinvoke r0.<org.slf4j.event.LoggingEvent: java.util.List getMarkers()>()",
+            "if $r1 == null goto $r2 = interfaceinvoke r0.<org.slf4j.event.LoggingEvent: java.util.List getKeyValuePairs()>()",
+            "$r2 = interfaceinvoke r0.<org.slf4j.event.LoggingEvent: java.util.List getKeyValuePairs()>()",
+            "if $r2 == null goto (branch)",
+            "if r15 == null goto return r3",
+            "return r3"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.LoggerFactory__safelyInstantiate__264850940\\57.smt2",
+        "z3": {
+            "memory": 30601216,
+            "run_time": 0.3715801239013672,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  ;; universe for Iterator:\r\n  ;;   Iterator!val!1 Iterator!val!0 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun Iterator!val!1 () Iterator)\r\n  (declare-fun Iterator!val!0 () Iterator)\r\n  ;; cardinality constraint:\r\n  (forall ((x Iterator)) (or (= x Iterator!val!1) (= x Iterator!val!0)))\r\n  ;; -----------\r\n  ;; universe for var308:\r\n  ;;   var308!val!0 var308!val!1 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var308!val!0 () var308)\r\n  (declare-fun var308!val!1 () var308)\r\n  ;; cardinality constraint:\r\n  (forall ((x var308)) (or (= x var308!val!0) (= x var308!val!1)))\r\n  ;; -----------\r\n  ;; universe for var1805:\r\n  ;;   var1805!val!0 var1805!val!1 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var1805!val!0 () var1805)\r\n  (declare-fun var1805!val!1 () var1805)\r\n  ;; cardinality constraint:\r\n  (forall ((x var1805)) (or (= x var1805!val!0) (= x var1805!val!1)))\r\n  ;; -----------\r\n  (define-fun var1136 () String\r\n    String-init)\r\n  (define-fun null-var308 () var308\r\n    var308!val!1)\r\n  (define-fun null-var1805 () var1805\r\n    var1805!val!1)\r\n  (define-fun var1810 () var1805\r\n    var1805!val!0)\r\n  (define-fun var2281 () Iterator\r\n    Iterator!val!0)\r\n  (define-fun null-Iterator () Iterator\r\n    Iterator!val!1)\r\n  (define-fun var2513 () var308\r\n    var308!val!0)\r\n  (define-fun <init>/1968657023 () String\r\n    \"\")\r\n  (define-fun var685 () String\r\n    (str.++ var1136!1 \"A service provider failed to instantiate:\\n\"))\r\n  (define-fun var2052 () String\r\n    (str.++ var1136!1\r\n        \"A service provider failed to instantiate:\\n\"\r\n        (getMessage/849299655 (cast-from-var1805-to-var1957 var1810))))\r\n  (define-fun var2848 () String\r\n    (str.++ var1136!1\r\n        \"A service provider failed to instantiate:\\n\"\r\n        (getMessage/849299655 (cast-from-var1805-to-var1957 var1810))))\r\n  (define-fun var1322 () String\r\n    (getMessage/849299655 (cast-from-var1805-to-var1957 var1810)))\r\n  (define-fun var685!1 () String\r\n    \"A service provider failed to instantiate:\\n\")\r\n  (define-fun var1136!2 () String\r\n    \"A service provider failed to instantiate:\\n\")\r\n  (define-fun var1136!1 () String\r\n    \"\")\r\n  (define-fun String-init () String\r\n    \"\")\r\n  (define-fun var2848!1 () String\r\n    \"\")\r\n  (define-fun cast-from-var1805-to-var1957 ((x!0 var1805)) var1957\r\n    var1957!val!0)\r\n  (define-fun getMessage/849299655 ((x!0 var1957)) String\r\n    \"\")\r\n  (define-fun var1360_error/1293771269 ((x!0 String)) void\r\n    void!val!0)\r\n)\r\n(error \"line 52 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 1638400,
+            "run_time": 0.14085745811462402,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var308 is 2\r\n; rep: (as @var308_0 var308)\r\n; rep: (as @var308_1 var308)\r\n; cardinality of var1805 is 2\r\n; rep: (as @var1805_0 var1805)\r\n; rep: (as @var1805_1 var1805)\r\n; cardinality of var1957 is 1\r\n; rep: (as @var1957_0 var1957)\r\n; cardinality of var1360 is 1\r\n; rep: (as @var1360_0 var1360)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 2\r\n; rep: (as @Iterator_0 Iterator)\r\n; rep: (as @Iterator_1 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun String-init () String \"\")\r\n(define-fun getMessage/849299655 ((BOUND_VARIABLE_529 var1957)) String \"\")\r\n(define-fun cast-from-var1805-to-var1957 ((BOUND_VARIABLE_532 var1805)) var1957 (as @var1957_0 var1957))\r\n(define-fun var1360_error/1293771269 ((BOUND_VARIABLE_535 String)) void (as @void_0 void))\r\n(define-fun null-var308 () var308 (as @var308_0 var308))\r\n(define-fun null-Iterator () Iterator (as @Iterator_0 Iterator))\r\n(define-fun null-var1805 () var1805 (as @var1805_0 var1805))\r\n(define-fun var2513 () var308 (as @var308_1 var308))\r\n(define-fun var2281 () Iterator (as @Iterator_1 Iterator))\r\n(define-fun var1810 () var1805 (as @var1805_1 var1805))\r\n(define-fun var1136!1 () String \"\")\r\n(define-fun var1136!2 () String \"A service provider failed to instantiate:\\u{5c}n\")\r\n(define-fun var685!1 () String \"A service provider failed to instantiate:\\u{5c}n\")\r\n(define-fun var2848!1 () String \"\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 36851712,
+            "run_time": 0.5250246524810791,
+            "is_sat": "sat",
+            "stdout": "sat\n(\n  ;; universe for Iterator:\n  ;;   Iterator!val!1 Iterator!val!0 \n  ;; -----------\n  ;; definitions for universe elements:\n  (declare-fun Iterator!val!1 () Iterator)\n  (declare-fun Iterator!val!0 () Iterator)\n  ;; cardinality constraint:\n  (forall ((x Iterator)) (or (= x Iterator!val!1) (= x Iterator!val!0)))\n  ;; -----------\n  ;; universe for var308:\n  ;;   var308!val!0 var308!val!1 \n  ;; -----------\n  ;; definitions for universe elements:\n  (declare-fun var308!val!0 () var308)\n  (declare-fun var308!val!1 () var308)\n  ;; cardinality constraint:\n  (forall ((x var308)) (or (= x var308!val!0) (= x var308!val!1)))\n  ;; -----------\n  ;; universe for var1805:\n  ;;   var1805!val!0 var1805!val!1 \n  ;; -----------\n  ;; definitions for universe elements:\n  (declare-fun var1805!val!0 () var1805)\n  (declare-fun var1805!val!1 () var1805)\n  ;; cardinality constraint:\n  (forall ((x var1805)) (or (= x var1805!val!0) (= x var1805!val!1)))\n  ;; -----------\n  (define-fun <init>/1968657023 () String\n    \"\")\n  (define-fun null-var308 () var308\n    var308!val!1)\n  (define-fun null-var1805 () var1805\n    var1805!val!1)\n  (define-fun var1810 () var1805\n    var1805!val!0)\n  (define-fun var2281 () Iterator\n    Iterator!val!0)\n  (define-fun null-Iterator () Iterator\n    Iterator!val!1)\n  (define-fun var2513 () var308\n    var308!val!0)\n  (define-fun var685 () String\n    (str.++ var1136!1 \"A service provider failed to instantiate:\\n\"))\n  (define-fun var1322 () String\n    (getMessage/849299655 (cast-from-var1805-to-var1957 var1810)))\n  (define-fun var2052 () String\n    (str.++ var1136!1\n        \"A service provider failed to instantiate:\\n\"\n        (getMessage/849299655 (cast-from-var1805-to-var1957 var1810))))\n  (define-fun var2848 () String\n    (str.++ var1136!1\n        \"A service provider failed to instantiate:\\n\"\n        (getMessage/849299655 (cast-from-var1805-to-var1957 var1810))))\n  (define-fun var1136 () String\n    String-init)\n  (define-fun var685!1 () String\n    \"A service provider failed to instantiate:\\n\")\n  (define-fun var1136!2 () String\n    \"A service provider failed to instantiate:\\n\")\n  (define-fun var1136!1 () String\n    \"\")\n  (define-fun String-init () String\n    \"\")\n  (define-fun var2848!1 () String\n    \"\")\n  (define-fun cast-from-var1805-to-var1957 ((x!0 var1805)) var1957\n    var1957!val!0)\n  (define-fun getMessage/849299655 ((x!0 var1957)) String\n    \"\")\n  (define-fun var1360_error/1293771269 ((x!0 String)) void\n    void!val!0)\n)\n(error \"line 52 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 178126848,
+            "run_time": 1.336411952972412,
+            "is_sat": "error",
+            "stdout": "(error \"Internal exception: java.util.NoSuchElementException: key not found: Iterator/1\")\r\n(error \"no model available\")\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": "Loading C:\\Users\\yyzha\\Desktop\\jars\\dataset_w\\slf4j\\smt\\method-org.slf4j.LoggerFactory__safelyInstantiate__264850940\\57.smt2 ...\r\n\r\nLoading OSTRICH 1.3.5, a solver for string constraints\r\n(c) Matthew Hague, Denghang Hu, Philipp Rmmer, 2018-2024\r\nWith contributions by Riccardo De Masellis, Zhilei Han, Oliver Markgraf.\r\nFor more information, see https://github.com/uuverifiers/ostrich\r\n\r\nWarning: assuming -length=on to handle length constraints\r\n\r\nRunning backward propagation\r\n   Considered function applications:\r\n   var685!1 =\r\n     concat(\"A service provider failed to instantiate:\\u{5c}n\", all_25_2)\r\n\r\n990ms\r\n"
+        },
+        "undefined_function_count": 4,
+        "assertion_count": 13,
+        "api_sequence": [
+            "<java.lang.StringBuilder: void <init>()>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.String toString()>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: void <init>()>": 1,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 2,
+            "<java.lang.StringBuilder: java.lang.String toString()>": 1
+        },
+        "jimple_statements": [
+            "r2 := @parameter0: java.util.List",
+            "r0 := @parameter1: java.util.Iterator",
+            "$r3 := @caughtexception",
+            "$r4 = new java.lang.StringBuilder",
+            "specialinvoke $r4.<java.lang.StringBuilder: void <init>()>()",
+            "$r6 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"A service provider failed to instantiate:\\n\")",
+            "$r5 = virtualinvoke $r3.<java.util.ServiceConfigurationError: java.lang.String getMessage()>()",
+            "$r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5)",
+            "$r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>()",
+            "staticinvoke <org.slf4j.helpers.Reporter: void error(java.lang.String)>($r8)",
+            "return"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.helpers.Util__report__1674290116\\397.smt2",
+        "z3": {
+            "memory": 31338496,
+            "run_time": 0.5014569759368896,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  (define-fun var2040 () String\r\n    (str.++ var1459!1 \"SLF4J: \" var2225))\r\n  (define-fun var3844 () String\r\n    (str.++ var1459!1 \"SLF4J: \" var2225))\r\n  (define-fun <init>/1968657023 () String\r\n    \"\")\r\n  (define-fun var1459 () String\r\n    String-init)\r\n  (define-fun var1038 () String\r\n    (str.++ var1459!1 \"SLF4J: \"))\r\n  (define-fun var2225 () String\r\n    \"A\")\r\n  (define-fun null-String () String\r\n    \"\")\r\n  (define-fun var2548 () var950\r\n    var1724-err)\r\n  (define-fun var1459!1 () String\r\n    \"\")\r\n  (define-fun var1459!2 () String\r\n    \"SLF4J: \")\r\n  (define-fun var1038!1 () String\r\n    \"SLF4J: A\")\r\n  (define-fun var2548!1 () var950\r\n    var950!val!0)\r\n  (define-fun var2040!1 () String\r\n    \"\")\r\n  (define-fun String-init () String\r\n    \"\")\r\n  (define-fun var1724-err () var950\r\n    var950!val!0)\r\n  (define-fun println/1773605060 ((x!0 var950) (x!1 String)) void\r\n    void!val!0)\r\n)\r\n(error \"line 43 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 2203648,
+            "run_time": 0.26639533042907715,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var1332 is 1\r\n; rep: (as @var1332_0 var1332)\r\n; cardinality of var950 is 1\r\n; rep: (as @var950_0 var950)\r\n; cardinality of var1724 is 1\r\n; rep: (as @var1724_0 var1724)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun String-init () String \"\")\r\n(define-fun println/1773605060 ((BOUND_VARIABLE_581 var950) (BOUND_VARIABLE_582 String)) void (as @void_0 void))\r\n(define-fun null-String () String \"A\")\r\n(define-fun var1724-err () var950 (as @var950_0 var950))\r\n(define-fun var2225 () String \"\")\r\n(define-fun var1459!1 () String \"\")\r\n(define-fun var1459!2 () String \"SLF4J: \")\r\n(define-fun var1038!1 () String \"SLF4J: \")\r\n(define-fun var2548!1 () var950 (as @var950_0 var950))\r\n(define-fun var2040!1 () String \"\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 38264832,
+            "run_time": 0.3738420009613037,
+            "is_sat": "sat",
+            "stdout": "sat\n(\n  (define-fun var1038!1 () String\n    \"SLF4J: \\u{0}\\u{0}\")\n  (define-fun var1459!2 () String\n    \"SLF4J: \")\n  (define-fun var1459!1 () String\n    \"\")\n  (define-fun var3844 () String\n    (str.++ var1459!1 \"SLF4J: \" var2225))\n  (define-fun var2225 () String\n    \"\\u{0}\\u{0}\")\n  (define-fun var2040 () String\n    (str.++ var1459!1 \"SLF4J: \" var2225))\n  (define-fun null-String () String\n    \"\\u{0}\")\n  (define-fun var2548 () var950\n    var1724-err)\n  (define-fun <init>/1968657023 () String\n    \"\")\n  (define-fun var1459 () String\n    String-init)\n  (define-fun var1038 () String\n    (str.++ var1459!1 \"SLF4J: \"))\n  (define-fun var2548!1 () var950\n    var950!val!0)\n  (define-fun var2040!1 () String\n    \"\")\n  (define-fun String-init () String\n    \"\")\n  (define-fun var1724-err () var950\n    var950!val!0)\n  (define-fun println/1773605060 ((x!0 var950) (x!1 String)) void\n    void!val!0)\n)\n(error \"line 43 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 166068224,
+            "run_time": 1.8635108470916748,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(model\r\n  (define-fun var1038!1 () String \"SLF4J: \")\r\n  (define-fun var1459!2 () String \"SLF4J: \")\r\n  (define-fun var1459!1 () String \"\")\r\n  (define-fun var2225 () String \"\")\r\n  (define-fun null-String () String \" \")\r\n)\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": ""
+        },
+        "undefined_function_count": 2,
+        "assertion_count": 9,
+        "api_sequence": [
+            "<java.lang.StringBuilder: void <init>()>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.String toString()>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: void <init>()>": 1,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 2,
+            "<java.lang.StringBuilder: java.lang.String toString()>": 1
+        },
+        "jimple_statements": [
+            "r2 := @parameter0: java.lang.String",
+            "$r1 = <java.lang.System: java.io.PrintStream err>",
+            "$r0 = new java.lang.StringBuilder",
+            "specialinvoke $r0.<java.lang.StringBuilder: void <init>()>()",
+            "$r3 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"SLF4J: \")",
+            "$r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r2)",
+            "$r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>()",
+            "virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>($r5)",
+            "return"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.Logger__isEnabledForLevel__-938986821\\139.smt2",
+        "z3": {
+            "memory": 31907840,
+            "run_time": 0.2142181396484375,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  ;; universe for var187:\r\n  ;;   var187!val!1 var187!val!0 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var187!val!1 () var187)\r\n  (declare-fun var187!val!0 () var187)\r\n  ;; cardinality constraint:\r\n  (forall ((x var187)) (or (= x var187!val!1) (= x var187!val!0)))\r\n  ;; -----------\r\n  ;; universe for var3092:\r\n  ;;   var3092!val!0 var3092!val!1 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var3092!val!0 () var3092)\r\n  (declare-fun var3092!val!1 () var3092)\r\n  ;; cardinality constraint:\r\n  (forall ((x var3092)) (or (= x var3092!val!0) (= x var3092!val!1)))\r\n  ;; -----------\r\n  (define-fun var3008!1 () String\r\n    \"Level [\")\r\n  (define-fun var2680 () String\r\n    (str.++ (append/-1031950772\r\n          (str.++ var3708!1 \"Level [\")\r\n          (cast-from-var187-to-var1643 var2668))\r\n        \"] not recognized.\"))\r\n  (define-fun var3252 () String\r\n    (append/-1031950772\r\n  (str.++ var3708!1 \"Level [\")\r\n  (cast-from-var187-to-var1643 var2668)))\r\n  (define-fun null-var3092 () var3092\r\n    var3092!val!1)\r\n  (define-fun var695 () String\r\n    (str.++ (append/-1031950772\r\n          (str.++ var3708!1 \"Level [\")\r\n          (cast-from-var187-to-var1643 var2668))\r\n        \"] not recognized.\"))\r\n  (define-fun var1175 () Int\r\n    (toInt/-1916557473 var2668))\r\n  (define-fun <init>/1968657023 () String\r\n    \"\")\r\n  (define-fun var442 () var2674\r\n    var2674-init)\r\n  (define-fun var2668 () var187\r\n    var187!val!0)\r\n  (define-fun null-var187 () var187\r\n    var187!val!1)\r\n  (define-fun var3708 () String\r\n    String-init)\r\n  (define-fun var3934 () var3092\r\n    var3092!val!0)\r\n  (define-fun var3008 () String\r\n    (str.++ var3708!1 \"Level [\"))\r\n  (define-fun var3252!1 () String\r\n    \"] not recognized.\")\r\n  (define-fun var3708!1 () String\r\n    \"\")\r\n  (define-fun var3708!2 () String\r\n    \"Level [\")\r\n  (define-fun var2674-init () var2674\r\n    var2674!val!0)\r\n  (define-fun var442!1 () var2674\r\n    var2674!val!0)\r\n  (define-fun var2680!1 () String\r\n    \"\")\r\n  (define-fun String-init () String\r\n    \"\")\r\n  (define-fun toInt/-1916557473 ((x!0 var187)) Int\r\n    2)\r\n  (define-fun cast-from-var187-to-var1643 ((x!0 var187)) var1643\r\n    var1643!val!0)\r\n  (define-fun append/-1031950772 ((x!0 String) (x!1 var1643)) String\r\n    \"\")\r\n  (define-fun <init>/875830710 ((x!0 var2674) (x!1 String)) void\r\n    void!val!0)\r\n)\r\n(error \"line 58 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 7016448,
+            "run_time": 0.3122432231903076,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var3092 is 2\r\n; rep: (as @var3092_0 var3092)\r\n; rep: (as @var3092_1 var3092)\r\n; cardinality of var187 is 2\r\n; rep: (as @var187_0 var187)\r\n; rep: (as @var187_1 var187)\r\n; cardinality of var2674 is 1\r\n; rep: (as @var2674_0 var2674)\r\n; cardinality of var1643 is 1\r\n; rep: (as @var1643_0 var1643)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun toInt/-1916557473 ((_arg_1 var187)) Int (- 1))\r\n(define-fun var2674-init () var2674 (as @var2674_0 var2674))\r\n(define-fun String-init () String \"\")\r\n(define-fun append/-1031950772 ((BOUND_VARIABLE_1023 String) (BOUND_VARIABLE_1024 var1643)) String \"\")\r\n(define-fun cast-from-var187-to-var1643 ((BOUND_VARIABLE_1027 var187)) var1643 (as @var1643_0 var1643))\r\n(define-fun <init>/875830710 ((BOUND_VARIABLE_1030 var2674) (BOUND_VARIABLE_1031 String)) void (as @void_0 void))\r\n(define-fun null-var3092 () var3092 (as @var3092_0 var3092))\r\n(define-fun null-var187 () var187 (as @var187_0 var187))\r\n(define-fun var3934 () var3092 (as @var3092_1 var3092))\r\n(define-fun var2668 () var187 (as @var187_1 var187))\r\n(define-fun var3708!1 () String \"\")\r\n(define-fun var3708!2 () String \"Level [\")\r\n(define-fun var3008!1 () String \"Level [\")\r\n(define-fun var3252!1 () String \"] not recognized.\")\r\n(define-fun var442!1 () var2674 (as @var2674_0 var2674))\r\n(define-fun var2680!1 () String \"\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 36257792,
+            "run_time": 0.09276199340820312,
+            "is_sat": "sat",
+            "stdout": "sat\n(\n  ;; universe for var187:\n  ;;   var187!val!1 var187!val!0 \n  ;; -----------\n  ;; definitions for universe elements:\n  (declare-fun var187!val!1 () var187)\n  (declare-fun var187!val!0 () var187)\n  ;; cardinality constraint:\n  (forall ((x var187)) (or (= x var187!val!1) (= x var187!val!0)))\n  ;; -----------\n  ;; universe for var3092:\n  ;;   var3092!val!0 var3092!val!1 \n  ;; -----------\n  ;; definitions for universe elements:\n  (declare-fun var3092!val!0 () var3092)\n  (declare-fun var3092!val!1 () var3092)\n  ;; cardinality constraint:\n  (forall ((x var3092)) (or (= x var3092!val!0) (= x var3092!val!1)))\n  ;; -----------\n  (define-fun null-var3092 () var3092\n    var3092!val!1)\n  (define-fun <init>/1968657023 () String\n    \"\")\n  (define-fun var1175 () Int\n    (toInt/-1916557473 var2668))\n  (define-fun var2668 () var187\n    var187!val!0)\n  (define-fun var3008 () String\n    (str.++ var3708!1 \"Level [\"))\n  (define-fun var2680 () String\n    (str.++ (append/-1031950772\n          (str.++ var3708!1 \"Level [\")\n          (cast-from-var187-to-var1643 var2668))\n        \"] not recognized.\"))\n  (define-fun var3934 () var3092\n    var3092!val!0)\n  (define-fun var3708!2 () String\n    \"Level [\")\n  (define-fun var3708 () String\n    String-init)\n  (define-fun var3008!1 () String\n    \"Level [\")\n  (define-fun null-var187 () var187\n    var187!val!1)\n  (define-fun var442 () var2674\n    var2674-init)\n  (define-fun var3252 () String\n    (append/-1031950772\n  (str.++ var3708!1 \"Level [\")\n  (cast-from-var187-to-var1643 var2668)))\n  (define-fun var695 () String\n    (str.++ (append/-1031950772\n          (str.++ var3708!1 \"Level [\")\n          (cast-from-var187-to-var1643 var2668))\n        \"] not recognized.\"))\n  (define-fun var3252!1 () String\n    \"] not recognized.\")\n  (define-fun var3708!1 () String\n    \"\")\n  (define-fun var2674-init () var2674\n    var2674!val!0)\n  (define-fun var442!1 () var2674\n    var2674!val!0)\n  (define-fun var2680!1 () String\n    \"\")\n  (define-fun String-init () String\n    \"\")\n  (define-fun toInt/-1916557473 ((x!0 var187)) Int\n    2)\n  (define-fun cast-from-var187-to-var1643 ((x!0 var187)) var1643\n    var1643!val!0)\n  (define-fun append/-1031950772 ((x!0 String) (x!1 var1643)) String\n    \"\")\n  (define-fun <init>/875830710 ((x!0 var2674) (x!1 String)) void\n    void!val!0)\n)\n(error \"line 58 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 178696192,
+            "run_time": 1.41395902633667,
+            "is_sat": "error",
+            "stdout": "(error \"Internal exception: java.util.NoSuchElementException: key not found: var187/1\")\r\n(error \"no model available\")\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": "Loading C:\\Users\\yyzha\\Desktop\\jars\\dataset_w\\slf4j\\smt\\method-org.slf4j.Logger__isEnabledForLevel__-938986821\\139.smt2 ...\r\n\r\nLoading OSTRICH 1.3.5, a solver for string constraints\r\n(c) Matthew Hague, Denghang Hu, Philipp Rmmer, 2018-2024\r\nWith contributions by Riccardo De Masellis, Zhilei Han, Oliver Markgraf.\r\nFor more information, see https://github.com/uuverifiers/ostrich\r\n\r\nWarning: assuming -length=on to handle length constraints\r\n\r\nRunning backward propagation\r\n   Considered function applications:\r\n   all_29_4 =\r\n     concat(all_26_4, \"] not recognized.\")\r\n   var3252!1 =\r\n     concat(all_26_4, \"] not recognized.\")\r\n\r\n1070ms\r\n"
+        },
+        "undefined_function_count": 6,
+        "assertion_count": 14,
+        "api_sequence": [
+            "<java.lang.StringBuilder: void <init>()>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.String toString()>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: void <init>()>": 1,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 2,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 1,
+            "<java.lang.StringBuilder: java.lang.String toString()>": 1
+        },
+        "jimple_statements": [
+            "r1 := @this: org.slf4j.Logger",
+            "r0 := @parameter0: org.slf4j.event.Level",
+            "i0 = virtualinvoke r0.<org.slf4j.event.Level: int toInt()>()",
+            "lookupswitch(i0) {     case 0: goto $z4 = interfaceinvoke r1.<org.slf4j.Logger: boolean isTraceEnabled()>();     case 10: goto $z3 = interfaceinvoke r1.<org.slf4j.Logger: boolean isDebugEnabled()>();     case 20: goto $z2 = interfaceinvoke r1.<org.slf4j.Logger: boolean isInfoEnabled()>();     case 30: goto $z1 = interfaceinvoke r1.<org.slf4j.Logger: boolean isWarnEnabled()>();     case 40: goto $z0 = interfaceinvoke r1.<org.slf4j.Logger: boolean isErrorEnabled()>();     default: goto $r2 = new java.lang.IllegalArgumentException; }",
+            "$r2 = new java.lang.IllegalArgumentException",
+            "$r3 = new java.lang.StringBuilder",
+            "specialinvoke $r3.<java.lang.StringBuilder: void <init>()>()",
+            "$r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"Level [\")",
+            "$r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>(r0)",
+            "$r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"] not recognized.\")",
+            "$r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>()",
+            "specialinvoke $r2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r7)",
+            "throw $r2"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.LoggerFactory__emitReplayWarning__1249053857\\362.smt2",
+        "z3": {
+            "memory": 31440896,
+            "run_time": 0.4492170810699463,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  (define-fun var2744 () String\r\n    (str.++ var2683!1\r\n        \"A number (\"\r\n        (str.from_int var2536)\r\n        \") of logging calls during the initialization phase have been intercepted and are\"))\r\n  (define-fun var2683 () String\r\n    String-init)\r\n  (define-fun var3580 () String\r\n    (str.++ var2683!1 \"A number (\" (str.from_int var2536)))\r\n  (define-fun var3062 () String\r\n    (str.++ var2683!1\r\n        \"A number (\"\r\n        (str.from_int var2536)\r\n        \") of logging calls during the initialization phase have been intercepted and are\"))\r\n  (define-fun var3133!1 () String\r\n    \"A number (\")\r\n  (define-fun <init>/1968657023 () String\r\n    \"\")\r\n  (define-fun var2536 () Int\r\n    1)\r\n  (define-fun var3133 () String\r\n    (str.++ var2683!1 \"A number (\"))\r\n  (define-fun null-Int () Int\r\n    0)\r\n  (define-fun var2683!1 () String\r\n    \"\")\r\n  (define-fun var3580!1 () String\r\n    \"A number (1) of logging calls during the initialization phase have been intercepted and are\")\r\n  (define-fun var2683!2 () String\r\n    \"A number (\")\r\n  (define-fun String-init () String\r\n    \"\")\r\n  (define-fun var3062!1 () String\r\n    \"\")\r\n  (define-fun var2371 () String\r\n    \"\")\r\n  (define-fun var3781 () String\r\n    \"\")\r\n  (define-fun var947_warn/-2058658223 ((x!0 String)) void\r\n    void!val!0)\r\n)\r\n(error \"line 48 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 1638400,
+            "run_time": 0.18617820739746094,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var947 is 1\r\n; rep: (as @var947_0 var947)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun String-init () String \"\")\r\n(define-fun var947_warn/-2058658223 ((BOUND_VARIABLE_935 String)) void (as @void_0 void))\r\n(define-fun null-Int () Int (- 1))\r\n(define-fun var2536 () Int 0)\r\n(define-fun var2683!1 () String \"\")\r\n(define-fun var2683!2 () String \"A number (\")\r\n(define-fun var3133!1 () String \"A number (\")\r\n(define-fun var3580!1 () String \"A number (0) of logging calls during the initialization phase have been intercepted and are\")\r\n(define-fun var3062!1 () String \"\")\r\n(define-fun var2371 () String \"\")\r\n(define-fun var3781 () String \"\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 36904960,
+            "run_time": 0.48122739791870117,
+            "is_sat": "sat",
+            "stdout": "sat\n(\n  (define-fun var3062 () String\n    (str.++ var2683!1\n        \"A number (\"\n        (str.from_int var2536)\n        \") of logging calls during the initialization phase have been intercepted and are\"))\n  (define-fun var3133!1 () String\n    \"A number (\")\n  (define-fun var2683 () String\n    String-init)\n  (define-fun <init>/1968657023 () String\n    \"\")\n  (define-fun var3133 () String\n    (str.++ var2683!1 \"A number (\"))\n  (define-fun var2536 () Int\n    1)\n  (define-fun var2683!2 () String\n    \"A number (\")\n  (define-fun var2744 () String\n    (str.++ var2683!1\n        \"A number (\"\n        (str.from_int var2536)\n        \") of logging calls during the initialization phase have been intercepted and are\"))\n  (define-fun var3580 () String\n    (str.++ var2683!1 \"A number (\" (str.from_int var2536)))\n  (define-fun null-Int () Int\n    0)\n  (define-fun var2683!1 () String\n    \"\")\n  (define-fun var3580!1 () String\n    \"A number (1) of logging calls during the initialization phase have been intercepted and are\")\n  (define-fun String-init () String\n    \"\")\n  (define-fun var3062!1 () String\n    \"\")\n  (define-fun var2371 () String\n    \"\")\n  (define-fun var3781 () String\n    \"\")\n  (define-fun var947_warn/-2058658223 ((x!0 String)) void\n    void!val!0)\n)\n(error \"line 48 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 168431616,
+            "run_time": 1.4289894104003906,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(model\r\n  (define-fun var3580!1 () String \"A number () of logging calls during the initialization phase have been intercepted and are\")\r\n  (define-fun var3133!1 () String \"A number (\")\r\n  (define-fun var2683!2 () String \"A number (\")\r\n  (define-fun var2683!1 () String \"\")\r\n  (define-fun var2536 () Int (- 6))\r\n  (define-fun null-Int () Int 0)\r\n)\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": ""
+        },
+        "undefined_function_count": 2,
+        "assertion_count": 10,
+        "api_sequence": [
+            "<java.lang.StringBuilder: void <init>()>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.String toString()>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: void <init>()>": 1,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 2,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(int)>": 1,
+            "<java.lang.StringBuilder: java.lang.String toString()>": 1
+        },
+        "jimple_statements": [
+            "i0 := @parameter0: int",
+            "$r0 = new java.lang.StringBuilder",
+            "specialinvoke $r0.<java.lang.StringBuilder: void <init>()>()",
+            "$r1 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"A number (\")",
+            "$r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i0)",
+            "$r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\") of logging calls during the initialization phase have been intercepted and are\")",
+            "$r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>()",
+            "staticinvoke <org.slf4j.helpers.Reporter: void warn(java.lang.String)>($r4)",
+            "staticinvoke <org.slf4j.helpers.Reporter: void warn(java.lang.String)>(\"now being replayed. These are subject to the filtering rules of the underlying logging system.\")",
+            "staticinvoke <org.slf4j.helpers.Reporter: void warn(java.lang.String)>(\"See also https://www.slf4j.org/codes.html#replay\")",
+            "return"
+        ]
+    },
+    {
+        "filename": "smt\\method-org.slf4j.helpers.Util__safeGetBooleanSystemProperty__1310203653\\312.smt2",
+        "z3": {
+            "memory": 31698944,
+            "run_time": 60.00105690956116,
+            "is_sat": "timeout",
+            "stdout": "",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 1662976,
+            "run_time": 0.028850317001342773,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var569 is 1\r\n; rep: (as @var569_0 var569)\r\n; cardinality of var2905 is 1\r\n; rep: (as @var2905_0 var2905)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun var2905_safeGetSystemProperty/735118062 ((_arg_1 String)) String \"\")\r\n(define-fun null-String () String \"A\")\r\n(define-fun var191 () String \"\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 33366016,
+            "run_time": 0.09057259559631348,
+            "is_sat": "unknown",
+            "stdout": "unknown\n(error \"line 21 column 10: model is not available, did you forget to enable model generation with ''model=true'?\")\n(error \"line 22 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 176414720,
+            "run_time": 0.7305436134338379,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(model\r\n  (define-fun var191 () String \"a\")\r\n  (define-fun null-String () String \"\")\r\n  (define-fun var2905_safeGetSystemProperty/735118062 ((x!0 String)) String (ite (= x!0 \"a\") \"d\" \"\"))\r\n)\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": ""
+        },
+        "undefined_function_count": 1,
+        "assertion_count": 3,
+        "api_sequence": [
+            "<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>"
+        ],
+        "api_count": {
+            "<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>": 1
+        },
+        "jimple_statements": [
+            "r0 := @parameter0: java.lang.String",
+            "r1 = staticinvoke <org.slf4j.helpers.Util: java.lang.String safeGetSystemProperty(java.lang.String)>(r0)",
+            "if r1 != null goto $z0 = virtualinvoke r1.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(\"true\")",
+            "$z0 = virtualinvoke r1.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(\"true\")",
+            "return $z0"
+        ]
+    }
+]

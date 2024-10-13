@@ -1,0 +1,100 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var3571 0)
+(declare-sort var1393 0)
+(declare-sort var3466 0)
+(declare-sort var1578 0)
+(declare-sort var1369 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun var1369-init () var1369)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun getName/-1907289949 (var1393) String)
+(declare-fun getClass/1258963082 (var3466) ClassObject)
+(declare-fun append/-1031950772 (String var3466) String)
+(declare-fun cast-from-ClassObject-to-var3466 (ClassObject) var3466)
+(declare-fun toString/-1112415476 (var1578) String)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun <init>/-1806233911 (var1369 String var1578) void)
+(declare-const null-var3571 var3571)
+(declare-const null-var1393 var1393)
+(declare-const null-var3466 var3466)
+(declare-const null-var1578 var1578)
+(declare-const var2535 var3571) ; Statement: r0 := @this: org.apache.ibatis.reflection.wrapper.BeanWrapper 
+(assert (not (= var2535 null-var3571)))
+(declare-const var2829 var1393) ; Statement: r1 := @parameter0: org.apache.ibatis.reflection.property.PropertyTokenizer 
+(assert (not (= var2829 null-var1393)))
+(declare-const var1716 var3466) ; Statement: r6 := @parameter1: java.lang.Object 
+(assert (not (= var1716 null-var3466)))
+(declare-const var854 var3466) ; Statement: r5 := @parameter2: java.lang.Object 
+(assert (not (= var854 null-var3466)))
+(assert true) ; Handling Exception: java.lang.Throwable 
+(declare-const var3950 var1578) ; Statement: $r7 := @caughtexception 
+(assert (not (= var3950 null-var1578)))
+(define-const var1711 var1369 var1369-init) ; Statement: $r8 = new org.apache.ibatis.reflection.ReflectionException 
+(define-const var619 String String-init) ; Statement: $r9 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var619)) ; Statement: specialinvoke $r9.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var619!1 String)
+(assert (= var619!1 ""))
+(assert true)
+(define-const var3707 String (append/672562846 var619!1 "Could not set property \u0027")) ; Statement: $r11 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Could not set property \'") 
+(declare-const var619!2 String)
+(assert (= var619!2 (str.++ var619!1 "Could not set property \u0027")))
+(assert true)
+(define-const var776 String (getName/-1907289949 var2829)) ; Statement: $r10 = virtualinvoke r1.<org.apache.ibatis.reflection.property.PropertyTokenizer: java.lang.String getName()>() 
+(assert true)
+(define-const var451 String (append/672562846 var3707 var776)) ; Statement: $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r10) 
+(declare-const var3707!1 String)
+(assert (= var3707!1 (str.++ var3707 var776)))
+(assert true)
+(define-const var1584 String (append/672562846 var451 "\u0027 of \u0027")) ; Statement: $r14 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\' of \'") 
+(declare-const var451!1 String)
+(assert (= var451!1 (str.++ var451 "\u0027 of \u0027")))
+(assert true)
+(define-const var3049 ClassObject (getClass/1258963082 var1716)) ; Statement: $r13 = virtualinvoke r6.<java.lang.Object: java.lang.Class getClass()>() 
+(assert true)
+(define-const var2189 String (append/-1031950772 var1584 (cast-from-ClassObject-to-var3466 var3049))) ; Statement: $r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r13) 
+(declare-const var1584!1 String)
+(assert (str.prefixof var1584 var1584!1))
+(assert true)
+(define-const var646 String (append/672562846 var2189 "\u0027 with value \u0027")) ; Statement: $r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\' with value \'") 
+(declare-const var2189!1 String)
+(assert (= var2189!1 (str.++ var2189 "\u0027 with value \u0027")))
+(assert true)
+(define-const var1693 String (append/-1031950772 var646 var854)) ; Statement: $r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>(r5) 
+(declare-const var646!1 String)
+(assert (str.prefixof var646 var646!1))
+(assert true)
+(define-const var2277 String (append/672562846 var1693 "\u0027 Cause: ")) ; Statement: $r19 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\' Cause: ") 
+(declare-const var1693!1 String)
+(assert (= var1693!1 (str.++ var1693 "\u0027 Cause: ")))
+(assert true)
+(define-const var2667 String (toString/-1112415476 var3950)) ; Statement: $r18 = virtualinvoke $r7.<java.lang.Throwable: java.lang.String toString()>() 
+(assert true)
+(define-const var1656 String (append/672562846 var2277 var2667)) ; Statement: $r20 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r18) 
+(declare-const var2277!1 String)
+(assert (= var2277!1 (str.++ var2277 var2667)))
+(assert true)
+(define-const var1171 String (toString/-2075883882 var1656)) ; Statement: $r21 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.String toString()>() 
+(assert true)
+;(assert (<init>/-1806233911 var1711 var1171 var3950)) ; Statement: specialinvoke $r8.<org.apache.ibatis.reflection.ReflectionException: void <init>(java.lang.String,java.lang.Throwable)>($r21, $r7) 
+
+(declare-const var1711!1 var1369)
+(declare-const var1171!1 String)
+(declare-const var3950!1 var1578)
+ ; Statement: throw $r8 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {var1369-init=([], org.apache.ibatis.reflection.ReflectionException), String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), getName/-1907289949=([org.apache.ibatis.reflection.property.PropertyTokenizer], java.lang.String), getClass/1258963082=([java.lang.Object], java.lang.Class), append/-1031950772=([java.lang.StringBuilder, java.lang.Object], java.lang.StringBuilder), cast-from-ClassObject-to-var3466=([java.lang.Class], java.lang.Object), toString/-1112415476=([java.lang.Throwable], java.lang.String), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), <init>/-1806233911=([org.apache.ibatis.reflection.ReflectionException, java.lang.String, java.lang.Throwable], void)}
+; {var3571=org.apache.ibatis.reflection.wrapper.BeanWrapper, var2535=r0, var1393=org.apache.ibatis.reflection.property.PropertyTokenizer, var2829=r1, var3466=java.lang.Object, var1716=r6, var854=r5, var1578=java.lang.Throwable, var3950=$r7, var1369=org.apache.ibatis.reflection.ReflectionException, var1711=$r8, var619=$r9, var3707=$r11, var776=$r10, var451=$r12, var1584=$r14, var3049=$r13, var2189=$r15, var646=$r16, var1693=$r17, var2277=$r19, var2667=$r18, var1656=$r20, var1171=$r21}
+; {org.apache.ibatis.reflection.wrapper.BeanWrapper=var3571, r0=var2535, org.apache.ibatis.reflection.property.PropertyTokenizer=var1393, r1=var2829, java.lang.Object=var3466, r6=var1716, r5=var854, java.lang.Throwable=var1578, $r7=var3950, org.apache.ibatis.reflection.ReflectionException=var1369, $r8=var1711, $r9=var619, $r11=var3707, $r10=var776, $r12=var451, $r14=var1584, $r13=var3049, $r15=var2189, $r16=var646, $r17=var1693, $r19=var2277, $r18=var2667, $r20=var1656, $r21=var1171}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.Throwable: java.lang.String toString()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 6,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 2,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r0 := @this: org.apache.ibatis.reflection.wrapper.BeanWrapper;	r1 := @parameter0: org.apache.ibatis.reflection.property.PropertyTokenizer;	r6 := @parameter1: java.lang.Object;	r5 := @parameter2: java.lang.Object;	$r7 := @caughtexception;	$r8 = new org.apache.ibatis.reflection.ReflectionException;	$r9 = new java.lang.StringBuilder;	specialinvoke $r9.<java.lang.StringBuilder: void <init>()>();	$r11 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Could not set property \'");	$r10 = virtualinvoke r1.<org.apache.ibatis.reflection.property.PropertyTokenizer: java.lang.String getName()>();	$r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r10);	$r14 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\' of \'");	$r13 = virtualinvoke r6.<java.lang.Object: java.lang.Class getClass()>();	$r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r13);	$r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\' with value \'");	$r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>(r5);	$r19 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\' Cause: ");	$r18 = virtualinvoke $r7.<java.lang.Throwable: java.lang.String toString()>();	$r20 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r18);	$r21 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.String toString()>();	specialinvoke $r8.<org.apache.ibatis.reflection.ReflectionException: void <init>(java.lang.String,java.lang.Throwable)>($r21, $r7);	throw $r8
+;block_num 2

@@ -1,0 +1,172 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var2044 0)
+(declare-sort var3186 0)
+(declare-sort var2853 0)
+(declare-sort var1051 0)
+(declare-sort var3916 0)
+(declare-sort var3945 0)
+(declare-sort var2438 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun var1051-init () var1051)
+(declare-fun mailhost/-1706755279 (var3186) String)
+(declare-fun port/-1029469955 (var3186) Int)
+(declare-fun <init>/624529186 (var1051 String Int) void)
+(declare-fun var3916_getDateForHeader/1166021712 () String)
+(declare-fun setHeader/-1987092425 (var1051 String String) void)
+(declare-fun from/1607271034 (var3186) String)
+(declare-fun from/-1285714277 (var1051 String) void)
+(declare-fun replytoList/-2005424537 (var3186) String)
+(define-fun isEmpty/-1285796103 ((s String)) Bool (= (str.len s) 0))
+(declare-fun var3945-init () var3945)
+(declare-fun toList/-1151686697 (var3186) String)
+(declare-fun <init>/-1517764957 (var3945 String String Bool) void)
+(declare-fun hasMoreTokens/711654492 (var3945) Bool)
+(declare-fun subject/1054519358 (var3186) String)
+(declare-fun setSubject/-540069337 (var1051 String) void)
+(declare-fun charset/-904220642 (var3186) String)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(declare-fun mimeType/-1520647390 (var3186) String)
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun getPrintStream/853539708 (var1051) var2438)
+(declare-fun body/1252986894 (var3186) String)
+(declare-fun println/1773605060 (var2438 String) void)
+(declare-fun sendAndClose/-31098045 (var1051) void)
+(declare-const null-var2044 var2044)
+(declare-const null-var3186 var3186)
+(declare-const null-String String)
+(declare-const var996 var2044) ; Statement: r26 := @this: com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger 
+(assert (not (= var996 null-var2044)))
+(declare-const var1676 var3186) ; Statement: r1 := @parameter0: com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values 
+(assert (not (= var1676 null-var3186)))
+(declare-const var2425 String) ; Statement: r19 := @parameter1: java.lang.String 
+(assert (not (= var2425 null-String)))
+(define-const var3998 var1051 var1051-init) ; Statement: $r0 = new com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage 
+(assert true)
+(define-const var3097 String (mailhost/-1706755279 var1676)) ; Statement: $r2 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String mailhost()>() 
+(assert true)
+(define-const var1704 Int (port/-1029469955 var1676)) ; Statement: $i0 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: int port()>() 
+(assert true)
+;(assert (<init>/624529186 var3998 var3097 var1704)) ; Statement: specialinvoke $r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage: void <init>(java.lang.String,int)>($r2, $i0) 
+
+(declare-const var3998!1 var1051)
+(declare-const var3097!1 String)
+(declare-const var1704!1 Int)
+(define-const var248 String var3916_getDateForHeader/1166021712) ; Statement: $r3 = staticinvoke <com.google.javascript.jscomp.jarjar.org.apache.tools.ant.util.DateUtils: java.lang.String getDateForHeader()>() 
+(assert true)
+;(assert (setHeader/-1987092425 var3998!1 "Date" var248)) ; Statement: virtualinvoke $r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage: void setHeader(java.lang.String,java.lang.String)>("Date", $r3) 
+
+(declare-const var3998!2 var1051)
+(declare-const var3433 String)
+(declare-const var248!1 String)
+(assert true)
+(define-const var3721 String (from/1607271034 var1676)) ; Statement: $r4 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String 'from'()>() 
+(assert true)
+;(assert (from/-1285714277 var3998!2 var3721)) ; Statement: virtualinvoke $r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage: void 'from'(java.lang.String)>($r4) 
+
+(declare-const var3998!3 var1051)
+(declare-const var3721!1 String)
+(assert true)
+(define-const var2511 String (replytoList/-2005424537 var1676)) ; Statement: $r5 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String replytoList()>() 
+(assert true)
+(define-const var2641 Bool (isEmpty/-1285796103 var2511)) ; Statement: $z0 = virtualinvoke $r5.<java.lang.String: boolean isEmpty()>() 
+ ; Statement: if $z0 != 0 goto $r6 = new java.util.StringTokenizer 
+(assert (not (= (ite var2641 1 0) 0))) ; Cond: $z0 != 0 
+(define-const var1714 var3945 var3945-init) ; Statement: $r6 = new java.util.StringTokenizer 
+(assert true)
+(define-const var747 String (toList/-1151686697 var1676)) ; Statement: $r7 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String toList()>() 
+(assert true)
+;(assert (<init>/-1517764957 var1714 var747 ", " (ite (= 1 0) true false))) ; Statement: specialinvoke $r6.<java.util.StringTokenizer: void <init>(java.lang.String,java.lang.String,boolean)>($r7, ", ", 0) 
+
+(declare-const var1714!1 var3945)
+(declare-const var747!1 String)
+(declare-const var1690 String)
+(declare-const var1702 Int)
+(assert true) ; Non Conditional
+(assert true)
+(define-const var2441 Bool (hasMoreTokens/711654492 var1714!1)) ; Statement: $z4 = virtualinvoke $r6.<java.util.StringTokenizer: boolean hasMoreTokens()>() 
+ ; Statement: if $z4 == 0 goto $r8 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String subject()>() 
+(assert (= (ite var2441 1 0) 0)) ; Cond: $z4 == 0 
+(assert true)
+(define-const var2908 String (subject/1054519358 var1676)) ; Statement: $r8 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String subject()>() 
+(assert true)
+;(assert (setSubject/-540069337 var3998!3 var2908)) ; Statement: virtualinvoke $r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage: void setSubject(java.lang.String)>($r8) 
+
+(declare-const var3998!4 var1051)
+(declare-const var2908!1 String)
+(assert true)
+(define-const var3418 String (charset/-904220642 var1676)) ; Statement: $r9 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String charset()>() 
+(assert true)
+(define-const var61 Bool (isEmpty/-1285796103 var3418)) ; Statement: $z1 = virtualinvoke $r9.<java.lang.String: boolean isEmpty()>() 
+ ; Statement: if $z1 == 0 goto $r10 = new java.lang.StringBuilder 
+(assert (= (ite var61 1 0) 0)) ; Cond: $z1 == 0 
+(define-const var1416 String String-init) ; Statement: $r10 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var1416)) ; Statement: specialinvoke $r10.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var1416!1 String)
+(assert (= var1416!1 ""))
+(assert true)
+(define-const var2267 String (mimeType/-1520647390 var1676)) ; Statement: $r11 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String mimeType()>() 
+(assert true)
+(define-const var1069 String (append/672562846 var1416!1 var2267)) ; Statement: $r12 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r11) 
+(declare-const var1416!2 String)
+(assert (= var1416!2 (str.++ var1416!1 var2267)))
+(assert true)
+(define-const var1724 String (append/672562846 var1069 "; charset=\u0022")) ; Statement: $r14 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("; charset=\"") 
+(declare-const var1069!1 String)
+(assert (= var1069!1 (str.++ var1069 "; charset=\u0022")))
+(assert true)
+(define-const var664 String (charset/-904220642 var1676)) ; Statement: $r13 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String charset()>() 
+(assert true)
+(define-const var514 String (append/672562846 var1724 var664)) ; Statement: $r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r13) 
+(declare-const var1724!1 String)
+(assert (= var1724!1 (str.++ var1724 var664)))
+(assert true)
+(define-const var200 String (append/672562846 var514 "\u0022")) ; Statement: $r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\"") 
+(declare-const var514!1 String)
+(assert (= var514!1 (str.++ var514 "\u0022")))
+(assert true)
+(define-const var1932 String (toString/-2075883882 var200)) ; Statement: $r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.String toString()>() 
+(assert true)
+;(assert (setHeader/-1987092425 var3998!4 "Content-Type" var1932)) ; Statement: virtualinvoke $r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage: void setHeader(java.lang.String,java.lang.String)>("Content-Type", $r17) 
+
+(declare-const var3998!5 var1051)
+(declare-const var451 String)
+(declare-const var1932!1 String)
+(assert true) ; Non Conditional
+(assert true)
+(define-const var1443 var2438 (getPrintStream/853539708 var3998!5)) ; Statement: $r21 = virtualinvoke $r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage: java.io.PrintStream getPrintStream()>() 
+(assert true)
+(define-const var1157 String (body/1252986894 var1676)) ; Statement: $r18 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String body()>() 
+(assert true)
+(define-const var2956 Bool (isEmpty/-1285796103 var1157)) ; Statement: $z2 = virtualinvoke $r18.<java.lang.String: boolean isEmpty()>() 
+ ; Statement: if $z2 == 0 goto $r27 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String body()>() 
+(assert (= (ite var2956 1 0) 0)) ; Cond: $z2 == 0 
+(assert true)
+(define-const var2423 String (body/1252986894 var1676)) ; Statement: $r27 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String body()>() 
+(assert true) ; Non Conditional
+(assert true)
+;(assert (println/1773605060 var1443 var2423)) ; Statement: virtualinvoke $r21.<java.io.PrintStream: void println(java.lang.String)>($r27) 
+
+(declare-const var1443!1 var2438)
+(declare-const var2423!1 String)
+(assert true)
+;(assert (sendAndClose/-31098045 var3998!5)) ; Statement: virtualinvoke $r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage: void sendAndClose()>() 
+
+(declare-const var3998!6 var1051)
+ ; Statement: return 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {var1051-init=([], com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage), mailhost/-1706755279=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values], java.lang.String), port/-1029469955=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values], int), <init>/624529186=([com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage, java.lang.String, int], void), var3916_getDateForHeader/1166021712=([], java.lang.String), setHeader/-1987092425=([com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage, java.lang.String, java.lang.String], void), from/1607271034=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values], java.lang.String), from/-1285714277=([com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage, java.lang.String], void), replytoList/-2005424537=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values], java.lang.String), isEmpty/-1285796103=([java.lang.String], boolean), var3945-init=([], java.util.StringTokenizer), toList/-1151686697=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values], java.lang.String), <init>/-1517764957=([java.util.StringTokenizer, java.lang.String, java.lang.String, boolean], void), hasMoreTokens/711654492=([java.util.StringTokenizer], boolean), subject/1054519358=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values], java.lang.String), setSubject/-540069337=([com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage, java.lang.String], void), charset/-904220642=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values], java.lang.String), String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), mimeType/-1520647390=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values], java.lang.String), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), getPrintStream/853539708=([com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage], java.io.PrintStream), body/1252986894=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values], java.lang.String), println/1773605060=([java.io.PrintStream, java.lang.String], void), sendAndClose/-31098045=([com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage], void)}
+; {var2044=com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger, var996=r26, var3186=com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values, var1676=r1, var2425=r19, var2853=null_type, var1051=com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage, var3998=$r0, var3097=$r2, var1704=$i0, var3916=com.google.javascript.jscomp.jarjar.org.apache.tools.ant.util.DateUtils, var248=$r3, var3433="Date", var3721=$r4, var2511=$r5, var2641=$z0, var3945=java.util.StringTokenizer, var1714=$r6, var747=$r7, var1690=", ", var1702=0, var2441=$z4, var2908=$r8, var3418=$r9, var61=$z1, var1416=$r10, var2267=$r11, var1069=$r12, var1724=$r14, var664=$r13, var514=$r15, var200=$r16, var1932=$r17, var451="Content-Type", var2438=java.io.PrintStream, var1443=$r21, var1157=$r18, var2956=$z2, var2423=$r27}
+; {com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger=var2044, r26=var996, com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values=var3186, r1=var1676, r19=var2425, null_type=var2853, com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage=var1051, $r0=var3998, $r2=var3097, $i0=var1704, com.google.javascript.jscomp.jarjar.org.apache.tools.ant.util.DateUtils=var3916, $r3=var248, "Date"=var3433, $r4=var3721, $r5=var2511, $z0=var2641, java.util.StringTokenizer=var3945, $r6=var1714, $r7=var747, ", "=var1690, 0=var1702, $z4=var2441, $r8=var2908, $r9=var3418, $z1=var61, $r10=var1416, $r11=var2267, $r12=var1069, $r14=var1724, $r13=var664, $r15=var514, $r16=var200, $r17=var1932, "Content-Type"=var451, java.io.PrintStream=var2438, $r21=var1443, $r18=var1157, $z2=var2956, $r27=var2423}
+;seq <java.lang.String: boolean isEmpty()>;	<java.lang.String: boolean isEmpty()>;	<java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>;	<java.lang.String: boolean isEmpty()>
+;cnt {"<java.lang.String: boolean isEmpty()>": 3,"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 4,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r26 := @this: com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger;	r1 := @parameter0: com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values;	r19 := @parameter1: java.lang.String;	$r0 = new com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage;	$r2 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String mailhost()>();	$i0 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: int port()>();	specialinvoke $r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage: void <init>(java.lang.String,int)>($r2, $i0);	$r3 = staticinvoke <com.google.javascript.jscomp.jarjar.org.apache.tools.ant.util.DateUtils: java.lang.String getDateForHeader()>();	virtualinvoke $r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage: void setHeader(java.lang.String,java.lang.String)>("Date", $r3);	$r4 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String 'from'()>();	virtualinvoke $r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage: void 'from'(java.lang.String)>($r4);	$r5 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String replytoList()>();	$z0 = virtualinvoke $r5.<java.lang.String: boolean isEmpty()>();	if $z0 != 0 goto $r6 = new java.util.StringTokenizer;	$r6 = new java.util.StringTokenizer;	$r7 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String toList()>();	specialinvoke $r6.<java.util.StringTokenizer: void <init>(java.lang.String,java.lang.String,boolean)>($r7, ", ", 0);	$z4 = virtualinvoke $r6.<java.util.StringTokenizer: boolean hasMoreTokens()>();	if $z4 == 0 goto $r8 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String subject()>();	$r8 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String subject()>();	virtualinvoke $r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage: void setSubject(java.lang.String)>($r8);	$r9 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String charset()>();	$z1 = virtualinvoke $r9.<java.lang.String: boolean isEmpty()>();	if $z1 == 0 goto $r10 = new java.lang.StringBuilder;	$r10 = new java.lang.StringBuilder;	specialinvoke $r10.<java.lang.StringBuilder: void <init>()>();	$r11 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String mimeType()>();	$r12 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r11);	$r14 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("; charset=\"");	$r13 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String charset()>();	$r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r13);	$r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\"");	$r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.String toString()>();	virtualinvoke $r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage: void setHeader(java.lang.String,java.lang.String)>("Content-Type", $r17);	$r21 = virtualinvoke $r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage: java.io.PrintStream getPrintStream()>();	$r18 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String body()>();	$z2 = virtualinvoke $r18.<java.lang.String: boolean isEmpty()>();	if $z2 == 0 goto $r27 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String body()>();	$r27 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.listener.MailLogger$Values: java.lang.String body()>();	virtualinvoke $r21.<java.io.PrintStream: void println(java.lang.String)>($r27);	virtualinvoke $r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.mail.MailMessage: void sendAndClose()>();	return
+;block_num 8

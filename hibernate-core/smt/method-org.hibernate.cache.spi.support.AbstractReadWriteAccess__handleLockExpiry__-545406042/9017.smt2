@@ -1,0 +1,143 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var2383 0)
+(declare-sort var3942 0)
+(declare-sort var2133 0)
+(declare-sort var2069 0)
+(declare-sort var3393 0)
+(declare-sort var381 0)
+(declare-sort var2574 0)
+(declare-sort var656 0)
+(declare-sort var2554 0)
+(declare-sort var309 0)
+(declare-sort var1569 0)
+(declare-sort var1965 0)
+(declare-sort var3304 0)
+(declare-sort var1579 0)
+(declare-sort var1783 0)
+(declare-sort var225 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun getRegion/1945408306 (var2574) var381)
+(declare-fun cast-from-var2383-to-var2574 (var2383) var2574)
+(declare-fun var656_getName/-839342387 (var656) String)
+(declare-fun cast-from-var381-to-var656 (var381) var656)
+(declare-fun var3393_softLockedCacheExpired/-864592302 (var3393 String var2133) void)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun append/-1031950772 (String var2133) String)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun info/-1796951176 (var2554 var2133) void)
+(declare-fun cast-from-String-to-var2133 (String) var2133)
+(declare-fun var656_getRegionFactory/1526130293 (var656) var309)
+(declare-fun var309_nextTimestamp/125435346 (var309) Int)
+(declare-fun var309_getTimeout/781408410 (var309) Int)
+(declare-fun var1569-init () var1569)
+(declare-fun uuid/428855192 (var2383) var1965)
+(declare-fun nextLockId/428855192 (var2383) var3304)
+(declare-fun getAndIncrement/-698983298 (var3304) Int)
+(declare-fun <init>/-35974134 (var1569 Int var1965 Int var2133) void)
+(declare-fun unlock/1918507724 (var1569 Int) void)
+(declare-fun getStorageAccess/165171015 (var2574) var1783)
+(declare-fun var225_putIntoCache/273855457 (var225 var2133 var2133 var3942) void)
+(declare-fun cast-from-var1783-to-var225 (var1783) var225)
+(declare-fun cast-from-var1569-to-var2133 (var1569) var2133)
+(declare-const null-var2383 var2383)
+(declare-const null-var3942 var3942)
+(declare-const null-var2133 var2133)
+(declare-const null-var2069 var2069)
+(declare-const var3393-INSTANCE var3393)
+(declare-const var2383-log var2554)
+(declare-const null-NullType var1579)
+(declare-const var1451 var2383) ; Statement: r0 := @this: org.hibernate.cache.spi.support.AbstractReadWriteAccess 
+(assert (not (= var1451 null-var2383)))
+(declare-const var3403 var3942) ; Statement: r19 := @parameter0: org.hibernate.engine.spi.SharedSessionContractImplementor 
+(assert (not (= var3403 null-var3942)))
+(declare-const var188 var2133) ; Statement: r3 := @parameter1: java.lang.Object 
+(assert (not (= var188 null-var2133)))
+(declare-const var2647 var2069) ; Statement: r21 := @parameter2: org.hibernate.cache.spi.support.AbstractReadWriteAccess$Lockable 
+(assert (not (= var2647 null-var2069)))
+(define-const var1102 var3393 var3393-INSTANCE) ; Statement: $r1 = <org.hibernate.cache.spi.SecondLevelCacheLogger: org.hibernate.cache.spi.SecondLevelCacheLogger INSTANCE> 
+(assert true)
+(define-const var3606 var381 (getRegion/1945408306 (cast-from-var2383-to-var2574 var1451))) ; Statement: $r2 = virtualinvoke r0.<org.hibernate.cache.spi.support.AbstractReadWriteAccess: org.hibernate.cache.spi.DomainDataRegion getRegion()>() 
+(define-const var1029 String (var656_getName/-839342387 (cast-from-var381-to-var656 var3606))) ; Statement: $r4 = interfaceinvoke $r2.<org.hibernate.cache.spi.DomainDataRegion: java.lang.String getName()>() 
+;(assert (var3393_softLockedCacheExpired/-864592302 var1102 var1029 var188)) ; Statement: interfaceinvoke $r1.<org.hibernate.cache.spi.SecondLevelCacheLogger: void softLockedCacheExpired(java.lang.String,java.lang.Object)>($r4, r3) 
+
+(declare-const var1102!1 var3393)
+(declare-const var1029!1 String)
+(declare-const var188!1 var2133)
+(define-const var3374 var2554 var2383-log) ; Statement: $r6 = <org.hibernate.cache.spi.support.AbstractReadWriteAccess: org.jboss.logging.Logger log> 
+(define-const var2120 String String-init) ; Statement: $r5 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var2120)) ; Statement: specialinvoke $r5.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var2120!1 String)
+(assert (= var2120!1 ""))
+(assert true)
+(define-const var1127 String (append/672562846 var2120!1 "Cached entry expired : ")) ; Statement: $r7 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Cached entry expired : ") 
+(declare-const var2120!2 String)
+(assert (= var2120!2 (str.++ var2120!1 "Cached entry expired : ")))
+(assert true)
+(define-const var3831 String (append/-1031950772 var1127 var188!1)) ; Statement: $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>(r3) 
+(declare-const var1127!1 String)
+(assert (str.prefixof var1127 var1127!1))
+(assert true)
+(define-const var1750 String (toString/-2075883882 var3831)) ; Statement: $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>() 
+(assert true)
+;(assert (info/-1796951176 var3374 (cast-from-String-to-var2133 var1750))) ; Statement: virtualinvoke $r6.<org.jboss.logging.Logger: void info(java.lang.Object)>($r9) 
+
+(declare-const var3374!1 var2554)
+(declare-const var1750!1 String)
+(assert true)
+(define-const var497 var381 (getRegion/1945408306 (cast-from-var2383-to-var2574 var1451))) ; Statement: $r10 = virtualinvoke r0.<org.hibernate.cache.spi.support.AbstractReadWriteAccess: org.hibernate.cache.spi.DomainDataRegion getRegion()>() 
+(define-const var885 var309 (var656_getRegionFactory/1526130293 (cast-from-var381-to-var656 var497))) ; Statement: $r11 = interfaceinvoke $r10.<org.hibernate.cache.spi.DomainDataRegion: org.hibernate.cache.spi.RegionFactory getRegionFactory()>() 
+(define-const var97 Int (var309_nextTimestamp/125435346 var885)) ; Statement: $l1 = interfaceinvoke $r11.<org.hibernate.cache.spi.RegionFactory: long nextTimestamp()>() 
+(assert true)
+(define-const var3314 var381 (getRegion/1945408306 (cast-from-var2383-to-var2574 var1451))) ; Statement: $r12 = virtualinvoke r0.<org.hibernate.cache.spi.support.AbstractReadWriteAccess: org.hibernate.cache.spi.DomainDataRegion getRegion()>() 
+(define-const var756 var309 (var656_getRegionFactory/1526130293 (cast-from-var381-to-var656 var3314))) ; Statement: $r13 = interfaceinvoke $r12.<org.hibernate.cache.spi.DomainDataRegion: org.hibernate.cache.spi.RegionFactory getRegionFactory()>() 
+(define-const var2709 Int (var309_getTimeout/781408410 var756)) ; Statement: $l0 = interfaceinvoke $r13.<org.hibernate.cache.spi.RegionFactory: long getTimeout()>() 
+(define-const var1254 Int (+ var97 var2709)) ; Statement: l2 = $l1 + $l0 
+(define-const var959 var1569 var1569-init) ; Statement: $r14 = new org.hibernate.cache.spi.support.AbstractReadWriteAccess$SoftLockImpl 
+(define-const var3316 var1965 (uuid/428855192 var1451)) ; Statement: $r16 = r0.<org.hibernate.cache.spi.support.AbstractReadWriteAccess: java.util.UUID uuid> 
+(define-const var557 var3304 (nextLockId/428855192 var1451)) ; Statement: $r15 = r0.<org.hibernate.cache.spi.support.AbstractReadWriteAccess: java.util.concurrent.atomic.AtomicLong nextLockId> 
+(assert true)
+(define-const var2268 Int (getAndIncrement/-698983298 var557)) ; Statement: $l3 = virtualinvoke $r15.<java.util.concurrent.atomic.AtomicLong: long getAndIncrement()>() 
+(assert true)
+;(assert (<init>/-35974134 var959 var1254 var3316 var2268 null-var2133)) ; Statement: specialinvoke $r14.<org.hibernate.cache.spi.support.AbstractReadWriteAccess$SoftLockImpl: void <init>(long,java.util.UUID,long,java.lang.Object)>(l2, $r16, $l3, null) 
+
+(declare-const var959!1 var1569)
+(declare-const var1254!1 Int)
+(declare-const var3316!1 var1965)
+(declare-const var2268!1 Int)
+(declare-const var3963 var1579)
+(assert true)
+(define-const var3832 var381 (getRegion/1945408306 (cast-from-var2383-to-var2574 var1451))) ; Statement: $r17 = virtualinvoke r0.<org.hibernate.cache.spi.support.AbstractReadWriteAccess: org.hibernate.cache.spi.DomainDataRegion getRegion()>() 
+(define-const var1217 var309 (var656_getRegionFactory/1526130293 (cast-from-var381-to-var656 var3832))) ; Statement: $r18 = interfaceinvoke $r17.<org.hibernate.cache.spi.DomainDataRegion: org.hibernate.cache.spi.RegionFactory getRegionFactory()>() 
+(define-const var66 Int (var309_getTimeout/781408410 var1217)) ; Statement: $l4 = interfaceinvoke $r18.<org.hibernate.cache.spi.RegionFactory: long getTimeout()>() 
+(define-const var1100 Int (- var1254!1 var66)) ; Statement: $l5 = l2 - $l4 
+(assert true)
+;(assert (unlock/1918507724 var959!1 var1100)) ; Statement: virtualinvoke $r14.<org.hibernate.cache.spi.support.AbstractReadWriteAccess$SoftLockImpl: void unlock(long)>($l5) 
+
+(declare-const var959!2 var1569)
+(declare-const var1100!1 Int)
+(assert true)
+(define-const var1288 var1783 (getStorageAccess/165171015 (cast-from-var2383-to-var2574 var1451))) ; Statement: $r20 = virtualinvoke r0.<org.hibernate.cache.spi.support.AbstractReadWriteAccess: org.hibernate.cache.spi.support.DomainDataStorageAccess getStorageAccess()>() 
+;(assert (var225_putIntoCache/273855457 (cast-from-var1783-to-var225 var1288) var188!1 (cast-from-var1569-to-var2133 var959!2) var3403)) ; Statement: interfaceinvoke $r20.<org.hibernate.cache.spi.support.DomainDataStorageAccess: void putIntoCache(java.lang.Object,java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)>(r3, $r14, r19) 
+
+(declare-const var1288!1 var1783)
+(declare-const var188!2 var2133)
+(declare-const var959!3 var1569)
+(declare-const var3403!1 var3942)
+ ; Statement: return 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {getRegion/1945408306=([org.hibernate.cache.spi.support.AbstractCachedDomainDataAccess], org.hibernate.cache.spi.DomainDataRegion), cast-from-var2383-to-var2574=([org.hibernate.cache.spi.support.AbstractReadWriteAccess], org.hibernate.cache.spi.support.AbstractCachedDomainDataAccess), var656_getName/-839342387=([org.hibernate.cache.spi.Region], java.lang.String), cast-from-var381-to-var656=([org.hibernate.cache.spi.DomainDataRegion], org.hibernate.cache.spi.Region), var3393_softLockedCacheExpired/-864592302=([org.hibernate.cache.spi.SecondLevelCacheLogger, java.lang.String, java.lang.Object], void), String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), append/-1031950772=([java.lang.StringBuilder, java.lang.Object], java.lang.StringBuilder), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), info/-1796951176=([org.jboss.logging.Logger, java.lang.Object], void), cast-from-String-to-var2133=([java.lang.String], java.lang.Object), var656_getRegionFactory/1526130293=([org.hibernate.cache.spi.Region], org.hibernate.cache.spi.RegionFactory), var309_nextTimestamp/125435346=([org.hibernate.cache.spi.RegionFactory], long), var309_getTimeout/781408410=([org.hibernate.cache.spi.RegionFactory], long), var1569-init=([], org.hibernate.cache.spi.support.AbstractReadWriteAccess$SoftLockImpl), uuid/428855192=([org.hibernate.cache.spi.support.AbstractReadWriteAccess], java.util.UUID), nextLockId/428855192=([org.hibernate.cache.spi.support.AbstractReadWriteAccess], java.util.concurrent.atomic.AtomicLong), getAndIncrement/-698983298=([java.util.concurrent.atomic.AtomicLong], long), <init>/-35974134=([org.hibernate.cache.spi.support.AbstractReadWriteAccess$SoftLockImpl, long, java.util.UUID, long, java.lang.Object], void), unlock/1918507724=([org.hibernate.cache.spi.support.AbstractReadWriteAccess$SoftLockImpl, long], void), getStorageAccess/165171015=([org.hibernate.cache.spi.support.AbstractCachedDomainDataAccess], org.hibernate.cache.spi.support.DomainDataStorageAccess), var225_putIntoCache/273855457=([org.hibernate.cache.spi.support.StorageAccess, java.lang.Object, java.lang.Object, org.hibernate.engine.spi.SharedSessionContractImplementor], void), cast-from-var1783-to-var225=([org.hibernate.cache.spi.support.DomainDataStorageAccess], org.hibernate.cache.spi.support.StorageAccess), cast-from-var1569-to-var2133=([org.hibernate.cache.spi.support.AbstractReadWriteAccess$SoftLockImpl], java.lang.Object)}
+; {var2383=org.hibernate.cache.spi.support.AbstractReadWriteAccess, var1451=r0, var3942=org.hibernate.engine.spi.SharedSessionContractImplementor, var3403=r19, var2133=java.lang.Object, var188=r3, var2069=org.hibernate.cache.spi.support.AbstractReadWriteAccess$Lockable, var2647=r21, var3393=org.hibernate.cache.spi.SecondLevelCacheLogger, var1102=$r1, var381=org.hibernate.cache.spi.DomainDataRegion, var2574=org.hibernate.cache.spi.support.AbstractCachedDomainDataAccess, var3606=$r2, var656=org.hibernate.cache.spi.Region, var1029=$r4, var2554=org.jboss.logging.Logger, var3374=$r6, var2120=$r5, var1127=$r7, var3831=$r8, var1750=$r9, var497=$r10, var309=org.hibernate.cache.spi.RegionFactory, var885=$r11, var97=$l1, var3314=$r12, var756=$r13, var2709=$l0, var1254=l2, var1569=org.hibernate.cache.spi.support.AbstractReadWriteAccess$SoftLockImpl, var959=$r14, var1965=java.util.UUID, var3316=$r16, var3304=java.util.concurrent.atomic.AtomicLong, var557=$r15, var2268=$l3, var3963=null, var1579=null_type, var3832=$r17, var1217=$r18, var66=$l4, var1100=$l5, var1783=org.hibernate.cache.spi.support.DomainDataStorageAccess, var1288=$r20, var225=org.hibernate.cache.spi.support.StorageAccess}
+; {org.hibernate.cache.spi.support.AbstractReadWriteAccess=var2383, r0=var1451, org.hibernate.engine.spi.SharedSessionContractImplementor=var3942, r19=var3403, java.lang.Object=var2133, r3=var188, org.hibernate.cache.spi.support.AbstractReadWriteAccess$Lockable=var2069, r21=var2647, org.hibernate.cache.spi.SecondLevelCacheLogger=var3393, $r1=var1102, org.hibernate.cache.spi.DomainDataRegion=var381, org.hibernate.cache.spi.support.AbstractCachedDomainDataAccess=var2574, $r2=var3606, org.hibernate.cache.spi.Region=var656, $r4=var1029, org.jboss.logging.Logger=var2554, $r6=var3374, $r5=var2120, $r7=var1127, $r8=var3831, $r9=var1750, $r10=var497, org.hibernate.cache.spi.RegionFactory=var309, $r11=var885, $l1=var97, $r12=var3314, $r13=var756, $l0=var2709, l2=var1254, org.hibernate.cache.spi.support.AbstractReadWriteAccess$SoftLockImpl=var1569, $r14=var959, java.util.UUID=var1965, $r16=var3316, java.util.concurrent.atomic.AtomicLong=var3304, $r15=var557, $l3=var2268, null=var3963, null_type=var1579, $r17=var3832, $r18=var1217, $l4=var66, $l5=var1100, org.hibernate.cache.spi.support.DomainDataStorageAccess=var1783, $r20=var1288, org.hibernate.cache.spi.support.StorageAccess=var225}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 1,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r0 := @this: org.hibernate.cache.spi.support.AbstractReadWriteAccess;	r19 := @parameter0: org.hibernate.engine.spi.SharedSessionContractImplementor;	r3 := @parameter1: java.lang.Object;	r21 := @parameter2: org.hibernate.cache.spi.support.AbstractReadWriteAccess$Lockable;	$r1 = <org.hibernate.cache.spi.SecondLevelCacheLogger: org.hibernate.cache.spi.SecondLevelCacheLogger INSTANCE>;	$r2 = virtualinvoke r0.<org.hibernate.cache.spi.support.AbstractReadWriteAccess: org.hibernate.cache.spi.DomainDataRegion getRegion()>();	$r4 = interfaceinvoke $r2.<org.hibernate.cache.spi.DomainDataRegion: java.lang.String getName()>();	interfaceinvoke $r1.<org.hibernate.cache.spi.SecondLevelCacheLogger: void softLockedCacheExpired(java.lang.String,java.lang.Object)>($r4, r3);	$r6 = <org.hibernate.cache.spi.support.AbstractReadWriteAccess: org.jboss.logging.Logger log>;	$r5 = new java.lang.StringBuilder;	specialinvoke $r5.<java.lang.StringBuilder: void <init>()>();	$r7 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Cached entry expired : ");	$r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>(r3);	$r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>();	virtualinvoke $r6.<org.jboss.logging.Logger: void info(java.lang.Object)>($r9);	$r10 = virtualinvoke r0.<org.hibernate.cache.spi.support.AbstractReadWriteAccess: org.hibernate.cache.spi.DomainDataRegion getRegion()>();	$r11 = interfaceinvoke $r10.<org.hibernate.cache.spi.DomainDataRegion: org.hibernate.cache.spi.RegionFactory getRegionFactory()>();	$l1 = interfaceinvoke $r11.<org.hibernate.cache.spi.RegionFactory: long nextTimestamp()>();	$r12 = virtualinvoke r0.<org.hibernate.cache.spi.support.AbstractReadWriteAccess: org.hibernate.cache.spi.DomainDataRegion getRegion()>();	$r13 = interfaceinvoke $r12.<org.hibernate.cache.spi.DomainDataRegion: org.hibernate.cache.spi.RegionFactory getRegionFactory()>();	$l0 = interfaceinvoke $r13.<org.hibernate.cache.spi.RegionFactory: long getTimeout()>();	l2 = $l1 + $l0;	$r14 = new org.hibernate.cache.spi.support.AbstractReadWriteAccess$SoftLockImpl;	$r16 = r0.<org.hibernate.cache.spi.support.AbstractReadWriteAccess: java.util.UUID uuid>;	$r15 = r0.<org.hibernate.cache.spi.support.AbstractReadWriteAccess: java.util.concurrent.atomic.AtomicLong nextLockId>;	$l3 = virtualinvoke $r15.<java.util.concurrent.atomic.AtomicLong: long getAndIncrement()>();	specialinvoke $r14.<org.hibernate.cache.spi.support.AbstractReadWriteAccess$SoftLockImpl: void <init>(long,java.util.UUID,long,java.lang.Object)>(l2, $r16, $l3, null);	$r17 = virtualinvoke r0.<org.hibernate.cache.spi.support.AbstractReadWriteAccess: org.hibernate.cache.spi.DomainDataRegion getRegion()>();	$r18 = interfaceinvoke $r17.<org.hibernate.cache.spi.DomainDataRegion: org.hibernate.cache.spi.RegionFactory getRegionFactory()>();	$l4 = interfaceinvoke $r18.<org.hibernate.cache.spi.RegionFactory: long getTimeout()>();	$l5 = l2 - $l4;	virtualinvoke $r14.<org.hibernate.cache.spi.support.AbstractReadWriteAccess$SoftLockImpl: void unlock(long)>($l5);	$r20 = virtualinvoke r0.<org.hibernate.cache.spi.support.AbstractReadWriteAccess: org.hibernate.cache.spi.support.DomainDataStorageAccess getStorageAccess()>();	interfaceinvoke $r20.<org.hibernate.cache.spi.support.DomainDataStorageAccess: void putIntoCache(java.lang.Object,java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)>(r3, $r14, r19);	return
+;block_num 1

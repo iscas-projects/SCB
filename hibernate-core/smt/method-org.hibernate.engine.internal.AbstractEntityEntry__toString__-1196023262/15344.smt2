@@ -1,0 +1,72 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var3127 0)
+(declare-sort var1789 0)
+(declare-sort var1267 0)
+(declare-sort var2945 0)
+(declare-sort var1214 0)
+(declare-sort var527 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun getPersister/764628644 (var3127) var1789)
+(declare-fun var1789_getEntityName/-1914780628 (var1789) String)
+(declare-fun id/-624628990 (var3127) var1267)
+(declare-fun var2945_infoString/1203698788 (String var1267) String)
+(declare-fun append/-1166366385 (String Int) String)
+(declare-fun getStatus/-64290649 (var3127) var1214)
+(declare-fun append/-1031950772 (String var527) String)
+(declare-fun cast-from-var1214-to-var527 (var1214) var527)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-const null-var3127 var3127)
+(declare-const var3429 var3127) ; Statement: r1 := @this: org.hibernate.engine.internal.AbstractEntityEntry 
+(assert (not (= var3429 null-var3127)))
+(define-const var1234 String String-init) ; Statement: $r0 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var1234)) ; Statement: specialinvoke $r0.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var1234!1 String)
+(assert (= var1234!1 ""))
+(assert true)
+(define-const var427 String (append/672562846 var1234!1 "EntityEntry")) ; Statement: $r6 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("EntityEntry") 
+(declare-const var1234!2 String)
+(assert (= var1234!2 (str.++ var1234!1 "EntityEntry")))
+(assert true)
+(define-const var1281 var1789 (getPersister/764628644 var3429)) ; Statement: $r2 = virtualinvoke r1.<org.hibernate.engine.internal.AbstractEntityEntry: org.hibernate.persister.entity.EntityPersister getPersister()>() 
+(define-const var2372 String (var1789_getEntityName/-1914780628 var1281)) ; Statement: $r4 = interfaceinvoke $r2.<org.hibernate.persister.entity.EntityPersister: java.lang.String getEntityName()>() 
+(define-const var128 var1267 (id/-624628990 var3429)) ; Statement: $r3 = r1.<org.hibernate.engine.internal.AbstractEntityEntry: java.io.Serializable id> 
+(define-const var2421 String (var2945_infoString/1203698788 var2372 var128)) ; Statement: $r5 = staticinvoke <org.hibernate.pretty.MessageHelper: java.lang.String infoString(java.lang.String,java.io.Serializable)>($r4, $r3) 
+(assert true)
+(define-const var3401 String (append/672562846 var427 var2421)) ; Statement: $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5) 
+(declare-const var427!1 String)
+(assert (= var427!1 (str.++ var427 var2421)))
+(assert true)
+(define-const var429 String (append/-1166366385 var3401 40)) ; Statement: $r9 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(40) 
+(declare-const var3401!1 String)
+(assert (str.prefixof var3401 var3401!1))
+(assert true)
+(define-const var1884 var1214 (getStatus/-64290649 var3429)) ; Statement: $r8 = virtualinvoke r1.<org.hibernate.engine.internal.AbstractEntityEntry: org.hibernate.engine.spi.Status getStatus()>() 
+(assert true)
+(define-const var2176 String (append/-1031950772 var429 (cast-from-var1214-to-var527 var1884))) ; Statement: $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r8) 
+(declare-const var429!1 String)
+(assert (str.prefixof var429 var429!1))
+(assert true)
+(define-const var586 String (append/-1166366385 var2176 41)) ; Statement: $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(41) 
+(declare-const var2176!1 String)
+(assert (str.prefixof var2176 var2176!1))
+(assert true)
+(define-const var2795 String (toString/-2075883882 var586)) ; Statement: $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.String toString()>() 
+ ; Statement: return $r12 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), getPersister/764628644=([org.hibernate.engine.internal.AbstractEntityEntry], org.hibernate.persister.entity.EntityPersister), var1789_getEntityName/-1914780628=([org.hibernate.persister.entity.EntityPersister], java.lang.String), id/-624628990=([org.hibernate.engine.internal.AbstractEntityEntry], java.io.Serializable), var2945_infoString/1203698788=([java.lang.String, java.io.Serializable], java.lang.String), append/-1166366385=([java.lang.StringBuilder, char], java.lang.StringBuilder), getStatus/-64290649=([org.hibernate.engine.internal.AbstractEntityEntry], org.hibernate.engine.spi.Status), append/-1031950772=([java.lang.StringBuilder, java.lang.Object], java.lang.StringBuilder), cast-from-var1214-to-var527=([org.hibernate.engine.spi.Status], java.lang.Object), toString/-2075883882=([java.lang.StringBuilder], java.lang.String)}
+; {var3127=org.hibernate.engine.internal.AbstractEntityEntry, var3429=r1, var1234=$r0, var427=$r6, var1789=org.hibernate.persister.entity.EntityPersister, var1281=$r2, var2372=$r4, var1267=java.io.Serializable, var128=$r3, var2945=org.hibernate.pretty.MessageHelper, var2421=$r5, var3401=$r7, var429=$r9, var1214=org.hibernate.engine.spi.Status, var1884=$r8, var527=java.lang.Object, var2176=$r10, var586=$r11, var2795=$r12}
+; {org.hibernate.engine.internal.AbstractEntityEntry=var3127, r1=var3429, $r0=var1234, $r6=var427, org.hibernate.persister.entity.EntityPersister=var1789, $r2=var1281, $r4=var2372, java.io.Serializable=var1267, $r3=var128, org.hibernate.pretty.MessageHelper=var2945, $r5=var2421, $r7=var3401, $r9=var429, org.hibernate.engine.spi.Status=var1214, $r8=var1884, java.lang.Object=var527, $r10=var2176, $r11=var586, $r12=var2795}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(char)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(char)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 2,"<java.lang.StringBuilder: java.lang.StringBuilder append(char)>": 2,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 1,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r1 := @this: org.hibernate.engine.internal.AbstractEntityEntry;	$r0 = new java.lang.StringBuilder;	specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();	$r6 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("EntityEntry");	$r2 = virtualinvoke r1.<org.hibernate.engine.internal.AbstractEntityEntry: org.hibernate.persister.entity.EntityPersister getPersister()>();	$r4 = interfaceinvoke $r2.<org.hibernate.persister.entity.EntityPersister: java.lang.String getEntityName()>();	$r3 = r1.<org.hibernate.engine.internal.AbstractEntityEntry: java.io.Serializable id>;	$r5 = staticinvoke <org.hibernate.pretty.MessageHelper: java.lang.String infoString(java.lang.String,java.io.Serializable)>($r4, $r3);	$r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);	$r9 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(40);	$r8 = virtualinvoke r1.<org.hibernate.engine.internal.AbstractEntityEntry: org.hibernate.engine.spi.Status getStatus()>();	$r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r8);	$r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(41);	$r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.String toString()>();	return $r12
+;block_num 1

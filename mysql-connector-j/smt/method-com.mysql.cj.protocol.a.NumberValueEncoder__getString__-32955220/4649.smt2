@@ -1,0 +1,68 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var971 0)
+(declare-sort var745 0)
+(declare-sort var125 0)
+(declare-sort var1525 0)
+(declare-sort var767 0)
+(declare-sort var3338 0)
+(declare-sort var2163 0)
+(declare-sort var376 0)
+(declare-sort var2857 0)
+(declare-sort var1907 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun var745_getValue/1809189437 (var745) var125)
+(declare-fun cast-from-var125-to-var1525 (var125) var1525)
+(declare-fun var745_getScaleOrLength/-620558396 (var745) Int)
+(declare-fun cast-from-var1525-to-var767 (var1525) var767)
+(declare-fun getScaled/575983753 (var3338 var1525 Int) var1525)
+(declare-fun cast-from-var971-to-var3338 (var971) var3338)
+(declare-fun var745_getMysqlType/-215853011 (var745) var376)
+(declare-fun ordinal/-291641772 (var2857) Int)
+(declare-fun cast-from-var376-to-var2857 (var376) var2857)
+(declare-fun doubleValue/-1508760051 (var767) Float64)
+(declare-fun Float64_toString/-1342597490 (Float64) String)
+(declare-fun var1907_fixDecimalExponent/1765417736 (String) String)
+(declare-const null-var971 var971)
+(declare-const null-var745 var745)
+(declare-const var2163-$SwitchMap$com$mysql$cj$MysqlType (Array Int Int))
+(declare-const var1343 var971) ; Statement: r20 := @this: com.mysql.cj.protocol.a.NumberValueEncoder 
+(assert (not (= var1343 null-var971)))
+(declare-const var2406 var745) ; Statement: r0 := @parameter0: com.mysql.cj.BindValue 
+(assert (not (= var2406 null-var745)))
+(define-const var3478 var125 (var745_getValue/1809189437 var2406)) ; Statement: $r1 = interfaceinvoke r0.<com.mysql.cj.BindValue: java.lang.Object getValue()>() 
+(define-const var3568 Bool false) ; Statement: $z0 = $r1 instanceof java.math.BigDecimal 
+ ; Statement: if $z0 == 0 goto $r2 = interfaceinvoke r0.<com.mysql.cj.BindValue: java.lang.Object getValue()>() 
+(assert (not (= (ite var3568 1 0) 0))) ; Negate: Cond: $z0 == 0  
+(define-const var727 var125 (var745_getValue/1809189437 var2406)) ; Statement: $r25 = interfaceinvoke r0.<com.mysql.cj.BindValue: java.lang.Object getValue()>() 
+(define-const var1739 var1525 (cast-from-var125-to-var1525 var727)) ; Statement: $r26 = (java.math.BigDecimal) $r25 
+(define-const var1246 Int (var745_getScaleOrLength/-620558396 var2406)) ; Statement: $l6 = interfaceinvoke r0.<com.mysql.cj.BindValue: long getScaleOrLength()>() 
+(assert true)
+(define-const var3129 var767 (cast-from-var1525-to-var767 (getScaled/575983753 (cast-from-var971-to-var3338 var1343) var1739 var1246))) ; Statement: $r27 = virtualinvoke r20.<com.mysql.cj.protocol.a.NumberValueEncoder: java.math.BigDecimal getScaled(java.math.BigDecimal,long)>($r26, $l6) 
+ ; Statement: goto [?= $r3 = <com.mysql.cj.protocol.a.NumberValueEncoder$1: int[] $SwitchMap$com$mysql$cj$MysqlType>] 
+(assert true) ; Non Conditional
+(define-const var3840 (Array Int Int) var2163-$SwitchMap$com$mysql$cj$MysqlType) ; Statement: $r3 = <com.mysql.cj.protocol.a.NumberValueEncoder$1: int[] $SwitchMap$com$mysql$cj$MysqlType> 
+(define-const var373 var376 (var745_getMysqlType/-215853011 var2406)) ; Statement: $r4 = interfaceinvoke r0.<com.mysql.cj.BindValue: com.mysql.cj.MysqlType getMysqlType()>() 
+(assert true)
+(define-const var1082 Int (ordinal/-291641772 (cast-from-var376-to-var2857 var373))) ; Statement: $i0 = virtualinvoke $r4.<com.mysql.cj.MysqlType: int ordinal()>() 
+(define-const var553 Int (select var3840 var1082)) ; Statement: $i1 = $r3[$i0] 
+ ; Statement: tableswitch($i1) {     case 1: goto return "null";     case 2: goto $l4 = virtualinvoke $r27.<java.lang.Number: long longValue()>();     case 3: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 4: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 5: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 6: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 7: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 8: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 9: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 10: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 11: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 12: goto $l2 = virtualinvoke $r27.<java.lang.Number: long longValue()>();     case 13: goto $l2 = virtualinvoke $r27.<java.lang.Number: long longValue()>();     case 14: goto $l2 = virtualinvoke $r27.<java.lang.Number: long longValue()>();     case 15: goto $f0 = virtualinvoke $r27.<java.lang.Number: float floatValue()>();     case 16: goto $f0 = virtualinvoke $r27.<java.lang.Number: float floatValue()>();     case 17: goto $d0 = virtualinvoke $r27.<java.lang.Number: double doubleValue()>();     case 18: goto $d0 = virtualinvoke $r27.<java.lang.Number: double doubleValue()>();     case 19: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 20: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 21: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 22: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 23: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 24: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 25: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 26: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 27: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 28: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 29: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 30: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 31: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 32: goto $z1 = $r27 instanceof java.math.BigDecimal;     default: goto $r14 = newarray (java.lang.Object)[2]; } 
+(assert (and (= var553 17) (and (not (= var553 16)) (and (not (= var553 15)) (and (not (= var553 14)) (and (not (= var553 13)) (and (not (= var553 12)) (and (not (= var553 11)) (and (not (= var553 10)) (and (not (= var553 9)) (and (not (= var553 8)) (and (not (= var553 7)) (and (not (= var553 6)) (and (not (= var553 5)) (and (not (= var553 4)) (and (not (= var553 3)) (and (not (= var553 2)) (and (not (= var553 1)) true)))))))))))))))))) ; Intersect: Cond: $i1 == 17  and Intersect: Negate: Cond: $i1 == 16   and Intersect: Negate: Cond: $i1 == 15   and Intersect: Negate: Cond: $i1 == 14   and Intersect: Negate: Cond: $i1 == 13   and Intersect: Negate: Cond: $i1 == 12   and Intersect: Negate: Cond: $i1 == 11   and Intersect: Negate: Cond: $i1 == 10   and Intersect: Negate: Cond: $i1 == 9   and Intersect: Negate: Cond: $i1 == 8   and Intersect: Negate: Cond: $i1 == 7   and Intersect: Negate: Cond: $i1 == 6   and Intersect: Negate: Cond: $i1 == 5   and Intersect: Negate: Cond: $i1 == 4   and Intersect: Negate: Cond: $i1 == 3   and Intersect: Negate: Cond: $i1 == 2   and Intersect: Negate: Cond: $i1 == 1   and Non Conditional                 
+(assert true)
+(define-const var3219 Float64 (doubleValue/-1508760051 var3129)) ; Statement: $d0 = virtualinvoke $r27.<java.lang.Number: double doubleValue()>() 
+(define-const var3124 String (Float64_toString/-1342597490 var3219)) ; Statement: $r7 = staticinvoke <java.lang.Double: java.lang.String toString(double)>($d0) 
+(define-const var2454 String (var1907_fixDecimalExponent/1765417736 var3124)) ; Statement: $r8 = staticinvoke <com.mysql.cj.util.StringUtils: java.lang.String fixDecimalExponent(java.lang.String)>($r7) 
+ ; Statement: return $r8 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {var745_getValue/1809189437=([com.mysql.cj.BindValue], java.lang.Object), cast-from-var125-to-var1525=([java.lang.Object], java.math.BigDecimal), var745_getScaleOrLength/-620558396=([com.mysql.cj.BindValue], long), cast-from-var1525-to-var767=([java.math.BigDecimal], java.lang.Number), getScaled/575983753=([com.mysql.cj.protocol.a.AbstractValueEncoder, java.math.BigDecimal, long], java.math.BigDecimal), cast-from-var971-to-var3338=([com.mysql.cj.protocol.a.NumberValueEncoder], com.mysql.cj.protocol.a.AbstractValueEncoder), var745_getMysqlType/-215853011=([com.mysql.cj.BindValue], com.mysql.cj.MysqlType), ordinal/-291641772=([java.lang.Enum], int), cast-from-var376-to-var2857=([com.mysql.cj.MysqlType], java.lang.Enum), doubleValue/-1508760051=([java.lang.Number], double), Float64_toString/-1342597490=([double], java.lang.String), var1907_fixDecimalExponent/1765417736=([java.lang.String], java.lang.String)}
+; {var971=com.mysql.cj.protocol.a.NumberValueEncoder, var1343=r20, var745=com.mysql.cj.BindValue, var2406=r0, var125=java.lang.Object, var3478=$r1, var3568=$z0, var727=$r25, var1525=java.math.BigDecimal, var1739=$r26, var1246=$l6, var767=java.lang.Number, var3338=com.mysql.cj.protocol.a.AbstractValueEncoder, var3129=$r27, var2163=com.mysql.cj.protocol.a.NumberValueEncoder$1, var3840=$r3, var376=com.mysql.cj.MysqlType, var373=$r4, var2857=java.lang.Enum, var1082=$i0, var553=$i1, var3219=$d0, var3124=$r7, var1907=com.mysql.cj.util.StringUtils, var2454=$r8}
+; {com.mysql.cj.protocol.a.NumberValueEncoder=var971, r20=var1343, com.mysql.cj.BindValue=var745, r0=var2406, java.lang.Object=var125, $r1=var3478, $z0=var3568, $r25=var727, java.math.BigDecimal=var1525, $r26=var1739, $l6=var1246, java.lang.Number=var767, com.mysql.cj.protocol.a.AbstractValueEncoder=var3338, $r27=var3129, com.mysql.cj.protocol.a.NumberValueEncoder$1=var2163, $r3=var3840, com.mysql.cj.MysqlType=var376, $r4=var373, java.lang.Enum=var2857, $i0=var1082, $i1=var553, $d0=var3219, $r7=var3124, com.mysql.cj.util.StringUtils=var1907, $r8=var2454}
+;seq <java.lang.Double: java.lang.String toString(double)>
+;cnt {}
+;stmts r20 := @this: com.mysql.cj.protocol.a.NumberValueEncoder;	r0 := @parameter0: com.mysql.cj.BindValue;	$r1 = interfaceinvoke r0.<com.mysql.cj.BindValue: java.lang.Object getValue()>();	$z0 = $r1 instanceof java.math.BigDecimal;	if $z0 == 0 goto $r2 = interfaceinvoke r0.<com.mysql.cj.BindValue: java.lang.Object getValue()>();	$r25 = interfaceinvoke r0.<com.mysql.cj.BindValue: java.lang.Object getValue()>();	$r26 = (java.math.BigDecimal) $r25;	$l6 = interfaceinvoke r0.<com.mysql.cj.BindValue: long getScaleOrLength()>();	$r27 = virtualinvoke r20.<com.mysql.cj.protocol.a.NumberValueEncoder: java.math.BigDecimal getScaled(java.math.BigDecimal,long)>($r26, $l6);	goto [?= $r3 = <com.mysql.cj.protocol.a.NumberValueEncoder$1: int[] $SwitchMap$com$mysql$cj$MysqlType>];	$r3 = <com.mysql.cj.protocol.a.NumberValueEncoder$1: int[] $SwitchMap$com$mysql$cj$MysqlType>;	$r4 = interfaceinvoke r0.<com.mysql.cj.BindValue: com.mysql.cj.MysqlType getMysqlType()>();	$i0 = virtualinvoke $r4.<com.mysql.cj.MysqlType: int ordinal()>();	$i1 = $r3[$i0];	tableswitch($i1) {     case 1: goto return "null";     case 2: goto $l4 = virtualinvoke $r27.<java.lang.Number: long longValue()>();     case 3: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 4: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 5: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 6: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 7: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 8: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 9: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 10: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 11: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 12: goto $l2 = virtualinvoke $r27.<java.lang.Number: long longValue()>();     case 13: goto $l2 = virtualinvoke $r27.<java.lang.Number: long longValue()>();     case 14: goto $l2 = virtualinvoke $r27.<java.lang.Number: long longValue()>();     case 15: goto $f0 = virtualinvoke $r27.<java.lang.Number: float floatValue()>();     case 16: goto $f0 = virtualinvoke $r27.<java.lang.Number: float floatValue()>();     case 17: goto $d0 = virtualinvoke $r27.<java.lang.Number: double doubleValue()>();     case 18: goto $d0 = virtualinvoke $r27.<java.lang.Number: double doubleValue()>();     case 19: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 20: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 21: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 22: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 23: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 24: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 25: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 26: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 27: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 28: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 29: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 30: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 31: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 32: goto $z1 = $r27 instanceof java.math.BigDecimal;     default: goto $r14 = newarray (java.lang.Object)[2]; };	$d0 = virtualinvoke $r27.<java.lang.Number: double doubleValue()>();	$r7 = staticinvoke <java.lang.Double: java.lang.String toString(double)>($d0);	$r8 = staticinvoke <com.mysql.cj.util.StringUtils: java.lang.String fixDecimalExponent(java.lang.String)>($r7);	return $r8
+;block_num 4

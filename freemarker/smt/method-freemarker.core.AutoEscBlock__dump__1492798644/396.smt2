@@ -1,0 +1,75 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var2573 0)
+(declare-sort var1171 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun getNodeTypeSymbol/1631762526 (var2573) String)
+(declare-fun getChildrenCanonicalForm/123097860 (var1171) String)
+(declare-fun cast-from-var2573-to-var1171 (var2573) var1171)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-const null-var2573 var2573)
+(declare-const null-Bool Bool)
+(declare-const var2108 var2573) ; Statement: r0 := @this: freemarker.core.AutoEscBlock 
+(assert (not (= var2108 null-var2573)))
+(declare-const var2726 Bool) ; Statement: z0 := @parameter0: boolean 
+(assert (not (= var2726 null-Bool)))
+ ; Statement: if z0 == 0 goto $r1 = virtualinvoke r0.<freemarker.core.AutoEscBlock: java.lang.String getNodeTypeSymbol()>() 
+(assert (not (= (ite var2726 1 0) 0))) ; Negate: Cond: z0 == 0  
+(define-const var3328 String String-init) ; Statement: $r2 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var3328)) ; Statement: specialinvoke $r2.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var3328!1 String)
+(assert (= var3328!1 ""))
+(assert true)
+(define-const var2409 String (append/672562846 var3328!1 "<")) ; Statement: $r4 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("<") 
+(declare-const var3328!2 String)
+(assert (= var3328!2 (str.++ var3328!1 "<")))
+(assert true)
+(define-const var3505 String (getNodeTypeSymbol/1631762526 var2108)) ; Statement: $r3 = virtualinvoke r0.<freemarker.core.AutoEscBlock: java.lang.String getNodeTypeSymbol()>() 
+(assert true)
+(define-const var3772 String (append/672562846 var2409 var3505)) ; Statement: $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3) 
+(declare-const var2409!1 String)
+(assert (= var2409!1 (str.++ var2409 var3505)))
+(assert true)
+(define-const var20 String (append/672562846 var3772 "\u0022>")) ; Statement: $r7 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\">") 
+(declare-const var3772!1 String)
+(assert (= var3772!1 (str.++ var3772 "\u0022>")))
+(assert true)
+(define-const var586 String (getChildrenCanonicalForm/123097860 (cast-from-var2573-to-var1171 var2108))) ; Statement: $r6 = virtualinvoke r0.<freemarker.core.AutoEscBlock: java.lang.String getChildrenCanonicalForm()>() 
+(assert true)
+(define-const var348 String (append/672562846 var20 var586)) ; Statement: $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6) 
+(declare-const var20!1 String)
+(assert (= var20!1 (str.++ var20 var586)))
+(assert true)
+(define-const var1849 String (append/672562846 var348 "</")) ; Statement: $r10 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("</") 
+(declare-const var348!1 String)
+(assert (= var348!1 (str.++ var348 "</")))
+(assert true)
+(define-const var701 String (getNodeTypeSymbol/1631762526 var2108)) ; Statement: $r9 = virtualinvoke r0.<freemarker.core.AutoEscBlock: java.lang.String getNodeTypeSymbol()>() 
+(assert true)
+(define-const var1522 String (append/672562846 var1849 var701)) ; Statement: $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9) 
+(declare-const var1849!1 String)
+(assert (= var1849!1 (str.++ var1849 var701)))
+(assert true)
+(define-const var763 String (append/672562846 var1522 ">")) ; Statement: $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(">") 
+(declare-const var1522!1 String)
+(assert (= var1522!1 (str.++ var1522 ">")))
+(assert true)
+(define-const var3223 String (toString/-2075883882 var763)) ; Statement: $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>() 
+ ; Statement: return $r13 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), getNodeTypeSymbol/1631762526=([freemarker.core.AutoEscBlock], java.lang.String), getChildrenCanonicalForm/123097860=([freemarker.core.TemplateElement], java.lang.String), cast-from-var2573-to-var1171=([freemarker.core.AutoEscBlock], freemarker.core.TemplateElement), toString/-2075883882=([java.lang.StringBuilder], java.lang.String)}
+; {var2573=freemarker.core.AutoEscBlock, var2108=r0, var2726=z0, var3328=$r2, var2409=$r4, var3505=$r3, var3772=$r5, var20=$r7, var1171=freemarker.core.TemplateElement, var586=$r6, var348=$r8, var1849=$r10, var701=$r9, var1522=$r11, var763=$r12, var3223=$r13}
+; {freemarker.core.AutoEscBlock=var2573, r0=var2108, z0=var2726, $r2=var3328, $r4=var2409, $r3=var3505, $r5=var3772, $r7=var20, freemarker.core.TemplateElement=var1171, $r6=var586, $r8=var348, $r10=var1849, $r9=var701, $r11=var1522, $r12=var763, $r13=var3223}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 7,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r0 := @this: freemarker.core.AutoEscBlock;	z0 := @parameter0: boolean;	if z0 == 0 goto $r1 = virtualinvoke r0.<freemarker.core.AutoEscBlock: java.lang.String getNodeTypeSymbol()>();	$r2 = new java.lang.StringBuilder;	specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();	$r4 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("<");	$r3 = virtualinvoke r0.<freemarker.core.AutoEscBlock: java.lang.String getNodeTypeSymbol()>();	$r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);	$r7 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\">");	$r6 = virtualinvoke r0.<freemarker.core.AutoEscBlock: java.lang.String getChildrenCanonicalForm()>();	$r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6);	$r10 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("</");	$r9 = virtualinvoke r0.<freemarker.core.AutoEscBlock: java.lang.String getNodeTypeSymbol()>();	$r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);	$r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(">");	$r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>();	return $r13
+;block_num 2

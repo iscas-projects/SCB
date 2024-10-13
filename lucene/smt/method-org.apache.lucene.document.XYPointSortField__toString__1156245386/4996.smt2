@@ -1,0 +1,88 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var2110 0)
+(declare-sort var509 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun append/-1166366385 (String Int) String)
+(declare-fun getField/665941068 (var509) String)
+(declare-fun cast-from-var2110-to-var509 (var2110) var509)
+(declare-fun x/1728041834 (var2110) Float32)
+(declare-fun append/991902413 (String Float32) String)
+(declare-fun y/1728041834 (var2110) Float32)
+(declare-fun getMissingValue/975462819 (var2110) Float64)
+(declare-fun doubleValue/-2921339 (Float64) Float64)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-const null-var2110 var2110)
+(declare-const var2818 var2110) ; Statement: r1 := @this: org.apache.lucene.document.XYPointSortField 
+(assert (not (= var2818 null-var2110)))
+(define-const var3758 String String-init) ; Statement: $r0 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var3758)) ; Statement: specialinvoke $r0.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var3758!1 String)
+(assert (= var3758!1 ""))
+(assert true)
+;(assert (append/672562846 var3758!1 "<distance:")) ; Statement: virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("<distance:") 
+(declare-const var3758!2 String)
+(assert (= var3758!2 (str.++ var3758!1 "<distance:")))
+(assert true)
+;(assert (append/-1166366385 var3758!2 34)) ; Statement: virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(34) 
+(declare-const var3758!3 String)
+(assert (str.prefixof var3758!2 var3758!3))
+(assert true)
+(define-const var1263 String (getField/665941068 (cast-from-var2110-to-var509 var2818))) ; Statement: $r2 = virtualinvoke r1.<org.apache.lucene.document.XYPointSortField: java.lang.String getField()>() 
+(assert true)
+;(assert (append/672562846 var3758!3 var1263)) ; Statement: virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2) 
+(declare-const var3758!4 String)
+(assert (= var3758!4 (str.++ var3758!3 var1263)))
+(assert true)
+;(assert (append/-1166366385 var3758!4 34)) ; Statement: virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(34) 
+(declare-const var3758!5 String)
+(assert (str.prefixof var3758!4 var3758!5))
+(assert true)
+;(assert (append/672562846 var3758!5 " x=")) ; Statement: virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" x=") 
+(declare-const var3758!6 String)
+(assert (= var3758!6 (str.++ var3758!5 " x=")))
+(define-const var101 Float32 (x/1728041834 var2818)) ; Statement: $f0 = r1.<org.apache.lucene.document.XYPointSortField: float x> 
+(assert true)
+;(assert (append/991902413 var3758!6 var101)) ; Statement: virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f0) 
+(declare-const var3758!7 String)
+(assert (str.prefixof var3758!6 var3758!7))
+(assert true)
+;(assert (append/672562846 var3758!7 " y=")) ; Statement: virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" y=") 
+(declare-const var3758!8 String)
+(assert (= var3758!8 (str.++ var3758!7 " y=")))
+(define-const var3253 Float32 (y/1728041834 var2818)) ; Statement: $f1 = r1.<org.apache.lucene.document.XYPointSortField: float y> 
+(assert true)
+;(assert (append/991902413 var3758!8 var3253)) ; Statement: virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f1) 
+(declare-const var3758!9 String)
+(assert (str.prefixof var3758!8 var3758!9))
+(assert true)
+(define-const var371 Float64 (getMissingValue/975462819 var2818)) ; Statement: $r3 = virtualinvoke r1.<org.apache.lucene.document.XYPointSortField: java.lang.Double getMissingValue()>() 
+(assert true)
+(define-const var1354 Float64 (doubleValue/-2921339 var371)) ; Statement: $d0 = virtualinvoke $r3.<java.lang.Double: double doubleValue()>() 
+(define-const var1845 Int (ite (fp.gt ((_ to_fp 11 53) #x7ff0000000000000) var1354) 1 (ite (fp.lt ((_ to_fp 11 53) #x7ff0000000000000) var1354) (- 1) 0))) ; Statement: $b0 = #Infinity cmpl $d0 
+ ; Statement: if $b0 == 0 goto virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(62) 
+(assert (= var1845 0)) ; Cond: $b0 == 0 
+(assert true)
+;(assert (append/-1166366385 var3758!9 62)) ; Statement: virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(62) 
+(declare-const var3758!10 String)
+(assert (str.prefixof var3758!9 var3758!10))
+(assert true)
+(define-const var1862 String (toString/-2075883882 var3758!10)) ; Statement: $r4 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.String toString()>() 
+ ; Statement: return $r4 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), append/-1166366385=([java.lang.StringBuilder, char], java.lang.StringBuilder), getField/665941068=([org.apache.lucene.search.SortField], java.lang.String), cast-from-var2110-to-var509=([org.apache.lucene.document.XYPointSortField], org.apache.lucene.search.SortField), x/1728041834=([org.apache.lucene.document.XYPointSortField], float), append/991902413=([java.lang.StringBuilder, float], java.lang.StringBuilder), y/1728041834=([org.apache.lucene.document.XYPointSortField], float), getMissingValue/975462819=([org.apache.lucene.document.XYPointSortField], java.lang.Double), doubleValue/-2921339=([java.lang.Double], double), toString/-2075883882=([java.lang.StringBuilder], java.lang.String)}
+; {var2110=org.apache.lucene.document.XYPointSortField, var2818=r1, var3758=$r0, var509=org.apache.lucene.search.SortField, var1263=$r2, var101=$f0, var3253=$f1, var371=$r3, var1354=$d0, var1845=$b0, var1862=$r4}
+; {org.apache.lucene.document.XYPointSortField=var2110, r1=var2818, $r0=var3758, org.apache.lucene.search.SortField=var509, $r2=var1263, $f0=var101, $f1=var3253, $r3=var371, $d0=var1354, $b0=var1845, $r4=var1862}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(char)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(char)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(float)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(float)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(char)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 4,"<java.lang.StringBuilder: java.lang.StringBuilder append(char)>": 3,"<java.lang.StringBuilder: java.lang.StringBuilder append(float)>": 2,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r1 := @this: org.apache.lucene.document.XYPointSortField;	$r0 = new java.lang.StringBuilder;	specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();	virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("<distance:");	virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(34);	$r2 = virtualinvoke r1.<org.apache.lucene.document.XYPointSortField: java.lang.String getField()>();	virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);	virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(34);	virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" x=");	$f0 = r1.<org.apache.lucene.document.XYPointSortField: float x>;	virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f0);	virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" y=");	$f1 = r1.<org.apache.lucene.document.XYPointSortField: float y>;	virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f1);	$r3 = virtualinvoke r1.<org.apache.lucene.document.XYPointSortField: java.lang.Double getMissingValue()>();	$d0 = virtualinvoke $r3.<java.lang.Double: double doubleValue()>();	$b0 = #Infinity cmpl $d0;	if $b0 == 0 goto virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(62);	virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(62);	$r4 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.String toString()>();	return $r4
+;block_num 2

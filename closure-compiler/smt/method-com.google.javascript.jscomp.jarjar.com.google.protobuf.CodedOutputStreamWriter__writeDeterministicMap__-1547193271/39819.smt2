@@ -1,0 +1,78 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var205 0)
+(declare-sort var1268 0)
+(declare-sort var3011 0)
+(declare-sort var3741 0)
+(declare-sort var2684 0)
+(declare-sort var2762 0)
+(declare-sort var1725 0)
+(declare-sort var830 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun keyType/1279652419 (var1268) var2684)
+(declare-fun ordinal/-291641772 (var2762) Int)
+(declare-fun cast-from-var2684-to-var2762 (var2684) var2762)
+(declare-fun var1725-init () var1725)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun append/-1031950772 (String var830) String)
+(declare-fun cast-from-var2684-to-var830 (var2684) var830)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun <init>/875830710 (var1725 String) void)
+(declare-const null-var205 var205)
+(declare-const null-Int Int)
+(declare-const null-var1268 var1268)
+(declare-const null-var3011 var3011)
+(declare-const var3741-$SwitchMap$com$google$protobuf$WireFormat$FieldType (Array Int Int))
+(declare-const var1856 var205) ; Statement: r3 := @this: com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter 
+(assert (not (= var1856 null-var205)))
+(declare-const var2019 Int) ; Statement: i2 := @parameter0: int 
+(assert (not (= var2019 null-Int)))
+(declare-const var835 var1268) ; Statement: r0 := @parameter1: com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata 
+(assert (not (= var835 null-var1268)))
+(declare-const var2625 var3011) ; Statement: r4 := @parameter2: java.util.Map 
+(assert (not (= var2625 null-var3011)))
+(define-const var413 (Array Int Int) var3741-$SwitchMap$com$google$protobuf$WireFormat$FieldType) ; Statement: $r2 = <com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter$1: int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType> 
+(define-const var672 var2684 (keyType/1279652419 var835)) ; Statement: $r1 = r0.<com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata: com.google.javascript.jscomp.jarjar.com.google.protobuf.WireFormat$FieldType keyType> 
+(assert true)
+(define-const var3337 Int (ordinal/-291641772 (cast-from-var2684-to-var2762 var672))) ; Statement: $i0 = virtualinvoke $r1.<com.google.javascript.jscomp.jarjar.com.google.protobuf.WireFormat$FieldType: int ordinal()>() 
+(define-const var124 Int (select var413 var3337)) ; Statement: $i1 = $r2[$i0] 
+ ; Statement: tableswitch($i1) {     case 1: goto $r5 = <java.lang.Boolean: java.lang.Boolean FALSE>;     case 2: goto specialinvoke r3.<com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter: void writeDeterministicIntegerMap(int,com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata,java.util.Map)>(i2, r0, r4);     case 3: goto specialinvoke r3.<com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter: void writeDeterministicIntegerMap(int,com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata,java.util.Map)>(i2, r0, r4);     case 4: goto specialinvoke r3.<com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter: void writeDeterministicIntegerMap(int,com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata,java.util.Map)>(i2, r0, r4);     case 5: goto specialinvoke r3.<com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter: void writeDeterministicIntegerMap(int,com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata,java.util.Map)>(i2, r0, r4);     case 6: goto specialinvoke r3.<com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter: void writeDeterministicIntegerMap(int,com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata,java.util.Map)>(i2, r0, r4);     case 7: goto specialinvoke r3.<com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter: void writeDeterministicLongMap(int,com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata,java.util.Map)>(i2, r0, r4);     case 8: goto specialinvoke r3.<com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter: void writeDeterministicLongMap(int,com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata,java.util.Map)>(i2, r0, r4);     case 9: goto specialinvoke r3.<com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter: void writeDeterministicLongMap(int,com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata,java.util.Map)>(i2, r0, r4);     case 10: goto specialinvoke r3.<com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter: void writeDeterministicLongMap(int,com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata,java.util.Map)>(i2, r0, r4);     case 11: goto specialinvoke r3.<com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter: void writeDeterministicLongMap(int,com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata,java.util.Map)>(i2, r0, r4);     case 12: goto specialinvoke r3.<com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter: void writeDeterministicStringMap(int,com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata,java.util.Map)>(i2, r0, r4);     default: goto $r9 = new java.lang.IllegalArgumentException; } 
+(assert (and (not (= var124 12)) (and (not (= var124 11)) (and (not (= var124 10)) (and (not (= var124 9)) (and (not (= var124 8)) (and (not (= var124 7)) (and (not (= var124 6)) (and (not (= var124 5)) (and (not (= var124 4)) (and (not (= var124 3)) (and (not (= var124 2)) (and (not (= var124 1)) true))))))))))))) ; Intersect: Negate: Cond: $i1 == 12   and Intersect: Negate: Cond: $i1 == 11   and Intersect: Negate: Cond: $i1 == 10   and Intersect: Negate: Cond: $i1 == 9   and Intersect: Negate: Cond: $i1 == 8   and Intersect: Negate: Cond: $i1 == 7   and Intersect: Negate: Cond: $i1 == 6   and Intersect: Negate: Cond: $i1 == 5   and Intersect: Negate: Cond: $i1 == 4   and Intersect: Negate: Cond: $i1 == 3   and Intersect: Negate: Cond: $i1 == 2   and Intersect: Negate: Cond: $i1 == 1   and Non Conditional            
+(define-const var2063 var1725 var1725-init) ; Statement: $r9 = new java.lang.IllegalArgumentException 
+(define-const var1926 String String-init) ; Statement: $r10 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var1926)) ; Statement: specialinvoke $r10.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var1926!1 String)
+(assert (= var1926!1 ""))
+(assert true)
+(define-const var2710 String (append/672562846 var1926!1 "does not support key type: ")) ; Statement: $r12 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("does not support key type: ") 
+(declare-const var1926!2 String)
+(assert (= var1926!2 (str.++ var1926!1 "does not support key type: ")))
+(define-const var1782 var2684 (keyType/1279652419 var835)) ; Statement: $r11 = r0.<com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata: com.google.javascript.jscomp.jarjar.com.google.protobuf.WireFormat$FieldType keyType> 
+(assert true)
+(define-const var1886 String (append/-1031950772 var2710 (cast-from-var2684-to-var830 var1782))) ; Statement: $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r11) 
+(declare-const var2710!1 String)
+(assert (str.prefixof var2710 var2710!1))
+(assert true)
+(define-const var2651 String (toString/-2075883882 var1886)) ; Statement: $r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>() 
+(assert true)
+;(assert (<init>/875830710 var2063 var2651)) ; Statement: specialinvoke $r9.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r14) 
+
+(declare-const var2063!1 var1725)
+(declare-const var2651!1 String)
+ ; Statement: throw $r9 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {keyType/1279652419=([com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata], com.google.javascript.jscomp.jarjar.com.google.protobuf.WireFormat$FieldType), ordinal/-291641772=([java.lang.Enum], int), cast-from-var2684-to-var2762=([com.google.javascript.jscomp.jarjar.com.google.protobuf.WireFormat$FieldType], java.lang.Enum), var1725-init=([], java.lang.IllegalArgumentException), String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), append/-1031950772=([java.lang.StringBuilder, java.lang.Object], java.lang.StringBuilder), cast-from-var2684-to-var830=([com.google.javascript.jscomp.jarjar.com.google.protobuf.WireFormat$FieldType], java.lang.Object), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), <init>/875830710=([java.lang.IllegalArgumentException, java.lang.String], void)}
+; {var205=com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter, var1856=r3, var2019=i2, var1268=com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata, var835=r0, var3011=java.util.Map, var2625=r4, var3741=com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter$1, var413=$r2, var2684=com.google.javascript.jscomp.jarjar.com.google.protobuf.WireFormat$FieldType, var672=$r1, var2762=java.lang.Enum, var3337=$i0, var124=$i1, var1725=java.lang.IllegalArgumentException, var2063=$r9, var1926=$r10, var2710=$r12, var1782=$r11, var830=java.lang.Object, var1886=$r13, var2651=$r14}
+; {com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter=var205, r3=var1856, i2=var2019, com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata=var1268, r0=var835, java.util.Map=var3011, r4=var2625, com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter$1=var3741, $r2=var413, com.google.javascript.jscomp.jarjar.com.google.protobuf.WireFormat$FieldType=var2684, $r1=var672, java.lang.Enum=var2762, $i0=var3337, $i1=var124, java.lang.IllegalArgumentException=var1725, $r9=var2063, $r10=var1926, $r12=var2710, $r11=var1782, java.lang.Object=var830, $r13=var1886, $r14=var2651}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 1,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r3 := @this: com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter;	i2 := @parameter0: int;	r0 := @parameter1: com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata;	r4 := @parameter2: java.util.Map;	$r2 = <com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter$1: int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType>;	$r1 = r0.<com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata: com.google.javascript.jscomp.jarjar.com.google.protobuf.WireFormat$FieldType keyType>;	$i0 = virtualinvoke $r1.<com.google.javascript.jscomp.jarjar.com.google.protobuf.WireFormat$FieldType: int ordinal()>();	$i1 = $r2[$i0];	tableswitch($i1) {     case 1: goto $r5 = <java.lang.Boolean: java.lang.Boolean FALSE>;     case 2: goto specialinvoke r3.<com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter: void writeDeterministicIntegerMap(int,com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata,java.util.Map)>(i2, r0, r4);     case 3: goto specialinvoke r3.<com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter: void writeDeterministicIntegerMap(int,com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata,java.util.Map)>(i2, r0, r4);     case 4: goto specialinvoke r3.<com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter: void writeDeterministicIntegerMap(int,com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata,java.util.Map)>(i2, r0, r4);     case 5: goto specialinvoke r3.<com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter: void writeDeterministicIntegerMap(int,com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata,java.util.Map)>(i2, r0, r4);     case 6: goto specialinvoke r3.<com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter: void writeDeterministicIntegerMap(int,com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata,java.util.Map)>(i2, r0, r4);     case 7: goto specialinvoke r3.<com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter: void writeDeterministicLongMap(int,com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata,java.util.Map)>(i2, r0, r4);     case 8: goto specialinvoke r3.<com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter: void writeDeterministicLongMap(int,com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata,java.util.Map)>(i2, r0, r4);     case 9: goto specialinvoke r3.<com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter: void writeDeterministicLongMap(int,com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata,java.util.Map)>(i2, r0, r4);     case 10: goto specialinvoke r3.<com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter: void writeDeterministicLongMap(int,com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata,java.util.Map)>(i2, r0, r4);     case 11: goto specialinvoke r3.<com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter: void writeDeterministicLongMap(int,com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata,java.util.Map)>(i2, r0, r4);     case 12: goto specialinvoke r3.<com.google.javascript.jscomp.jarjar.com.google.protobuf.CodedOutputStreamWriter: void writeDeterministicStringMap(int,com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata,java.util.Map)>(i2, r0, r4);     default: goto $r9 = new java.lang.IllegalArgumentException; };	$r9 = new java.lang.IllegalArgumentException;	$r10 = new java.lang.StringBuilder;	specialinvoke $r10.<java.lang.StringBuilder: void <init>()>();	$r12 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("does not support key type: ");	$r11 = r0.<com.google.javascript.jscomp.jarjar.com.google.protobuf.MapEntryLite$Metadata: com.google.javascript.jscomp.jarjar.com.google.protobuf.WireFormat$FieldType keyType>;	$r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r11);	$r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>();	specialinvoke $r9.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r14);	throw $r9
+;block_num 2

@@ -1,0 +1,35 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var1579 0)
+(declare-sort var2682 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun var2682_size/-959786421 (var2682) Int)
+(declare-fun hashCode/-467973558 (String) Int)
+(declare-const null-String String)
+(declare-const null-var2682 var2682)
+(declare-const var2968 String) ; Statement: r1 := @parameter0: java.lang.String 
+(assert (not (= var2968 null-String)))
+(declare-const var1385 var2682) ; Statement: r0 := @parameter1: java.util.List 
+(assert (not (= var1385 null-var2682)))
+(define-const var1068 Int (var2682_size/-959786421 var1385)) ; Statement: i0 = interfaceinvoke r0.<java.util.List: int size()>() 
+(define-const var367 Int (- 1)) ; Statement: b7 = -1 
+(assert true)
+(define-const var1685 Int (hashCode/-467973558 var2968)) ; Statement: $i1 = virtualinvoke r1.<java.lang.String: int hashCode()>() 
+ ; Statement: lookupswitch($i1) {     case -1325958191: goto $z9 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>("double");     case 104431: goto $z8 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>("int");     case 3039496: goto $z7 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>("byte");     case 3052374: goto $z6 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>("char");     case 3327612: goto $z5 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>("long");     case 64711720: goto $z4 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>("boolean");     case 97526364: goto $z3 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>("float");     case 109413500: goto $z2 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>("short");     case 1195259493: goto $z0 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>("java.lang.String");     default: goto tableswitch(b7) {     case 0: goto r18 = newarray (int)[i0];     case 1: goto r21 = newarray (long)[i0];     case 2: goto r22 = newarray (float)[i0];     case 3: goto r23 = newarray (double)[i0];     case 4: goto r24 = newarray (short)[i0];     case 5: goto r25 = newarray (char)[i0];     case 6: goto r26 = newarray (byte)[i0];     case 7: goto r27 = newarray (boolean)[i0];     case 8: goto r28 = newarray (java.lang.String)[i0];     default: goto return null; }; } 
+(assert (and (not (= var1685 1195259493)) (and (not (= var1685 109413500)) (and (not (= var1685 97526364)) (and (not (= var1685 64711720)) (and (not (= var1685 3327612)) (and (not (= var1685 3052374)) (and (not (= var1685 3039496)) (and (not (= var1685 104431)) (and (not (= var1685 (- 1325958191))) true)))))))))) ; Intersect: Negate: Cond: $i1 == 1195259493   and Intersect: Negate: Cond: $i1 == 109413500   and Intersect: Negate: Cond: $i1 == 97526364   and Intersect: Negate: Cond: $i1 == 64711720   and Intersect: Negate: Cond: $i1 == 3327612   and Intersect: Negate: Cond: $i1 == 3052374   and Intersect: Negate: Cond: $i1 == 3039496   and Intersect: Negate: Cond: $i1 == 104431   and Intersect: Negate: Cond: $i1 == -1325958191   and Non Conditional         
+ ; Statement: tableswitch(b7) {     case 0: goto r18 = newarray (int)[i0];     case 1: goto r21 = newarray (long)[i0];     case 2: goto r22 = newarray (float)[i0];     case 3: goto r23 = newarray (double)[i0];     case 4: goto r24 = newarray (short)[i0];     case 5: goto r25 = newarray (char)[i0];     case 6: goto r26 = newarray (byte)[i0];     case 7: goto r27 = newarray (boolean)[i0];     case 8: goto r28 = newarray (java.lang.String)[i0];     default: goto return null; } 
+(assert (and (not (= var367 8)) (and (not (= var367 7)) (and (not (= var367 6)) (and (not (= var367 5)) (and (not (= var367 4)) (and (not (= var367 3)) (and (not (= var367 2)) (and (not (= var367 1)) (and (not (= var367 0)) true)))))))))) ; Intersect: Negate: Cond: b7 == 8   and Intersect: Negate: Cond: b7 == 7   and Intersect: Negate: Cond: b7 == 6   and Intersect: Negate: Cond: b7 == 5   and Intersect: Negate: Cond: b7 == 4   and Intersect: Negate: Cond: b7 == 3   and Intersect: Negate: Cond: b7 == 2   and Intersect: Negate: Cond: b7 == 1   and Intersect: Negate: Cond: b7 == 0   and Non Conditional         
+ ; Statement: return null 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {var2682_size/-959786421=([java.util.List], int), hashCode/-467973558=([java.lang.String], int)}
+; {var2968=r1, var1579=null_type, var2682=java.util.List, var1385=r0, var1068=i0, var367=b7, var1685=$i1}
+; {r1=var2968, null_type=var1579, java.util.List=var2682, r0=var1385, i0=var1068, b7=var367, $i1=var1685}
+;seq <java.lang.String: int hashCode()>
+;cnt {"<java.lang.String: int hashCode()>": 1}
+;stmts r1 := @parameter0: java.lang.String;	r0 := @parameter1: java.util.List;	i0 = interfaceinvoke r0.<java.util.List: int size()>();	b7 = -1;	$i1 = virtualinvoke r1.<java.lang.String: int hashCode()>();	lookupswitch($i1) {     case -1325958191: goto $z9 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>("double");     case 104431: goto $z8 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>("int");     case 3039496: goto $z7 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>("byte");     case 3052374: goto $z6 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>("char");     case 3327612: goto $z5 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>("long");     case 64711720: goto $z4 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>("boolean");     case 97526364: goto $z3 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>("float");     case 109413500: goto $z2 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>("short");     case 1195259493: goto $z0 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>("java.lang.String");     default: goto tableswitch(b7) {     case 0: goto r18 = newarray (int)[i0];     case 1: goto r21 = newarray (long)[i0];     case 2: goto r22 = newarray (float)[i0];     case 3: goto r23 = newarray (double)[i0];     case 4: goto r24 = newarray (short)[i0];     case 5: goto r25 = newarray (char)[i0];     case 6: goto r26 = newarray (byte)[i0];     case 7: goto r27 = newarray (boolean)[i0];     case 8: goto r28 = newarray (java.lang.String)[i0];     default: goto return null; }; };	tableswitch(b7) {     case 0: goto r18 = newarray (int)[i0];     case 1: goto r21 = newarray (long)[i0];     case 2: goto r22 = newarray (float)[i0];     case 3: goto r23 = newarray (double)[i0];     case 4: goto r24 = newarray (short)[i0];     case 5: goto r25 = newarray (char)[i0];     case 6: goto r26 = newarray (byte)[i0];     case 7: goto r27 = newarray (boolean)[i0];     case 8: goto r28 = newarray (java.lang.String)[i0];     default: goto return null; };	return null
+;block_num 3

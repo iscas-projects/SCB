@@ -1,0 +1,391 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var3132 0)
+(declare-sort var1551 0)
+(declare-sort var320 0)
+(declare-sort var490 0)
+(declare-sort var3634 0)
+(declare-sort var534 0)
+(declare-sort var794 0)
+(declare-sort var3941 0)
+(declare-sort var399 0)
+(declare-sort var30 0)
+(declare-sort var3503 0)
+(declare-sort var3599 0)
+(declare-sort var2175 0)
+(declare-sort var2009 0)
+(declare-sort var3279 0)
+(declare-sort var2990 0)
+(declare-sort var105 0)
+(declare-sort var207 0)
+(declare-sort var1270 0)
+(declare-sort var861 0)
+(declare-sort var3331 0)
+(declare-sort var2233 0)
+(declare-sort var2963 0)
+(declare-sort var386 0)
+(declare-sort var2613 0)
+(declare-sort var635 0)
+(declare-sort var1027 0)
+(declare-sort var2237 0)
+(declare-sort var906 0)
+(declare-sort var648 0)
+(declare-sort var3204 0)
+(declare-sort var738 0)
+(declare-sort var2393 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun newInstance/532723879 (var320) var3634)
+(declare-fun cast-from-var3634-to-var490 (var3634) var490)
+(declare-fun doc/-2020745741 (var3132) var534)
+(declare-fun getDocument/-1264257560 (var534) var794)
+(declare-fun var794_getBody/-1515921931 (var794) var3941)
+(declare-fun var3941_sizeOfPArray/-2141624084 (var3941) Int)
+(declare-fun var3941_getPArray/886377975 (var3941 Int) var490)
+(declare-fun var490_getRsidR/956471942 (var490) (Array Int Int))
+(declare-fun var490_getRsidRDefault/1642446419 (var490) (Array Int Int))
+(declare-fun var490_setRsidP/291972072 (var490 (Array Int Int)) void)
+(declare-fun var490_setRsidRDefault/-765566329 (var490 (Array Int Int)) void)
+(declare-fun var490_addNewPPr/1902925068 (var490) var399)
+(declare-fun var399_addNewPStyle/-1673993728 (var399) var30)
+(declare-fun var30_setVal/2142443077 (var30 String) void)
+(declare-fun var490_addNewR/1692580492 (var490) var3503)
+(declare-fun var3503_addNewRPr/-1138221882 (var3503) var3599)
+(declare-fun var3599_addNewNoProof/1314121945 (var3599) var2393)
+(declare-fun var3503_addNewPict/1049456896 (var3503) var2175)
+(declare-fun cast-from-var3634-to-var2009 (var3634) var2009)
+(declare-fun var2009_addNewShapetype/-126183377 (var2009) var3279)
+(declare-fun var3279_setId/-1571084993 (var3279 String) void)
+(declare-fun var3279_setCoordsize/-2091410540 (var3279 String) void)
+(declare-fun var3279_setSpt/-1907385896 (var3279 Float32) void)
+(declare-fun var3279_setAdj/520214979 (var3279 String) void)
+(declare-fun var3279_setPath2/215680509 (var3279 String) void)
+(declare-fun var3279_addNewFormulas/-862713341 (var3279) var2990)
+(declare-fun var2990_addNewF/-361316507 (var2990) var105)
+(declare-fun var105_setEqn/543482963 (var105 String) void)
+(declare-fun var3279_addNewPath/398937347 (var3279) var207)
+(declare-fun var207_setTextpathok/-233305854 (var207 var1270) void)
+(declare-fun var207_setConnecttype/-1939150956 (var207 var3331) void)
+(declare-fun var207_setConnectlocs/452811541 (var207 String) void)
+(declare-fun var207_setConnectangles/1284872104 (var207 String) void)
+(declare-fun var3279_addNewTextpath/-622148413 (var3279) var2963)
+(declare-fun var2963_setOn/-123786300 (var2963 var1270) void)
+(declare-fun var2963_setFitshape/1238544659 (var2963 var1270) void)
+(declare-fun var3279_addNewHandles/1351138859 (var3279) var386)
+(declare-fun var386_addNewH/-1621570975 (var386) var2613)
+(declare-fun var2613_setPosition/718160260 (var2613 String) void)
+(declare-fun var2613_setXrange/413872168 (var2613 String) void)
+(declare-fun var3279_addNewLock/1610163978 (var3279) var635)
+(declare-fun var635_setExt/-49059264 (var635 var1027) void)
+(declare-fun var2009_addNewShape/-1061986781 (var2009) var906)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(define-fun append/-1001720160 ((s String) (tail Int)) String (str.++ s (str.from_int tail)))
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun var906_setId/-1293471047 (var906 String) void)
+(declare-fun var906_setSpid/-1803834372 (var906 String) void)
+(declare-fun var906_setType/-651075142 (var906 String) void)
+(declare-fun var906_setStyle/350259903 (var906 String) void)
+(declare-fun var906_setWrapcoords/-1946541108 (var906 String) void)
+(declare-fun var906_setFillcolor/-248525488 (var906 String) void)
+(declare-fun var906_setStroked/420730914 (var906 var1270) void)
+(declare-fun var906_addNewTextpath/715715721 (var906) var2963)
+(declare-fun var2963_setStyle/1354508814 (var2963 String) void)
+(declare-fun var2963_setString/-1870790252 (var2963 String) void)
+(declare-fun cast-from-var2009-to-var648 (var2009) var648)
+(declare-fun var2175_set/1119364886 (var2175 var648) var648)
+(declare-fun var3204-init () var3204)
+(declare-fun <init>/916914304 (var3204 var490 var738) void)
+(declare-fun cast-from-var534-to-var738 (var534) var738)
+(declare-const null-var3132 var3132)
+(declare-const null-String String)
+(declare-const null-Int Int)
+(declare-const var490-Factory var320)
+(declare-const null-__Array__Int__Int__ (Array Int Int))
+(declare-const var2009-Factory var320)
+(declare-const var861-T var1270)
+(declare-const var2233-CUSTOM var3331)
+(declare-const var2237-EDIT var1027)
+(declare-const var861-FALSE var1270)
+(declare-const var2591 var3132) ; Statement: r3 := @this: org.apache.poi.xwpf.model.XWPFHeaderFooterPolicy 
+(assert (not (= var2591 null-var3132)))
+(declare-const var3761 String) ; Statement: r38 := @parameter0: java.lang.String 
+(assert (not (= var3761 null-String)))
+(declare-const var1091 Int) ; Statement: i1 := @parameter1: int 
+(assert (not (= var1091 null-Int)))
+(define-const var3845 var320 var490-Factory) ; Statement: $r0 = <org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP: org.apache.xmlbeans.impl.schema.DocumentFactory Factory> 
+(assert true)
+(define-const var481 var3634 (newInstance/532723879 var3845)) ; Statement: $r1 = virtualinvoke $r0.<org.apache.xmlbeans.impl.schema.DocumentFactory: java.lang.Object newInstance()>() 
+(define-const var1153 var490 (cast-from-var3634-to-var490 var481)) ; Statement: r2 = (org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP) $r1 
+(define-const var2555 var534 (doc/-2020745741 var2591)) ; Statement: $r4 = r3.<org.apache.poi.xwpf.model.XWPFHeaderFooterPolicy: org.apache.poi.xwpf.usermodel.XWPFDocument doc> 
+(assert true)
+(define-const var341 var794 (getDocument/-1264257560 var2555)) ; Statement: $r5 = virtualinvoke $r4.<org.apache.poi.xwpf.usermodel.XWPFDocument: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTDocument1 getDocument()>() 
+(define-const var336 var3941 (var794_getBody/-1515921931 var341)) ; Statement: r6 = interfaceinvoke $r5.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTDocument1: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTBody getBody()>() 
+(define-const var2336 (Array Int Int) null-__Array__Int__Int__) ; Statement: r55 = null 
+(define-const var448 (Array Int Int) null-__Array__Int__Int__) ; Statement: r56 = null 
+(define-const var3854 Int (var3941_sizeOfPArray/-2141624084 var336)) ; Statement: $i0 = interfaceinvoke r6.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTBody: int sizeOfPArray()>() 
+ ; Statement: if $i0 != 0 goto r57 = interfaceinvoke r6.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTBody: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP getPArray(int)>(0) 
+(assert (not (= var3854 0))) ; Cond: $i0 != 0 
+(define-const var498 var490 (var3941_getPArray/886377975 var336 0)) ; Statement: r57 = interfaceinvoke r6.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTBody: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP getPArray(int)>(0) 
+(define-const var2336!1 (Array Int Int) (var490_getRsidR/956471942 var498)) ; Statement: r55 = interfaceinvoke r57.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP: byte[] getRsidR()>() 
+(define-const var448!1 (Array Int Int) (var490_getRsidRDefault/1642446419 var498)) ; Statement: r56 = interfaceinvoke r57.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP: byte[] getRsidRDefault()>() 
+(assert true) ; Non Conditional
+;(assert (var490_setRsidP/291972072 var1153 var2336!1)) ; Statement: interfaceinvoke r2.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP: void setRsidP(byte[])>(r55) 
+
+(declare-const var1153!1 var490)
+(declare-const var2336!2 (Array Int Int))
+;(assert (var490_setRsidRDefault/-765566329 var1153!1 var448!1)) ; Statement: interfaceinvoke r2.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP: void setRsidRDefault(byte[])>(r56) 
+
+(declare-const var1153!2 var490)
+(declare-const var448!2 (Array Int Int))
+(define-const var3471 var399 (var490_addNewPPr/1902925068 var1153!2)) ; Statement: $r41 = interfaceinvoke r2.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTPPr addNewPPr()>() 
+(define-const var3008 var30 (var399_addNewPStyle/-1673993728 var3471)) ; Statement: $r7 = interfaceinvoke $r41.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTPPr: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTString addNewPStyle()>() 
+;(assert (var30_setVal/2142443077 var3008 "Header")) ; Statement: interfaceinvoke $r7.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTString: void setVal(java.lang.String)>("Header") 
+
+(declare-const var3008!1 var30)
+(declare-const var147 String)
+(define-const var1806 var3503 (var490_addNewR/1692580492 var1153!2)) ; Statement: $r42 = interfaceinvoke r2.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTR addNewR()>() 
+(define-const var2196 var3599 (var3503_addNewRPr/-1138221882 var1806)) ; Statement: $r43 = interfaceinvoke $r42.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTR: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTRPr addNewRPr()>() 
+;(assert (var3599_addNewNoProof/1314121945 var2196)) ; Statement: interfaceinvoke $r43.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTRPr: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTOnOff addNewNoProof()>() 
+
+(declare-const var2196!1 var3599)
+(define-const var2593 var2175 (var3503_addNewPict/1049456896 var1806)) ; Statement: $r44 = interfaceinvoke $r42.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTR: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTPicture addNewPict()>() 
+(define-const var2678 var320 var2009-Factory) ; Statement: $r8 = <com.microsoft.schemas.vml.CTGroup: org.apache.xmlbeans.impl.schema.DocumentFactory Factory> 
+(assert true)
+(define-const var1563 var3634 (newInstance/532723879 var2678)) ; Statement: $r9 = virtualinvoke $r8.<org.apache.xmlbeans.impl.schema.DocumentFactory: java.lang.Object newInstance()>() 
+(define-const var666 var2009 (cast-from-var3634-to-var2009 var1563)) ; Statement: $r45 = (com.microsoft.schemas.vml.CTGroup) $r9 
+(define-const var2855 var3279 (var2009_addNewShapetype/-126183377 var666)) ; Statement: $r46 = interfaceinvoke $r45.<com.microsoft.schemas.vml.CTGroup: com.microsoft.schemas.vml.CTShapetype addNewShapetype()>() 
+;(assert (var3279_setId/-1571084993 var2855 "_x0000_t136")) ; Statement: interfaceinvoke $r46.<com.microsoft.schemas.vml.CTShapetype: void setId(java.lang.String)>("_x0000_t136") 
+
+(declare-const var2855!1 var3279)
+(declare-const var1405 String)
+;(assert (var3279_setCoordsize/-2091410540 var2855!1 "1600,21600")) ; Statement: interfaceinvoke $r46.<com.microsoft.schemas.vml.CTShapetype: void setCoordsize(java.lang.String)>("1600,21600") 
+
+(declare-const var2855!2 var3279)
+(declare-const var1981 String)
+;(assert (var3279_setSpt/-1907385896 var2855!2 ((_ to_fp 8 24) #x43080000))) ; Statement: interfaceinvoke $r46.<com.microsoft.schemas.vml.CTShapetype: void setSpt(float)>(136.0F) 
+
+(declare-const var2855!3 var3279)
+(declare-const var2850 Float32)
+;(assert (var3279_setAdj/520214979 var2855!3 "10800")) ; Statement: interfaceinvoke $r46.<com.microsoft.schemas.vml.CTShapetype: void setAdj(java.lang.String)>("10800") 
+
+(declare-const var2855!4 var3279)
+(declare-const var285 String)
+;(assert (var3279_setPath2/215680509 var2855!4 "m@7,0l@8,0m@5,21600l@6,21600e")) ; Statement: interfaceinvoke $r46.<com.microsoft.schemas.vml.CTShapetype: void setPath2(java.lang.String)>("m@7,0l@8,0m@5,21600l@6,21600e") 
+
+(declare-const var2855!5 var3279)
+(declare-const var1200 String)
+(define-const var958 var2990 (var3279_addNewFormulas/-862713341 var2855!5)) ; Statement: $r47 = interfaceinvoke $r46.<com.microsoft.schemas.vml.CTShapetype: com.microsoft.schemas.vml.CTFormulas addNewFormulas()>() 
+(define-const var1892 var105 (var2990_addNewF/-361316507 var958)) ; Statement: $r10 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>() 
+;(assert (var105_setEqn/543482963 var1892 "sum #0 0 10800")) ; Statement: interfaceinvoke $r10.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("sum #0 0 10800") 
+
+(declare-const var1892!1 var105)
+(declare-const var817 String)
+(define-const var3646 var105 (var2990_addNewF/-361316507 var958)) ; Statement: $r11 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>() 
+;(assert (var105_setEqn/543482963 var3646 "prod #0 2 1")) ; Statement: interfaceinvoke $r11.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("prod #0 2 1") 
+
+(declare-const var3646!1 var105)
+(declare-const var611 String)
+(define-const var767 var105 (var2990_addNewF/-361316507 var958)) ; Statement: $r12 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>() 
+;(assert (var105_setEqn/543482963 var767 "sum 21600 0 @1")) ; Statement: interfaceinvoke $r12.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("sum 21600 0 @1") 
+
+(declare-const var767!1 var105)
+(declare-const var3362 String)
+(define-const var350 var105 (var2990_addNewF/-361316507 var958)) ; Statement: $r13 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>() 
+;(assert (var105_setEqn/543482963 var350 "sum 0 0 @2")) ; Statement: interfaceinvoke $r13.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("sum 0 0 @2") 
+
+(declare-const var350!1 var105)
+(declare-const var1805 String)
+(define-const var2814 var105 (var2990_addNewF/-361316507 var958)) ; Statement: $r14 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>() 
+;(assert (var105_setEqn/543482963 var2814 "sum 21600 0 @3")) ; Statement: interfaceinvoke $r14.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("sum 21600 0 @3") 
+
+(declare-const var2814!1 var105)
+(declare-const var1047 String)
+(define-const var688 var105 (var2990_addNewF/-361316507 var958)) ; Statement: $r15 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>() 
+;(assert (var105_setEqn/543482963 var688 "if @0 @3 0")) ; Statement: interfaceinvoke $r15.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("if @0 @3 0") 
+
+(declare-const var688!1 var105)
+(declare-const var2572 String)
+(define-const var840 var105 (var2990_addNewF/-361316507 var958)) ; Statement: $r16 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>() 
+;(assert (var105_setEqn/543482963 var840 "if @0 21600 @1")) ; Statement: interfaceinvoke $r16.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("if @0 21600 @1") 
+
+(declare-const var840!1 var105)
+(declare-const var1774 String)
+(define-const var1616 var105 (var2990_addNewF/-361316507 var958)) ; Statement: $r17 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>() 
+;(assert (var105_setEqn/543482963 var1616 "if @0 0 @2")) ; Statement: interfaceinvoke $r17.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("if @0 0 @2") 
+
+(declare-const var1616!1 var105)
+(declare-const var2883 String)
+(define-const var998 var105 (var2990_addNewF/-361316507 var958)) ; Statement: $r18 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>() 
+;(assert (var105_setEqn/543482963 var998 "if @0 @4 21600")) ; Statement: interfaceinvoke $r18.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("if @0 @4 21600") 
+
+(declare-const var998!1 var105)
+(declare-const var697 String)
+(define-const var3501 var105 (var2990_addNewF/-361316507 var958)) ; Statement: $r19 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>() 
+;(assert (var105_setEqn/543482963 var3501 "mid @5 @6")) ; Statement: interfaceinvoke $r19.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("mid @5 @6") 
+
+(declare-const var3501!1 var105)
+(declare-const var3269 String)
+(define-const var1125 var105 (var2990_addNewF/-361316507 var958)) ; Statement: $r20 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>() 
+;(assert (var105_setEqn/543482963 var1125 "mid @8 @5")) ; Statement: interfaceinvoke $r20.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("mid @8 @5") 
+
+(declare-const var1125!1 var105)
+(declare-const var801 String)
+(define-const var1366 var105 (var2990_addNewF/-361316507 var958)) ; Statement: $r21 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>() 
+;(assert (var105_setEqn/543482963 var1366 "mid @7 @8")) ; Statement: interfaceinvoke $r21.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("mid @7 @8") 
+
+(declare-const var1366!1 var105)
+(declare-const var568 String)
+(define-const var1120 var105 (var2990_addNewF/-361316507 var958)) ; Statement: $r22 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>() 
+;(assert (var105_setEqn/543482963 var1120 "mid @6 @7")) ; Statement: interfaceinvoke $r22.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("mid @6 @7") 
+
+(declare-const var1120!1 var105)
+(declare-const var2258 String)
+(define-const var1441 var105 (var2990_addNewF/-361316507 var958)) ; Statement: $r23 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>() 
+;(assert (var105_setEqn/543482963 var1441 "sum @6 0 @5")) ; Statement: interfaceinvoke $r23.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("sum @6 0 @5") 
+
+(declare-const var1441!1 var105)
+(declare-const var1204 String)
+(define-const var636 var207 (var3279_addNewPath/398937347 var2855!5)) ; Statement: $r48 = interfaceinvoke $r46.<com.microsoft.schemas.vml.CTShapetype: com.microsoft.schemas.vml.CTPath addNewPath()>() 
+(define-const var1588 var1270 var861-T) ; Statement: $r24 = <org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse: org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse$Enum T> 
+;(assert (var207_setTextpathok/-233305854 var636 var1588)) ; Statement: interfaceinvoke $r48.<com.microsoft.schemas.vml.CTPath: void setTextpathok(org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse$Enum)>($r24) 
+
+(declare-const var636!1 var207)
+(declare-const var1588!1 var1270)
+(define-const var1392 var3331 var2233-CUSTOM) ; Statement: $r25 = <com.microsoft.schemas.office.office.STConnectType: com.microsoft.schemas.office.office.STConnectType$Enum CUSTOM> 
+;(assert (var207_setConnecttype/-1939150956 var636!1 var1392)) ; Statement: interfaceinvoke $r48.<com.microsoft.schemas.vml.CTPath: void setConnecttype(com.microsoft.schemas.office.office.STConnectType$Enum)>($r25) 
+
+(declare-const var636!2 var207)
+(declare-const var1392!1 var3331)
+;(assert (var207_setConnectlocs/452811541 var636!2 "@9,0;@10,10800;@11,21600;@12,10800")) ; Statement: interfaceinvoke $r48.<com.microsoft.schemas.vml.CTPath: void setConnectlocs(java.lang.String)>("@9,0;@10,10800;@11,21600;@12,10800") 
+
+(declare-const var636!3 var207)
+(declare-const var1319 String)
+;(assert (var207_setConnectangles/1284872104 var636!3 "270,180,90,0")) ; Statement: interfaceinvoke $r48.<com.microsoft.schemas.vml.CTPath: void setConnectangles(java.lang.String)>("270,180,90,0") 
+
+(declare-const var636!4 var207)
+(declare-const var3198 String)
+(define-const var2588 var2963 (var3279_addNewTextpath/-622148413 var2855!5)) ; Statement: $r49 = interfaceinvoke $r46.<com.microsoft.schemas.vml.CTShapetype: com.microsoft.schemas.vml.CTTextPath addNewTextpath()>() 
+(define-const var3777 var1270 var861-T) ; Statement: $r26 = <org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse: org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse$Enum T> 
+;(assert (var2963_setOn/-123786300 var2588 var3777)) ; Statement: interfaceinvoke $r49.<com.microsoft.schemas.vml.CTTextPath: void setOn(org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse$Enum)>($r26) 
+
+(declare-const var2588!1 var2963)
+(declare-const var3777!1 var1270)
+(define-const var2725 var1270 var861-T) ; Statement: $r27 = <org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse: org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse$Enum T> 
+;(assert (var2963_setFitshape/1238544659 var2588!1 var2725)) ; Statement: interfaceinvoke $r49.<com.microsoft.schemas.vml.CTTextPath: void setFitshape(org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse$Enum)>($r27) 
+
+(declare-const var2588!2 var2963)
+(declare-const var2725!1 var1270)
+(define-const var1922 var386 (var3279_addNewHandles/1351138859 var2855!5)) ; Statement: $r50 = interfaceinvoke $r46.<com.microsoft.schemas.vml.CTShapetype: com.microsoft.schemas.vml.CTHandles addNewHandles()>() 
+(define-const var3563 var2613 (var386_addNewH/-1621570975 var1922)) ; Statement: $r51 = interfaceinvoke $r50.<com.microsoft.schemas.vml.CTHandles: com.microsoft.schemas.vml.CTH addNewH()>() 
+;(assert (var2613_setPosition/718160260 var3563 "#0,bottomRight")) ; Statement: interfaceinvoke $r51.<com.microsoft.schemas.vml.CTH: void setPosition(java.lang.String)>("#0,bottomRight") 
+
+(declare-const var3563!1 var2613)
+(declare-const var3676 String)
+;(assert (var2613_setXrange/413872168 var3563!1 "6629,14971")) ; Statement: interfaceinvoke $r51.<com.microsoft.schemas.vml.CTH: void setXrange(java.lang.String)>("6629,14971") 
+
+(declare-const var3563!2 var2613)
+(declare-const var1352 String)
+(define-const var3733 var635 (var3279_addNewLock/1610163978 var2855!5)) ; Statement: $r52 = interfaceinvoke $r46.<com.microsoft.schemas.vml.CTShapetype: com.microsoft.schemas.office.office.CTLock addNewLock()>() 
+(define-const var2377 var1027 var2237-EDIT) ; Statement: $r28 = <com.microsoft.schemas.vml.STExt: com.microsoft.schemas.vml.STExt$Enum EDIT> 
+;(assert (var635_setExt/-49059264 var3733 var2377)) ; Statement: interfaceinvoke $r52.<com.microsoft.schemas.office.office.CTLock: void setExt(com.microsoft.schemas.vml.STExt$Enum)>($r28) 
+
+(declare-const var3733!1 var635)
+(declare-const var2377!1 var1027)
+(define-const var3622 var906 (var2009_addNewShape/-1061986781 var666)) ; Statement: $r53 = interfaceinvoke $r45.<com.microsoft.schemas.vml.CTGroup: com.microsoft.schemas.vml.CTShape addNewShape()>() 
+(define-const var1082 String String-init) ; Statement: $r58 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var1082)) ; Statement: specialinvoke $r58.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var1082!1 String)
+(assert (= var1082!1 ""))
+(assert true)
+(define-const var676 String (append/672562846 var1082!1 "PowerPlusWaterMarkObject")) ; Statement: $r30 = virtualinvoke $r58.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("PowerPlusWaterMarkObject") 
+(declare-const var1082!2 String)
+(assert (= var1082!2 (str.++ var1082!1 "PowerPlusWaterMarkObject")))
+(assert true)
+(define-const var1622 String (append/-1001720160 var676 var1091)) ; Statement: $r31 = virtualinvoke $r30.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i1) 
+(declare-const var676!1 String)
+(assert (str.prefixof var676 var676!1))
+(assert true)
+(define-const var2584 String (toString/-2075883882 var1622)) ; Statement: $r32 = virtualinvoke $r31.<java.lang.StringBuilder: java.lang.String toString()>() 
+;(assert (var906_setId/-1293471047 var3622 var2584)) ; Statement: interfaceinvoke $r53.<com.microsoft.schemas.vml.CTShape: void setId(java.lang.String)>($r32) 
+
+(declare-const var3622!1 var906)
+(declare-const var2584!1 String)
+(define-const var2773 String String-init) ; Statement: $r59 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var2773)) ; Statement: specialinvoke $r59.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var2773!1 String)
+(assert (= var2773!1 ""))
+(assert true)
+(define-const var829 String (append/672562846 var2773!1 "_x0000_s102")) ; Statement: $r34 = virtualinvoke $r59.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("_x0000_s102") 
+(declare-const var2773!2 String)
+(assert (= var2773!2 (str.++ var2773!1 "_x0000_s102")))
+(define-const var3162 Int (+ 4 var1091)) ; Statement: $i2 = 4 + i1 
+(assert true)
+(define-const var3040 String (append/-1001720160 var829 var3162)) ; Statement: $r35 = virtualinvoke $r34.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2) 
+(declare-const var829!1 String)
+(assert (str.prefixof var829 var829!1))
+(assert true)
+(define-const var2396 String (toString/-2075883882 var3040)) ; Statement: $r36 = virtualinvoke $r35.<java.lang.StringBuilder: java.lang.String toString()>() 
+;(assert (var906_setSpid/-1803834372 var3622!1 var2396)) ; Statement: interfaceinvoke $r53.<com.microsoft.schemas.vml.CTShape: void setSpid(java.lang.String)>($r36) 
+
+(declare-const var3622!2 var906)
+(declare-const var2396!1 String)
+;(assert (var906_setType/-651075142 var3622!2 "#_x0000_t136")) ; Statement: interfaceinvoke $r53.<com.microsoft.schemas.vml.CTShape: void setType(java.lang.String)>("#_x0000_t136") 
+
+(declare-const var3622!3 var906)
+(declare-const var2741 String)
+;(assert (var906_setStyle/350259903 var3622!3 "position:absolute;margin-left:0;margin-top:0;width:415pt;height:207.5pt;z-index:-251654144;mso-wrap-edited:f;mso-position-horizontal:center;mso-position-horizontal-relative:margin;mso-position-vertical:center;mso-position-vertical-relative:margin")) ; Statement: interfaceinvoke $r53.<com.microsoft.schemas.vml.CTShape: void setStyle(java.lang.String)>("position:absolute;margin-left:0;margin-top:0;width:415pt;height:207.5pt;z-index:-251654144;mso-wrap-edited:f;mso-position-horizontal:center;mso-position-horizontal-relative:margin;mso-position-vertical:center;mso-position-vertical-relative:margin") 
+
+(declare-const var3622!4 var906)
+(declare-const var3062 String)
+;(assert (var906_setWrapcoords/-1946541108 var3622!4 "616 5068 390 16297 39 16921 -39 17155 7265 17545 7186 17467 -39 17467 18904 17467 10507 17467 8710 17545 18904 17077 18787 16843 18358 16297 18279 12554 19178 12476 20701 11774 20779 11228 21131 10059 21248 8811 21248 7563 20975 6316 20935 5380 19490 5146 14022 5068 2616 5068")) ; Statement: interfaceinvoke $r53.<com.microsoft.schemas.vml.CTShape: void setWrapcoords(java.lang.String)>("616 5068 390 16297 39 16921 -39 17155 7265 17545 7186 17467 -39 17467 18904 17467 10507 17467 8710 17545 18904 17077 18787 16843 18358 16297 18279 12554 19178 12476 20701 11774 20779 11228 21131 10059 21248 8811 21248 7563 20975 6316 20935 5380 19490 5146 14022 5068 2616 5068") 
+
+(declare-const var3622!5 var906)
+(declare-const var3788 String)
+;(assert (var906_setFillcolor/-248525488 var3622!5 "black")) ; Statement: interfaceinvoke $r53.<com.microsoft.schemas.vml.CTShape: void setFillcolor(java.lang.String)>("black") 
+
+(declare-const var3622!6 var906)
+(declare-const var2606 String)
+(define-const var121 var1270 var861-FALSE) ; Statement: $r37 = <org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse: org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse$Enum FALSE> 
+;(assert (var906_setStroked/420730914 var3622!6 var121)) ; Statement: interfaceinvoke $r53.<com.microsoft.schemas.vml.CTShape: void setStroked(org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse$Enum)>($r37) 
+
+(declare-const var3622!7 var906)
+(declare-const var121!1 var1270)
+(define-const var1627 var2963 (var906_addNewTextpath/715715721 var3622!7)) ; Statement: $r54 = interfaceinvoke $r53.<com.microsoft.schemas.vml.CTShape: com.microsoft.schemas.vml.CTTextPath addNewTextpath()>() 
+;(assert (var2963_setStyle/1354508814 var1627 "font-family:&quot;Cambria&quot;;font-size:1pt")) ; Statement: interfaceinvoke $r54.<com.microsoft.schemas.vml.CTTextPath: void setStyle(java.lang.String)>("font-family:&quot;Cambria&quot;;font-size:1pt") 
+
+(declare-const var1627!1 var2963)
+(declare-const var3418 String)
+;(assert (var2963_setString/-1870790252 var1627!1 var3761)) ; Statement: interfaceinvoke $r54.<com.microsoft.schemas.vml.CTTextPath: void setString(java.lang.String)>(r38) 
+
+(declare-const var1627!2 var2963)
+(declare-const var3761!1 String)
+(define-const var351 var648 (cast-from-var2009-to-var648 var666)) ; Statement: $r61 = (org.apache.xmlbeans.XmlObject) $r45 
+;(assert (var2175_set/1119364886 var2593 var351)) ; Statement: interfaceinvoke $r44.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTPicture: org.apache.xmlbeans.XmlObject set(org.apache.xmlbeans.XmlObject)>($r61) 
+
+(declare-const var2593!1 var2175)
+(declare-const var351!1 var648)
+(define-const var3799 var3204 var3204-init) ; Statement: $r60 = new org.apache.poi.xwpf.usermodel.XWPFParagraph 
+(define-const var1194 var534 (doc/-2020745741 var2591)) ; Statement: $r40 = r3.<org.apache.poi.xwpf.model.XWPFHeaderFooterPolicy: org.apache.poi.xwpf.usermodel.XWPFDocument doc> 
+(assert true)
+;(assert (<init>/916914304 var3799 var1153!2 (cast-from-var534-to-var738 var1194))) ; Statement: specialinvoke $r60.<org.apache.poi.xwpf.usermodel.XWPFParagraph: void <init>(org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP,org.apache.poi.xwpf.usermodel.IBody)>(r2, $r40) 
+
+(declare-const var3799!1 var3204)
+(declare-const var1153!3 var490)
+(declare-const var1194!1 var534)
+ ; Statement: return $r60 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {newInstance/532723879=([org.apache.xmlbeans.impl.schema.DocumentFactory], java.lang.Object), cast-from-var3634-to-var490=([java.lang.Object], org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP), doc/-2020745741=([org.apache.poi.xwpf.model.XWPFHeaderFooterPolicy], org.apache.poi.xwpf.usermodel.XWPFDocument), getDocument/-1264257560=([org.apache.poi.xwpf.usermodel.XWPFDocument], org.openxmlformats.schemas.wordprocessingml.x2006.main.CTDocument1), var794_getBody/-1515921931=([org.openxmlformats.schemas.wordprocessingml.x2006.main.CTDocument1], org.openxmlformats.schemas.wordprocessingml.x2006.main.CTBody), var3941_sizeOfPArray/-2141624084=([org.openxmlformats.schemas.wordprocessingml.x2006.main.CTBody], int), var3941_getPArray/886377975=([org.openxmlformats.schemas.wordprocessingml.x2006.main.CTBody, int], org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP), var490_getRsidR/956471942=([org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP], byte[]), var490_getRsidRDefault/1642446419=([org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP], byte[]), var490_setRsidP/291972072=([org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP, byte[]], void), var490_setRsidRDefault/-765566329=([org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP, byte[]], void), var490_addNewPPr/1902925068=([org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP], org.openxmlformats.schemas.wordprocessingml.x2006.main.CTPPr), var399_addNewPStyle/-1673993728=([org.openxmlformats.schemas.wordprocessingml.x2006.main.CTPPr], org.openxmlformats.schemas.wordprocessingml.x2006.main.CTString), var30_setVal/2142443077=([org.openxmlformats.schemas.wordprocessingml.x2006.main.CTString, java.lang.String], void), var490_addNewR/1692580492=([org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP], org.openxmlformats.schemas.wordprocessingml.x2006.main.CTR), var3503_addNewRPr/-1138221882=([org.openxmlformats.schemas.wordprocessingml.x2006.main.CTR], org.openxmlformats.schemas.wordprocessingml.x2006.main.CTRPr), var3599_addNewNoProof/1314121945=([org.openxmlformats.schemas.wordprocessingml.x2006.main.CTRPr], org.openxmlformats.schemas.wordprocessingml.x2006.main.CTOnOff), var3503_addNewPict/1049456896=([org.openxmlformats.schemas.wordprocessingml.x2006.main.CTR], org.openxmlformats.schemas.wordprocessingml.x2006.main.CTPicture), cast-from-var3634-to-var2009=([java.lang.Object], com.microsoft.schemas.vml.CTGroup), var2009_addNewShapetype/-126183377=([com.microsoft.schemas.vml.CTGroup], com.microsoft.schemas.vml.CTShapetype), var3279_setId/-1571084993=([com.microsoft.schemas.vml.CTShapetype, java.lang.String], void), var3279_setCoordsize/-2091410540=([com.microsoft.schemas.vml.CTShapetype, java.lang.String], void), var3279_setSpt/-1907385896=([com.microsoft.schemas.vml.CTShapetype, float], void), var3279_setAdj/520214979=([com.microsoft.schemas.vml.CTShapetype, java.lang.String], void), var3279_setPath2/215680509=([com.microsoft.schemas.vml.CTShapetype, java.lang.String], void), var3279_addNewFormulas/-862713341=([com.microsoft.schemas.vml.CTShapetype], com.microsoft.schemas.vml.CTFormulas), var2990_addNewF/-361316507=([com.microsoft.schemas.vml.CTFormulas], com.microsoft.schemas.vml.CTF), var105_setEqn/543482963=([com.microsoft.schemas.vml.CTF, java.lang.String], void), var3279_addNewPath/398937347=([com.microsoft.schemas.vml.CTShapetype], com.microsoft.schemas.vml.CTPath), var207_setTextpathok/-233305854=([com.microsoft.schemas.vml.CTPath, org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse$Enum], void), var207_setConnecttype/-1939150956=([com.microsoft.schemas.vml.CTPath, com.microsoft.schemas.office.office.STConnectType$Enum], void), var207_setConnectlocs/452811541=([com.microsoft.schemas.vml.CTPath, java.lang.String], void), var207_setConnectangles/1284872104=([com.microsoft.schemas.vml.CTPath, java.lang.String], void), var3279_addNewTextpath/-622148413=([com.microsoft.schemas.vml.CTShapetype], com.microsoft.schemas.vml.CTTextPath), var2963_setOn/-123786300=([com.microsoft.schemas.vml.CTTextPath, org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse$Enum], void), var2963_setFitshape/1238544659=([com.microsoft.schemas.vml.CTTextPath, org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse$Enum], void), var3279_addNewHandles/1351138859=([com.microsoft.schemas.vml.CTShapetype], com.microsoft.schemas.vml.CTHandles), var386_addNewH/-1621570975=([com.microsoft.schemas.vml.CTHandles], com.microsoft.schemas.vml.CTH), var2613_setPosition/718160260=([com.microsoft.schemas.vml.CTH, java.lang.String], void), var2613_setXrange/413872168=([com.microsoft.schemas.vml.CTH, java.lang.String], void), var3279_addNewLock/1610163978=([com.microsoft.schemas.vml.CTShapetype], com.microsoft.schemas.office.office.CTLock), var635_setExt/-49059264=([com.microsoft.schemas.office.office.CTLock, com.microsoft.schemas.vml.STExt$Enum], void), var2009_addNewShape/-1061986781=([com.microsoft.schemas.vml.CTGroup], com.microsoft.schemas.vml.CTShape), String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), append/-1001720160=([java.lang.StringBuilder, int], java.lang.StringBuilder), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), var906_setId/-1293471047=([com.microsoft.schemas.vml.CTShape, java.lang.String], void), var906_setSpid/-1803834372=([com.microsoft.schemas.vml.CTShape, java.lang.String], void), var906_setType/-651075142=([com.microsoft.schemas.vml.CTShape, java.lang.String], void), var906_setStyle/350259903=([com.microsoft.schemas.vml.CTShape, java.lang.String], void), var906_setWrapcoords/-1946541108=([com.microsoft.schemas.vml.CTShape, java.lang.String], void), var906_setFillcolor/-248525488=([com.microsoft.schemas.vml.CTShape, java.lang.String], void), var906_setStroked/420730914=([com.microsoft.schemas.vml.CTShape, org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse$Enum], void), var906_addNewTextpath/715715721=([com.microsoft.schemas.vml.CTShape], com.microsoft.schemas.vml.CTTextPath), var2963_setStyle/1354508814=([com.microsoft.schemas.vml.CTTextPath, java.lang.String], void), var2963_setString/-1870790252=([com.microsoft.schemas.vml.CTTextPath, java.lang.String], void), cast-from-var2009-to-var648=([com.microsoft.schemas.vml.CTGroup], org.apache.xmlbeans.XmlObject), var2175_set/1119364886=([org.openxmlformats.schemas.wordprocessingml.x2006.main.CTPicture, org.apache.xmlbeans.XmlObject], org.apache.xmlbeans.XmlObject), var3204-init=([], org.apache.poi.xwpf.usermodel.XWPFParagraph), <init>/916914304=([org.apache.poi.xwpf.usermodel.XWPFParagraph, org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP, org.apache.poi.xwpf.usermodel.IBody], void), cast-from-var534-to-var738=([org.apache.poi.xwpf.usermodel.XWPFDocument], org.apache.poi.xwpf.usermodel.IBody)}
+; {var3132=org.apache.poi.xwpf.model.XWPFHeaderFooterPolicy, var2591=r3, var3761=r38, var1551=null_type, var1091=i1, var320=org.apache.xmlbeans.impl.schema.DocumentFactory, var490=org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP, var3845=$r0, var3634=java.lang.Object, var481=$r1, var1153=r2, var534=org.apache.poi.xwpf.usermodel.XWPFDocument, var2555=$r4, var794=org.openxmlformats.schemas.wordprocessingml.x2006.main.CTDocument1, var341=$r5, var3941=org.openxmlformats.schemas.wordprocessingml.x2006.main.CTBody, var336=r6, var2336=r55, var448=r56, var3854=$i0, var498=r57, var399=org.openxmlformats.schemas.wordprocessingml.x2006.main.CTPPr, var3471=$r41, var30=org.openxmlformats.schemas.wordprocessingml.x2006.main.CTString, var3008=$r7, var147="Header", var3503=org.openxmlformats.schemas.wordprocessingml.x2006.main.CTR, var1806=$r42, var3599=org.openxmlformats.schemas.wordprocessingml.x2006.main.CTRPr, var2196=$r43, var2175=org.openxmlformats.schemas.wordprocessingml.x2006.main.CTPicture, var2593=$r44, var2009=com.microsoft.schemas.vml.CTGroup, var2678=$r8, var1563=$r9, var666=$r45, var3279=com.microsoft.schemas.vml.CTShapetype, var2855=$r46, var1405="_x0000_t136", var1981="1600,21600", var2850=136.0F, var285="10800", var1200="m@7,0l@8,0m@5,21600l@6,21600e", var2990=com.microsoft.schemas.vml.CTFormulas, var958=$r47, var105=com.microsoft.schemas.vml.CTF, var1892=$r10, var817="sum #0 0 10800", var3646=$r11, var611="prod #0 2 1", var767=$r12, var3362="sum 21600 0 @1", var350=$r13, var1805="sum 0 0 @2", var2814=$r14, var1047="sum 21600 0 @3", var688=$r15, var2572="if @0 @3 0", var840=$r16, var1774="if @0 21600 @1", var1616=$r17, var2883="if @0 0 @2", var998=$r18, var697="if @0 @4 21600", var3501=$r19, var3269="mid @5 @6", var1125=$r20, var801="mid @8 @5", var1366=$r21, var568="mid @7 @8", var1120=$r22, var2258="mid @6 @7", var1441=$r23, var1204="sum @6 0 @5", var207=com.microsoft.schemas.vml.CTPath, var636=$r48, var1270=org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse$Enum, var861=org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse, var1588=$r24, var3331=com.microsoft.schemas.office.office.STConnectType$Enum, var2233=com.microsoft.schemas.office.office.STConnectType, var1392=$r25, var1319="@9,0;@10,10800;@11,21600;@12,10800", var3198="270,180,90,0", var2963=com.microsoft.schemas.vml.CTTextPath, var2588=$r49, var3777=$r26, var2725=$r27, var386=com.microsoft.schemas.vml.CTHandles, var1922=$r50, var2613=com.microsoft.schemas.vml.CTH, var3563=$r51, var3676="#0,bottomRight", var1352="6629,14971", var635=com.microsoft.schemas.office.office.CTLock, var3733=$r52, var1027=com.microsoft.schemas.vml.STExt$Enum, var2237=com.microsoft.schemas.vml.STExt, var2377=$r28, var906=com.microsoft.schemas.vml.CTShape, var3622=$r53, var1082=$r58, var676=$r30, var1622=$r31, var2584=$r32, var2773=$r59, var829=$r34, var3162=$i2, var3040=$r35, var2396=$r36, var2741="#_x0000_t136", var3062="position:absolute;margin-left:0;margin-top:0;width:415pt;height:207.5pt;z-index:-251654144;mso-wrap-edited:f;mso-position-horizontal:center;mso-position-horizontal-relative:margin;mso-position-vertical:center;mso-position-vertical-relative:margin", var3788="616 5068 390 16297 39 16921 -39 17155 7265 17545 7186 17467 -39 17467 18904 17467 10507 17467 8710 17545 18904 17077 18787 16843 18358 16297 18279 12554 19178 12476 20701 11774 20779 11228 21131 10059 21248 8811 21248 7563 20975 6316 20935 5380 19490 5146 14022 5068 2616 5068", var2606="black", var121=$r37, var1627=$r54, var3418="font-family:&quot;Cambria&quot;;font-size:1pt", var648=org.apache.xmlbeans.XmlObject, var351=$r61, var3204=org.apache.poi.xwpf.usermodel.XWPFParagraph, var3799=$r60, var1194=$r40, var738=org.apache.poi.xwpf.usermodel.IBody, var2393=org.openxmlformats.schemas.wordprocessingml.x2006.main.CTOnOff}
+; {org.apache.poi.xwpf.model.XWPFHeaderFooterPolicy=var3132, r3=var2591, r38=var3761, null_type=var1551, i1=var1091, org.apache.xmlbeans.impl.schema.DocumentFactory=var320, org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP=var490, $r0=var3845, java.lang.Object=var3634, $r1=var481, r2=var1153, org.apache.poi.xwpf.usermodel.XWPFDocument=var534, $r4=var2555, org.openxmlformats.schemas.wordprocessingml.x2006.main.CTDocument1=var794, $r5=var341, org.openxmlformats.schemas.wordprocessingml.x2006.main.CTBody=var3941, r6=var336, r55=var2336, r56=var448, $i0=var3854, r57=var498, org.openxmlformats.schemas.wordprocessingml.x2006.main.CTPPr=var399, $r41=var3471, org.openxmlformats.schemas.wordprocessingml.x2006.main.CTString=var30, $r7=var3008, "Header"=var147, org.openxmlformats.schemas.wordprocessingml.x2006.main.CTR=var3503, $r42=var1806, org.openxmlformats.schemas.wordprocessingml.x2006.main.CTRPr=var3599, $r43=var2196, org.openxmlformats.schemas.wordprocessingml.x2006.main.CTPicture=var2175, $r44=var2593, com.microsoft.schemas.vml.CTGroup=var2009, $r8=var2678, $r9=var1563, $r45=var666, com.microsoft.schemas.vml.CTShapetype=var3279, $r46=var2855, "_x0000_t136"=var1405, "1600,21600"=var1981, 136.0F=var2850, "10800"=var285, "m@7,0l@8,0m@5,21600l@6,21600e"=var1200, com.microsoft.schemas.vml.CTFormulas=var2990, $r47=var958, com.microsoft.schemas.vml.CTF=var105, $r10=var1892, "sum #0 0 10800"=var817, $r11=var3646, "prod #0 2 1"=var611, $r12=var767, "sum 21600 0 @1"=var3362, $r13=var350, "sum 0 0 @2"=var1805, $r14=var2814, "sum 21600 0 @3"=var1047, $r15=var688, "if @0 @3 0"=var2572, $r16=var840, "if @0 21600 @1"=var1774, $r17=var1616, "if @0 0 @2"=var2883, $r18=var998, "if @0 @4 21600"=var697, $r19=var3501, "mid @5 @6"=var3269, $r20=var1125, "mid @8 @5"=var801, $r21=var1366, "mid @7 @8"=var568, $r22=var1120, "mid @6 @7"=var2258, $r23=var1441, "sum @6 0 @5"=var1204, com.microsoft.schemas.vml.CTPath=var207, $r48=var636, org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse$Enum=var1270, org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse=var861, $r24=var1588, com.microsoft.schemas.office.office.STConnectType$Enum=var3331, com.microsoft.schemas.office.office.STConnectType=var2233, $r25=var1392, "@9,0;@10,10800;@11,21600;@12,10800"=var1319, "270,180,90,0"=var3198, com.microsoft.schemas.vml.CTTextPath=var2963, $r49=var2588, $r26=var3777, $r27=var2725, com.microsoft.schemas.vml.CTHandles=var386, $r50=var1922, com.microsoft.schemas.vml.CTH=var2613, $r51=var3563, "#0,bottomRight"=var3676, "6629,14971"=var1352, com.microsoft.schemas.office.office.CTLock=var635, $r52=var3733, com.microsoft.schemas.vml.STExt$Enum=var1027, com.microsoft.schemas.vml.STExt=var2237, $r28=var2377, com.microsoft.schemas.vml.CTShape=var906, $r53=var3622, $r58=var1082, $r30=var676, $r31=var1622, $r32=var2584, $r59=var2773, $r34=var829, $i2=var3162, $r35=var3040, $r36=var2396, "#_x0000_t136"=var2741, "position:absolute;margin-left:0;margin-top:0;width:415pt;height:207.5pt;z-index:-251654144;mso-wrap-edited:f;mso-position-horizontal:center;mso-position-horizontal-relative:margin;mso-position-vertical:center;mso-position-vertical-relative:margin"=var3062, "616 5068 390 16297 39 16921 -39 17155 7265 17545 7186 17467 -39 17467 18904 17467 10507 17467 8710 17545 18904 17077 18787 16843 18358 16297 18279 12554 19178 12476 20701 11774 20779 11228 21131 10059 21248 8811 21248 7563 20975 6316 20935 5380 19490 5146 14022 5068 2616 5068"=var3788, "black"=var2606, $r37=var121, $r54=var1627, "font-family:&quot;Cambria&quot;;font-size:1pt"=var3418, org.apache.xmlbeans.XmlObject=var648, $r61=var351, org.apache.poi.xwpf.usermodel.XWPFParagraph=var3204, $r60=var3799, $r40=var1194, org.apache.poi.xwpf.usermodel.IBody=var738, org.openxmlformats.schemas.wordprocessingml.x2006.main.CTOnOff=var2393}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.String toString()>;	<java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(int)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 2,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 2,"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>": 2,"<java.lang.StringBuilder: java.lang.String toString()>": 2}
+;stmts r3 := @this: org.apache.poi.xwpf.model.XWPFHeaderFooterPolicy;	r38 := @parameter0: java.lang.String;	i1 := @parameter1: int;	$r0 = <org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP: org.apache.xmlbeans.impl.schema.DocumentFactory Factory>;	$r1 = virtualinvoke $r0.<org.apache.xmlbeans.impl.schema.DocumentFactory: java.lang.Object newInstance()>();	r2 = (org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP) $r1;	$r4 = r3.<org.apache.poi.xwpf.model.XWPFHeaderFooterPolicy: org.apache.poi.xwpf.usermodel.XWPFDocument doc>;	$r5 = virtualinvoke $r4.<org.apache.poi.xwpf.usermodel.XWPFDocument: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTDocument1 getDocument()>();	r6 = interfaceinvoke $r5.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTDocument1: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTBody getBody()>();	r55 = null;	r56 = null;	$i0 = interfaceinvoke r6.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTBody: int sizeOfPArray()>();	if $i0 != 0 goto r57 = interfaceinvoke r6.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTBody: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP getPArray(int)>(0);	r57 = interfaceinvoke r6.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTBody: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP getPArray(int)>(0);	r55 = interfaceinvoke r57.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP: byte[] getRsidR()>();	r56 = interfaceinvoke r57.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP: byte[] getRsidRDefault()>();	interfaceinvoke r2.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP: void setRsidP(byte[])>(r55);	interfaceinvoke r2.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP: void setRsidRDefault(byte[])>(r56);	$r41 = interfaceinvoke r2.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTPPr addNewPPr()>();	$r7 = interfaceinvoke $r41.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTPPr: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTString addNewPStyle()>();	interfaceinvoke $r7.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTString: void setVal(java.lang.String)>("Header");	$r42 = interfaceinvoke r2.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTR addNewR()>();	$r43 = interfaceinvoke $r42.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTR: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTRPr addNewRPr()>();	interfaceinvoke $r43.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTRPr: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTOnOff addNewNoProof()>();	$r44 = interfaceinvoke $r42.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTR: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTPicture addNewPict()>();	$r8 = <com.microsoft.schemas.vml.CTGroup: org.apache.xmlbeans.impl.schema.DocumentFactory Factory>;	$r9 = virtualinvoke $r8.<org.apache.xmlbeans.impl.schema.DocumentFactory: java.lang.Object newInstance()>();	$r45 = (com.microsoft.schemas.vml.CTGroup) $r9;	$r46 = interfaceinvoke $r45.<com.microsoft.schemas.vml.CTGroup: com.microsoft.schemas.vml.CTShapetype addNewShapetype()>();	interfaceinvoke $r46.<com.microsoft.schemas.vml.CTShapetype: void setId(java.lang.String)>("_x0000_t136");	interfaceinvoke $r46.<com.microsoft.schemas.vml.CTShapetype: void setCoordsize(java.lang.String)>("1600,21600");	interfaceinvoke $r46.<com.microsoft.schemas.vml.CTShapetype: void setSpt(float)>(136.0F);	interfaceinvoke $r46.<com.microsoft.schemas.vml.CTShapetype: void setAdj(java.lang.String)>("10800");	interfaceinvoke $r46.<com.microsoft.schemas.vml.CTShapetype: void setPath2(java.lang.String)>("m@7,0l@8,0m@5,21600l@6,21600e");	$r47 = interfaceinvoke $r46.<com.microsoft.schemas.vml.CTShapetype: com.microsoft.schemas.vml.CTFormulas addNewFormulas()>();	$r10 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>();	interfaceinvoke $r10.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("sum #0 0 10800");	$r11 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>();	interfaceinvoke $r11.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("prod #0 2 1");	$r12 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>();	interfaceinvoke $r12.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("sum 21600 0 @1");	$r13 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>();	interfaceinvoke $r13.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("sum 0 0 @2");	$r14 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>();	interfaceinvoke $r14.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("sum 21600 0 @3");	$r15 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>();	interfaceinvoke $r15.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("if @0 @3 0");	$r16 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>();	interfaceinvoke $r16.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("if @0 21600 @1");	$r17 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>();	interfaceinvoke $r17.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("if @0 0 @2");	$r18 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>();	interfaceinvoke $r18.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("if @0 @4 21600");	$r19 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>();	interfaceinvoke $r19.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("mid @5 @6");	$r20 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>();	interfaceinvoke $r20.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("mid @8 @5");	$r21 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>();	interfaceinvoke $r21.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("mid @7 @8");	$r22 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>();	interfaceinvoke $r22.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("mid @6 @7");	$r23 = interfaceinvoke $r47.<com.microsoft.schemas.vml.CTFormulas: com.microsoft.schemas.vml.CTF addNewF()>();	interfaceinvoke $r23.<com.microsoft.schemas.vml.CTF: void setEqn(java.lang.String)>("sum @6 0 @5");	$r48 = interfaceinvoke $r46.<com.microsoft.schemas.vml.CTShapetype: com.microsoft.schemas.vml.CTPath addNewPath()>();	$r24 = <org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse: org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse$Enum T>;	interfaceinvoke $r48.<com.microsoft.schemas.vml.CTPath: void setTextpathok(org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse$Enum)>($r24);	$r25 = <com.microsoft.schemas.office.office.STConnectType: com.microsoft.schemas.office.office.STConnectType$Enum CUSTOM>;	interfaceinvoke $r48.<com.microsoft.schemas.vml.CTPath: void setConnecttype(com.microsoft.schemas.office.office.STConnectType$Enum)>($r25);	interfaceinvoke $r48.<com.microsoft.schemas.vml.CTPath: void setConnectlocs(java.lang.String)>("@9,0;@10,10800;@11,21600;@12,10800");	interfaceinvoke $r48.<com.microsoft.schemas.vml.CTPath: void setConnectangles(java.lang.String)>("270,180,90,0");	$r49 = interfaceinvoke $r46.<com.microsoft.schemas.vml.CTShapetype: com.microsoft.schemas.vml.CTTextPath addNewTextpath()>();	$r26 = <org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse: org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse$Enum T>;	interfaceinvoke $r49.<com.microsoft.schemas.vml.CTTextPath: void setOn(org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse$Enum)>($r26);	$r27 = <org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse: org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse$Enum T>;	interfaceinvoke $r49.<com.microsoft.schemas.vml.CTTextPath: void setFitshape(org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse$Enum)>($r27);	$r50 = interfaceinvoke $r46.<com.microsoft.schemas.vml.CTShapetype: com.microsoft.schemas.vml.CTHandles addNewHandles()>();	$r51 = interfaceinvoke $r50.<com.microsoft.schemas.vml.CTHandles: com.microsoft.schemas.vml.CTH addNewH()>();	interfaceinvoke $r51.<com.microsoft.schemas.vml.CTH: void setPosition(java.lang.String)>("#0,bottomRight");	interfaceinvoke $r51.<com.microsoft.schemas.vml.CTH: void setXrange(java.lang.String)>("6629,14971");	$r52 = interfaceinvoke $r46.<com.microsoft.schemas.vml.CTShapetype: com.microsoft.schemas.office.office.CTLock addNewLock()>();	$r28 = <com.microsoft.schemas.vml.STExt: com.microsoft.schemas.vml.STExt$Enum EDIT>;	interfaceinvoke $r52.<com.microsoft.schemas.office.office.CTLock: void setExt(com.microsoft.schemas.vml.STExt$Enum)>($r28);	$r53 = interfaceinvoke $r45.<com.microsoft.schemas.vml.CTGroup: com.microsoft.schemas.vml.CTShape addNewShape()>();	$r58 = new java.lang.StringBuilder;	specialinvoke $r58.<java.lang.StringBuilder: void <init>()>();	$r30 = virtualinvoke $r58.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("PowerPlusWaterMarkObject");	$r31 = virtualinvoke $r30.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i1);	$r32 = virtualinvoke $r31.<java.lang.StringBuilder: java.lang.String toString()>();	interfaceinvoke $r53.<com.microsoft.schemas.vml.CTShape: void setId(java.lang.String)>($r32);	$r59 = new java.lang.StringBuilder;	specialinvoke $r59.<java.lang.StringBuilder: void <init>()>();	$r34 = virtualinvoke $r59.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("_x0000_s102");	$i2 = 4 + i1;	$r35 = virtualinvoke $r34.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2);	$r36 = virtualinvoke $r35.<java.lang.StringBuilder: java.lang.String toString()>();	interfaceinvoke $r53.<com.microsoft.schemas.vml.CTShape: void setSpid(java.lang.String)>($r36);	interfaceinvoke $r53.<com.microsoft.schemas.vml.CTShape: void setType(java.lang.String)>("#_x0000_t136");	interfaceinvoke $r53.<com.microsoft.schemas.vml.CTShape: void setStyle(java.lang.String)>("position:absolute;margin-left:0;margin-top:0;width:415pt;height:207.5pt;z-index:-251654144;mso-wrap-edited:f;mso-position-horizontal:center;mso-position-horizontal-relative:margin;mso-position-vertical:center;mso-position-vertical-relative:margin");	interfaceinvoke $r53.<com.microsoft.schemas.vml.CTShape: void setWrapcoords(java.lang.String)>("616 5068 390 16297 39 16921 -39 17155 7265 17545 7186 17467 -39 17467 18904 17467 10507 17467 8710 17545 18904 17077 18787 16843 18358 16297 18279 12554 19178 12476 20701 11774 20779 11228 21131 10059 21248 8811 21248 7563 20975 6316 20935 5380 19490 5146 14022 5068 2616 5068");	interfaceinvoke $r53.<com.microsoft.schemas.vml.CTShape: void setFillcolor(java.lang.String)>("black");	$r37 = <org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse: org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse$Enum FALSE>;	interfaceinvoke $r53.<com.microsoft.schemas.vml.CTShape: void setStroked(org.openxmlformats.schemas.officeDocument.x2006.sharedTypes.STTrueFalse$Enum)>($r37);	$r54 = interfaceinvoke $r53.<com.microsoft.schemas.vml.CTShape: com.microsoft.schemas.vml.CTTextPath addNewTextpath()>();	interfaceinvoke $r54.<com.microsoft.schemas.vml.CTTextPath: void setStyle(java.lang.String)>("font-family:&quot;Cambria&quot;;font-size:1pt");	interfaceinvoke $r54.<com.microsoft.schemas.vml.CTTextPath: void setString(java.lang.String)>(r38);	$r61 = (org.apache.xmlbeans.XmlObject) $r45;	interfaceinvoke $r44.<org.openxmlformats.schemas.wordprocessingml.x2006.main.CTPicture: org.apache.xmlbeans.XmlObject set(org.apache.xmlbeans.XmlObject)>($r61);	$r60 = new org.apache.poi.xwpf.usermodel.XWPFParagraph;	$r40 = r3.<org.apache.poi.xwpf.model.XWPFHeaderFooterPolicy: org.apache.poi.xwpf.usermodel.XWPFDocument doc>;	specialinvoke $r60.<org.apache.poi.xwpf.usermodel.XWPFParagraph: void <init>(org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP,org.apache.poi.xwpf.usermodel.IBody)>(r2, $r40);	return $r60
+;block_num 3

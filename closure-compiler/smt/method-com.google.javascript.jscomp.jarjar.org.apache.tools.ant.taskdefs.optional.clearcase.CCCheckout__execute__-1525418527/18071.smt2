@@ -1,0 +1,110 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var331 0)
+(declare-sort var1914 0)
+(declare-sort var2221 0)
+(declare-sort var3002 0)
+(declare-sort var645 0)
+(declare-sort var3494 0)
+(declare-sort var2649 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun var1914-init () var1914)
+(declare-fun <init>/900561260 (var1914) void)
+(declare-fun getProject/416672769 (var3002) var2221)
+(declare-fun cast-from-var331-to-var3002 (var331) var3002)
+(declare-fun getViewPath/1513064252 (var645) String)
+(declare-fun cast-from-var331-to-var645 (var331) var645)
+(declare-fun getClearToolCommand/1735323424 (var645) String)
+(declare-fun setExecutable/491986901 (var1914 String) void)
+(declare-fun createArgument/-916843187 (var1914) var2649)
+(declare-fun setValue/2115864135 (var2649 String) void)
+(declare-fun checkOptions/-1087223783 (var331 var1914) void)
+(declare-fun getNotco/-2144447607 (var331) Bool)
+(declare-fun lsCheckout/-1932694363 (var331) Bool)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun getViewPathBasename/900805056 (var645) String)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun log/2093317233 (var2221 String Int) void)
+(declare-const null-var331 var331)
+(declare-const null-String String)
+(declare-const var3974 var331) ; Statement: r1 := @this: com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout 
+(assert (not (= var3974 null-var331)))
+(define-const var3935 var1914 var1914-init) ; Statement: $r0 = new com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline 
+(assert true)
+;(assert (<init>/900561260 var3935)) ; Statement: specialinvoke $r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline: void <init>()>() 
+
+(declare-const var3935!1 var1914)
+(assert true)
+(define-const var2943 var2221 (getProject/416672769 (cast-from-var331-to-var3002 var3974))) ; Statement: r2 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout: com.google.javascript.jscomp.jarjar.org.apache.tools.ant.Project getProject()>() 
+(assert true)
+(define-const var1063 String (getViewPath/1513064252 (cast-from-var331-to-var645 var3974))) ; Statement: $r3 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout: java.lang.String getViewPath()>() 
+ ; Statement: if $r3 != null goto $r4 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout: java.lang.String getClearToolCommand()>() 
+(assert (not (= var1063 null-String))) ; Cond: $r3 != null 
+(assert true)
+(define-const var3061 String (getClearToolCommand/1735323424 (cast-from-var331-to-var645 var3974))) ; Statement: $r4 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout: java.lang.String getClearToolCommand()>() 
+(assert true)
+;(assert (setExecutable/491986901 var3935!1 var3061)) ; Statement: virtualinvoke $r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline: void setExecutable(java.lang.String)>($r4) 
+
+(declare-const var3935!2 var1914)
+(declare-const var3061!1 String)
+(assert true)
+(define-const var2030 var2649 (createArgument/-916843187 var3935!2)) ; Statement: $r5 = virtualinvoke $r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline: com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline$Argument createArgument()>() 
+(assert true)
+;(assert (setValue/2115864135 var2030 "checkout")) ; Statement: virtualinvoke $r5.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline$Argument: void setValue(java.lang.String)>("checkout") 
+
+(declare-const var2030!1 var2649)
+(declare-const var11 String)
+(assert true)
+;(assert (checkOptions/-1087223783 var3974 var3935!2)) ; Statement: specialinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout: void checkOptions(com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline)>($r0) 
+
+(declare-const var3974!1 var331)
+(declare-const var3935!3 var1914)
+(assert true)
+(define-const var29 Bool (getNotco/-2144447607 var3974!1)) ; Statement: $z0 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout: boolean getNotco()>() 
+ ; Statement: if $z0 != 0 goto $z1 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout: boolean getFailOnErr()>() 
+(assert (not (not (= (ite var29 1 0) 0)))) ; Negate: Cond: $z0 != 0  
+(assert true)
+(define-const var2766 Bool (lsCheckout/-1932694363 var3974!1)) ; Statement: $z4 = specialinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout: boolean lsCheckout()>() 
+ ; Statement: if $z4 == 0 goto $z1 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout: boolean getFailOnErr()>() 
+(assert (not (= (ite var2766 1 0) 0))) ; Negate: Cond: $z4 == 0  
+(assert true)
+(define-const var3354 var2221 (getProject/416672769 (cast-from-var331-to-var3002 var3974!1))) ; Statement: $r23 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout: com.google.javascript.jscomp.jarjar.org.apache.tools.ant.Project getProject()>() 
+(define-const var2110 String String-init) ; Statement: $r18 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var2110)) ; Statement: specialinvoke $r18.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var2110!1 String)
+(assert (= var2110!1 ""))
+(assert true)
+(define-const var2134 String (append/672562846 var2110!1 "Already checked out in this view: ")) ; Statement: $r20 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Already checked out in this view: ") 
+(declare-const var2110!2 String)
+(assert (= var2110!2 (str.++ var2110!1 "Already checked out in this view: ")))
+(assert true)
+(define-const var3310 String (getViewPathBasename/900805056 (cast-from-var331-to-var645 var3974!1))) ; Statement: $r19 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout: java.lang.String getViewPathBasename()>() 
+(assert true)
+(define-const var1100 String (append/672562846 var2134 var3310)) ; Statement: $r21 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r19) 
+(declare-const var2134!1 String)
+(assert (= var2134!1 (str.++ var2134 var3310)))
+(assert true)
+(define-const var1969 String (toString/-2075883882 var1100)) ; Statement: $r22 = virtualinvoke $r21.<java.lang.StringBuilder: java.lang.String toString()>() 
+(assert true)
+;(assert (log/2093317233 var3354 var1969 3)) ; Statement: virtualinvoke $r23.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.Project: void log(java.lang.String,int)>($r22, 3) 
+
+(declare-const var3354!1 var2221)
+(declare-const var1969!1 String)
+(declare-const var3885 Int)
+ ; Statement: return 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {var1914-init=([], com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline), <init>/900561260=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline], void), getProject/416672769=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.ProjectComponent], com.google.javascript.jscomp.jarjar.org.apache.tools.ant.Project), cast-from-var331-to-var3002=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout], com.google.javascript.jscomp.jarjar.org.apache.tools.ant.ProjectComponent), getViewPath/1513064252=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.ClearCase], java.lang.String), cast-from-var331-to-var645=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout], com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.ClearCase), getClearToolCommand/1735323424=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.ClearCase], java.lang.String), setExecutable/491986901=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline, java.lang.String], void), createArgument/-916843187=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline], com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline$Argument), setValue/2115864135=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline$Argument, java.lang.String], void), checkOptions/-1087223783=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout, com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline], void), getNotco/-2144447607=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout], boolean), lsCheckout/-1932694363=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout], boolean), String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), getViewPathBasename/900805056=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.ClearCase], java.lang.String), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), log/2093317233=([com.google.javascript.jscomp.jarjar.org.apache.tools.ant.Project, java.lang.String, int], void)}
+; {var331=com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout, var3974=r1, var1914=com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline, var3935=$r0, var2221=com.google.javascript.jscomp.jarjar.org.apache.tools.ant.Project, var3002=com.google.javascript.jscomp.jarjar.org.apache.tools.ant.ProjectComponent, var2943=r2, var645=com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.ClearCase, var1063=$r3, var3494=null_type, var3061=$r4, var2649=com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline$Argument, var2030=$r5, var11="checkout", var29=$z0, var2766=$z4, var3354=$r23, var2110=$r18, var2134=$r20, var3310=$r19, var1100=$r21, var1969=$r22, var3885=3}
+; {com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout=var331, r1=var3974, com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline=var1914, $r0=var3935, com.google.javascript.jscomp.jarjar.org.apache.tools.ant.Project=var2221, com.google.javascript.jscomp.jarjar.org.apache.tools.ant.ProjectComponent=var3002, r2=var2943, com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.ClearCase=var645, $r3=var1063, null_type=var3494, $r4=var3061, com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline$Argument=var2649, $r5=var2030, "checkout"=var11, $z0=var29, $z4=var2766, $r23=var3354, $r18=var2110, $r20=var2134, $r19=var3310, $r21=var1100, $r22=var1969, 3=var3885}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 2,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r1 := @this: com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout;	$r0 = new com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline;	specialinvoke $r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline: void <init>()>();	r2 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout: com.google.javascript.jscomp.jarjar.org.apache.tools.ant.Project getProject()>();	$r3 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout: java.lang.String getViewPath()>();	if $r3 != null goto $r4 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout: java.lang.String getClearToolCommand()>();	$r4 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout: java.lang.String getClearToolCommand()>();	virtualinvoke $r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline: void setExecutable(java.lang.String)>($r4);	$r5 = virtualinvoke $r0.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline: com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline$Argument createArgument()>();	virtualinvoke $r5.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline$Argument: void setValue(java.lang.String)>("checkout");	specialinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout: void checkOptions(com.google.javascript.jscomp.jarjar.org.apache.tools.ant.types.Commandline)>($r0);	$z0 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout: boolean getNotco()>();	if $z0 != 0 goto $z1 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout: boolean getFailOnErr()>();	$z4 = specialinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout: boolean lsCheckout()>();	if $z4 == 0 goto $z1 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout: boolean getFailOnErr()>();	$r23 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout: com.google.javascript.jscomp.jarjar.org.apache.tools.ant.Project getProject()>();	$r18 = new java.lang.StringBuilder;	specialinvoke $r18.<java.lang.StringBuilder: void <init>()>();	$r20 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Already checked out in this view: ");	$r19 = virtualinvoke r1.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.taskdefs.optional.clearcase.CCCheckout: java.lang.String getViewPathBasename()>();	$r21 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r19);	$r22 = virtualinvoke $r21.<java.lang.StringBuilder: java.lang.String toString()>();	virtualinvoke $r23.<com.google.javascript.jscomp.jarjar.org.apache.tools.ant.Project: void log(java.lang.String,int)>($r22, 3);	return
+;block_num 4

@@ -1,0 +1,68 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var1662 0)
+(declare-sort var2438 0)
+(declare-sort var3508 0)
+(declare-sort var2180 0)
+(declare-sort var3409 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(declare-fun getDeclaringClass/629685452 (var3508) var2438)
+(declare-fun cast-from-var1662-to-var3508 (var1662) var3508)
+(declare-fun getName/1611768686 (var2438) String)
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun getName/-1096976293 (var1662) String)
+(declare-fun getSignature/-576084531 (var2180) String)
+(declare-fun cast-from-var1662-to-var2180 (var1662) var2180)
+(declare-fun var3409_toString/-626024667 (String) String)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-const null-var1662 var1662)
+(declare-const var2579 var1662) ; Statement: r1 := @this: org.apache.ibatis.javassist.CtMethod 
+(assert (not (= var2579 null-var1662)))
+(define-const var479 String String-init) ; Statement: $r0 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var479)) ; Statement: specialinvoke $r0.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var479!1 String)
+(assert (= var479!1 ""))
+(assert true)
+(define-const var493 var2438 (getDeclaringClass/629685452 (cast-from-var1662-to-var3508 var2579))) ; Statement: $r2 = virtualinvoke r1.<org.apache.ibatis.javassist.CtMethod: org.apache.ibatis.javassist.CtClass getDeclaringClass()>() 
+(assert true)
+(define-const var945 String (getName/1611768686 var493)) ; Statement: $r3 = virtualinvoke $r2.<org.apache.ibatis.javassist.CtClass: java.lang.String getName()>() 
+(assert true)
+(define-const var83 String (append/672562846 var479!1 var945)) ; Statement: $r4 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3) 
+(declare-const var479!2 String)
+(assert (= var479!2 (str.++ var479!1 var945)))
+(assert true)
+(define-const var3813 String (append/672562846 var83 ".")) ; Statement: $r6 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".") 
+(declare-const var83!1 String)
+(assert (= var83!1 (str.++ var83 ".")))
+(assert true)
+(define-const var612 String (getName/-1096976293 var2579)) ; Statement: $r5 = virtualinvoke r1.<org.apache.ibatis.javassist.CtMethod: java.lang.String getName()>() 
+(assert true)
+(define-const var3779 String (append/672562846 var3813 var612)) ; Statement: $r9 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5) 
+(declare-const var3813!1 String)
+(assert (= var3813!1 (str.++ var3813 var612)))
+(assert true)
+(define-const var2143 String (getSignature/-576084531 (cast-from-var1662-to-var2180 var2579))) ; Statement: $r7 = virtualinvoke r1.<org.apache.ibatis.javassist.CtMethod: java.lang.String getSignature()>() 
+(define-const var108 String (var3409_toString/-626024667 var2143)) ; Statement: $r8 = staticinvoke <org.apache.ibatis.javassist.bytecode.Descriptor: java.lang.String toString(java.lang.String)>($r7) 
+(assert true)
+(define-const var2150 String (append/672562846 var3779 var108)) ; Statement: $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8) 
+(declare-const var3779!1 String)
+(assert (= var3779!1 (str.++ var3779 var108)))
+(assert true)
+(define-const var1852 String (toString/-2075883882 var2150)) ; Statement: $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>() 
+ ; Statement: return $r11 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), getDeclaringClass/629685452=([org.apache.ibatis.javassist.CtMember], org.apache.ibatis.javassist.CtClass), cast-from-var1662-to-var3508=([org.apache.ibatis.javassist.CtMethod], org.apache.ibatis.javassist.CtMember), getName/1611768686=([org.apache.ibatis.javassist.CtClass], java.lang.String), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), getName/-1096976293=([org.apache.ibatis.javassist.CtMethod], java.lang.String), getSignature/-576084531=([org.apache.ibatis.javassist.CtBehavior], java.lang.String), cast-from-var1662-to-var2180=([org.apache.ibatis.javassist.CtMethod], org.apache.ibatis.javassist.CtBehavior), var3409_toString/-626024667=([java.lang.String], java.lang.String), toString/-2075883882=([java.lang.StringBuilder], java.lang.String)}
+; {var1662=org.apache.ibatis.javassist.CtMethod, var2579=r1, var479=$r0, var2438=org.apache.ibatis.javassist.CtClass, var3508=org.apache.ibatis.javassist.CtMember, var493=$r2, var945=$r3, var83=$r4, var3813=$r6, var612=$r5, var3779=$r9, var2180=org.apache.ibatis.javassist.CtBehavior, var2143=$r7, var3409=org.apache.ibatis.javassist.bytecode.Descriptor, var108=$r8, var2150=$r10, var1852=$r11}
+; {org.apache.ibatis.javassist.CtMethod=var1662, r1=var2579, $r0=var479, org.apache.ibatis.javassist.CtClass=var2438, org.apache.ibatis.javassist.CtMember=var3508, $r2=var493, $r3=var945, $r4=var83, $r6=var3813, $r5=var612, $r9=var3779, org.apache.ibatis.javassist.CtBehavior=var2180, $r7=var2143, org.apache.ibatis.javassist.bytecode.Descriptor=var3409, $r8=var108, $r10=var2150, $r11=var1852}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<org.apache.ibatis.javassist.bytecode.Descriptor: java.lang.String toString(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 4,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r1 := @this: org.apache.ibatis.javassist.CtMethod;	$r0 = new java.lang.StringBuilder;	specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();	$r2 = virtualinvoke r1.<org.apache.ibatis.javassist.CtMethod: org.apache.ibatis.javassist.CtClass getDeclaringClass()>();	$r3 = virtualinvoke $r2.<org.apache.ibatis.javassist.CtClass: java.lang.String getName()>();	$r4 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);	$r6 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".");	$r5 = virtualinvoke r1.<org.apache.ibatis.javassist.CtMethod: java.lang.String getName()>();	$r9 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);	$r7 = virtualinvoke r1.<org.apache.ibatis.javassist.CtMethod: java.lang.String getSignature()>();	$r8 = staticinvoke <org.apache.ibatis.javassist.bytecode.Descriptor: java.lang.String toString(java.lang.String)>($r7);	$r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8);	$r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>();	return $r11
+;block_num 1

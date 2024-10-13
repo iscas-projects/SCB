@@ -1,0 +1,96 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var3143 0)
+(declare-sort var1086 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(declare-fun <init>/543593434 (String Int) void)
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun String_join/-1520935655 (String (Array Int String)) String)
+(define-fun cast-from-String-to-String ((arg String)) String arg)
+(define-fun cast-from-__Array__Int__String__-to-__Array__Int__String__ ((arg (Array Int String))) (Array Int String) arg)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-const null-var3143 var3143)
+(declare-const null-String String)
+(declare-const null-__Array__Int__String__ (Array Int String))
+(declare-const null-Bool Bool)
+(declare-const var3928 var3143) ; Statement: r19 := @this: org.hibernate.dialect.Cache71Dialect 
+(assert (not (= var3928 null-var3143)))
+(declare-const var3612 String) ; Statement: r1 := @parameter0: java.lang.String 
+(assert (not (= var3612 null-String)))
+(declare-const var270 (Array Int String)) ; Statement: r6 := @parameter1: java.lang.String[] 
+(assert (not (= var270 null-__Array__Int__String__)))
+(declare-const var2656 String) ; Statement: r10 := @parameter2: java.lang.String 
+(assert (not (= var2656 null-String)))
+(declare-const var1841 (Array Int String)) ; Statement: r13 := @parameter3: java.lang.String[] 
+(assert (not (= var1841 null-__Array__Int__String__)))
+(declare-const var931 Bool) ; Statement: z0 := @parameter4: boolean 
+(assert (not (= var931 null-Bool)))
+(define-const var1081 String String-init) ; Statement: $r0 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/543593434 var1081 300)) ; Statement: specialinvoke $r0.<java.lang.StringBuilder: void <init>(int)>(300) 
+
+(declare-const var1081!1 String)
+(declare-const var2993 Int)
+(assert true)
+(define-const var627 String (append/672562846 var1081!1 " ADD CONSTRAINT ")) ; Statement: $r2 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ADD CONSTRAINT ") 
+(declare-const var1081!2 String)
+(assert (= var1081!2 (str.++ var1081!1 " ADD CONSTRAINT ")))
+(assert true)
+(define-const var329 String (append/672562846 var627 var3612)) ; Statement: $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1) 
+(declare-const var627!1 String)
+(assert (= var627!1 (str.++ var627 var3612)))
+(assert true)
+(define-const var1911 String (append/672562846 var329 " FOREIGN KEY ")) ; Statement: $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" FOREIGN KEY ") 
+(declare-const var329!1 String)
+(assert (= var329!1 (str.++ var329 " FOREIGN KEY ")))
+(assert true)
+(define-const var131 String (append/672562846 var1911 var3612)) ; Statement: $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1) 
+(declare-const var1911!1 String)
+(assert (= var1911!1 (str.++ var1911 var3612)))
+(assert true)
+(define-const var1601 String (append/672562846 var131 " (")) ; Statement: $r8 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" (") 
+(declare-const var131!1 String)
+(assert (= var131!1 (str.++ var131 " (")))
+(define-const var2701 String (String_join/-1520935655 (cast-from-String-to-String ", ") (cast-from-__Array__Int__String__-to-__Array__Int__String__ var270))) ; Statement: $r7 = staticinvoke <java.lang.String: java.lang.String join(java.lang.CharSequence,java.lang.CharSequence[])>(", ", r6) 
+(assert true)
+(define-const var518 String (append/672562846 var1601 var2701)) ; Statement: $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7) 
+(declare-const var1601!1 String)
+(assert (= var1601!1 (str.++ var1601 var2701)))
+(assert true)
+(define-const var1204 String (append/672562846 var518 ") REFERENCES ")) ; Statement: $r11 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(") REFERENCES ") 
+(declare-const var518!1 String)
+(assert (= var518!1 (str.++ var518 ") REFERENCES ")))
+(assert true)
+(define-const var2098 String (append/672562846 var1204 var2656)) ; Statement: $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r10) 
+(declare-const var1204!1 String)
+(assert (= var1204!1 (str.++ var1204 var2656)))
+(assert true)
+(define-const var535 String (append/672562846 var2098 " (")) ; Statement: $r15 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" (") 
+(declare-const var2098!1 String)
+(assert (= var2098!1 (str.++ var2098 " (")))
+(define-const var3273 String (String_join/-1520935655 (cast-from-String-to-String ", ") (cast-from-__Array__Int__String__-to-__Array__Int__String__ var1841))) ; Statement: $r14 = staticinvoke <java.lang.String: java.lang.String join(java.lang.CharSequence,java.lang.CharSequence[])>(", ", r13) 
+(assert true)
+(define-const var1486 String (append/672562846 var535 var3273)) ; Statement: $r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r14) 
+(declare-const var535!1 String)
+(assert (= var535!1 (str.++ var535 var3273)))
+(assert true)
+(define-const var3733 String (append/672562846 var1486 ") ")) ; Statement: $r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(") ") 
+(declare-const var1486!1 String)
+(assert (= var1486!1 (str.++ var1486 ") ")))
+(assert true)
+(define-const var2579 String (toString/-2075883882 var3733)) ; Statement: $r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.String toString()>() 
+ ; Statement: return $r18 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/543593434=([java.lang.StringBuilder, int], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), String_join/-1520935655=([java.lang.CharSequence, java.lang.CharSequence[]], java.lang.String), cast-from-String-to-String=([java.lang.String], java.lang.CharSequence), cast-from-__Array__Int__String__-to-__Array__Int__String__=([java.lang.String[]], java.lang.CharSequence[]), toString/-2075883882=([java.lang.StringBuilder], java.lang.String)}
+; {var3143=org.hibernate.dialect.Cache71Dialect, var3928=r19, var3612=r1, var1086=null_type, var270=r6, var2656=r10, var1841=r13, var931=z0, var1081=$r0, var2993=300, var627=$r2, var329=$r3, var1911=$r4, var131=$r5, var1601=$r8, var2701=$r7, var518=$r9, var1204=$r11, var2098=$r12, var535=$r15, var3273=$r14, var1486=$r16, var3733=$r17, var2579=$r18}
+; {org.hibernate.dialect.Cache71Dialect=var3143, r19=var3928, r1=var3612, null_type=var1086, r6=var270, r10=var2656, r13=var1841, z0=var931, $r0=var1081, 300=var2993, $r2=var627, $r3=var329, $r4=var1911, $r5=var131, $r8=var1601, $r7=var2701, $r9=var518, $r11=var1204, $r12=var2098, $r15=var535, $r14=var3273, $r16=var1486, $r17=var3733, $r18=var2579}
+;seq <java.lang.StringBuilder: void <init>(int)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.String: java.lang.String join(java.lang.CharSequence,java.lang.CharSequence[])>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.String: java.lang.String join(java.lang.CharSequence,java.lang.CharSequence[])>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>(int)>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 11,"<java.lang.String: java.lang.String join(java.lang.CharSequence,java.lang.CharSequence[])>": 2,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r19 := @this: org.hibernate.dialect.Cache71Dialect;	r1 := @parameter0: java.lang.String;	r6 := @parameter1: java.lang.String[];	r10 := @parameter2: java.lang.String;	r13 := @parameter3: java.lang.String[];	z0 := @parameter4: boolean;	$r0 = new java.lang.StringBuilder;	specialinvoke $r0.<java.lang.StringBuilder: void <init>(int)>(300);	$r2 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ADD CONSTRAINT ");	$r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1);	$r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" FOREIGN KEY ");	$r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1);	$r8 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" (");	$r7 = staticinvoke <java.lang.String: java.lang.String join(java.lang.CharSequence,java.lang.CharSequence[])>(", ", r6);	$r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);	$r11 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(") REFERENCES ");	$r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r10);	$r15 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" (");	$r14 = staticinvoke <java.lang.String: java.lang.String join(java.lang.CharSequence,java.lang.CharSequence[])>(", ", r13);	$r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r14);	$r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(") ");	$r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.String toString()>();	return $r18
+;block_num 1

@@ -1,0 +1,70 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var2562 0)
+(declare-sort var3036 0)
+(declare-sort var781 0)
+(declare-sort var2377 0)
+(declare-sort var3678 0)
+(declare-sort var1386 0)
+(declare-sort var3954 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun var3036_getOwningEntityNaming/2027762938 (var3036) var781)
+(declare-fun transformEntityName/179831079 (var2562 var781) String)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun append/-1166366385 (String Int) String)
+(declare-fun var3036_getOwningAttributePath/-877936987 (var3036) var2377)
+(declare-fun transformAttributePath/1325372791 (var2562 var2377) String)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun var1386_getBuildingContext/-812955260 (var1386) var3678)
+(declare-fun cast-from-var3036-to-var1386 (var3036) var1386)
+(declare-fun toIdentifier/-987167605 (var2562 String var3678) var3954)
+(declare-const null-var2562 var2562)
+(declare-const null-var3036 var3036)
+(declare-const var1626 var2562) ; Statement: r0 := @this: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl 
+(assert (not (= var1626 null-var2562)))
+(declare-const var1931 var3036) ; Statement: r1 := @parameter0: org.hibernate.boot.model.naming.ImplicitCollectionTableNameSource 
+(assert (not (= var1931 null-var3036)))
+(define-const var3849 var781 (var3036_getOwningEntityNaming/2027762938 var1931)) ; Statement: $r2 = interfaceinvoke r1.<org.hibernate.boot.model.naming.ImplicitCollectionTableNameSource: org.hibernate.boot.model.naming.EntityNaming getOwningEntityNaming()>() 
+(assert true)
+(define-const var1862 String (transformEntityName/179831079 var1626 var3849)) ; Statement: r3 = virtualinvoke r0.<org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl: java.lang.String transformEntityName(org.hibernate.boot.model.naming.EntityNaming)>($r2) 
+(define-const var2121 String String-init) ; Statement: $r4 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var2121)) ; Statement: specialinvoke $r4.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var2121!1 String)
+(assert (= var2121!1 ""))
+(assert true)
+(define-const var3355 String (append/672562846 var2121!1 var1862)) ; Statement: $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r3) 
+(declare-const var2121!2 String)
+(assert (= var2121!2 (str.++ var2121!1 var1862)))
+(assert true)
+(define-const var1734 String (append/-1166366385 var3355 95)) ; Statement: $r8 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(95) 
+(declare-const var3355!1 String)
+(assert (str.prefixof var3355 var3355!1))
+(define-const var1284 var2377 (var3036_getOwningAttributePath/-877936987 var1931)) ; Statement: $r6 = interfaceinvoke r1.<org.hibernate.boot.model.naming.ImplicitCollectionTableNameSource: org.hibernate.boot.model.source.spi.AttributePath getOwningAttributePath()>() 
+(assert true)
+(define-const var1813 String (transformAttributePath/1325372791 var1626 var1284)) ; Statement: $r7 = virtualinvoke r0.<org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl: java.lang.String transformAttributePath(org.hibernate.boot.model.source.spi.AttributePath)>($r6) 
+(assert true)
+(define-const var3839 String (append/672562846 var1734 var1813)) ; Statement: $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7) 
+(declare-const var1734!1 String)
+(assert (= var1734!1 (str.++ var1734 var1813)))
+(assert true)
+(define-const var2633 String (toString/-2075883882 var3839)) ; Statement: r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>() 
+(define-const var688 var3678 (var1386_getBuildingContext/-812955260 (cast-from-var3036-to-var1386 var1931))) ; Statement: $r11 = interfaceinvoke r1.<org.hibernate.boot.model.naming.ImplicitCollectionTableNameSource: org.hibernate.boot.spi.MetadataBuildingContext getBuildingContext()>() 
+(assert true)
+(define-const var1455 var3954 (toIdentifier/-987167605 var1626 var2633 var688)) ; Statement: $r12 = virtualinvoke r0.<org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl: org.hibernate.boot.model.naming.Identifier toIdentifier(java.lang.String,org.hibernate.boot.spi.MetadataBuildingContext)>(r10, $r11) 
+ ; Statement: return $r12 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {var3036_getOwningEntityNaming/2027762938=([org.hibernate.boot.model.naming.ImplicitCollectionTableNameSource], org.hibernate.boot.model.naming.EntityNaming), transformEntityName/179831079=([org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl, org.hibernate.boot.model.naming.EntityNaming], java.lang.String), String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), append/-1166366385=([java.lang.StringBuilder, char], java.lang.StringBuilder), var3036_getOwningAttributePath/-877936987=([org.hibernate.boot.model.naming.ImplicitCollectionTableNameSource], org.hibernate.boot.model.source.spi.AttributePath), transformAttributePath/1325372791=([org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl, org.hibernate.boot.model.source.spi.AttributePath], java.lang.String), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), var1386_getBuildingContext/-812955260=([org.hibernate.boot.model.naming.ImplicitNameSource], org.hibernate.boot.spi.MetadataBuildingContext), cast-from-var3036-to-var1386=([org.hibernate.boot.model.naming.ImplicitCollectionTableNameSource], org.hibernate.boot.model.naming.ImplicitNameSource), toIdentifier/-987167605=([org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl, java.lang.String, org.hibernate.boot.spi.MetadataBuildingContext], org.hibernate.boot.model.naming.Identifier)}
+; {var2562=org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl, var1626=r0, var3036=org.hibernate.boot.model.naming.ImplicitCollectionTableNameSource, var1931=r1, var781=org.hibernate.boot.model.naming.EntityNaming, var3849=$r2, var1862=r3, var2121=$r4, var3355=$r5, var1734=$r8, var2377=org.hibernate.boot.model.source.spi.AttributePath, var1284=$r6, var1813=$r7, var3839=$r9, var2633=r10, var3678=org.hibernate.boot.spi.MetadataBuildingContext, var1386=org.hibernate.boot.model.naming.ImplicitNameSource, var688=$r11, var3954=org.hibernate.boot.model.naming.Identifier, var1455=$r12}
+; {org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl=var2562, r0=var1626, org.hibernate.boot.model.naming.ImplicitCollectionTableNameSource=var3036, r1=var1931, org.hibernate.boot.model.naming.EntityNaming=var781, $r2=var3849, r3=var1862, $r4=var2121, $r5=var3355, $r8=var1734, org.hibernate.boot.model.source.spi.AttributePath=var2377, $r6=var1284, $r7=var1813, $r9=var3839, r10=var2633, org.hibernate.boot.spi.MetadataBuildingContext=var3678, org.hibernate.boot.model.naming.ImplicitNameSource=var1386, $r11=var688, org.hibernate.boot.model.naming.Identifier=var3954, $r12=var1455}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(char)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 2,"<java.lang.StringBuilder: java.lang.StringBuilder append(char)>": 1,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r0 := @this: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl;	r1 := @parameter0: org.hibernate.boot.model.naming.ImplicitCollectionTableNameSource;	$r2 = interfaceinvoke r1.<org.hibernate.boot.model.naming.ImplicitCollectionTableNameSource: org.hibernate.boot.model.naming.EntityNaming getOwningEntityNaming()>();	r3 = virtualinvoke r0.<org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl: java.lang.String transformEntityName(org.hibernate.boot.model.naming.EntityNaming)>($r2);	$r4 = new java.lang.StringBuilder;	specialinvoke $r4.<java.lang.StringBuilder: void <init>()>();	$r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r3);	$r8 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(95);	$r6 = interfaceinvoke r1.<org.hibernate.boot.model.naming.ImplicitCollectionTableNameSource: org.hibernate.boot.model.source.spi.AttributePath getOwningAttributePath()>();	$r7 = virtualinvoke r0.<org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl: java.lang.String transformAttributePath(org.hibernate.boot.model.source.spi.AttributePath)>($r6);	$r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7);	r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();	$r11 = interfaceinvoke r1.<org.hibernate.boot.model.naming.ImplicitCollectionTableNameSource: org.hibernate.boot.spi.MetadataBuildingContext getBuildingContext()>();	$r12 = virtualinvoke r0.<org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl: org.hibernate.boot.model.naming.Identifier toIdentifier(java.lang.String,org.hibernate.boot.spi.MetadataBuildingContext)>(r10, $r11);	return $r12
+;block_num 1

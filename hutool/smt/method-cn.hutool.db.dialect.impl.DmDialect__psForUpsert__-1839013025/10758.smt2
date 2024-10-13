@@ -1,0 +1,147 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var2887 0)
+(declare-sort var1912 0)
+(declare-sort var2942 0)
+(declare-sort var2004 0)
+(declare-sort var3401 0)
+(declare-sort var3210 0)
+(declare-sort var2070 0)
+(declare-sort var12 0)
+(declare-sort var1575 0)
+(declare-sort var3193 0)
+(declare-sort var1913 0)
+(declare-sort var3539 0)
+(declare-sort var1784 0)
+(declare-sort var1564 0)
+(declare-sort var1868 0)
+(declare-sort var137 0)
+(declare-sort var1794 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun arr-var2004-init () (Array Int var2004))
+(declare-fun var3401_notEmpty/641213756 ((Array Int var2004) String (Array Int var2004)) (Array Int var2004))
+(declare-fun cast-from-__Array__Int__String__-to-__Array__Int__var2004__ ((Array Int String)) (Array Int var2004))
+(declare-fun var3210_validateEntity/970713086 (var2942) void)
+(declare-fun wrapper/1376218167 (var12) var2070)
+(declare-fun cast-from-var2887-to-var12 (var2887) var12)
+(declare-fun var3210_create/-1666572224 (var2070) var3210)
+(declare-fun var3193_asList/1779083644 ((Array Int var2004)) var1575)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(declare-fun var3539_bootstrap$/1093037276 (var1575 String var3210) var1913)
+(declare-fun forEach/-83680035 (var1784 var1913) void)
+(declare-fun cast-from-var2942-to-var1784 (var2942) var1784)
+(declare-fun var1564_bootstrap$/-972735015 (var1575 String var3210) var1913)
+(declare-fun var1868_bootstrap$/1899255588 (var2887 String String var3210) var1913)
+(declare-fun getTableName/-517879498 (var2942) String)
+(declare-fun append/-76071956 (var3210 var2004) var3210)
+(declare-fun cast-from-String-to-var2004 (String) var2004)
+(declare-fun var1794_prepareStatement/1601996539 (var1912 var3210) var137)
+(declare-const null-var2887 var2887)
+(declare-const null-var1912 var1912)
+(declare-const null-var2942 var2942)
+(declare-const null-__Array__Int__String__ (Array Int String))
+(declare-const null-var2070 var2070)
+(declare-const var1885 var2887) ; Statement: r3 := @this: cn.hutool.db.dialect.impl.DmDialect 
+(assert (not (= var1885 null-var2887)))
+(declare-const var2571 var1912) ; Statement: r25 := @parameter0: java.sql.Connection 
+(assert (not (= var2571 null-var1912)))
+(declare-const var2614 var2942) ; Statement: r2 := @parameter1: cn.hutool.db.Entity 
+(assert (not (= var2614 null-var2942)))
+(declare-const var574 (Array Int String)) ; Statement: r0 := @parameter2: java.lang.String[] 
+(assert (not (= var574 null-__Array__Int__String__)))
+(define-const var2855 (Array Int var2004) arr-var2004-init) ; Statement: $r1 = newarray (java.lang.Object)[0] 
+;(assert (var3401_notEmpty/641213756 (cast-from-__Array__Int__String__-to-__Array__Int__var2004__ var574) "Keys must be not empty for DM MERGE SQL." var2855)) ; Statement: staticinvoke <cn.hutool.core.lang.Assert: java.lang.Object[] notEmpty(java.lang.Object[],java.lang.String,java.lang.Object[])>(r0, "Keys must be not empty for DM MERGE SQL.", $r1) 
+
+(declare-const var574!1 (Array Int String))
+(declare-const var2929 String)
+(declare-const var2855!1 (Array Int var2004))
+;(assert (var3210_validateEntity/970713086 var2614)) ; Statement: staticinvoke <cn.hutool.db.sql.SqlBuilder: void validateEntity(cn.hutool.db.Entity)>(r2) 
+
+(declare-const var2614!1 var2942)
+(define-const var3894 var2070 (wrapper/1376218167 (cast-from-var2887-to-var12 var1885))) ; Statement: $r4 = r3.<cn.hutool.db.dialect.impl.DmDialect: cn.hutool.db.sql.Wrapper wrapper> 
+(define-const var3582 var3210 (var3210_create/-1666572224 var3894)) ; Statement: r5 = staticinvoke <cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder create(cn.hutool.db.sql.Wrapper)>($r4) 
+(define-const var3230 var1575 (var3193_asList/1779083644 (cast-from-__Array__Int__String__-to-__Array__Int__var2004__ var574!1))) ; Statement: r6 = staticinvoke <java.util.Arrays: java.util.List asList(java.lang.Object[])>(r0) 
+(define-const var1090 String String-init) ; Statement: $r7 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var1090)) ; Statement: specialinvoke $r7.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var1090!1 String)
+(assert (= var1090!1 ""))
+(define-const var3792 String String-init) ; Statement: $r8 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var3792)) ; Statement: specialinvoke $r8.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var3792!1 String)
+(assert (= var3792!1 ""))
+(define-const var1489 String String-init) ; Statement: $r9 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var1489)) ; Statement: specialinvoke $r9.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var1489!1 String)
+(assert (= var1489!1 ""))
+(define-const var3627 String String-init) ; Statement: $r10 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var3627)) ; Statement: specialinvoke $r10.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var3627!1 String)
+(assert (= var3627!1 ""))
+(define-const var2856 var1913 (var3539_bootstrap$/1093037276 var3230 var1090!1 var3582)) ; Statement: $r11 = staticinvoke <cn.hutool.db.dialect.impl.DmDialect$lambda_psForUpsert_0__514: java.util.function.BiConsumer bootstrap$(java.util.List,java.lang.StringBuilder,cn.hutool.db.sql.SqlBuilder)>(r6, $r7, r5) 
+(assert true)
+;(assert (forEach/-83680035 (cast-from-var2942-to-var1784 var2614!1) var2856)) ; Statement: virtualinvoke r2.<cn.hutool.db.Entity: void forEach(java.util.function.BiConsumer)>($r11) 
+
+(declare-const var2614!2 var2942)
+(declare-const var2856!1 var1913)
+(define-const var3925 var1913 (var1564_bootstrap$/-972735015 var3230 var3792!1 var3582)) ; Statement: $r12 = staticinvoke <cn.hutool.db.dialect.impl.DmDialect$lambda_psForUpsert_1__518: java.util.function.BiConsumer bootstrap$(java.util.List,java.lang.StringBuilder,cn.hutool.db.sql.SqlBuilder)>(r6, $r8, r5) 
+(assert true)
+;(assert (forEach/-83680035 (cast-from-var2942-to-var1784 var2614!2) var3925)) ; Statement: virtualinvoke r2.<cn.hutool.db.Entity: void forEach(java.util.function.BiConsumer)>($r12) 
+
+(declare-const var2614!3 var2942)
+(declare-const var3925!1 var1913)
+(define-const var277 var1913 (var1868_bootstrap$/1899255588 var1885 var1489!1 var3627!1 var3582)) ; Statement: $r13 = staticinvoke <cn.hutool.db.dialect.impl.DmDialect$lambda_psForUpsert_2__519: java.util.function.BiConsumer bootstrap$(cn.hutool.db.dialect.impl.DmDialect,java.lang.StringBuilder,java.lang.StringBuilder,cn.hutool.db.sql.SqlBuilder)>(r3, $r9, $r10, r5) 
+(assert true)
+;(assert (forEach/-83680035 (cast-from-var2942-to-var1784 var2614!3) var277)) ; Statement: virtualinvoke r2.<cn.hutool.db.Entity: void forEach(java.util.function.BiConsumer)>($r13) 
+
+(declare-const var2614!4 var2942)
+(declare-const var277!1 var1913)
+(assert true)
+(define-const var3637 String (getTableName/-517879498 var2614!4)) ; Statement: r28 = virtualinvoke r2.<cn.hutool.db.Entity: java.lang.String getTableName()>() 
+(define-const var915 var2070 (wrapper/1376218167 (cast-from-var2887-to-var12 var1885))) ; Statement: $r14 = r3.<cn.hutool.db.dialect.impl.DmDialect: cn.hutool.db.sql.Wrapper wrapper> 
+ ; Statement: if null == $r14 goto $r15 = virtualinvoke r5.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>("MERGE INTO ") 
+(assert (= null-var2070 var915)) ; Cond: null == $r14 
+(assert true)
+(define-const var3305 var3210 (append/-76071956 var3582 (cast-from-String-to-var2004 "MERGE INTO "))) ; Statement: $r15 = virtualinvoke r5.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>("MERGE INTO ") 
+(assert true)
+(define-const var2391 var3210 (append/-76071956 var3305 (cast-from-String-to-var2004 var3637))) ; Statement: $r16 = virtualinvoke $r15.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>(r28) 
+(assert true)
+(define-const var3417 var3210 (append/-76071956 var2391 (cast-from-String-to-var2004 " USING DUAL ON "))) ; Statement: $r17 = virtualinvoke $r16.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>(" USING DUAL ON ") 
+(assert true)
+(define-const var240 var3210 (append/-76071956 var3417 (cast-from-String-to-var2004 var1090!1))) ; Statement: $r18 = virtualinvoke $r17.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>($r7) 
+(assert true)
+(define-const var47 var3210 (append/-76071956 var240 (cast-from-String-to-var2004 " WHEN MATCHED THEN UPDATE SET "))) ; Statement: $r19 = virtualinvoke $r18.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>(" WHEN MATCHED THEN UPDATE SET ") 
+(assert true)
+(define-const var2650 var3210 (append/-76071956 var47 (cast-from-String-to-var2004 var3792!1))) ; Statement: $r20 = virtualinvoke $r19.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>($r8) 
+(assert true)
+(define-const var3748 var3210 (append/-76071956 var2650 (cast-from-String-to-var2004 " WHEN NOT MATCHED THEN INSERT ("))) ; Statement: $r21 = virtualinvoke $r20.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>(" WHEN NOT MATCHED THEN INSERT (") 
+(assert true)
+(define-const var453 var3210 (append/-76071956 var3748 (cast-from-String-to-var2004 var1489!1))) ; Statement: $r22 = virtualinvoke $r21.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>($r9) 
+(assert true)
+(define-const var1456 var3210 (append/-76071956 var453 (cast-from-String-to-var2004 ") VALUES ("))) ; Statement: $r23 = virtualinvoke $r22.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>(") VALUES (") 
+(assert true)
+(define-const var428 var3210 (append/-76071956 var1456 (cast-from-String-to-var2004 var3627!1))) ; Statement: $r24 = virtualinvoke $r23.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>($r10) 
+(assert true)
+;(assert (append/-76071956 var428 (cast-from-String-to-var2004 ")"))) ; Statement: virtualinvoke $r24.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>(")") 
+
+(declare-const var428!1 var3210)
+(declare-const var3885 String)
+(define-const var2813 var137 (var1794_prepareStatement/1601996539 var2571 var3582)) ; Statement: $r26 = staticinvoke <cn.hutool.db.StatementUtil: java.sql.PreparedStatement prepareStatement(java.sql.Connection,cn.hutool.db.sql.SqlBuilder)>(r25, r5) 
+ ; Statement: return $r26 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {arr-var2004-init=([], java.lang.Object[]), var3401_notEmpty/641213756=([java.lang.Object[], java.lang.String, java.lang.Object[]], java.lang.Object[]), cast-from-__Array__Int__String__-to-__Array__Int__var2004__=([java.lang.String[]], java.lang.Object[]), var3210_validateEntity/970713086=([cn.hutool.db.Entity], void), wrapper/1376218167=([cn.hutool.db.dialect.impl.AnsiSqlDialect], cn.hutool.db.sql.Wrapper), cast-from-var2887-to-var12=([cn.hutool.db.dialect.impl.DmDialect], cn.hutool.db.dialect.impl.AnsiSqlDialect), var3210_create/-1666572224=([cn.hutool.db.sql.Wrapper], cn.hutool.db.sql.SqlBuilder), var3193_asList/1779083644=([java.lang.Object[]], java.util.List), String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), var3539_bootstrap$/1093037276=([java.util.List, java.lang.StringBuilder, cn.hutool.db.sql.SqlBuilder], java.util.function.BiConsumer), forEach/-83680035=([java.util.LinkedHashMap, java.util.function.BiConsumer], void), cast-from-var2942-to-var1784=([cn.hutool.db.Entity], java.util.LinkedHashMap), var1564_bootstrap$/-972735015=([java.util.List, java.lang.StringBuilder, cn.hutool.db.sql.SqlBuilder], java.util.function.BiConsumer), var1868_bootstrap$/1899255588=([cn.hutool.db.dialect.impl.DmDialect, java.lang.StringBuilder, java.lang.StringBuilder, cn.hutool.db.sql.SqlBuilder], java.util.function.BiConsumer), getTableName/-517879498=([cn.hutool.db.Entity], java.lang.String), append/-76071956=([cn.hutool.db.sql.SqlBuilder, java.lang.Object], cn.hutool.db.sql.SqlBuilder), cast-from-String-to-var2004=([java.lang.String], java.lang.Object), var1794_prepareStatement/1601996539=([java.sql.Connection, cn.hutool.db.sql.SqlBuilder], java.sql.PreparedStatement)}
+; {var2887=cn.hutool.db.dialect.impl.DmDialect, var1885=r3, var1912=java.sql.Connection, var2571=r25, var2942=cn.hutool.db.Entity, var2614=r2, var574=r0, var2004=java.lang.Object, var2855=$r1, var3401=cn.hutool.core.lang.Assert, var2929="Keys must be not empty for DM MERGE SQL.", var3210=cn.hutool.db.sql.SqlBuilder, var2070=cn.hutool.db.sql.Wrapper, var12=cn.hutool.db.dialect.impl.AnsiSqlDialect, var3894=$r4, var3582=r5, var1575=java.util.List, var3193=java.util.Arrays, var3230=r6, var1090=$r7, var3792=$r8, var1489=$r9, var3627=$r10, var1913=java.util.function.BiConsumer, var3539=cn.hutool.db.dialect.impl.DmDialect$lambda_psForUpsert_0__514, var2856=$r11, var1784=java.util.LinkedHashMap, var1564=cn.hutool.db.dialect.impl.DmDialect$lambda_psForUpsert_1__518, var3925=$r12, var1868=cn.hutool.db.dialect.impl.DmDialect$lambda_psForUpsert_2__519, var277=$r13, var3637=r28, var915=$r14, var3305=$r15, var2391=$r16, var3417=$r17, var240=$r18, var47=$r19, var2650=$r20, var3748=$r21, var453=$r22, var1456=$r23, var428=$r24, var3885=")", var137=java.sql.PreparedStatement, var1794=cn.hutool.db.StatementUtil, var2813=$r26}
+; {cn.hutool.db.dialect.impl.DmDialect=var2887, r3=var1885, java.sql.Connection=var1912, r25=var2571, cn.hutool.db.Entity=var2942, r2=var2614, r0=var574, java.lang.Object=var2004, $r1=var2855, cn.hutool.core.lang.Assert=var3401, "Keys must be not empty for DM MERGE SQL."=var2929, cn.hutool.db.sql.SqlBuilder=var3210, cn.hutool.db.sql.Wrapper=var2070, cn.hutool.db.dialect.impl.AnsiSqlDialect=var12, $r4=var3894, r5=var3582, java.util.List=var1575, java.util.Arrays=var3193, r6=var3230, $r7=var1090, $r8=var3792, $r9=var1489, $r10=var3627, java.util.function.BiConsumer=var1913, cn.hutool.db.dialect.impl.DmDialect$lambda_psForUpsert_0__514=var3539, $r11=var2856, java.util.LinkedHashMap=var1784, cn.hutool.db.dialect.impl.DmDialect$lambda_psForUpsert_1__518=var1564, $r12=var3925, cn.hutool.db.dialect.impl.DmDialect$lambda_psForUpsert_2__519=var1868, $r13=var277, r28=var3637, $r14=var915, $r15=var3305, $r16=var2391, $r17=var3417, $r18=var240, $r19=var47, $r20=var2650, $r21=var3748, $r22=var453, $r23=var1456, $r24=var428, ")"=var3885, java.sql.PreparedStatement=var137, cn.hutool.db.StatementUtil=var1794, $r26=var2813}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: void <init>()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 4}
+;stmts r3 := @this: cn.hutool.db.dialect.impl.DmDialect;	r25 := @parameter0: java.sql.Connection;	r2 := @parameter1: cn.hutool.db.Entity;	r0 := @parameter2: java.lang.String[];	$r1 = newarray (java.lang.Object)[0];	staticinvoke <cn.hutool.core.lang.Assert: java.lang.Object[] notEmpty(java.lang.Object[],java.lang.String,java.lang.Object[])>(r0, "Keys must be not empty for DM MERGE SQL.", $r1);	staticinvoke <cn.hutool.db.sql.SqlBuilder: void validateEntity(cn.hutool.db.Entity)>(r2);	$r4 = r3.<cn.hutool.db.dialect.impl.DmDialect: cn.hutool.db.sql.Wrapper wrapper>;	r5 = staticinvoke <cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder create(cn.hutool.db.sql.Wrapper)>($r4);	r6 = staticinvoke <java.util.Arrays: java.util.List asList(java.lang.Object[])>(r0);	$r7 = new java.lang.StringBuilder;	specialinvoke $r7.<java.lang.StringBuilder: void <init>()>();	$r8 = new java.lang.StringBuilder;	specialinvoke $r8.<java.lang.StringBuilder: void <init>()>();	$r9 = new java.lang.StringBuilder;	specialinvoke $r9.<java.lang.StringBuilder: void <init>()>();	$r10 = new java.lang.StringBuilder;	specialinvoke $r10.<java.lang.StringBuilder: void <init>()>();	$r11 = staticinvoke <cn.hutool.db.dialect.impl.DmDialect$lambda_psForUpsert_0__514: java.util.function.BiConsumer bootstrap$(java.util.List,java.lang.StringBuilder,cn.hutool.db.sql.SqlBuilder)>(r6, $r7, r5);	virtualinvoke r2.<cn.hutool.db.Entity: void forEach(java.util.function.BiConsumer)>($r11);	$r12 = staticinvoke <cn.hutool.db.dialect.impl.DmDialect$lambda_psForUpsert_1__518: java.util.function.BiConsumer bootstrap$(java.util.List,java.lang.StringBuilder,cn.hutool.db.sql.SqlBuilder)>(r6, $r8, r5);	virtualinvoke r2.<cn.hutool.db.Entity: void forEach(java.util.function.BiConsumer)>($r12);	$r13 = staticinvoke <cn.hutool.db.dialect.impl.DmDialect$lambda_psForUpsert_2__519: java.util.function.BiConsumer bootstrap$(cn.hutool.db.dialect.impl.DmDialect,java.lang.StringBuilder,java.lang.StringBuilder,cn.hutool.db.sql.SqlBuilder)>(r3, $r9, $r10, r5);	virtualinvoke r2.<cn.hutool.db.Entity: void forEach(java.util.function.BiConsumer)>($r13);	r28 = virtualinvoke r2.<cn.hutool.db.Entity: java.lang.String getTableName()>();	$r14 = r3.<cn.hutool.db.dialect.impl.DmDialect: cn.hutool.db.sql.Wrapper wrapper>;	if null == $r14 goto $r15 = virtualinvoke r5.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>("MERGE INTO ");	$r15 = virtualinvoke r5.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>("MERGE INTO ");	$r16 = virtualinvoke $r15.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>(r28);	$r17 = virtualinvoke $r16.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>(" USING DUAL ON ");	$r18 = virtualinvoke $r17.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>($r7);	$r19 = virtualinvoke $r18.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>(" WHEN MATCHED THEN UPDATE SET ");	$r20 = virtualinvoke $r19.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>($r8);	$r21 = virtualinvoke $r20.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>(" WHEN NOT MATCHED THEN INSERT (");	$r22 = virtualinvoke $r21.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>($r9);	$r23 = virtualinvoke $r22.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>(") VALUES (");	$r24 = virtualinvoke $r23.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>($r10);	virtualinvoke $r24.<cn.hutool.db.sql.SqlBuilder: cn.hutool.db.sql.SqlBuilder append(java.lang.Object)>(")");	$r26 = staticinvoke <cn.hutool.db.StatementUtil: java.sql.PreparedStatement prepareStatement(java.sql.Connection,cn.hutool.db.sql.SqlBuilder)>(r25, r5);	return $r26
+;block_num 2

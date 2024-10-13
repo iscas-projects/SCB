@@ -1,0 +1,163 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var433 0)
+(declare-sort var1354 0)
+(declare-sort var344 0)
+(declare-sort var3334 0)
+(declare-sort var2659 0)
+(declare-sort var1381 0)
+(declare-sort var1474 0)
+(declare-sort var1406 0)
+(declare-sort var2958 0)
+(declare-sort var1825 0)
+(declare-sort var3118 0)
+(declare-sort var1533 0)
+(declare-sort var1753 0)
+(declare-sort var3211 0)
+(declare-sort var3897 0)
+(declare-sort var2423 0)
+(declare-sort var1121 0)
+(declare-sort var3309 0)
+(declare-sort var1445 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun getSignatureConfig/-1274643453 (var1354) var2659)
+(declare-fun getSignatureFactory/1859554095 (var1354) var1381)
+(declare-fun newInstance/532723879 (var1474) var2958)
+(declare-fun cast-from-var2958-to-var1406 (var2958) var1406)
+(declare-fun var1406_addNewSignatureTime/1445683867 (var1406) var1825)
+(declare-fun var1825_setFormat/1722294284 (var1825 String) void)
+(declare-fun formatExecutionTime/1896883990 (var2659) String)
+(declare-fun var1825_setValue/-1824643472 (var1825 String) void)
+(declare-fun var3118_atDebug/-1653529376 (var3118) var1533)
+(declare-fun var1825_getValue/-1837208048 (var1825) String)
+(declare-fun var1533_log/-408545991 (var1533 String var2958) void)
+(declare-fun cast-from-String-to-var2958 (String) var2958)
+(declare-fun var1825_getDomNode/-1413573065 (var1825) var1753)
+(declare-fun var344_importNode/-1051342038 (var344 var1753 Bool) var1753)
+(declare-fun cast-from-var1753-to-var3211 (var1753) var3211)
+(declare-fun var3897-init () var3897)
+(declare-fun <init>/-325640736 (var3897) void)
+(declare-fun var2423-init () var2423)
+(declare-fun <init>/1926742051 (var2423 var1753) void)
+(declare-fun cast-from-var3211-to-var1753 (var3211) var1753)
+(declare-fun var3334_add/328494887 (var3334 var2958) Bool)
+(declare-fun cast-from-var3897-to-var3334 (var3897) var3334)
+(declare-fun cast-from-var2423-to-var2958 (var2423) var2958)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun getPackageSignatureId/113804993 (var2659) String)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun newSignatureProperty/-52188344 (var1381 var3334 String String) var1121)
+(declare-fun cast-from-var1121-to-var2958 (var1121) var2958)
+(declare-fun newSignatureProperties/1765930291 (var1381 var3334 String) var3309)
+(declare-fun cast-from-var3309-to-var2958 (var3309) var2958)
+(declare-const null-var433 var433)
+(declare-const null-var1354 var1354)
+(declare-const null-var344 var344)
+(declare-const null-var3334 var3334)
+(declare-const var1406-Factory var1474)
+(declare-const var433-LOG var3118)
+(declare-const null-NullType var1445)
+(declare-const null-String String)
+(declare-const var410 var433) ; Statement: r26 := @this: org.apache.poi.poifs.crypt.dsig.facets.OOXMLSignatureFacet 
+(assert (not (= var410 null-var433)))
+(declare-const var2111 var1354) ; Statement: r0 := @parameter0: org.apache.poi.poifs.crypt.dsig.SignatureInfo 
+(assert (not (= var2111 null-var1354)))
+(declare-const var3969 var344) ; Statement: r11 := @parameter1: org.w3c.dom.Document 
+(assert (not (= var3969 null-var344)))
+(declare-const var761 var3334) ; Statement: r25 := @parameter2: java.util.List 
+(assert (not (= var761 null-var3334)))
+(assert true)
+(define-const var660 var2659 (getSignatureConfig/-1274643453 var2111)) ; Statement: r1 = virtualinvoke r0.<org.apache.poi.poifs.crypt.dsig.SignatureInfo: org.apache.poi.poifs.crypt.dsig.SignatureConfig getSignatureConfig()>() 
+(assert true)
+(define-const var3499 var1381 (getSignatureFactory/1859554095 var2111)) ; Statement: r2 = virtualinvoke r0.<org.apache.poi.poifs.crypt.dsig.SignatureInfo: javax.xml.crypto.dsig.XMLSignatureFactory getSignatureFactory()>() 
+(define-const var1602 var1474 var1406-Factory) ; Statement: $r3 = <org.openxmlformats.schemas.xpackage.x2006.digitalSignature.SignatureTimeDocument: org.apache.xmlbeans.impl.schema.DocumentFactory Factory> 
+(assert true)
+(define-const var3559 var2958 (newInstance/532723879 var1602)) ; Statement: $r4 = virtualinvoke $r3.<org.apache.xmlbeans.impl.schema.DocumentFactory: java.lang.Object newInstance()>() 
+(define-const var1087 var1406 (cast-from-var2958-to-var1406 var3559)) ; Statement: r5 = (org.openxmlformats.schemas.xpackage.x2006.digitalSignature.SignatureTimeDocument) $r4 
+(define-const var3430 var1825 (var1406_addNewSignatureTime/1445683867 var1087)) ; Statement: r6 = interfaceinvoke r5.<org.openxmlformats.schemas.xpackage.x2006.digitalSignature.SignatureTimeDocument: org.openxmlformats.schemas.xpackage.x2006.digitalSignature.CTSignatureTime addNewSignatureTime()>() 
+;(assert (var1825_setFormat/1722294284 var3430 "YYYY-MM-DDThh:mm:ssTZD")) ; Statement: interfaceinvoke r6.<org.openxmlformats.schemas.xpackage.x2006.digitalSignature.CTSignatureTime: void setFormat(java.lang.String)>("YYYY-MM-DDThh:mm:ssTZD") 
+
+(declare-const var3430!1 var1825)
+(declare-const var1446 String)
+(assert true)
+(define-const var2989 String (formatExecutionTime/1896883990 var660)) ; Statement: $r7 = virtualinvoke r1.<org.apache.poi.poifs.crypt.dsig.SignatureConfig: java.lang.String formatExecutionTime()>() 
+;(assert (var1825_setValue/-1824643472 var3430!1 var2989)) ; Statement: interfaceinvoke r6.<org.openxmlformats.schemas.xpackage.x2006.digitalSignature.CTSignatureTime: void setValue(java.lang.String)>($r7) 
+
+(declare-const var3430!2 var1825)
+(declare-const var2989!1 String)
+(define-const var788 var3118 var433-LOG) ; Statement: $r8 = <org.apache.poi.poifs.crypt.dsig.facets.OOXMLSignatureFacet: org.apache.logging.log4j.Logger LOG> 
+(define-const var113 var1533 (var3118_atDebug/-1653529376 var788)) ; Statement: $r10 = interfaceinvoke $r8.<org.apache.logging.log4j.Logger: org.apache.logging.log4j.LogBuilder atDebug()>() 
+(define-const var2287 String (var1825_getValue/-1837208048 var3430!2)) ; Statement: $r9 = interfaceinvoke r6.<org.openxmlformats.schemas.xpackage.x2006.digitalSignature.CTSignatureTime: java.lang.String getValue()>() 
+;(assert (var1533_log/-408545991 var113 "execution time: {}" (cast-from-String-to-var2958 var2287))) ; Statement: interfaceinvoke $r10.<org.apache.logging.log4j.LogBuilder: void log(java.lang.String,java.lang.Object)>("execution time: {}", $r9) 
+
+(declare-const var113!1 var1533)
+(declare-const var3935 String)
+(declare-const var2287!1 String)
+(define-const var941 var1753 (var1825_getDomNode/-1413573065 var3430!2)) ; Statement: $r12 = interfaceinvoke r6.<org.openxmlformats.schemas.xpackage.x2006.digitalSignature.CTSignatureTime: org.w3c.dom.Node getDomNode()>() 
+(define-const var2915 var1753 (var344_importNode/-1051342038 var3969 var941 (ite (= 1 1) true false))) ; Statement: $r13 = interfaceinvoke r11.<org.w3c.dom.Document: org.w3c.dom.Node importNode(org.w3c.dom.Node,boolean)>($r12, 1) 
+(define-const var3178 var3211 (cast-from-var1753-to-var3211 var2915)) ; Statement: r14 = (org.w3c.dom.Element) $r13 
+(define-const var403 var3897 var3897-init) ; Statement: $r15 = new java.util.ArrayList 
+(assert true)
+;(assert (<init>/-325640736 var403)) ; Statement: specialinvoke $r15.<java.util.ArrayList: void <init>()>() 
+
+(declare-const var403!1 var3897)
+(define-const var2863 var2423 var2423-init) ; Statement: $r16 = new javax.xml.crypto.dom.DOMStructure 
+(assert true)
+;(assert (<init>/1926742051 var2863 (cast-from-var3211-to-var1753 var3178))) ; Statement: specialinvoke $r16.<javax.xml.crypto.dom.DOMStructure: void <init>(org.w3c.dom.Node)>(r14) 
+
+(declare-const var2863!1 var2423)
+(declare-const var3178!1 var3211)
+;(assert (var3334_add/328494887 (cast-from-var3897-to-var3334 var403!1) (cast-from-var2423-to-var2958 var2863!1))) ; Statement: interfaceinvoke $r15.<java.util.List: boolean add(java.lang.Object)>($r16) 
+
+(declare-const var403!2 var3897)
+(declare-const var2863!2 var2423)
+(define-const var3656 String String-init) ; Statement: $r17 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var3656)) ; Statement: specialinvoke $r17.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var3656!1 String)
+(assert (= var3656!1 ""))
+(assert true)
+(define-const var1444 String (append/672562846 var3656!1 "#")) ; Statement: $r19 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("#") 
+(declare-const var3656!2 String)
+(assert (= var3656!2 (str.++ var3656!1 "#")))
+(assert true)
+(define-const var2603 String (getPackageSignatureId/113804993 var660)) ; Statement: $r18 = virtualinvoke r1.<org.apache.poi.poifs.crypt.dsig.SignatureConfig: java.lang.String getPackageSignatureId()>() 
+(assert true)
+(define-const var3307 String (append/672562846 var1444 var2603)) ; Statement: $r20 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r18) 
+(declare-const var1444!1 String)
+(assert (= var1444!1 (str.++ var1444 var2603)))
+(assert true)
+(define-const var2530 String (toString/-2075883882 var3307)) ; Statement: $r21 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.String toString()>() 
+(assert true)
+(define-const var3095 var1121 (newSignatureProperty/-52188344 var3499 (cast-from-var3897-to-var3334 var403!2) var2530 "idSignatureTime")) ; Statement: r22 = virtualinvoke r2.<javax.xml.crypto.dsig.XMLSignatureFactory: javax.xml.crypto.dsig.SignatureProperty newSignatureProperty(java.util.List,java.lang.String,java.lang.String)>($r15, $r21, "idSignatureTime") 
+(define-const var2095 var3897 var3897-init) ; Statement: $r23 = new java.util.ArrayList 
+(assert true)
+;(assert (<init>/-325640736 var2095)) ; Statement: specialinvoke $r23.<java.util.ArrayList: void <init>()>() 
+
+(declare-const var2095!1 var3897)
+;(assert (var3334_add/328494887 (cast-from-var3897-to-var3334 var2095!1) (cast-from-var1121-to-var2958 var3095))) ; Statement: interfaceinvoke $r23.<java.util.List: boolean add(java.lang.Object)>(r22) 
+
+(declare-const var2095!2 var3897)
+(declare-const var3095!1 var1121)
+(assert true)
+(define-const var3600 var3309 (newSignatureProperties/1765930291 var3499 (cast-from-var3897-to-var3334 var2095!2) null-String)) ; Statement: r24 = virtualinvoke r2.<javax.xml.crypto.dsig.XMLSignatureFactory: javax.xml.crypto.dsig.SignatureProperties newSignatureProperties(java.util.List,java.lang.String)>($r23, null) 
+;(assert (var3334_add/328494887 var761 (cast-from-var3309-to-var2958 var3600))) ; Statement: interfaceinvoke r25.<java.util.List: boolean add(java.lang.Object)>(r24) 
+
+(declare-const var761!1 var3334)
+(declare-const var3600!1 var3309)
+ ; Statement: return 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {getSignatureConfig/-1274643453=([org.apache.poi.poifs.crypt.dsig.SignatureInfo], org.apache.poi.poifs.crypt.dsig.SignatureConfig), getSignatureFactory/1859554095=([org.apache.poi.poifs.crypt.dsig.SignatureInfo], javax.xml.crypto.dsig.XMLSignatureFactory), newInstance/532723879=([org.apache.xmlbeans.impl.schema.DocumentFactory], java.lang.Object), cast-from-var2958-to-var1406=([java.lang.Object], org.openxmlformats.schemas.xpackage.x2006.digitalSignature.SignatureTimeDocument), var1406_addNewSignatureTime/1445683867=([org.openxmlformats.schemas.xpackage.x2006.digitalSignature.SignatureTimeDocument], org.openxmlformats.schemas.xpackage.x2006.digitalSignature.CTSignatureTime), var1825_setFormat/1722294284=([org.openxmlformats.schemas.xpackage.x2006.digitalSignature.CTSignatureTime, java.lang.String], void), formatExecutionTime/1896883990=([org.apache.poi.poifs.crypt.dsig.SignatureConfig], java.lang.String), var1825_setValue/-1824643472=([org.openxmlformats.schemas.xpackage.x2006.digitalSignature.CTSignatureTime, java.lang.String], void), var3118_atDebug/-1653529376=([org.apache.logging.log4j.Logger], org.apache.logging.log4j.LogBuilder), var1825_getValue/-1837208048=([org.openxmlformats.schemas.xpackage.x2006.digitalSignature.CTSignatureTime], java.lang.String), var1533_log/-408545991=([org.apache.logging.log4j.LogBuilder, java.lang.String, java.lang.Object], void), cast-from-String-to-var2958=([java.lang.String], java.lang.Object), var1825_getDomNode/-1413573065=([org.openxmlformats.schemas.xpackage.x2006.digitalSignature.CTSignatureTime], org.w3c.dom.Node), var344_importNode/-1051342038=([org.w3c.dom.Document, org.w3c.dom.Node, boolean], org.w3c.dom.Node), cast-from-var1753-to-var3211=([org.w3c.dom.Node], org.w3c.dom.Element), var3897-init=([], java.util.ArrayList), <init>/-325640736=([java.util.ArrayList], void), var2423-init=([], javax.xml.crypto.dom.DOMStructure), <init>/1926742051=([javax.xml.crypto.dom.DOMStructure, org.w3c.dom.Node], void), cast-from-var3211-to-var1753=([org.w3c.dom.Element], org.w3c.dom.Node), var3334_add/328494887=([java.util.List, java.lang.Object], boolean), cast-from-var3897-to-var3334=([java.util.ArrayList], java.util.List), cast-from-var2423-to-var2958=([javax.xml.crypto.dom.DOMStructure], java.lang.Object), String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), getPackageSignatureId/113804993=([org.apache.poi.poifs.crypt.dsig.SignatureConfig], java.lang.String), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), newSignatureProperty/-52188344=([javax.xml.crypto.dsig.XMLSignatureFactory, java.util.List, java.lang.String, java.lang.String], javax.xml.crypto.dsig.SignatureProperty), cast-from-var1121-to-var2958=([javax.xml.crypto.dsig.SignatureProperty], java.lang.Object), newSignatureProperties/1765930291=([javax.xml.crypto.dsig.XMLSignatureFactory, java.util.List, java.lang.String], javax.xml.crypto.dsig.SignatureProperties), cast-from-var3309-to-var2958=([javax.xml.crypto.dsig.SignatureProperties], java.lang.Object)}
+; {var433=org.apache.poi.poifs.crypt.dsig.facets.OOXMLSignatureFacet, var410=r26, var1354=org.apache.poi.poifs.crypt.dsig.SignatureInfo, var2111=r0, var344=org.w3c.dom.Document, var3969=r11, var3334=java.util.List, var761=r25, var2659=org.apache.poi.poifs.crypt.dsig.SignatureConfig, var660=r1, var1381=javax.xml.crypto.dsig.XMLSignatureFactory, var3499=r2, var1474=org.apache.xmlbeans.impl.schema.DocumentFactory, var1406=org.openxmlformats.schemas.xpackage.x2006.digitalSignature.SignatureTimeDocument, var1602=$r3, var2958=java.lang.Object, var3559=$r4, var1087=r5, var1825=org.openxmlformats.schemas.xpackage.x2006.digitalSignature.CTSignatureTime, var3430=r6, var1446="YYYY-MM-DDThh:mm:ssTZD", var2989=$r7, var3118=org.apache.logging.log4j.Logger, var788=$r8, var1533=org.apache.logging.log4j.LogBuilder, var113=$r10, var2287=$r9, var3935="execution time: {}", var1753=org.w3c.dom.Node, var941=$r12, var2915=$r13, var3211=org.w3c.dom.Element, var3178=r14, var3897=java.util.ArrayList, var403=$r15, var2423=javax.xml.crypto.dom.DOMStructure, var2863=$r16, var3656=$r17, var1444=$r19, var2603=$r18, var3307=$r20, var2530=$r21, var1121=javax.xml.crypto.dsig.SignatureProperty, var3095=r22, var2095=$r23, var3309=javax.xml.crypto.dsig.SignatureProperties, var1445=null_type, var3600=r24}
+; {org.apache.poi.poifs.crypt.dsig.facets.OOXMLSignatureFacet=var433, r26=var410, org.apache.poi.poifs.crypt.dsig.SignatureInfo=var1354, r0=var2111, org.w3c.dom.Document=var344, r11=var3969, java.util.List=var3334, r25=var761, org.apache.poi.poifs.crypt.dsig.SignatureConfig=var2659, r1=var660, javax.xml.crypto.dsig.XMLSignatureFactory=var1381, r2=var3499, org.apache.xmlbeans.impl.schema.DocumentFactory=var1474, org.openxmlformats.schemas.xpackage.x2006.digitalSignature.SignatureTimeDocument=var1406, $r3=var1602, java.lang.Object=var2958, $r4=var3559, r5=var1087, org.openxmlformats.schemas.xpackage.x2006.digitalSignature.CTSignatureTime=var1825, r6=var3430, "YYYY-MM-DDThh:mm:ssTZD"=var1446, $r7=var2989, org.apache.logging.log4j.Logger=var3118, $r8=var788, org.apache.logging.log4j.LogBuilder=var1533, $r10=var113, $r9=var2287, "execution time: {}"=var3935, org.w3c.dom.Node=var1753, $r12=var941, $r13=var2915, org.w3c.dom.Element=var3211, r14=var3178, java.util.ArrayList=var3897, $r15=var403, javax.xml.crypto.dom.DOMStructure=var2423, $r16=var2863, $r17=var3656, $r19=var1444, $r18=var2603, $r20=var3307, $r21=var2530, javax.xml.crypto.dsig.SignatureProperty=var1121, r22=var3095, $r23=var2095, javax.xml.crypto.dsig.SignatureProperties=var3309, null_type=var1445, r24=var3600}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 2,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r26 := @this: org.apache.poi.poifs.crypt.dsig.facets.OOXMLSignatureFacet;	r0 := @parameter0: org.apache.poi.poifs.crypt.dsig.SignatureInfo;	r11 := @parameter1: org.w3c.dom.Document;	r25 := @parameter2: java.util.List;	r1 = virtualinvoke r0.<org.apache.poi.poifs.crypt.dsig.SignatureInfo: org.apache.poi.poifs.crypt.dsig.SignatureConfig getSignatureConfig()>();	r2 = virtualinvoke r0.<org.apache.poi.poifs.crypt.dsig.SignatureInfo: javax.xml.crypto.dsig.XMLSignatureFactory getSignatureFactory()>();	$r3 = <org.openxmlformats.schemas.xpackage.x2006.digitalSignature.SignatureTimeDocument: org.apache.xmlbeans.impl.schema.DocumentFactory Factory>;	$r4 = virtualinvoke $r3.<org.apache.xmlbeans.impl.schema.DocumentFactory: java.lang.Object newInstance()>();	r5 = (org.openxmlformats.schemas.xpackage.x2006.digitalSignature.SignatureTimeDocument) $r4;	r6 = interfaceinvoke r5.<org.openxmlformats.schemas.xpackage.x2006.digitalSignature.SignatureTimeDocument: org.openxmlformats.schemas.xpackage.x2006.digitalSignature.CTSignatureTime addNewSignatureTime()>();	interfaceinvoke r6.<org.openxmlformats.schemas.xpackage.x2006.digitalSignature.CTSignatureTime: void setFormat(java.lang.String)>("YYYY-MM-DDThh:mm:ssTZD");	$r7 = virtualinvoke r1.<org.apache.poi.poifs.crypt.dsig.SignatureConfig: java.lang.String formatExecutionTime()>();	interfaceinvoke r6.<org.openxmlformats.schemas.xpackage.x2006.digitalSignature.CTSignatureTime: void setValue(java.lang.String)>($r7);	$r8 = <org.apache.poi.poifs.crypt.dsig.facets.OOXMLSignatureFacet: org.apache.logging.log4j.Logger LOG>;	$r10 = interfaceinvoke $r8.<org.apache.logging.log4j.Logger: org.apache.logging.log4j.LogBuilder atDebug()>();	$r9 = interfaceinvoke r6.<org.openxmlformats.schemas.xpackage.x2006.digitalSignature.CTSignatureTime: java.lang.String getValue()>();	interfaceinvoke $r10.<org.apache.logging.log4j.LogBuilder: void log(java.lang.String,java.lang.Object)>("execution time: {}", $r9);	$r12 = interfaceinvoke r6.<org.openxmlformats.schemas.xpackage.x2006.digitalSignature.CTSignatureTime: org.w3c.dom.Node getDomNode()>();	$r13 = interfaceinvoke r11.<org.w3c.dom.Document: org.w3c.dom.Node importNode(org.w3c.dom.Node,boolean)>($r12, 1);	r14 = (org.w3c.dom.Element) $r13;	$r15 = new java.util.ArrayList;	specialinvoke $r15.<java.util.ArrayList: void <init>()>();	$r16 = new javax.xml.crypto.dom.DOMStructure;	specialinvoke $r16.<javax.xml.crypto.dom.DOMStructure: void <init>(org.w3c.dom.Node)>(r14);	interfaceinvoke $r15.<java.util.List: boolean add(java.lang.Object)>($r16);	$r17 = new java.lang.StringBuilder;	specialinvoke $r17.<java.lang.StringBuilder: void <init>()>();	$r19 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("#");	$r18 = virtualinvoke r1.<org.apache.poi.poifs.crypt.dsig.SignatureConfig: java.lang.String getPackageSignatureId()>();	$r20 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r18);	$r21 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.String toString()>();	r22 = virtualinvoke r2.<javax.xml.crypto.dsig.XMLSignatureFactory: javax.xml.crypto.dsig.SignatureProperty newSignatureProperty(java.util.List,java.lang.String,java.lang.String)>($r15, $r21, "idSignatureTime");	$r23 = new java.util.ArrayList;	specialinvoke $r23.<java.util.ArrayList: void <init>()>();	interfaceinvoke $r23.<java.util.List: boolean add(java.lang.Object)>(r22);	r24 = virtualinvoke r2.<javax.xml.crypto.dsig.XMLSignatureFactory: javax.xml.crypto.dsig.SignatureProperties newSignatureProperties(java.util.List,java.lang.String)>($r23, null);	interfaceinvoke r25.<java.util.List: boolean add(java.lang.Object)>(r24);	return
+;block_num 1

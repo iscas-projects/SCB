@@ -1,0 +1,82 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var3842 0)
+(declare-sort var94 0)
+(declare-sort var2899 0)
+(declare-sort var1209 0)
+(declare-sort var145 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun printer/-1347178147 (var3842) var94)
+(declare-fun getPattern/515694758 (var94) String)
+(declare-fun getLocale/-788858571 (var94) var2899)
+(declare-fun append/-1031950772 (String var1209) String)
+(declare-fun cast-from-var2899-to-var1209 (var2899) var1209)
+(declare-fun getTimeZone/-666450313 (var94) var145)
+(declare-fun getID/-1323510388 (var145) String)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-const null-var3842 var3842)
+(declare-const var3869 var3842) ; Statement: r1 := @this: org.apache.commons.lang3.time.FastDateFormat 
+(assert (not (= var3869 null-var3842)))
+(define-const var1728 String String-init) ; Statement: $r0 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var1728)) ; Statement: specialinvoke $r0.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var1728!1 String)
+(assert (= var1728!1 ""))
+(assert true)
+(define-const var624 String (append/672562846 var1728!1 "FastDateFormat[")) ; Statement: $r4 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("FastDateFormat[") 
+(declare-const var1728!2 String)
+(assert (= var1728!2 (str.++ var1728!1 "FastDateFormat[")))
+(define-const var1208 var94 (printer/-1347178147 var3869)) ; Statement: $r2 = r1.<org.apache.commons.lang3.time.FastDateFormat: org.apache.commons.lang3.time.FastDatePrinter printer> 
+(assert true)
+(define-const var3478 String (getPattern/515694758 var1208)) ; Statement: $r3 = virtualinvoke $r2.<org.apache.commons.lang3.time.FastDatePrinter: java.lang.String getPattern()>() 
+(assert true)
+(define-const var3009 String (append/672562846 var624 var3478)) ; Statement: $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3) 
+(declare-const var624!1 String)
+(assert (= var624!1 (str.++ var624 var3478)))
+(assert true)
+(define-const var840 String (append/672562846 var3009 ",")) ; Statement: $r8 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",") 
+(declare-const var3009!1 String)
+(assert (= var3009!1 (str.++ var3009 ",")))
+(define-const var2568 var94 (printer/-1347178147 var3869)) ; Statement: $r6 = r1.<org.apache.commons.lang3.time.FastDateFormat: org.apache.commons.lang3.time.FastDatePrinter printer> 
+(assert true)
+(define-const var1781 var2899 (getLocale/-788858571 var2568)) ; Statement: $r7 = virtualinvoke $r6.<org.apache.commons.lang3.time.FastDatePrinter: java.util.Locale getLocale()>() 
+(assert true)
+(define-const var1272 String (append/-1031950772 var840 (cast-from-var2899-to-var1209 var1781))) ; Statement: $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r7) 
+(declare-const var840!1 String)
+(assert (str.prefixof var840 var840!1))
+(assert true)
+(define-const var684 String (append/672562846 var1272 ",")) ; Statement: $r13 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",") 
+(declare-const var1272!1 String)
+(assert (= var1272!1 (str.++ var1272 ",")))
+(define-const var274 var94 (printer/-1347178147 var3869)) ; Statement: $r10 = r1.<org.apache.commons.lang3.time.FastDateFormat: org.apache.commons.lang3.time.FastDatePrinter printer> 
+(assert true)
+(define-const var638 var145 (getTimeZone/-666450313 var274)) ; Statement: $r11 = virtualinvoke $r10.<org.apache.commons.lang3.time.FastDatePrinter: java.util.TimeZone getTimeZone()>() 
+(assert true)
+(define-const var1199 String (getID/-1323510388 var638)) ; Statement: $r12 = virtualinvoke $r11.<java.util.TimeZone: java.lang.String getID()>() 
+(assert true)
+(define-const var1113 String (append/672562846 var684 var1199)) ; Statement: $r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r12) 
+(declare-const var684!1 String)
+(assert (= var684!1 (str.++ var684 var1199)))
+(assert true)
+(define-const var238 String (append/672562846 var1113 "]")) ; Statement: $r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("]") 
+(declare-const var1113!1 String)
+(assert (= var1113!1 (str.++ var1113 "]")))
+(assert true)
+(define-const var2720 String (toString/-2075883882 var238)) ; Statement: $r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>() 
+ ; Statement: return $r16 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), printer/-1347178147=([org.apache.commons.lang3.time.FastDateFormat], org.apache.commons.lang3.time.FastDatePrinter), getPattern/515694758=([org.apache.commons.lang3.time.FastDatePrinter], java.lang.String), getLocale/-788858571=([org.apache.commons.lang3.time.FastDatePrinter], java.util.Locale), append/-1031950772=([java.lang.StringBuilder, java.lang.Object], java.lang.StringBuilder), cast-from-var2899-to-var1209=([java.util.Locale], java.lang.Object), getTimeZone/-666450313=([org.apache.commons.lang3.time.FastDatePrinter], java.util.TimeZone), getID/-1323510388=([java.util.TimeZone], java.lang.String), toString/-2075883882=([java.lang.StringBuilder], java.lang.String)}
+; {var3842=org.apache.commons.lang3.time.FastDateFormat, var3869=r1, var1728=$r0, var624=$r4, var94=org.apache.commons.lang3.time.FastDatePrinter, var1208=$r2, var3478=$r3, var3009=$r5, var840=$r8, var2568=$r6, var2899=java.util.Locale, var1781=$r7, var1209=java.lang.Object, var1272=$r9, var684=$r13, var274=$r10, var145=java.util.TimeZone, var638=$r11, var1199=$r12, var1113=$r14, var238=$r15, var2720=$r16}
+; {org.apache.commons.lang3.time.FastDateFormat=var3842, r1=var3869, $r0=var1728, $r4=var624, org.apache.commons.lang3.time.FastDatePrinter=var94, $r2=var1208, $r3=var3478, $r5=var3009, $r8=var840, $r6=var2568, java.util.Locale=var2899, $r7=var1781, java.lang.Object=var1209, $r9=var1272, $r13=var684, $r10=var274, java.util.TimeZone=var145, $r11=var638, $r12=var1199, $r14=var1113, $r15=var238, $r16=var2720}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 6,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 1,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r1 := @this: org.apache.commons.lang3.time.FastDateFormat;	$r0 = new java.lang.StringBuilder;	specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();	$r4 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("FastDateFormat[");	$r2 = r1.<org.apache.commons.lang3.time.FastDateFormat: org.apache.commons.lang3.time.FastDatePrinter printer>;	$r3 = virtualinvoke $r2.<org.apache.commons.lang3.time.FastDatePrinter: java.lang.String getPattern()>();	$r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);	$r8 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");	$r6 = r1.<org.apache.commons.lang3.time.FastDateFormat: org.apache.commons.lang3.time.FastDatePrinter printer>;	$r7 = virtualinvoke $r6.<org.apache.commons.lang3.time.FastDatePrinter: java.util.Locale getLocale()>();	$r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r7);	$r13 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",");	$r10 = r1.<org.apache.commons.lang3.time.FastDateFormat: org.apache.commons.lang3.time.FastDatePrinter printer>;	$r11 = virtualinvoke $r10.<org.apache.commons.lang3.time.FastDatePrinter: java.util.TimeZone getTimeZone()>();	$r12 = virtualinvoke $r11.<java.util.TimeZone: java.lang.String getID()>();	$r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r12);	$r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("]");	$r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();	return $r16
+;block_num 1

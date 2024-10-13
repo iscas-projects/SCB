@@ -1,0 +1,91 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var1502 0)
+(declare-sort var1998 0)
+(declare-sort var691 0)
+(declare-sort var3056 0)
+(declare-sort var3424 0)
+(declare-sort var2531 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun getDescriptor/-634664744 (var1998) var691)
+(declare-fun getContainingType/-747419587 (var691) var3056)
+(declare-fun getDescriptorForType/737344896 (var3424) var3056)
+(declare-fun cast-from-var1502-to-var3424 (var1502) var3424)
+(declare-fun var2531-init () var2531)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun getFullName/-1302123061 (var3056) String)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun <init>/875830710 (var2531 String) void)
+(declare-const null-var1502 var1502)
+(declare-const null-var1998 var1998)
+(declare-const var3460 var1502) ; Statement: r2 := @this: com.google.javascript.jscomp.jarjar.com.google.protobuf.GeneratedMessage$ExtendableMessage 
+(assert (not (= var3460 null-var1502)))
+(declare-const var1083 var1998) ; Statement: r0 := @parameter0: com.google.javascript.jscomp.jarjar.com.google.protobuf.Extension 
+(assert (not (= var1083 null-var1998)))
+(assert true)
+(define-const var2556 var691 (getDescriptor/-634664744 var1083)) ; Statement: $r1 = virtualinvoke r0.<com.google.javascript.jscomp.jarjar.com.google.protobuf.Extension: com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$FieldDescriptor getDescriptor()>() 
+(assert true)
+(define-const var921 var3056 (getContainingType/-747419587 var2556)) ; Statement: $r4 = virtualinvoke $r1.<com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$FieldDescriptor: com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$Descriptor getContainingType()>() 
+(assert true)
+(define-const var2994 var3056 (getDescriptorForType/737344896 (cast-from-var1502-to-var3424 var3460))) ; Statement: $r3 = virtualinvoke r2.<com.google.javascript.jscomp.jarjar.com.google.protobuf.GeneratedMessage$ExtendableMessage: com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$Descriptor getDescriptorForType()>() 
+ ; Statement: if $r4 == $r3 goto return 
+(assert (not (= var921 var2994))) ; Negate: Cond: $r4 == $r3  
+(define-const var3614 var2531 var2531-init) ; Statement: $r5 = new java.lang.IllegalArgumentException 
+(define-const var3018 String String-init) ; Statement: $r6 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var3018)) ; Statement: specialinvoke $r6.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var3018!1 String)
+(assert (= var3018!1 ""))
+(assert true)
+(define-const var2740 String (append/672562846 var3018!1 "Extension is for type \u0022")) ; Statement: $r10 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Extension is for type \"") 
+(declare-const var3018!2 String)
+(assert (= var3018!2 (str.++ var3018!1 "Extension is for type \u0022")))
+(assert true)
+(define-const var1440 var691 (getDescriptor/-634664744 var1083)) ; Statement: $r7 = virtualinvoke r0.<com.google.javascript.jscomp.jarjar.com.google.protobuf.Extension: com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$FieldDescriptor getDescriptor()>() 
+(assert true)
+(define-const var2887 var3056 (getContainingType/-747419587 var1440)) ; Statement: $r8 = virtualinvoke $r7.<com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$FieldDescriptor: com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$Descriptor getContainingType()>() 
+(assert true)
+(define-const var768 String (getFullName/-1302123061 var2887)) ; Statement: $r9 = virtualinvoke $r8.<com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$Descriptor: java.lang.String getFullName()>() 
+(assert true)
+(define-const var673 String (append/672562846 var2740 var768)) ; Statement: $r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9) 
+(declare-const var2740!1 String)
+(assert (= var2740!1 (str.++ var2740 var768)))
+(assert true)
+(define-const var3153 String (append/672562846 var673 "\u0022 which does not match message type \u0022")) ; Statement: $r14 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\" which does not match message type \"") 
+(declare-const var673!1 String)
+(assert (= var673!1 (str.++ var673 "\u0022 which does not match message type \u0022")))
+(assert true)
+(define-const var1755 var3056 (getDescriptorForType/737344896 (cast-from-var1502-to-var3424 var3460))) ; Statement: $r12 = virtualinvoke r2.<com.google.javascript.jscomp.jarjar.com.google.protobuf.GeneratedMessage$ExtendableMessage: com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$Descriptor getDescriptorForType()>() 
+(assert true)
+(define-const var365 String (getFullName/-1302123061 var1755)) ; Statement: $r13 = virtualinvoke $r12.<com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$Descriptor: java.lang.String getFullName()>() 
+(assert true)
+(define-const var1822 String (append/672562846 var3153 var365)) ; Statement: $r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r13) 
+(declare-const var3153!1 String)
+(assert (= var3153!1 (str.++ var3153 var365)))
+(assert true)
+(define-const var836 String (append/672562846 var1822 "\u0022.")) ; Statement: $r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\".") 
+(declare-const var1822!1 String)
+(assert (= var1822!1 (str.++ var1822 "\u0022.")))
+(assert true)
+(define-const var3249 String (toString/-2075883882 var836)) ; Statement: $r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.String toString()>() 
+(assert true)
+;(assert (<init>/875830710 var3614 var3249)) ; Statement: specialinvoke $r5.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r17) 
+
+(declare-const var3614!1 var2531)
+(declare-const var3249!1 String)
+ ; Statement: throw $r5 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {getDescriptor/-634664744=([com.google.javascript.jscomp.jarjar.com.google.protobuf.Extension], com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$FieldDescriptor), getContainingType/-747419587=([com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$FieldDescriptor], com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$Descriptor), getDescriptorForType/737344896=([com.google.javascript.jscomp.jarjar.com.google.protobuf.GeneratedMessage], com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$Descriptor), cast-from-var1502-to-var3424=([com.google.javascript.jscomp.jarjar.com.google.protobuf.GeneratedMessage$ExtendableMessage], com.google.javascript.jscomp.jarjar.com.google.protobuf.GeneratedMessage), var2531-init=([], java.lang.IllegalArgumentException), String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), getFullName/-1302123061=([com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$Descriptor], java.lang.String), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), <init>/875830710=([java.lang.IllegalArgumentException, java.lang.String], void)}
+; {var1502=com.google.javascript.jscomp.jarjar.com.google.protobuf.GeneratedMessage$ExtendableMessage, var3460=r2, var1998=com.google.javascript.jscomp.jarjar.com.google.protobuf.Extension, var1083=r0, var691=com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$FieldDescriptor, var2556=$r1, var3056=com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$Descriptor, var921=$r4, var3424=com.google.javascript.jscomp.jarjar.com.google.protobuf.GeneratedMessage, var2994=$r3, var2531=java.lang.IllegalArgumentException, var3614=$r5, var3018=$r6, var2740=$r10, var1440=$r7, var2887=$r8, var768=$r9, var673=$r11, var3153=$r14, var1755=$r12, var365=$r13, var1822=$r15, var836=$r16, var3249=$r17}
+; {com.google.javascript.jscomp.jarjar.com.google.protobuf.GeneratedMessage$ExtendableMessage=var1502, r2=var3460, com.google.javascript.jscomp.jarjar.com.google.protobuf.Extension=var1998, r0=var1083, com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$FieldDescriptor=var691, $r1=var2556, com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$Descriptor=var3056, $r4=var921, com.google.javascript.jscomp.jarjar.com.google.protobuf.GeneratedMessage=var3424, $r3=var2994, java.lang.IllegalArgumentException=var2531, $r5=var3614, $r6=var3018, $r10=var2740, $r7=var1440, $r8=var2887, $r9=var768, $r11=var673, $r14=var3153, $r12=var1755, $r13=var365, $r15=var1822, $r16=var836, $r17=var3249}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 5,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r2 := @this: com.google.javascript.jscomp.jarjar.com.google.protobuf.GeneratedMessage$ExtendableMessage;	r0 := @parameter0: com.google.javascript.jscomp.jarjar.com.google.protobuf.Extension;	$r1 = virtualinvoke r0.<com.google.javascript.jscomp.jarjar.com.google.protobuf.Extension: com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$FieldDescriptor getDescriptor()>();	$r4 = virtualinvoke $r1.<com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$FieldDescriptor: com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$Descriptor getContainingType()>();	$r3 = virtualinvoke r2.<com.google.javascript.jscomp.jarjar.com.google.protobuf.GeneratedMessage$ExtendableMessage: com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$Descriptor getDescriptorForType()>();	if $r4 == $r3 goto return;	$r5 = new java.lang.IllegalArgumentException;	$r6 = new java.lang.StringBuilder;	specialinvoke $r6.<java.lang.StringBuilder: void <init>()>();	$r10 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Extension is for type \"");	$r7 = virtualinvoke r0.<com.google.javascript.jscomp.jarjar.com.google.protobuf.Extension: com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$FieldDescriptor getDescriptor()>();	$r8 = virtualinvoke $r7.<com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$FieldDescriptor: com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$Descriptor getContainingType()>();	$r9 = virtualinvoke $r8.<com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$Descriptor: java.lang.String getFullName()>();	$r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9);	$r14 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\" which does not match message type \"");	$r12 = virtualinvoke r2.<com.google.javascript.jscomp.jarjar.com.google.protobuf.GeneratedMessage$ExtendableMessage: com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$Descriptor getDescriptorForType()>();	$r13 = virtualinvoke $r12.<com.google.javascript.jscomp.jarjar.com.google.protobuf.Descriptors$Descriptor: java.lang.String getFullName()>();	$r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r13);	$r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\".");	$r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.String toString()>();	specialinvoke $r5.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r17);	throw $r5
+;block_num 2

@@ -1,0 +1,83 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var1014 0)
+(declare-sort var1669 0)
+(declare-sort var647 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun getID/1493844442 (var1014) String)
+(declare-fun enabled/1090152259 (var1014) Bool)
+(declare-fun append/-388390247 (String Bool) String)
+(declare-fun resourceNames/1090152259 (var1014) var1669)
+(declare-fun append/-1031950772 (String var647) String)
+(declare-fun cast-from-var1669-to-var647 (var1669) var647)
+(declare-fun files/1090152259 (var1014) var1669)
+(declare-fun append/-1166366385 (String Int) String)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-const null-var1014 var1014)
+(declare-const var2370 var1014) ; Statement: r1 := @this: com.oracle.webservices.internal.api.databinding.ExternalMetadataFeature 
+(assert (not (= var2370 null-var1014)))
+(define-const var14 String String-init) ; Statement: $r0 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var14)) ; Statement: specialinvoke $r0.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var14!1 String)
+(assert (= var14!1 ""))
+(assert true)
+(define-const var1682 String (append/672562846 var14!1 "[")) ; Statement: $r3 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[") 
+(declare-const var14!2 String)
+(assert (= var14!2 (str.++ var14!1 "[")))
+(assert true)
+(define-const var3490 String (getID/1493844442 var2370)) ; Statement: $r2 = virtualinvoke r1.<com.oracle.webservices.internal.api.databinding.ExternalMetadataFeature: java.lang.String getID()>() 
+(assert true)
+(define-const var2642 String (append/672562846 var1682 var3490)) ; Statement: $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2) 
+(declare-const var1682!1 String)
+(assert (= var1682!1 (str.++ var1682 var3490)))
+(assert true)
+(define-const var1244 String (append/672562846 var2642 ", enabled=")) ; Statement: $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", enabled=") 
+(declare-const var2642!1 String)
+(assert (= var2642!1 (str.++ var2642 ", enabled=")))
+(define-const var1439 Bool (enabled/1090152259 var2370)) ; Statement: $z0 = r1.<com.oracle.webservices.internal.api.databinding.ExternalMetadataFeature: boolean enabled> 
+(assert true)
+(define-const var252 String (append/-388390247 var1244 var1439)) ; Statement: $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>($z0) 
+(declare-const var1244!1 String)
+(assert (str.prefixof var1244 var1244!1))
+(assert true)
+(define-const var2260 String (append/672562846 var252 ", resourceNames=")) ; Statement: $r8 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", resourceNames=") 
+(declare-const var252!1 String)
+(assert (= var252!1 (str.++ var252 ", resourceNames=")))
+(define-const var781 var1669 (resourceNames/1090152259 var2370)) ; Statement: $r7 = r1.<com.oracle.webservices.internal.api.databinding.ExternalMetadataFeature: java.util.List resourceNames> 
+(assert true)
+(define-const var167 String (append/-1031950772 var2260 (cast-from-var1669-to-var647 var781))) ; Statement: $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r7) 
+(declare-const var2260!1 String)
+(assert (str.prefixof var2260 var2260!1))
+(assert true)
+(define-const var3050 String (append/672562846 var167 ", files=")) ; Statement: $r11 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", files=") 
+(declare-const var167!1 String)
+(assert (= var167!1 (str.++ var167 ", files=")))
+(define-const var3782 var1669 (files/1090152259 var2370)) ; Statement: $r10 = r1.<com.oracle.webservices.internal.api.databinding.ExternalMetadataFeature: java.util.List files> 
+(assert true)
+(define-const var4 String (append/-1031950772 var3050 (cast-from-var1669-to-var647 var3782))) ; Statement: $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r10) 
+(declare-const var3050!1 String)
+(assert (str.prefixof var3050 var3050!1))
+(assert true)
+(define-const var3616 String (append/-1166366385 var4 93)) ; Statement: $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(93) 
+(declare-const var4!1 String)
+(assert (str.prefixof var4 var4!1))
+(assert true)
+(define-const var2384 String (toString/-2075883882 var3616)) ; Statement: $r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>() 
+ ; Statement: return $r14 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), getID/1493844442=([com.oracle.webservices.internal.api.databinding.ExternalMetadataFeature], java.lang.String), enabled/1090152259=([com.oracle.webservices.internal.api.databinding.ExternalMetadataFeature], boolean), append/-388390247=([java.lang.StringBuilder, boolean], java.lang.StringBuilder), resourceNames/1090152259=([com.oracle.webservices.internal.api.databinding.ExternalMetadataFeature], java.util.List), append/-1031950772=([java.lang.StringBuilder, java.lang.Object], java.lang.StringBuilder), cast-from-var1669-to-var647=([java.util.List], java.lang.Object), files/1090152259=([com.oracle.webservices.internal.api.databinding.ExternalMetadataFeature], java.util.List), append/-1166366385=([java.lang.StringBuilder, char], java.lang.StringBuilder), toString/-2075883882=([java.lang.StringBuilder], java.lang.String)}
+; {var1014=com.oracle.webservices.internal.api.databinding.ExternalMetadataFeature, var2370=r1, var14=$r0, var1682=$r3, var3490=$r2, var2642=$r4, var1244=$r5, var1439=$z0, var252=$r6, var2260=$r8, var1669=java.util.List, var781=$r7, var647=java.lang.Object, var167=$r9, var3050=$r11, var3782=$r10, var4=$r12, var3616=$r13, var2384=$r14}
+; {com.oracle.webservices.internal.api.databinding.ExternalMetadataFeature=var1014, r1=var2370, $r0=var14, $r3=var1682, $r2=var3490, $r4=var2642, $r5=var1244, $z0=var1439, $r6=var252, $r8=var2260, java.util.List=var1669, $r7=var781, java.lang.Object=var647, $r9=var167, $r11=var3050, $r10=var3782, $r12=var4, $r13=var3616, $r14=var2384}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(char)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 5,"<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 2,"<java.lang.StringBuilder: java.lang.StringBuilder append(char)>": 1,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r1 := @this: com.oracle.webservices.internal.api.databinding.ExternalMetadataFeature;	$r0 = new java.lang.StringBuilder;	specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();	$r3 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("[");	$r2 = virtualinvoke r1.<com.oracle.webservices.internal.api.databinding.ExternalMetadataFeature: java.lang.String getID()>();	$r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2);	$r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", enabled=");	$z0 = r1.<com.oracle.webservices.internal.api.databinding.ExternalMetadataFeature: boolean enabled>;	$r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>($z0);	$r8 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", resourceNames=");	$r7 = r1.<com.oracle.webservices.internal.api.databinding.ExternalMetadataFeature: java.util.List resourceNames>;	$r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r7);	$r11 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", files=");	$r10 = r1.<com.oracle.webservices.internal.api.databinding.ExternalMetadataFeature: java.util.List files>;	$r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r10);	$r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(93);	$r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.String toString()>();	return $r14
+;block_num 1

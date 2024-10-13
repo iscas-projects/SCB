@@ -1,0 +1,1221 @@
+[
+    {
+        "filename": "smt\\method-com.efficient.common.util.ExcelUtil__setCell__-1054413154\\88.smt2",
+        "z3": {
+            "memory": 31059968,
+            "run_time": 0.22760677337646484,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  ;; universe for var1401:\r\n  ;;   var1401!val!1 var1401!val!0 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var1401!val!1 () var1401)\r\n  (declare-fun var1401!val!0 () var1401)\r\n  ;; cardinality constraint:\r\n  (forall ((x var1401)) (or (= x var1401!val!1) (= x var1401!val!0)))\r\n  ;; -----------\r\n  ;; universe for var3595:\r\n  ;;   var3595!val!1 var3595!val!0 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var3595!val!1 () var3595)\r\n  (declare-fun var3595!val!0 () var3595)\r\n  ;; cardinality constraint:\r\n  (forall ((x var3595)) (or (= x var3595!val!1) (= x var3595!val!0)))\r\n  ;; -----------\r\n  (define-fun null-var1401 () var1401\r\n    var1401!val!1)\r\n  (define-fun var1145 () var3595\r\n    var3595!val!0)\r\n  (define-fun var2458 () var1401\r\n    var1401!val!0)\r\n  (define-fun var2077 () String\r\n    (String_valueOf/-333372740 var1145))\r\n  (define-fun var986 () Bool\r\n    (var1750_isNull/-1052882743 var1145))\r\n  (define-fun null-var3595 () var3595\r\n    var3595!val!1)\r\n  (define-fun var2077!1 () String\r\n    \"\")\r\n  (define-fun var2458!1 () var1401\r\n    var1401!val!1)\r\n  (define-fun var1750_isNull/-1052882743 ((x!0 var3595)) Bool\r\n    false)\r\n  (define-fun setCellValue/620157681 ((x!0 var1401) (x!1 String)) void\r\n    void!val!0)\r\n  (define-fun String_valueOf/-333372740 ((x!0 var3595)) String\r\n    \"\")\r\n)\r\n(error \"line 32 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 9027584,
+            "run_time": 0.014757156372070312,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var1401 is 2\r\n; rep: (as @var1401_0 var1401)\r\n; rep: (as @var1401_1 var1401)\r\n; cardinality of var3595 is 2\r\n; rep: (as @var3595_0 var3595)\r\n; rep: (as @var3595_1 var3595)\r\n; cardinality of var1750 is 1\r\n; rep: (as @var1750_0 var1750)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun var1750_isNull/-1052882743 ((_arg_1 var3595)) Bool false)\r\n(define-fun String_valueOf/-333372740 ((BOUND_VARIABLE_461 var3595)) String \"\")\r\n(define-fun setCellValue/620157681 ((BOUND_VARIABLE_464 var1401) (BOUND_VARIABLE_465 String)) void (as @void_0 void))\r\n(define-fun null-var1401 () var1401 (as @var1401_0 var1401))\r\n(define-fun null-var3595 () var3595 (as @var3595_0 var3595))\r\n(define-fun var2458 () var1401 (as @var1401_1 var1401))\r\n(define-fun var1145 () var3595 (as @var3595_1 var3595))\r\n(define-fun var2458!1 () var1401 (as @var1401_0 var1401))\r\n(define-fun var2077!1 () String \"\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 36298752,
+            "run_time": 0.09374022483825684,
+            "is_sat": "sat",
+            "stdout": "sat\n(\n  ;; universe for var1401:\n  ;;   var1401!val!1 var1401!val!0 \n  ;; -----------\n  ;; definitions for universe elements:\n  (declare-fun var1401!val!1 () var1401)\n  (declare-fun var1401!val!0 () var1401)\n  ;; cardinality constraint:\n  (forall ((x var1401)) (or (= x var1401!val!1) (= x var1401!val!0)))\n  ;; -----------\n  ;; universe for var3595:\n  ;;   var3595!val!1 var3595!val!0 \n  ;; -----------\n  ;; definitions for universe elements:\n  (declare-fun var3595!val!1 () var3595)\n  (declare-fun var3595!val!0 () var3595)\n  ;; cardinality constraint:\n  (forall ((x var3595)) (or (= x var3595!val!1) (= x var3595!val!0)))\n  ;; -----------\n  (define-fun null-var1401 () var1401\n    var1401!val!1)\n  (define-fun var1145 () var3595\n    var3595!val!0)\n  (define-fun var2077 () String\n    (String_valueOf/-333372740 var1145))\n  (define-fun var986 () Bool\n    (var1750_isNull/-1052882743 var1145))\n  (define-fun var2458 () var1401\n    var1401!val!0)\n  (define-fun null-var3595 () var3595\n    var3595!val!1)\n  (define-fun var2077!1 () String\n    \"\")\n  (define-fun var2458!1 () var1401\n    var1401!val!1)\n  (define-fun var1750_isNull/-1052882743 ((x!0 var3595)) Bool\n    false)\n  (define-fun setCellValue/620157681 ((x!0 var1401) (x!1 String)) void\n    void!val!0)\n  (define-fun String_valueOf/-333372740 ((x!0 var3595)) String\n    \"\")\n)\n(error \"line 32 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 150151168,
+            "run_time": 1.7731287479400635,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(model\r\n  (define-fun var1145 () var3595 var3595!8)\r\n  (define-fun var2458 () var1401 var1401!6)\r\n  (define-fun null-var3595 () var3595 var3595!4)\r\n  (define-fun null-var1401 () var1401 var1401!2)\r\n  (define-fun var1750_isNull/-1052882743 ((x!0 var3595)) Bool (ite (= x!0 var3595!8) false true))\r\n)\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": ""
+        },
+        "undefined_function_count": 3,
+        "assertion_count": 5,
+        "api_sequence": [
+            "<java.lang.String: java.lang.String valueOf(java.lang.Object)>"
+        ],
+        "api_count": {
+            "<java.lang.String: java.lang.String valueOf(java.lang.Object)>": 1
+        },
+        "jimple_statements": [
+            "r1 := @parameter0: org.apache.poi.hssf.usermodel.HSSFCell",
+            "r0 := @parameter1: java.lang.Object",
+            "$z0 = staticinvoke <java.util.Objects: boolean isNull(java.lang.Object)>(r0)",
+            "if $z0 == 0 goto $r2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(r0)",
+            "$r2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(r0)",
+            "virtualinvoke r1.<org.apache.poi.hssf.usermodel.HSSFCell: void setCellValue(java.lang.String)>($r2)",
+            "return"
+        ]
+    },
+    {
+        "filename": "smt\\method-com.efficient.common.util.WordUtil__setRange__1284393697\\195.smt2",
+        "z3": {
+            "memory": 31608832,
+            "run_time": 0.13760805130004883,
+            "is_sat": "unsat",
+            "stdout": "unsat\r\n(error \"line 35 column 10: model is not available\")\r\n()\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 5517312,
+            "run_time": 0.03100419044494629,
+            "is_sat": "unsat",
+            "stdout": "unsat\r\n(error \"Cannot get model unless after a SAT or UNKNOWN response.\")\r\n(\r\n)\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 35241984,
+            "run_time": 0.09374022483825684,
+            "is_sat": "unsat",
+            "stdout": "unsat\n(error \"line 35 column 10: model is not available, did you forget to enable model generation with ''model=true'?\")\n()\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 141996032,
+            "run_time": 1.7874252796173096,
+            "is_sat": "unsat",
+            "stdout": "unsat\r\n(error \"no model available\")\r\n()\r\n",
+            "stderr": ""
+        },
+        "undefined_function_count": 2,
+        "assertion_count": 8,
+        "api_sequence": [
+            "<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>"
+        ],
+        "api_count": {
+            "<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>": 1
+        },
+        "jimple_statements": [
+            "r0 := @parameter0: com.aspose.words.Range",
+            "r1 := @parameter1: java.lang.String",
+            "r3 := @parameter2: java.lang.String",
+            "if r3 == null goto $r4 = \"\"",
+            "$r4 = \"\"",
+            "goto [?= $r2 = virtualinvoke $r4.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>(\"null\", \"\")]",
+            "$r2 = virtualinvoke $r4.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>(\"null\", \"\")",
+            "virtualinvoke r0.<com.aspose.words.Range: int replace(java.lang.String,java.lang.String)>(r1, $r2)",
+            "return"
+        ]
+    },
+    {
+        "filename": "smt\\method-com.efficient.common.util.FileUtil__getRelativePath__537849875\\45.smt2",
+        "z3": {
+            "memory": 31281152,
+            "run_time": 0.1990058422088623,
+            "is_sat": "unsat",
+            "stdout": "unsat\r\n(error \"line 23 column 10: model is not available\")\r\n()\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 8994816,
+            "run_time": 0.03028392791748047,
+            "is_sat": "unsat",
+            "stdout": "unsat\r\n(error \"Cannot get model unless after a SAT or UNKNOWN response.\")\r\n(\r\n)\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 34963456,
+            "run_time": 0.09317493438720703,
+            "is_sat": "unsat",
+            "stdout": "unsat\n(error \"line 23 column 10: model is not available, did you forget to enable model generation with ''model=true'?\")\n()\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 130748416,
+            "run_time": 1.882786750793457,
+            "is_sat": "unsat",
+            "stdout": "unsat\r\n(error \"no model available\")\r\n()\r\n",
+            "stderr": ""
+        },
+        "undefined_function_count": 1,
+        "assertion_count": 4,
+        "api_sequence": [
+            "<java.lang.String: int lastIndexOf(java.lang.String)>"
+        ],
+        "api_count": {
+            "<java.lang.String: int lastIndexOf(java.lang.String)>": 1
+        },
+        "jimple_statements": [
+            "r0 := @parameter0: java.lang.String",
+            "$r1 = <com.efficient.common.util.FileUtil: java.lang.String DOWNLOAD_PATH>",
+            "i1 = virtualinvoke r0.<java.lang.String: int lastIndexOf(java.lang.String)>($r1)",
+            "if i1 >= 0 goto (branch)",
+            "if i1 >= 0 goto $i0 = i1 - 1",
+            "return r0"
+        ]
+    },
+    {
+        "filename": "smt\\method-com.efficient.common.util.AESUtils__getCipher__158395435\\63.smt2",
+        "z3": {
+            "memory": 31518720,
+            "run_time": 0.21619129180908203,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  (define-fun var1955 () var184\r\n    (cast-from-var1426-to-var184 var1186!1))\r\n  (define-fun var2545 () String\r\n    \"!0!\")\r\n  (define-fun var1818 () (Array Int Int)\r\n    (getBytes/-163691139 var2545 var278-UTF_8))\r\n  (define-fun var1997 () var3946\r\n    var278-UTF_8)\r\n  (define-fun var1674 () var2373\r\n    (var2373_getInstance/-503489887 \"AES/ECB/PKCS5Padding\"))\r\n  (define-fun var2557 () Int\r\n    1)\r\n  (define-fun var1186 () var1426\r\n    var1426-init)\r\n  (define-fun null-String () String\r\n    \"!1!\")\r\n  (define-fun null-Int () Int\r\n    0)\r\n  (define-fun var1818!1 () (Array Int Int)\r\n    ((as const (Array Int Int)) 0))\r\n  (define-fun var1955!1 () var184\r\n    var184!val!0)\r\n  (define-fun var1426-init () var1426\r\n    var1426!val!0)\r\n  (define-fun var2557!1 () Int\r\n    0)\r\n  (define-fun var1363 () String\r\n    \"\")\r\n  (define-fun var1674!1 () var2373\r\n    var2373!val!0)\r\n  (define-fun var278-UTF_8 () var3946\r\n    var3946!val!0)\r\n  (define-fun var1186!1 () var1426\r\n    var1426!val!0)\r\n  (define-fun cast-from-var1426-to-var184 ((x!0 var1426)) var184\r\n    var184!val!0)\r\n  (define-fun init/-1276187457 ((x!0 var2373) (x!1 Int) (x!2 var184)) void\r\n    void!val!0)\r\n  (define-fun var2373_getInstance/-503489887 ((x!0 String)) var2373\r\n    var2373!val!0)\r\n  (define-fun getBytes/-163691139 ((x!0 String) (x!1 var3946)) (Array Int Int)\r\n    ((as const (Array Int Int)) 0))\r\n  (define-fun <init>/-1663446212 ((x!0 var1426)\r\n   (x!1 (Array Int Int))\r\n   (x!2 String)) void\r\n    void!val!0)\r\n)\r\n(error \"line 47 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 5722112,
+            "run_time": 0.03100419044494629,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var924 is 1\r\n; rep: (as @var924_0 var924)\r\n; cardinality of var1426 is 1\r\n; rep: (as @var1426_0 var1426)\r\n; cardinality of var3946 is 1\r\n; rep: (as @var3946_0 var3946)\r\n; cardinality of var278 is 1\r\n; rep: (as @var278_0 var278)\r\n; cardinality of var2373 is 1\r\n; rep: (as @var2373_0 var2373)\r\n; cardinality of var184 is 1\r\n; rep: (as @var184_0 var184)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun var1426-init () var1426 (as @var1426_0 var1426))\r\n(define-fun getBytes/-163691139 ((BOUND_VARIABLE_550 String) (BOUND_VARIABLE_551 var3946)) (Array Int Int) ((as const (Array Int Int)) 0))\r\n(define-fun <init>/-1663446212 ((BOUND_VARIABLE_556 var1426) (BOUND_VARIABLE_557 (Array Int Int)) (BOUND_VARIABLE_558 String)) void (as @void_0 void))\r\n(define-fun var2373_getInstance/-503489887 ((BOUND_VARIABLE_561 String)) var2373 (as @var2373_0 var2373))\r\n(define-fun cast-from-var1426-to-var184 ((BOUND_VARIABLE_564 var1426)) var184 (as @var184_0 var184))\r\n(define-fun init/-1276187457 ((BOUND_VARIABLE_567 var2373) (BOUND_VARIABLE_568 Int) (BOUND_VARIABLE_569 var184)) void (as @void_0 void))\r\n(define-fun null-String () String \"A\")\r\n(define-fun null-Int () Int (- 1))\r\n(define-fun var278-UTF_8 () var3946 (as @var3946_0 var3946))\r\n(define-fun var2545 () String \"\")\r\n(define-fun var2557 () Int 0)\r\n(define-fun var1186!1 () var1426 (as @var1426_0 var1426))\r\n(define-fun var1818!1 () (Array Int Int) ((as const (Array Int Int)) 0))\r\n(define-fun var1363 () String \"\")\r\n(define-fun var1674!1 () var2373 (as @var2373_0 var2373))\r\n(define-fun var2557!1 () Int 0)\r\n(define-fun var1955!1 () var184 (as @var184_0 var184))\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 36917248,
+            "run_time": 0.09374022483825684,
+            "is_sat": "sat",
+            "stdout": "sat\n(\n  (define-fun null-Int () Int\n    0)\n  (define-fun var1955 () var184\n    (cast-from-var1426-to-var184 var1186!1))\n  (define-fun var1818 () (Array Int Int)\n    (getBytes/-163691139 var2545 var278-UTF_8))\n  (define-fun var2545 () String\n    \"\\u{0}\\u{0}\")\n  (define-fun var2557 () Int\n    1)\n  (define-fun var1997 () var3946\n    var278-UTF_8)\n  (define-fun null-String () String\n    \"\\u{0}\")\n  (define-fun var1674 () var2373\n    (var2373_getInstance/-503489887 \"AES/ECB/PKCS5Padding\"))\n  (define-fun var1186 () var1426\n    var1426-init)\n  (define-fun var1818!1 () (Array Int Int)\n    ((as const (Array Int Int)) 0))\n  (define-fun var1955!1 () var184\n    var184!val!0)\n  (define-fun var1426-init () var1426\n    var1426!val!0)\n  (define-fun var2557!1 () Int\n    0)\n  (define-fun var1363 () String\n    \"\")\n  (define-fun var1674!1 () var2373\n    var2373!val!0)\n  (define-fun var278-UTF_8 () var3946\n    var3946!val!0)\n  (define-fun var1186!1 () var1426\n    var1426!val!0)\n  (define-fun cast-from-var1426-to-var184 ((x!0 var1426)) var184\n    var184!val!0)\n  (define-fun init/-1276187457 ((x!0 var2373) (x!1 Int) (x!2 var184)) void\n    void!val!0)\n  (define-fun var2373_getInstance/-503489887 ((x!0 String)) var2373\n    var2373!val!0)\n  (define-fun getBytes/-163691139 ((x!0 String) (x!1 var3946)) (Array Int Int)\n    ((as const (Array Int Int)) 0))\n  (define-fun <init>/-1663446212 ((x!0 var1426)\n   (x!1 (Array Int Int))\n   (x!2 String)) void\n    void!val!0)\n)\n(error \"line 47 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 173744128,
+            "run_time": 2.1127169132232666,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(model\r\n  (define-fun var2557 () Int 1)\r\n  (define-fun var2545 () String \"g\")\r\n  (define-fun null-Int () Int 0)\r\n  (define-fun null-String () String \"\")\r\n  (define-fun var2373!60 () var2373 (var2373_getInstance/-503489887 \"AES/ECB/PKCS5Padding\"))\r\n)\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": ""
+        },
+        "undefined_function_count": 6,
+        "assertion_count": 5,
+        "api_sequence": [
+            "<java.lang.String: byte[] getBytes(java.nio.charset.Charset)>"
+        ],
+        "api_count": {
+            "<java.lang.String: byte[] getBytes(java.nio.charset.Charset)>": 1
+        },
+        "jimple_statements": [
+            "r1 := @parameter0: java.lang.String",
+            "i0 := @parameter1: int",
+            "$r5 = new javax.crypto.spec.SecretKeySpec",
+            "$r2 = <java.nio.charset.StandardCharsets: java.nio.charset.Charset UTF_8>",
+            "$r3 = virtualinvoke r1.<java.lang.String: byte[] getBytes(java.nio.charset.Charset)>($r2)",
+            "specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, \"AES\")",
+            "r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(\"AES/ECB/PKCS5Padding\")",
+            "$r6 = (java.security.Key) $r5",
+            "virtualinvoke r4.<javax.crypto.Cipher: void init(int,java.security.Key)>(i0, $r6)",
+            "return r4"
+        ]
+    },
+    {
+        "filename": "smt\\method-com.efficient.common.util.AESUtils__encrypt__585566577\\33.smt2",
+        "z3": {
+            "memory": 31760384,
+            "run_time": 0.227752685546875,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  ;; universe for var3248:\r\n  ;;   var3248!val!0 var3248!val!1 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var3248!val!0 () var3248)\r\n  (declare-fun var3248!val!1 () var3248)\r\n  ;; cardinality constraint:\r\n  (forall ((x var3248)) (or (= x var3248!val!0) (= x var3248!val!1)))\r\n  ;; -----------\r\n  (define-fun var1463 () String\r\n    (str.++ var533!1\r\n        \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\"\r\n        var3504))\r\n  (define-fun var449 () Bool\r\n    (var3755_isBlank/-29875248 var3504))\r\n  (define-fun null-var3248 () var3248\r\n    var3248!val!1)\r\n  (define-fun var3180 () var254\r\n    var254-init)\r\n  (define-fun var827 () var3248\r\n    var3248!val!0)\r\n  (define-fun var533 () String\r\n    String-init)\r\n  (define-fun var3201 () String\r\n    (str.++ var533!1 \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\"))\r\n  (define-fun <init>/1968657023 () String\r\n    \"\")\r\n  (define-fun var257 () String\r\n    (str.++ var533!1\r\n        \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\"\r\n        var3504))\r\n  (define-fun null-String () String\r\n    \"\")\r\n  (define-fun var3504 () String\r\n    \"A\")\r\n  (define-fun var533!2 () String\r\n    \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\")\r\n  (define-fun var533!1 () String\r\n    \"\")\r\n  (define-fun var3201!1 () String\r\n    \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:A\")\r\n  (define-fun var827!1 () var3248\r\n    var3248!val!0)\r\n  (define-fun var3180!1 () var254\r\n    var254!val!0)\r\n  (define-fun var254-init () var254\r\n    var254!val!0)\r\n  (define-fun String-init () String\r\n    \"\")\r\n  (define-fun var1463!1 () String\r\n    \"\")\r\n  (define-fun var3755_isBlank/-29875248 ((x!0 String)) Bool\r\n    true)\r\n  (define-fun cast-from-var3248-to-var862 ((x!0 var3248)) var862\r\n    var862!val!0)\r\n  (define-fun <init>/1642269841 ((x!0 var254) (x!1 String) (x!2 var862)) void\r\n    void!val!0)\r\n)\r\n(error \"line 55 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 5738496,
+            "run_time": 0.03100419044494629,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var1018 is 1\r\n; rep: (as @var1018_0 var1018)\r\n; cardinality of var3755 is 1\r\n; rep: (as @var3755_0 var3755)\r\n; cardinality of var3248 is 2\r\n; rep: (as @var3248_0 var3248)\r\n; rep: (as @var3248_1 var3248)\r\n; cardinality of var254 is 1\r\n; rep: (as @var254_0 var254)\r\n; cardinality of var862 is 1\r\n; rep: (as @var862_0 var862)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun var3755_isBlank/-29875248 ((_arg_1 String)) Bool true)\r\n(define-fun var254-init () var254 (as @var254_0 var254))\r\n(define-fun String-init () String \"\")\r\n(define-fun <init>/1642269841 ((BOUND_VARIABLE_660 var254) (BOUND_VARIABLE_661 String) (BOUND_VARIABLE_662 var862)) void (as @void_0 void))\r\n(define-fun cast-from-var3248-to-var862 ((BOUND_VARIABLE_665 var3248)) var862 (as @var862_0 var862))\r\n(define-fun null-String () String \"A\")\r\n(define-fun null-var3248 () var3248 (as @var3248_0 var3248))\r\n(define-fun var3504 () String \"\")\r\n(define-fun var827 () var3248 (as @var3248_1 var3248))\r\n(define-fun var533!1 () String \"\")\r\n(define-fun var533!2 () String \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\")\r\n(define-fun var3201!1 () String \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\")\r\n(define-fun var3180!1 () var254 (as @var254_0 var254))\r\n(define-fun var1463!1 () String \"\")\r\n(define-fun var827!1 () var3248 (as @var3248_0 var3248))\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 37146624,
+            "run_time": 0.10870170593261719,
+            "is_sat": "sat",
+            "stdout": "sat\n(\n  ;; universe for var3248:\n  ;;   var3248!val!0 var3248!val!1 \n  ;; -----------\n  ;; definitions for universe elements:\n  (declare-fun var3248!val!0 () var3248)\n  (declare-fun var3248!val!1 () var3248)\n  ;; cardinality constraint:\n  (forall ((x var3248)) (or (= x var3248!val!0) (= x var3248!val!1)))\n  ;; -----------\n  (define-fun var3201!1 () String\n    \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\\u{0}\\u{0}\")\n  (define-fun var533!1 () String\n    \"\")\n  (define-fun var533!2 () String\n    \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\")\n  (define-fun var1463 () String\n    (str.++ var533!1\n        \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\"\n        var3504))\n  (define-fun var533 () String\n    String-init)\n  (define-fun var3504 () String\n    \"\\u{0}\\u{0}\")\n  (define-fun var827 () var3248\n    var3248!val!0)\n  (define-fun var449 () Bool\n    (var3755_isBlank/-29875248 var3504))\n  (define-fun <init>/1968657023 () String\n    \"\")\n  (define-fun null-String () String\n    \"\\u{0}\")\n  (define-fun null-var3248 () var3248\n    var3248!val!1)\n  (define-fun var3201 () String\n    (str.++ var533!1 \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\"))\n  (define-fun var257 () String\n    (str.++ var533!1\n        \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\"\n        var3504))\n  (define-fun var3180 () var254\n    var254-init)\n  (define-fun var827!1 () var3248\n    var3248!val!0)\n  (define-fun var3180!1 () var254\n    var254!val!0)\n  (define-fun var254-init () var254\n    var254!val!0)\n  (define-fun String-init () String\n    \"\")\n  (define-fun var1463!1 () String\n    \"\")\n  (define-fun var3755_isBlank/-29875248 ((x!0 String)) Bool\n    true)\n  (define-fun cast-from-var3248-to-var862 ((x!0 var3248)) var862\n    var862!val!0)\n  (define-fun <init>/1642269841 ((x!0 var254) (x!1 String) (x!2 var862)) void\n    void!val!0)\n)\n(error \"line 55 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 165384192,
+            "run_time": 2.2965471744537354,
+            "is_sat": "error",
+            "stdout": "(error \"Internal exception: java.util.NoSuchElementException: key not found: var3248/1\")\r\n(error \"no model available\")\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": "Loading C:\\Users\\yyzha\\Desktop\\jars\\dataset_w\\efficient-boot-common\\smt\\method-com.efficient.common.util.AESUtils__encrypt__585566577\\33.smt2 ...\r\n\r\nLoading OSTRICH 1.3.5, a solver for string constraints\r\n(c) Matthew Hague, Denghang Hu, Philipp Rmmer, 2018-2024\r\nWith contributions by Riccardo De Masellis, Zhilei Han, Oliver Markgraf.\r\nFor more information, see https://github.com/uuverifiers/ostrich\r\n\r\nWarning: assuming -length=on to handle length constraints\r\n\r\nRunning backward propagation\r\n   Considered function applications:\r\n   var3201!1 =\r\n     concat(\"e70c6eRa0\\u{89}e3[c6_02^38:\", var3504)\r\n\r\n1817ms\r\n"
+        },
+        "undefined_function_count": 5,
+        "assertion_count": 11,
+        "api_sequence": [
+            "<java.lang.StringBuilder: void <init>()>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.String toString()>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: void <init>()>": 1,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 2,
+            "<java.lang.StringBuilder: java.lang.String toString()>": 1
+        },
+        "jimple_statements": [
+            "r0 := @parameter0: java.lang.String",
+            "$z0 = staticinvoke <cn.hutool.core.util.StrUtil: boolean isBlank(java.lang.CharSequence)>(r0)",
+            "if $z0 == 0 goto r12 = staticinvoke <com.efficient.common.util.AESUtils: javax.crypto.Cipher getCipher(java.lang.String,int)>(\"http://tanmw.top\", 1)",
+            "$r6 := @caughtexception",
+            "$r7 = new java.lang.RuntimeException",
+            "$r8 = new java.lang.StringBuilder",
+            "specialinvoke $r8.<java.lang.StringBuilder: void <init>()>()",
+            "$r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"\\u6570\\u636e\\u52a0\\u89e3\\u5bc6\\u5f02\\u5e38:\")",
+            "$r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r0)",
+            "$r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.String toString()>()",
+            "specialinvoke $r7.<java.lang.RuntimeException: void <init>(java.lang.String,java.lang.Throwable)>($r11, $r6)",
+            "throw $r7"
+        ]
+    },
+    {
+        "filename": "smt\\method-com.efficient.common.entity.HotWord__toString__1298437269\\278.smt2",
+        "z3": {
+            "memory": 31961088,
+            "run_time": 0.18646740913391113,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  ;; universe for var2637:\r\n  ;;   var2637!val!0 var2637!val!1 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var2637!val!0 () var2637)\r\n  (declare-fun var2637!val!1 () var2637)\r\n  ;; cardinality constraint:\r\n  (forall ((x var2637)) (or (= x var2637!val!0) (= x var2637!val!1)))\r\n  ;; -----------\r\n  (define-fun var759 () String\r\n    (append/-1031950772\r\n  (str.++ var943!1\r\n          \"HotWord(word=\"\r\n          (getWord/-1526606791 var316)\r\n          \", nature=\"\r\n          (getNature/304212988 var316)\r\n          \", count=\")\r\n  (cast-from-Int-to-var2776 (getCount/983766831 var316))))\r\n  (define-fun var2687 () String\r\n    (getNature/304212988 var316))\r\n  (define-fun var899 () Int\r\n    (getCount/983766831 var316))\r\n  (define-fun <init>/1968657023 () String\r\n    \"\")\r\n  (define-fun var1094 () String\r\n    (str.++ var943!1\r\n        \"HotWord(word=\"\r\n        (getWord/-1526606791 var316)\r\n        \", nature=\"\r\n        (getNature/304212988 var316)))\r\n  (define-fun var2357 () String\r\n    (str.++ var943!1 \"HotWord(word=\" (getWord/-1526606791 var316)))\r\n  (define-fun var1977 () String\r\n    (str.++ (append/-1031950772\r\n          (str.++ var943!1\r\n                  \"HotWord(word=\"\r\n                  (getWord/-1526606791 var316)\r\n                  \", nature=\"\r\n                  (getNature/304212988 var316)\r\n                  \", count=\")\r\n          (cast-from-Int-to-var2776 (getCount/983766831 var316)))\r\n        \")\"))\r\n  (define-fun var1089 () String\r\n    (getWord/-1526606791 var316))\r\n  (define-fun var2633 () String\r\n    (str.++ var943!1\r\n        \"HotWord(word=\"\r\n        (getWord/-1526606791 var316)\r\n        \", nature=\"\r\n        (getNature/304212988 var316)\r\n        \", count=\"))\r\n  (define-fun var316 () var2637\r\n    var2637!val!0)\r\n  (define-fun var3605 () String\r\n    (str.++ var943!1 \"HotWord(word=\"))\r\n  (define-fun null-var2637 () var2637\r\n    var2637!val!1)\r\n  (define-fun var943 () String\r\n    String-init)\r\n  (define-fun var3775 () String\r\n    (str.++ (append/-1031950772\r\n          (str.++ var943!1\r\n                  \"HotWord(word=\"\r\n                  (getWord/-1526606791 var316)\r\n                  \", nature=\"\r\n                  (getNature/304212988 var316)\r\n                  \", count=\")\r\n          (cast-from-Int-to-var2776 (getCount/983766831 var316)))\r\n        \")\"))\r\n  (define-fun var2633!1 () String\r\n    \"HotWord(word=, nature=, count=\")\r\n  (define-fun var2496 () String\r\n    (str.++ var943!1 \"HotWord(word=\" (getWord/-1526606791 var316) \", nature=\"))\r\n  (define-fun var759!1 () String\r\n    \")\")\r\n  (define-fun var2496!1 () String\r\n    \"HotWord(word=, nature=\")\r\n  (define-fun var1094!1 () String\r\n    \"HotWord(word=, nature=, count=\")\r\n  (define-fun var2357!1 () String\r\n    \"HotWord(word=, nature=\")\r\n  (define-fun var943!1 () String\r\n    \"\")\r\n  (define-fun var943!2 () String\r\n    \"HotWord(word=\")\r\n  (define-fun var3605!1 () String\r\n    \"HotWord(word=\")\r\n  (define-fun String-init () String\r\n    \"\")\r\n  (define-fun getNature/304212988 ((x!0 var2637)) String\r\n    \"\")\r\n  (define-fun getWord/-1526606791 ((x!0 var2637)) String\r\n    \"\")\r\n  (define-fun getCount/983766831 ((x!0 var2637)) Int\r\n    0)\r\n  (define-fun cast-from-Int-to-var2776 ((x!0 Int)) var2776\r\n    var2776!val!0)\r\n  (define-fun append/-1031950772 ((x!0 String) (x!1 var2776)) String\r\n    \"\")\r\n)\r\n(error \"line 65 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 13369344,
+            "run_time": 0.030482769012451172,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var2637 is 2\r\n; rep: (as @var2637_0 var2637)\r\n; rep: (as @var2637_1 var2637)\r\n; cardinality of var2776 is 1\r\n; rep: (as @var2776_0 var2776)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun String-init () String \"\")\r\n(define-fun getWord/-1526606791 ((_arg_1 var2637)) String \"\")\r\n(define-fun getNature/304212988 ((_arg_1 var2637)) String \"\")\r\n(define-fun getCount/983766831 ((BOUND_VARIABLE_1336 var2637)) Int 0)\r\n(define-fun append/-1031950772 ((BOUND_VARIABLE_1339 String) (BOUND_VARIABLE_1340 var2776)) String \"\")\r\n(define-fun cast-from-Int-to-var2776 ((BOUND_VARIABLE_1343 Int)) var2776 (as @var2776_0 var2776))\r\n(define-fun null-var2637 () var2637 (as @var2637_0 var2637))\r\n(define-fun var316 () var2637 (as @var2637_1 var2637))\r\n(define-fun var943!1 () String \"\")\r\n(define-fun var943!2 () String \"HotWord(word=\")\r\n(define-fun var3605!1 () String \"HotWord(word=\")\r\n(define-fun var2357!1 () String \"HotWord(word=, nature=\")\r\n(define-fun var2496!1 () String \"HotWord(word=, nature=\")\r\n(define-fun var1094!1 () String \"HotWord(word=, nature=, count=\")\r\n(define-fun var2633!1 () String \"HotWord(word=, nature=, count=\")\r\n(define-fun var759!1 () String \")\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 34148352,
+            "run_time": 0.07797527313232422,
+            "is_sat": "unknown",
+            "stdout": "unknown\n(error \"line 64 column 10: model is not available, did you forget to enable model generation with ''model=true'?\")\n(error \"line 65 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 170524672,
+            "run_time": 2.451478958129883,
+            "is_sat": "error",
+            "stdout": "(error \"Internal exception: java.util.NoSuchElementException: key not found: var2637/1\")\r\n(error \"no model available\")\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": "Loading C:\\Users\\yyzha\\Desktop\\jars\\dataset_w\\efficient-boot-common\\smt\\method-com.efficient.common.entity.HotWord__toString__1298437269\\278.smt2 ...\r\n\r\nLoading OSTRICH 1.3.5, a solver for string constraints\r\n(c) Matthew Hague, Denghang Hu, Philipp Rmmer, 2018-2024\r\nWith contributions by Riccardo De Masellis, Zhilei Han, Oliver Markgraf.\r\nFor more information, see https://github.com/uuverifiers/ostrich\r\n\r\nWarning: assuming -length=on to handle length constraints\r\n\r\nRunning backward propagation\r\n   Considered function applications:\r\n   var759!1 =\r\n     concat(all_36_5, \")\")\r\n   all_36_8 =\r\n     concat(all_36_9, \", count=\")\r\n   var2357!1 =\r\n     concat(all_29_4, \", nature=\")\r\n   var1094!1 =\r\n     concat(all_23_3, \", count=\")\r\n   var2496!1 =\r\n     concat(all_17_3, all_17_2)\r\n   var3605!1 =\r\n     concat(\"HotWord(word=\", all_20_3)\r\n   var2633!1 =\r\n     concat(all_26_3, rhs)\r\n   all_26_3 =\r\n     concat(all_26_4, \", count=\")\r\n   all_36_9 =\r\n     concat(all_17_3, all_17_2)\r\n   all_23_3 =\r\n     concat(all_17_3, all_17_2)\r\n   all_29_4 =\r\n     concat(\"HotWord(word=\", all_20_3)\r\n   all_26_4 =\r\n     concat(all_17_3, all_17_2)\r\n   all_17_3 =\r\n     concat(all_32_5, \", nature=\")\r\n   all_32_5 =\r\n     concat(\"HotWord(word=\", all_20_3)\r\n\r\n2050ms\r\n"
+        },
+        "undefined_function_count": 6,
+        "assertion_count": 21,
+        "api_sequence": [
+            "<java.lang.StringBuilder: void <init>()>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.String toString()>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: void <init>()>": 1,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 6,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 1,
+            "<java.lang.StringBuilder: java.lang.String toString()>": 1
+        },
+        "jimple_statements": [
+            "r1 := @this: com.efficient.common.entity.HotWord",
+            "$r0 = new java.lang.StringBuilder",
+            "specialinvoke $r0.<java.lang.StringBuilder: void <init>()>()",
+            "$r3 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"HotWord(word=\")",
+            "$r2 = virtualinvoke r1.<com.efficient.common.entity.HotWord: java.lang.String getWord()>()",
+            "$r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2)",
+            "$r6 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", nature=\")",
+            "$r5 = virtualinvoke r1.<com.efficient.common.entity.HotWord: java.lang.String getNature()>()",
+            "$r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5)",
+            "$r9 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", count=\")",
+            "$r8 = virtualinvoke r1.<com.efficient.common.entity.HotWord: java.lang.Integer getCount()>()",
+            "$r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r8)",
+            "$r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\")\")",
+            "$r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.String toString()>()",
+            "return $r12"
+        ]
+    },
+    {
+        "filename": "smt\\method-com.efficient.common.util.FileUtil__getRelativePath__537849875\\74-deviant-0.smt2",
+        "z3": {
+            "memory": 31256576,
+            "run_time": 0.18298029899597168,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  (define-fun var2073 () String\r\n    var1080-DOWNLOAD_PATH)\r\n  (define-fun var970 () String\r\n    \"A\")\r\n  (define-fun var1080-DOWNLOAD_PATH () String\r\n    \"A\")\r\n  (define-fun var3675 () Int\r\n    (lastIndexOf/-618837785 var970 var1080-DOWNLOAD_PATH))\r\n  (define-fun null-String () String\r\n    \"\")\r\n  (define-fun var505 () Int\r\n    (- (lastIndexOf/-618837785 var970 var1080-DOWNLOAD_PATH) 1))\r\n  (define-fun lastIndexOf/-618837785 ((x!0 String) (x!1 String)) Int\r\n    0)\r\n)\r\n(error \"line 26 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 8994816,
+            "run_time": 0.031282901763916016,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var1410 is 1\r\n; rep: (as @var1410_0 var1410)\r\n; cardinality of var1080 is 1\r\n; rep: (as @var1080_0 var1080)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun lastIndexOf/-618837785 ((_arg_1 String) (_arg_2 String)) Int 0)\r\n(define-fun null-String () String \"A\")\r\n(define-fun var1080-DOWNLOAD_PATH () String \"\")\r\n(define-fun var970 () String \"\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 36651008,
+            "run_time": 0.09217548370361328,
+            "is_sat": "sat",
+            "stdout": "sat\n(\n  (define-fun null-String () String\n    \"\\u{0}\")\n  (define-fun var970 () String\n    \"\\u{0}\\u{0}\")\n  (define-fun var3675 () Int\n    (lastIndexOf/-618837785 var970 var1080-DOWNLOAD_PATH))\n  (define-fun var1080-DOWNLOAD_PATH () String\n    \"\")\n  (define-fun var505 () Int\n    (- (lastIndexOf/-618837785 var970 var1080-DOWNLOAD_PATH) 1))\n  (define-fun var2073 () String\n    var1080-DOWNLOAD_PATH)\n  (define-fun lastIndexOf/-618837785 ((x!0 String) (x!1 String)) Int\n    0)\n)\n(error \"line 26 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 164990976,
+            "run_time": 2.3418068885803223,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(model\r\n  (define-fun var970 () String \"\\u{0}\")\r\n  (define-fun var1080-DOWNLOAD_PATH () String \"\\u{1}\")\r\n  (define-fun null-String () String \"\")\r\n  (define-fun lastIndexOf/-618837785 ((x!0 String) (x!1 String)) Int (ite (and (= x!0 \"\\u{0}\") (= x!1 \"\\u{1}\")) 0 0))\r\n)\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": ""
+        },
+        "undefined_function_count": 1,
+        "assertion_count": 5,
+        "api_sequence": [
+            "<java.lang.String: int lastIndexOf(java.lang.String)>",
+            "<java.lang.String: java.lang.String substring(int)>"
+        ],
+        "api_count": {
+            "<java.lang.String: int lastIndexOf(java.lang.String)>": 1,
+            "<java.lang.String: java.lang.String substring(int)>": 1
+        },
+        "jimple_statements": [
+            "r0 := @parameter0: java.lang.String",
+            "$r1 = <com.efficient.common.util.FileUtil: java.lang.String DOWNLOAD_PATH>",
+            "i1 = virtualinvoke r0.<java.lang.String: int lastIndexOf(java.lang.String)>($r1)",
+            "if i1 >= 0 goto (branch)",
+            "if i1 >= 0 goto $i0 = i1 - 1",
+            "$i0 = i1 - 1",
+            "$r2 = virtualinvoke r0.<java.lang.String: java.lang.String substring(int)>($i0)",
+            "return $r2"
+        ]
+    },
+    {
+        "filename": "smt\\method-com.efficient.common.util.AsposeLicense__getInputStream__109110002\\17.smt2",
+        "z3": {
+            "memory": 31178752,
+            "run_time": 0.2433629035949707,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  (define-fun var778-UTF_8 () var2255\r\n    var2255!val!0)\r\n  (define-fun var443-init () var443\r\n    var443!val!0)\r\n  (define-fun var1199!1 () (Array Int Int)\r\n    ((as const (Array Int Int)) 0))\r\n  (define-fun var2772!1 () var443\r\n    var443!val!0)\r\n  (define-fun var2772 () var443\r\n    var443-init)\r\n  (define-fun var3587 () var2255\r\n    var778-UTF_8)\r\n  (define-fun var153 () String\r\n    \"<?xml version=\"\"1.0\"\" encoding=\"\"UTF-8\"\"?>\\n<License>\\n    <Data>\\n        <Products>\\n            <Product>Aspose.Total for Java</Product>\\n            <Product>Aspose.Words for Java</Product>\\n        </Products>\\n        <EditionType>Enterprise</EditionType>\\n        <SubscriptionExpiry>20991231</SubscriptionExpiry>\\n        <LicenseExpiry>20991231</LicenseExpiry>\\n        <SerialNumber>8bfe198c-7f0c-4ef8-8ff0-acc3237bf0d7</SerialNumber>\\n    </Data>\\n    <Signature>\\n        sNLLKGMUdF0r8O1kKilWAGdgfs2BvJb/2Xp8p5iuDVfZXmhppo+d0Ran1P9TKdjV4ABwAgKXxJ3jcQTqE/2IRfqwnPf8itN8aFZlV3TJPYeD3yWE7IT55Gz6EijUpC7aKeoohTb4w2fpox58wWoF3SNp6sK6jDfiAUGEHYJ9pjU=\\n    </Signature>\\n</License>\\n\")\r\n  (define-fun var1199 () (Array Int Int)\r\n    (getBytes/-163691139\r\n  \"<?xml version=\"\"1.0\"\" encoding=\"\"UTF-8\"\"?>\\n<License>\\n    <Data>\\n        <Products>\\n            <Product>Aspose.Total for Java</Product>\\n            <Product>Aspose.Words for Java</Product>\\n        </Products>\\n        <EditionType>Enterprise</EditionType>\\n        <SubscriptionExpiry>20991231</SubscriptionExpiry>\\n        <LicenseExpiry>20991231</LicenseExpiry>\\n        <SerialNumber>8bfe198c-7f0c-4ef8-8ff0-acc3237bf0d7</SerialNumber>\\n    </Data>\\n    <Signature>\\n        sNLLKGMUdF0r8O1kKilWAGdgfs2BvJb/2Xp8p5iuDVfZXmhppo+d0Ran1P9TKdjV4ABwAgKXxJ3jcQTqE/2IRfqwnPf8itN8aFZlV3TJPYeD3yWE7IT55Gz6EijUpC7aKeoohTb4w2fpox58wWoF3SNp6sK6jDfiAUGEHYJ9pjU=\\n    </Signature>\\n</License>\\n\"\r\n  var778-UTF_8))\r\n  (define-fun getBytes/-163691139 ((x!0 String) (x!1 var2255)) (Array Int Int)\r\n    ((as const (Array Int Int)) 0))\r\n  (define-fun <init>/1208500544 ((x!0 var443) (x!1 (Array Int Int))) void\r\n    void!val!0)\r\n)\r\n(error \"line 27 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 9125888,
+            "run_time": 0.031166553497314453,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var443 is 1\r\n; rep: (as @var443_0 var443)\r\n; cardinality of var2255 is 1\r\n; rep: (as @var2255_0 var2255)\r\n; cardinality of var778 is 1\r\n; rep: (as @var778_0 var778)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun var443-init () var443 (as @var443_0 var443))\r\n(define-fun getBytes/-163691139 ((BOUND_VARIABLE_427 String) (BOUND_VARIABLE_428 var2255)) (Array Int Int) ((as const (Array Int Int)) 0))\r\n(define-fun <init>/1208500544 ((BOUND_VARIABLE_433 var443) (BOUND_VARIABLE_434 (Array Int Int))) void (as @void_0 void))\r\n(define-fun var778-UTF_8 () var2255 (as @var2255_0 var2255))\r\n(define-fun var2772!1 () var443 (as @var443_0 var443))\r\n(define-fun var1199!1 () (Array Int Int) ((as const (Array Int Int)) 0))\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 35221504,
+            "run_time": 0.23195934295654297,
+            "is_sat": "sat",
+            "stdout": "sat\n(\n  (define-fun var778-UTF_8 () var2255\n    var2255!val!0)\n  (define-fun var443-init () var443\n    var443!val!0)\n  (define-fun var1199!1 () (Array Int Int)\n    ((as const (Array Int Int)) 0))\n  (define-fun var2772!1 () var443\n    var443!val!0)\n  (define-fun var2772 () var443\n    var443-init)\n  (define-fun var3587 () var2255\n    var778-UTF_8)\n  (define-fun var153 () String\n    \"<?xml version=\"\"1.0\"\" encoding=\"\"UTF-8\"\"?>\\n<License>\\n    <Data>\\n        <Products>\\n            <Product>Aspose.Total for Java</Product>\\n            <Product>Aspose.Words for Java</Product>\\n        </Products>\\n        <EditionType>Enterprise</EditionType>\\n        <SubscriptionExpiry>20991231</SubscriptionExpiry>\\n        <LicenseExpiry>20991231</LicenseExpiry>\\n        <SerialNumber>8bfe198c-7f0c-4ef8-8ff0-acc3237bf0d7</SerialNumber>\\n    </Data>\\n    <Signature>\\n        sNLLKGMUdF0r8O1kKilWAGdgfs2BvJb/2Xp8p5iuDVfZXmhppo+d0Ran1P9TKdjV4ABwAgKXxJ3jcQTqE/2IRfqwnPf8itN8aFZlV3TJPYeD3yWE7IT55Gz6EijUpC7aKeoohTb4w2fpox58wWoF3SNp6sK6jDfiAUGEHYJ9pjU=\\n    </Signature>\\n</License>\\n\")\n  (define-fun var1199 () (Array Int Int)\n    (getBytes/-163691139\n  \"<?xml version=\"\"1.0\"\" encoding=\"\"UTF-8\"\"?>\\n<License>\\n    <Data>\\n        <Products>\\n            <Product>Aspose.Total for Java</Product>\\n            <Product>Aspose.Words for Java</Product>\\n        </Products>\\n        <EditionType>Enterprise</EditionType>\\n        <SubscriptionExpiry>20991231</SubscriptionExpiry>\\n        <LicenseExpiry>20991231</LicenseExpiry>\\n        <SerialNumber>8bfe198c-7f0c-4ef8-8ff0-acc3237bf0d7</SerialNumber>\\n    </Data>\\n    <Signature>\\n        sNLLKGMUdF0r8O1kKilWAGdgfs2BvJb/2Xp8p5iuDVfZXmhppo+d0Ran1P9TKdjV4ABwAgKXxJ3jcQTqE/2IRfqwnPf8itN8aFZlV3TJPYeD3yWE7IT55Gz6EijUpC7aKeoohTb4w2fpox58wWoF3SNp6sK6jDfiAUGEHYJ9pjU=\\n    </Signature>\\n</License>\\n\"\n  var778-UTF_8))\n  (define-fun getBytes/-163691139 ((x!0 String) (x!1 var2255)) (Array Int Int)\n    ((as const (Array Int Int)) 0))\n  (define-fun <init>/1208500544 ((x!0 var443) (x!1 (Array Int Int))) void\n    void!val!0)\n)\n(error \"line 27 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 164327424,
+            "run_time": 2.2336182594299316,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(model\r\n)\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": ""
+        },
+        "undefined_function_count": 3,
+        "assertion_count": 2,
+        "api_sequence": [
+            "<java.lang.String: byte[] getBytes(java.nio.charset.Charset)>"
+        ],
+        "api_count": {
+            "<java.lang.String: byte[] getBytes(java.nio.charset.Charset)>": 1
+        },
+        "jimple_statements": [
+            "$r0 = new java.io.ByteArrayInputStream",
+            "$r2 = \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n<License>\\n    <Data>\\n        <Products>\\n            <Product>Aspose.Total for Java</Product>\\n            <Product>Aspose.Words for Java</Product>\\n        </Products>\\n        <EditionType>Enterprise</EditionType>\\n        <SubscriptionExpiry>20991231</SubscriptionExpiry>\\n        <LicenseExpiry>20991231</LicenseExpiry>\\n        <SerialNumber>8bfe198c-7f0c-4ef8-8ff0-acc3237bf0d7</SerialNumber>\\n    </Data>\\n    <Signature>\\n        sNLLKGMUdF0r8O1kKilWAGdgfs2BvJb/2Xp8p5iuDVfZXmhppo+d0Ran1P9TKdjV4ABwAgKXxJ3jcQTqE/2IRfqwnPf8itN8aFZlV3TJPYeD3yWE7IT55Gz6EijUpC7aKeoohTb4w2fpox58wWoF3SNp6sK6jDfiAUGEHYJ9pjU=\\n    </Signature>\\n</License>\\n\"",
+            "$r1 = <java.nio.charset.StandardCharsets: java.nio.charset.Charset UTF_8>",
+            "$r3 = virtualinvoke $r2.<java.lang.String: byte[] getBytes(java.nio.charset.Charset)>($r1)",
+            "specialinvoke $r0.<java.io.ByteArrayInputStream: void <init>(byte[])>($r3)",
+            "return $r0"
+        ]
+    },
+    {
+        "filename": "smt\\method-com.efficient.common.util.AESUtils__decrypt__2069561673\\162.smt2",
+        "z3": {
+            "memory": 31481856,
+            "run_time": 0.2787971496582031,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  ;; universe for var2020:\r\n  ;;   var2020!val!1 var2020!val!0 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var2020!val!1 () var2020)\r\n  (declare-fun var2020!val!0 () var2020)\r\n  ;; cardinality constraint:\r\n  (forall ((x var2020)) (or (= x var2020!val!1) (= x var2020!val!0)))\r\n  ;; -----------\r\n  (define-fun var1348 () String\r\n    String-init)\r\n  (define-fun var1639 () String\r\n    (str.++ var1348!1\r\n        \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\"\r\n        var715))\r\n  (define-fun var1124 () var2020\r\n    var2020!val!0)\r\n  (define-fun var1809 () Bool\r\n    (var3120_isBlank/-29875248 var715))\r\n  (define-fun <init>/1968657023 () String\r\n    \"\")\r\n  (define-fun var2022 () String\r\n    (str.++ var1348!1\r\n        \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\"\r\n        var715))\r\n  (define-fun var715 () String\r\n    \"A\")\r\n  (define-fun var3063 () String\r\n    (str.++ var1348!1 \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\"))\r\n  (define-fun null-String () String\r\n    \"\")\r\n  (define-fun null-var2020 () var2020\r\n    var2020!val!1)\r\n  (define-fun var3185 () var2205\r\n    var2205-init)\r\n  (define-fun var3063!1 () String\r\n    \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:A\")\r\n  (define-fun var1348!1 () String\r\n    \"\")\r\n  (define-fun var1348!2 () String\r\n    \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\")\r\n  (define-fun var3185!1 () var2205\r\n    var2205!val!0)\r\n  (define-fun var1124!1 () var2020\r\n    var2020!val!1)\r\n  (define-fun var2205-init () var2205\r\n    var2205!val!0)\r\n  (define-fun String-init () String\r\n    \"\")\r\n  (define-fun var2022!1 () String\r\n    \"\")\r\n  (define-fun var3120_isBlank/-29875248 ((x!0 String)) Bool\r\n    true)\r\n  (define-fun <init>/1642269841 ((x!0 var2205) (x!1 String) (x!2 var817)) void\r\n    void!val!0)\r\n  (define-fun cast-from-var2020-to-var817 ((x!0 var2020)) var817\r\n    var817!val!0)\r\n)\r\n(error \"line 55 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 9015296,
+            "run_time": 0.03028392791748047,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var3113 is 1\r\n; rep: (as @var3113_0 var3113)\r\n; cardinality of var3120 is 1\r\n; rep: (as @var3120_0 var3120)\r\n; cardinality of var2020 is 2\r\n; rep: (as @var2020_0 var2020)\r\n; rep: (as @var2020_1 var2020)\r\n; cardinality of var2205 is 1\r\n; rep: (as @var2205_0 var2205)\r\n; cardinality of var817 is 1\r\n; rep: (as @var817_0 var817)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun var3120_isBlank/-29875248 ((_arg_1 String)) Bool true)\r\n(define-fun var2205-init () var2205 (as @var2205_0 var2205))\r\n(define-fun String-init () String \"\")\r\n(define-fun <init>/1642269841 ((BOUND_VARIABLE_660 var2205) (BOUND_VARIABLE_661 String) (BOUND_VARIABLE_662 var817)) void (as @void_0 void))\r\n(define-fun cast-from-var2020-to-var817 ((BOUND_VARIABLE_665 var2020)) var817 (as @var817_0 var817))\r\n(define-fun null-String () String \"A\")\r\n(define-fun null-var2020 () var2020 (as @var2020_0 var2020))\r\n(define-fun var715 () String \"\")\r\n(define-fun var1124 () var2020 (as @var2020_1 var2020))\r\n(define-fun var1348!1 () String \"\")\r\n(define-fun var1348!2 () String \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\")\r\n(define-fun var3063!1 () String \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\")\r\n(define-fun var3185!1 () var2205 (as @var2205_0 var2205))\r\n(define-fun var2022!1 () String \"\")\r\n(define-fun var1124!1 () var2020 (as @var2020_0 var2020))\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 37167104,
+            "run_time": 0.09317493438720703,
+            "is_sat": "sat",
+            "stdout": "sat\n(\n  ;; universe for var2020:\n  ;;   var2020!val!1 var2020!val!0 \n  ;; -----------\n  ;; definitions for universe elements:\n  (declare-fun var2020!val!1 () var2020)\n  (declare-fun var2020!val!0 () var2020)\n  ;; cardinality constraint:\n  (forall ((x var2020)) (or (= x var2020!val!1) (= x var2020!val!0)))\n  ;; -----------\n  (define-fun var1348!2 () String\n    \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\")\n  (define-fun var1348!1 () String\n    \"\")\n  (define-fun var3063!1 () String\n    \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\\u{0}\\u{0}\")\n  (define-fun var3185 () var2205\n    var2205-init)\n  (define-fun <init>/1968657023 () String\n    \"\")\n  (define-fun null-var2020 () var2020\n    var2020!val!1)\n  (define-fun var3063 () String\n    (str.++ var1348!1 \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\"))\n  (define-fun var1639 () String\n    (str.++ var1348!1\n        \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\"\n        var715))\n  (define-fun var1809 () Bool\n    (var3120_isBlank/-29875248 var715))\n  (define-fun var715 () String\n    \"\\u{0}\\u{0}\")\n  (define-fun null-String () String\n    \"\\u{0}\")\n  (define-fun var1348 () String\n    String-init)\n  (define-fun var1124 () var2020\n    var2020!val!0)\n  (define-fun var2022 () String\n    (str.++ var1348!1\n        \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\"\n        var715))\n  (define-fun var3185!1 () var2205\n    var2205!val!0)\n  (define-fun var1124!1 () var2020\n    var2020!val!1)\n  (define-fun var2205-init () var2205\n    var2205!val!0)\n  (define-fun String-init () String\n    \"\")\n  (define-fun var2022!1 () String\n    \"\")\n  (define-fun var3120_isBlank/-29875248 ((x!0 String)) Bool\n    true)\n  (define-fun <init>/1642269841 ((x!0 var2205) (x!1 String) (x!2 var817)) void\n    void!val!0)\n  (define-fun cast-from-var2020-to-var817 ((x!0 var2020)) var817\n    var817!val!0)\n)\n(error \"line 55 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 174370816,
+            "run_time": 2.387730836868286,
+            "is_sat": "error",
+            "stdout": "(error \"Internal exception: java.util.NoSuchElementException: key not found: var2020/1\")\r\n(error \"no model available\")\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": "Loading C:\\Users\\yyzha\\Desktop\\jars\\dataset_w\\efficient-boot-common\\smt\\method-com.efficient.common.util.AESUtils__decrypt__2069561673\\162.smt2 ...\r\n\r\nLoading OSTRICH 1.3.5, a solver for string constraints\r\n(c) Matthew Hague, Denghang Hu, Philipp Rmmer, 2018-2024\r\nWith contributions by Riccardo De Masellis, Zhilei Han, Oliver Markgraf.\r\nFor more information, see https://github.com/uuverifiers/ostrich\r\n\r\nWarning: assuming -length=on to handle length constraints\r\n\r\nRunning backward propagation\r\n   Considered function applications:\r\n   var3063!1 =\r\n     concat(\"e70c6eRa0\\u{89}e3[c6_02^38:\", var715)\r\n\r\n1916ms\r\n"
+        },
+        "undefined_function_count": 5,
+        "assertion_count": 11,
+        "api_sequence": [
+            "<java.lang.StringBuilder: void <init>()>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.String toString()>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: void <init>()>": 1,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 2,
+            "<java.lang.StringBuilder: java.lang.String toString()>": 1
+        },
+        "jimple_statements": [
+            "r0 := @parameter0: java.lang.String",
+            "$z0 = staticinvoke <cn.hutool.core.util.StrUtil: boolean isBlank(java.lang.CharSequence)>(r0)",
+            "if $z0 == 0 goto r13 = staticinvoke <com.efficient.common.util.AESUtils: javax.crypto.Cipher getCipher(java.lang.String,int)>(\"http://tanmw.top\", 2)",
+            "$r7 := @caughtexception",
+            "$r8 = new java.lang.RuntimeException",
+            "$r9 = new java.lang.StringBuilder",
+            "specialinvoke $r9.<java.lang.StringBuilder: void <init>()>()",
+            "$r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"\\u6570\\u636e\\u52a0\\u89e3\\u5bc6\\u5f02\\u5e38:\")",
+            "$r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r0)",
+            "$r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.String toString()>()",
+            "specialinvoke $r8.<java.lang.RuntimeException: void <init>(java.lang.String,java.lang.Throwable)>($r12, $r7)",
+            "throw $r8"
+        ]
+    },
+    {
+        "filename": "smt\\method-com.efficient.common.util.FileUtil__getRelativePath__537849875\\74.smt2",
+        "z3": {
+            "memory": 31350784,
+            "run_time": 0.12087035179138184,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  (define-fun var2073 () String\r\n    var1080-DOWNLOAD_PATH)\r\n  (define-fun var970 () String\r\n    \"\")\r\n  (define-fun var1080-DOWNLOAD_PATH () String\r\n    \"A\")\r\n  (define-fun var3675 () Int\r\n    (lastIndexOf/-618837785 var970 var1080-DOWNLOAD_PATH))\r\n  (define-fun null-String () String\r\n    \"A\")\r\n  (define-fun var505 () Int\r\n    (- (lastIndexOf/-618837785 var970 var1080-DOWNLOAD_PATH) 1))\r\n  (define-fun var3438 () String\r\n    (str.substr var970\r\n            (- (lastIndexOf/-618837785 var970 var1080-DOWNLOAD_PATH) 1)\r\n            (- (str.len var970)\r\n               (- (lastIndexOf/-618837785 var970 var1080-DOWNLOAD_PATH) 1))))\r\n  (define-fun lastIndexOf/-618837785 ((x!0 String) (x!1 String)) Int\r\n    1)\r\n)\r\n(error \"line 28 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 1720320,
+            "run_time": 0.061112165451049805,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var1410 is 1\r\n; rep: (as @var1410_0 var1410)\r\n; cardinality of var1080 is 1\r\n; rep: (as @var1080_0 var1080)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun lastIndexOf/-618837785 ((_arg_1 String) (_arg_2 String)) Int 1)\r\n(define-fun null-String () String \"A\")\r\n(define-fun var1080-DOWNLOAD_PATH () String \"\")\r\n(define-fun var970 () String \"\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 36921344,
+            "run_time": 0.1234588623046875,
+            "is_sat": "sat",
+            "stdout": "sat\n(\n  (define-fun null-String () String\n    \"\\u{0}\")\n  (define-fun var1080-DOWNLOAD_PATH () String\n    \"\")\n  (define-fun var3675 () Int\n    (lastIndexOf/-618837785 var970 var1080-DOWNLOAD_PATH))\n  (define-fun var505 () Int\n    (- (lastIndexOf/-618837785 var970 var1080-DOWNLOAD_PATH) 1))\n  (define-fun var970 () String\n    \"\\u{0}\\u{0}\")\n  (define-fun var2073 () String\n    var1080-DOWNLOAD_PATH)\n  (define-fun var3438 () String\n    (str.substr var970\n            (- (lastIndexOf/-618837785 var970 var1080-DOWNLOAD_PATH) 1)\n            (- (str.len var970)\n               (- (lastIndexOf/-618837785 var970 var1080-DOWNLOAD_PATH) 1))))\n  (define-fun lastIndexOf/-618837785 ((x!0 String) (x!1 String)) Int\n    1)\n)\n(error \"line 28 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 175079424,
+            "run_time": 2.4037892818450928,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(model\r\n  (define-fun var970 () String \"\")\r\n  (define-fun var1080-DOWNLOAD_PATH () String \"\\u{0}\")\r\n  (define-fun null-String () String \"\\u{1}\")\r\n  (define-fun lastIndexOf/-618837785 ((x!0 String) (x!1 String)) Int (ite (and (= x!0 \"\") (= x!1 \"\\u{0}\")) 1 0))\r\n)\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": ""
+        },
+        "undefined_function_count": 1,
+        "assertion_count": 5,
+        "api_sequence": [
+            "<java.lang.String: int lastIndexOf(java.lang.String)>",
+            "<java.lang.String: java.lang.String substring(int)>"
+        ],
+        "api_count": {
+            "<java.lang.String: int lastIndexOf(java.lang.String)>": 1,
+            "<java.lang.String: java.lang.String substring(int)>": 1
+        },
+        "jimple_statements": [
+            "r0 := @parameter0: java.lang.String",
+            "$r1 = <com.efficient.common.util.FileUtil: java.lang.String DOWNLOAD_PATH>",
+            "i1 = virtualinvoke r0.<java.lang.String: int lastIndexOf(java.lang.String)>($r1)",
+            "if i1 >= 0 goto (branch)",
+            "if i1 >= 0 goto $i0 = i1 - 1",
+            "$i0 = i1 - 1",
+            "$r2 = virtualinvoke r0.<java.lang.String: java.lang.String substring(int)>($i0)",
+            "return $r2"
+        ]
+    },
+    {
+        "filename": "smt\\method-com.efficient.common.util.AESUtils__decrypt__365537449\\116.smt2",
+        "z3": {
+            "memory": 30908416,
+            "run_time": 0.24300074577331543,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  ;; universe for var358:\r\n  ;;   var358!val!0 var358!val!1 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var358!val!0 () var358)\r\n  (declare-fun var358!val!1 () var358)\r\n  ;; cardinality constraint:\r\n  (forall ((x var358)) (or (= x var358!val!0) (= x var358!val!1)))\r\n  ;; -----------\r\n  (define-fun var908 () var3402\r\n    var3402-init)\r\n  (define-fun var2658 () String\r\n    (str.++ var1669!1 \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\"))\r\n  (define-fun var949 () String\r\n    (str.++ var1669!1\r\n        \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\"\r\n        var2837!1))\r\n  (define-fun var767 () var358\r\n    var358!val!0)\r\n  (define-fun var1435 () String\r\n    (str.++ var1669!1\r\n        \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\"\r\n        var2837!1))\r\n  (define-fun <init>/1968657023 () String\r\n    \"\")\r\n  (define-fun null-__Array__Int__Int__ () (Array Int Int)\r\n    (store ((as const (Array Int Int)) 0) 0 1))\r\n  (define-fun var3521 () Bool\r\n    (var232_isEmpty/1611114494 var388))\r\n  (define-fun var388 () (Array Int Int)\r\n    ((as const (Array Int Int)) 0))\r\n  (define-fun var1669 () String\r\n    String-init)\r\n  (define-fun null-var358 () var358\r\n    var358!val!1)\r\n  (define-fun var2837 () String\r\n    String-init)\r\n  (define-fun var2837!1 () String\r\n    \"\")\r\n  (define-fun var2658!1 () String\r\n    \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\")\r\n  (define-fun var1669!2 () String\r\n    \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\")\r\n  (define-fun var1669!1 () String\r\n    \"\")\r\n  (define-fun var388!1 () (Array Int Int)\r\n    ((as const (Array Int Int)) 0))\r\n  (define-fun var1435!1 () String\r\n    \"\")\r\n  (define-fun var3402-init () var3402\r\n    var3402!val!0)\r\n  (define-fun String-init () String\r\n    \"\")\r\n  (define-fun var908!1 () var3402\r\n    var3402!val!0)\r\n  (define-fun var767!1 () var358\r\n    var358!val!0)\r\n  (define-fun var232_isEmpty/1611114494 ((x!0 (Array Int Int))) Bool\r\n    true)\r\n  (define-fun cast-from-var358-to-var1805 ((x!0 var358)) var1805\r\n    var1805!val!0)\r\n  (define-fun <init>/76075152 ((x!0 String) (x!1 (Array Int Int))) void\r\n    void!val!0)\r\n  (define-fun <init>/1642269841 ((x!0 var3402) (x!1 String) (x!2 var1805)) void\r\n    void!val!0)\r\n)\r\n(error \"line 60 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 8994816,
+            "run_time": 0.03028392791748047,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var232 is 1\r\n; rep: (as @var232_0 var232)\r\n; cardinality of var358 is 2\r\n; rep: (as @var358_0 var358)\r\n; rep: (as @var358_1 var358)\r\n; cardinality of var3402 is 1\r\n; rep: (as @var3402_0 var3402)\r\n; cardinality of var1805 is 1\r\n; rep: (as @var1805_0 var1805)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun var232_isEmpty/1611114494 ((_arg_1 (Array Int Int))) Bool true)\r\n(define-fun var3402-init () var3402 (as @var3402_0 var3402))\r\n(define-fun String-init () String \"\")\r\n(define-fun <init>/76075152 ((BOUND_VARIABLE_613 String) (BOUND_VARIABLE_614 (Array Int Int))) void (as @void_0 void))\r\n(define-fun <init>/1642269841 ((BOUND_VARIABLE_617 var3402) (BOUND_VARIABLE_618 String) (BOUND_VARIABLE_619 var1805)) void (as @void_0 void))\r\n(define-fun cast-from-var358-to-var1805 ((BOUND_VARIABLE_622 var358)) var1805 (as @var1805_0 var1805))\r\n(define-fun null-__Array__Int__Int__ () (Array Int Int) (store ((as const (Array Int Int)) 1) 0 (- 1)))\r\n(define-fun null-var358 () var358 (as @var358_0 var358))\r\n(define-fun var388 () (Array Int Int) ((as const (Array Int Int)) 0))\r\n(define-fun var767 () var358 (as @var358_1 var358))\r\n(define-fun var1669!1 () String \"\")\r\n(define-fun var1669!2 () String \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\")\r\n(define-fun var2837!1 () String \"\")\r\n(define-fun var388!1 () (Array Int Int) ((as const (Array Int Int)) 0))\r\n(define-fun var2658!1 () String \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\")\r\n(define-fun var908!1 () var3402 (as @var3402_0 var3402))\r\n(define-fun var1435!1 () String \"\")\r\n(define-fun var767!1 () var358 (as @var358_0 var358))\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 34971648,
+            "run_time": 0.09317493438720703,
+            "is_sat": "sat",
+            "stdout": "sat\n(\n  ;; universe for var358:\n  ;;   var358!val!0 var358!val!1 \n  ;; -----------\n  ;; definitions for universe elements:\n  (declare-fun var358!val!0 () var358)\n  (declare-fun var358!val!1 () var358)\n  ;; cardinality constraint:\n  (forall ((x var358)) (or (= x var358!val!0) (= x var358!val!1)))\n  ;; -----------\n  (define-fun var3521 () Bool\n    (var232_isEmpty/1611114494 var388))\n  (define-fun var949 () String\n    (str.++ var1669!1\n        \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\"\n        var2837!1))\n  (define-fun var1435 () String\n    (str.++ var1669!1\n        \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\"\n        var2837!1))\n  (define-fun var908 () var3402\n    var3402-init)\n  (define-fun <init>/1968657023 () String\n    \"\")\n  (define-fun var767 () var358\n    var358!val!0)\n  (define-fun var1669 () String\n    String-init)\n  (define-fun null-__Array__Int__Int__ () (Array Int Int)\n    (store ((as const (Array Int Int)) 0) 0 1))\n  (define-fun var2837 () String\n    String-init)\n  (define-fun var2658 () String\n    (str.++ var1669!1 \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\"))\n  (define-fun null-var358 () var358\n    var358!val!1)\n  (define-fun var388 () (Array Int Int)\n    ((as const (Array Int Int)) 0))\n  (define-fun var2837!1 () String\n    \"\")\n  (define-fun var2658!1 () String\n    \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\")\n  (define-fun var1669!2 () String\n    \"\\u{6570}\\u{636e}\\u{52a0}\\u{89e3}\\u{5bc6}\\u{5f02}\\u{5e38}:\")\n  (define-fun var1669!1 () String\n    \"\")\n  (define-fun var388!1 () (Array Int Int)\n    ((as const (Array Int Int)) 0))\n  (define-fun var1435!1 () String\n    \"\")\n  (define-fun var3402-init () var3402\n    var3402!val!0)\n  (define-fun String-init () String\n    \"\")\n  (define-fun var908!1 () var3402\n    var3402!val!0)\n  (define-fun var767!1 () var358\n    var358!val!0)\n  (define-fun var232_isEmpty/1611114494 ((x!0 (Array Int Int))) Bool\n    true)\n  (define-fun cast-from-var358-to-var1805 ((x!0 var358)) var1805\n    var1805!val!0)\n  (define-fun <init>/76075152 ((x!0 String) (x!1 (Array Int Int))) void\n    void!val!0)\n  (define-fun <init>/1642269841 ((x!0 var3402) (x!1 String) (x!2 var1805)) void\n    void!val!0)\n)\n(error \"line 60 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 163696640,
+            "run_time": 2.4036264419555664,
+            "is_sat": "error",
+            "stdout": "(error \"Internal exception: java.util.NoSuchElementException: key not found: var358/1\")\r\n(error \"no model available\")\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": "Loading C:\\Users\\yyzha\\Desktop\\jars\\dataset_w\\efficient-boot-common\\smt\\method-com.efficient.common.util.AESUtils__decrypt__365537449\\116.smt2 ...\r\n\r\nLoading OSTRICH 1.3.5, a solver for string constraints\r\n(c) Matthew Hague, Denghang Hu, Philipp Rmmer, 2018-2024\r\nWith contributions by Riccardo De Masellis, Zhilei Han, Oliver Markgraf.\r\nFor more information, see https://github.com/uuverifiers/ostrich\r\n\r\nWarning: assuming -length=on to handle length constraints\r\n\r\nRunning backward propagation\r\n   Considered function applications:\r\n   var2658!1 =\r\n     concat(\"e70c6eRa0\\u{89}e3[c6_02^38:\", var2837!1)\r\n\r\n1947ms\r\n"
+        },
+        "undefined_function_count": 6,
+        "assertion_count": 12,
+        "api_sequence": [
+            "<java.lang.StringBuilder: void <init>()>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.String: void <init>(byte[])>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.String toString()>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: void <init>()>": 1,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 2,
+            "<java.lang.String: void <init>(byte[])>": 1,
+            "<java.lang.StringBuilder: java.lang.String toString()>": 1
+        },
+        "jimple_statements": [
+            "r0 := @parameter0: byte[]",
+            "$z0 = staticinvoke <cn.hutool.core.util.ArrayUtil: boolean isEmpty(byte[])>(r0)",
+            "if $z0 == 0 goto r11 = staticinvoke <com.efficient.common.util.AESUtils: javax.crypto.Cipher getCipher(java.lang.String,int)>(\"http://tanmw.top\", 2)",
+            "$r4 := @caughtexception",
+            "$r5 = new java.lang.RuntimeException",
+            "$r6 = new java.lang.StringBuilder",
+            "specialinvoke $r6.<java.lang.StringBuilder: void <init>()>()",
+            "$r8 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"\\u6570\\u636e\\u52a0\\u89e3\\u5bc6\\u5f02\\u5e38:\")",
+            "$r7 = new java.lang.String",
+            "specialinvoke $r7.<java.lang.String: void <init>(byte[])>(r0)",
+            "$r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7)",
+            "$r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>()",
+            "specialinvoke $r5.<java.lang.RuntimeException: void <init>(java.lang.String,java.lang.Throwable)>($r10, $r4)",
+            "throw $r5"
+        ]
+    },
+    {
+        "filename": "smt\\method-com.efficient.common.util.ThreadUtil__lambda$static$0__-89304257\\146.smt2",
+        "z3": {
+            "memory": 31907840,
+            "run_time": 0.15285611152648926,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  ;; universe for var3484:\r\n  ;;   var3484!val!0 var3484!val!1 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var3484!val!0 () var3484)\r\n  (declare-fun var3484!val!1 () var3484)\r\n  ;; cardinality constraint:\r\n  (forall ((x var3484)) (or (= x var3484!val!0) (= x var3484!val!1)))\r\n  ;; -----------\r\n  ;; universe for var3700:\r\n  ;;   var3700!val!0 var3700!val!1 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var3700!val!0 () var3700)\r\n  (declare-fun var3700!val!1 () var3700)\r\n  ;; cardinality constraint:\r\n  (forall ((x var3700)) (or (= x var3700!val!0) (= x var3700!val!1)))\r\n  ;; -----------\r\n  (define-fun null-var3484 () var3484\r\n    var3484!val!1)\r\n  (define-fun var685 () var2910\r\n    var2863-LOGGER)\r\n  (define-fun var3630 () String\r\n    String-init)\r\n  (define-fun var1503 () var878\r\n    var878-init)\r\n  (define-fun var2436 () var3484\r\n    var3484!val!0)\r\n  (define-fun null-var3700 () var3700\r\n    var3700!val!1)\r\n  (define-fun var1100 () String\r\n    (append/-1031950772\r\n  (str.++ var3630!1 \"\\u{4efb}\\u{52a1}\\u{5904}\\u{7406}\\u{5f02}\\u{5e38}!\")\r\n  (cast-from-var878-to-var355 var1503!2)))\r\n  (define-fun var97 () String\r\n    (str.++ var3630!1 \"\\u{4efb}\\u{52a1}\\u{5904}\\u{7406}\\u{5f02}\\u{5e38}!\"))\r\n  (define-fun var97!1 () String\r\n    \"\\u{4efb}\\u{52a1}\\u{5904}\\u{7406}\\u{5f02}\\u{5e38}!\")\r\n  (define-fun <init>/1968657023 () String\r\n    \"\")\r\n  (define-fun var299 () String\r\n    (append/-1031950772\r\n  (str.++ var3630!1 \"\\u{4efb}\\u{52a1}\\u{5904}\\u{7406}\\u{5f02}\\u{5e38}!\")\r\n  (cast-from-var878-to-var355 var1503!2)))\r\n  (define-fun var1776 () var3700\r\n    var3700!val!0)\r\n  (define-fun var2764 () var1711\r\n    var1711-init)\r\n  (define-fun var3630!1 () String\r\n    \"\")\r\n  (define-fun var3630!2 () String\r\n    \"\\u{4efb}\\u{52a1}\\u{5904}\\u{7406}\\u{5f02}\\u{5e38}!\")\r\n  (define-fun var2764!2 () var1711\r\n    var1711!val!0)\r\n  (define-fun var1776!1 () var3700\r\n    var3700!val!0)\r\n  (define-fun var1711-init () var1711\r\n    var1711!val!0)\r\n  (define-fun var299!1 () String\r\n    \"\")\r\n  (define-fun var2863-LOGGER () var2910\r\n    var2910!val!0)\r\n  (define-fun var685!1 () var2910\r\n    var2910!val!0)\r\n  (define-fun var2764!1 () var1711\r\n    var1711!val!0)\r\n  (define-fun String-init () String\r\n    \"\")\r\n  (define-fun var1503!1 () var878\r\n    var878!val!0)\r\n  (define-fun var1503!2 () var878\r\n    var878!val!0)\r\n  (define-fun var878-init () var878\r\n    var878!val!0)\r\n  (define-fun append/-1031950772 ((x!0 String) (x!1 var355)) String\r\n    \"\")\r\n  (define-fun info/114590825 ((x!0 var2910) (x!1 String)) void\r\n    void!val!0)\r\n  (define-fun <init>/358169345 ((x!0 var878)) void\r\n    void!val!0)\r\n  (define-fun printStackTrace/652371045 ((x!0 var3700) (x!1 var1711)) void\r\n    void!val!0)\r\n  (define-fun <init>/-1864438596 ((x!0 var1711) (x!1 var2961)) void\r\n    void!val!0)\r\n  (define-fun cast-from-var878-to-var2961 ((x!0 var878)) var2961\r\n    var2961!val!0)\r\n  (define-fun cast-from-var878-to-var355 ((x!0 var878)) var355\r\n    var355!val!0)\r\n)\r\n(error \"line 75 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 8994816,
+            "run_time": 0.03028392791748047,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var3484 is 2\r\n; rep: (as @var3484_0 var3484)\r\n; rep: (as @var3484_1 var3484)\r\n; cardinality of var3700 is 2\r\n; rep: (as @var3700_0 var3700)\r\n; rep: (as @var3700_1 var3700)\r\n; cardinality of var878 is 1\r\n; rep: (as @var878_0 var878)\r\n; cardinality of var1711 is 1\r\n; rep: (as @var1711_0 var1711)\r\n; cardinality of var2961 is 1\r\n; rep: (as @var2961_0 var2961)\r\n; cardinality of var2910 is 1\r\n; rep: (as @var2910_0 var2910)\r\n; cardinality of var2863 is 1\r\n; rep: (as @var2863_0 var2863)\r\n; cardinality of var355 is 1\r\n; rep: (as @var355_0 var355)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun var878-init () var878 (as @var878_0 var878))\r\n(define-fun <init>/358169345 ((BOUND_VARIABLE_932 var878)) void (as @void_0 void))\r\n(define-fun var1711-init () var1711 (as @var1711_0 var1711))\r\n(define-fun <init>/-1864438596 ((BOUND_VARIABLE_935 var1711) (BOUND_VARIABLE_936 var2961)) void (as @void_0 void))\r\n(define-fun cast-from-var878-to-var2961 ((BOUND_VARIABLE_939 var878)) var2961 (as @var2961_0 var2961))\r\n(define-fun printStackTrace/652371045 ((BOUND_VARIABLE_942 var3700) (BOUND_VARIABLE_943 var1711)) void (as @void_0 void))\r\n(define-fun String-init () String \"\")\r\n(define-fun append/-1031950772 ((BOUND_VARIABLE_946 String) (BOUND_VARIABLE_947 var355)) String \"\")\r\n(define-fun cast-from-var878-to-var355 ((BOUND_VARIABLE_950 var878)) var355 (as @var355_0 var355))\r\n(define-fun info/114590825 ((BOUND_VARIABLE_953 var2910) (BOUND_VARIABLE_954 String)) void (as @void_0 void))\r\n(define-fun null-var3484 () var3484 (as @var3484_0 var3484))\r\n(define-fun null-var3700 () var3700 (as @var3700_0 var3700))\r\n(define-fun var2863-LOGGER () var2910 (as @var2910_0 var2910))\r\n(define-fun var2436 () var3484 (as @var3484_1 var3484))\r\n(define-fun var1776 () var3700 (as @var3700_1 var3700))\r\n(define-fun var1503!1 () var878 (as @var878_0 var878))\r\n(define-fun var2764!1 () var1711 (as @var1711_0 var1711))\r\n(define-fun var1503!2 () var878 (as @var878_0 var878))\r\n(define-fun var1776!1 () var3700 (as @var3700_0 var3700))\r\n(define-fun var2764!2 () var1711 (as @var1711_0 var1711))\r\n(define-fun var3630!1 () String \"\")\r\n(define-fun var3630!2 () String \"\\u{4efb}\\u{52a1}\\u{5904}\\u{7406}\\u{5f02}\\u{5e38}!\")\r\n(define-fun var97!1 () String \"\\u{4efb}\\u{52a1}\\u{5904}\\u{7406}\\u{5f02}\\u{5e38}!\")\r\n(define-fun var685!1 () var2910 (as @var2910_0 var2910))\r\n(define-fun var299!1 () String \"\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 36139008,
+            "run_time": 0.10785102844238281,
+            "is_sat": "sat",
+            "stdout": "sat\n(\n  ;; universe for var3484:\n  ;;   var3484!val!0 var3484!val!1 \n  ;; -----------\n  ;; definitions for universe elements:\n  (declare-fun var3484!val!0 () var3484)\n  (declare-fun var3484!val!1 () var3484)\n  ;; cardinality constraint:\n  (forall ((x var3484)) (or (= x var3484!val!0) (= x var3484!val!1)))\n  ;; -----------\n  ;; universe for var3700:\n  ;;   var3700!val!0 var3700!val!1 \n  ;; -----------\n  ;; definitions for universe elements:\n  (declare-fun var3700!val!0 () var3700)\n  (declare-fun var3700!val!1 () var3700)\n  ;; cardinality constraint:\n  (forall ((x var3700)) (or (= x var3700!val!0) (= x var3700!val!1)))\n  ;; -----------\n  (define-fun var3630 () String\n    String-init)\n  (define-fun var97 () String\n    (str.++ var3630!1 \"\\u{4efb}\\u{52a1}\\u{5904}\\u{7406}\\u{5f02}\\u{5e38}!\"))\n  (define-fun <init>/1968657023 () String\n    \"\")\n  (define-fun var2436 () var3484\n    var3484!val!0)\n  (define-fun var299 () String\n    (append/-1031950772\n  (str.++ var3630!1 \"\\u{4efb}\\u{52a1}\\u{5904}\\u{7406}\\u{5f02}\\u{5e38}!\")\n  (cast-from-var878-to-var355 var1503!2)))\n  (define-fun var1776 () var3700\n    var3700!val!0)\n  (define-fun null-var3484 () var3484\n    var3484!val!1)\n  (define-fun var97!1 () String\n    \"\\u{4efb}\\u{52a1}\\u{5904}\\u{7406}\\u{5f02}\\u{5e38}!\")\n  (define-fun var2764 () var1711\n    var1711-init)\n  (define-fun var3630!2 () String\n    \"\\u{4efb}\\u{52a1}\\u{5904}\\u{7406}\\u{5f02}\\u{5e38}!\")\n  (define-fun null-var3700 () var3700\n    var3700!val!1)\n  (define-fun var685 () var2910\n    var2863-LOGGER)\n  (define-fun var1503 () var878\n    var878-init)\n  (define-fun var1100 () String\n    (append/-1031950772\n  (str.++ var3630!1 \"\\u{4efb}\\u{52a1}\\u{5904}\\u{7406}\\u{5f02}\\u{5e38}!\")\n  (cast-from-var878-to-var355 var1503!2)))\n  (define-fun var3630!1 () String\n    \"\")\n  (define-fun var2764!2 () var1711\n    var1711!val!0)\n  (define-fun var1776!1 () var3700\n    var3700!val!0)\n  (define-fun var1711-init () var1711\n    var1711!val!0)\n  (define-fun var299!1 () String\n    \"\")\n  (define-fun var2863-LOGGER () var2910\n    var2910!val!0)\n  (define-fun var685!1 () var2910\n    var2910!val!0)\n  (define-fun var2764!1 () var1711\n    var1711!val!0)\n  (define-fun String-init () String\n    \"\")\n  (define-fun var1503!1 () var878\n    var878!val!0)\n  (define-fun var1503!2 () var878\n    var878!val!0)\n  (define-fun var878-init () var878\n    var878!val!0)\n  (define-fun append/-1031950772 ((x!0 String) (x!1 var355)) String\n    \"\")\n  (define-fun info/114590825 ((x!0 var2910) (x!1 String)) void\n    void!val!0)\n  (define-fun <init>/358169345 ((x!0 var878)) void\n    void!val!0)\n  (define-fun printStackTrace/652371045 ((x!0 var3700) (x!1 var1711)) void\n    void!val!0)\n  (define-fun <init>/-1864438596 ((x!0 var1711) (x!1 var2961)) void\n    void!val!0)\n  (define-fun cast-from-var878-to-var2961 ((x!0 var878)) var2961\n    var2961!val!0)\n  (define-fun cast-from-var878-to-var355 ((x!0 var878)) var355\n    var355!val!0)\n)\n(error \"line 75 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 181448704,
+            "run_time": 2.4207262992858887,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(model\r\n  (define-fun var97!1 () String \"NfbRa1Y04t06_02^38!\")\r\n  (define-fun var3630!2 () String \"NfbRa1Y04t06_02^38!\")\r\n  (define-fun var3630!1 () String \"\")\r\n  (define-fun var1503!2 () var878 var878!48)\r\n  (define-fun var1776 () var3700 var3700!46)\r\n  (define-fun var2436 () var3484 var3484!44)\r\n  (define-fun null-var3700 () var3700 var3700!42)\r\n  (define-fun null-var3484 () var3484 var3484!40)\r\n  (define-fun var355!72 () var355 (cast-from-var878-to-var355 var878!48))\r\n  (define-fun append/-1031950772 ((x!0 String) (x!1 var355)) String (ite (and (= x!0 \"NfbRa1Y04t06_02^38!\") (= x!1 var355!72)) \"\\u{0}\" \"\"))\r\n)\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": ""
+        },
+        "undefined_function_count": 10,
+        "assertion_count": 13,
+        "api_sequence": [
+            "<java.lang.StringBuilder: void <init>()>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>",
+            "<java.lang.StringBuilder: java.lang.String toString()>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: void <init>()>": 1,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 1,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 1,
+            "<java.lang.StringBuilder: java.lang.String toString()>": 1
+        },
+        "jimple_statements": [
+            "r8 := @parameter0: java.lang.Thread",
+            "r1 := @parameter1: java.lang.Throwable",
+            "$r0 = new java.io.StringWriter",
+            "specialinvoke $r0.<java.io.StringWriter: void <init>()>()",
+            "$r2 = new java.io.PrintWriter",
+            "specialinvoke $r2.<java.io.PrintWriter: void <init>(java.io.Writer)>($r0)",
+            "virtualinvoke r1.<java.lang.Throwable: void printStackTrace(java.io.PrintWriter)>($r2)",
+            "$r4 = <com.efficient.common.util.ThreadUtil: java.util.logging.Logger LOGGER>",
+            "$r3 = new java.lang.StringBuilder",
+            "specialinvoke $r3.<java.lang.StringBuilder: void <init>()>()",
+            "$r5 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"\\u4efb\\u52a1\\u5904\\u7406\\u5f02\\u5e38!\")",
+            "$r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r0)",
+            "$r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>()",
+            "virtualinvoke $r4.<java.util.logging.Logger: void info(java.lang.String)>($r7)",
+            "return"
+        ]
+    },
+    {
+        "filename": "smt\\method-com.efficient.common.util.FileUtil__renameDateTime__1144048330\\87.smt2",
+        "z3": {
+            "memory": 31150080,
+            "run_time": 0.15245556831359863,
+            "is_sat": "unknown",
+            "stdout": "unknown\r\n(error \"line 57 column 10: model is not available\")\r\n(error \"line 58 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 1683456,
+            "run_time": 0.030019760131835938,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var1195 is 1\r\n; rep: (as @var1195_0 var1195)\r\n; cardinality of var3285 is 1\r\n; rep: (as @var3285_0 var3285)\r\n; cardinality of var2170 is 1\r\n; rep: (as @var2170_0 var2170)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun String-init () String \"\")\r\n(define-fun var3285-init () var3285 (as @var3285_0 var3285))\r\n(define-fun <init>/-788057745 ((BOUND_VARIABLE_923 var3285)) void (as @void_0 void))\r\n(define-fun var2170_format/-1287257735 ((_arg_1 var3285) (_arg_2 String)) String \"\")\r\n(define-fun replaceAll/1692887130 ((_arg_1 String) (_arg_2 String) (_arg_3 String)) String \".\")\r\n(define-fun null-String () String \"A\")\r\n(define-fun var3264 () String \"\")\r\n(define-fun var1773 () String \"\")\r\n(define-fun var8!1 () String \"\")\r\n(define-fun var8!2 () String \"\")\r\n(define-fun var3504!1 () var3285 (as @var3285_0 var3285))\r\n(define-fun var3607!1 () String \"\")\r\n(define-fun var3696!1 () String \".\")\r\n(define-fun var3574!1 () String \".\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 35033088,
+            "run_time": 0.10849738121032715,
+            "is_sat": "unknown",
+            "stdout": "unknown\n(error \"line 57 column 10: model is not available, did you forget to enable model generation with ''model=true'?\")\n(error \"line 58 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 205082624,
+            "run_time": 2.9773998260498047,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(model\r\n  (define-fun var3574!1 () String \".\")\r\n  (define-fun var3696!1 () String \".\")\r\n  (define-fun var3607!1 () String \"\")\r\n  (define-fun var3504!1 () var3285 var3285!34)\r\n  (define-fun var8!2 () String \"\")\r\n  (define-fun var8!1 () String \"\")\r\n  (define-fun var1773 () String \"\")\r\n  (define-fun var3264 () String \"\")\r\n  (define-fun null-String () String \"s\")\r\n  (define-fun replaceAll/1692887130 ((x!0 String) (x!1 String) (x!2 String)) String (ite (and (and (= x!0 \".\") (= x!1 \" \")) (= x!2 \"\")) \".\" \"\"))\r\n  (define-fun var2170_format/-1287257735 ((x!0 var3285) (x!1 String)) String (ite (and (= x!0 var3285!34) (= x!1 \"yyyyMMddHHmmss\")) \"\" \"\"))\r\n)\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": ""
+        },
+        "undefined_function_count": 5,
+        "assertion_count": 16,
+        "api_sequence": [
+            "<java.lang.StringBuilder: void <init>()>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.String toString()>",
+            "<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: void <init>()>": 1,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 4,
+            "<java.lang.StringBuilder: java.lang.String toString()>": 1,
+            "<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>": 1
+        },
+        "jimple_statements": [
+            "r1 := @parameter0: java.lang.String",
+            "r6 := @parameter1: java.lang.String",
+            "$r0 = new java.lang.StringBuilder",
+            "specialinvoke $r0.<java.lang.StringBuilder: void <init>()>()",
+            "$r4 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r1)",
+            "$r2 = new java.util.Date",
+            "specialinvoke $r2.<java.util.Date: void <init>()>()",
+            "$r3 = staticinvoke <cn.hutool.core.date.DateUtil: java.lang.String format(java.util.Date,java.lang.String)>($r2, \"yyyyMMddHHmmss\")",
+            "$r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3)",
+            "$r7 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\".\")",
+            "$r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r6)",
+            "r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.String toString()>()",
+            "$r10 = virtualinvoke r9.<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>(\" \", \"\")",
+            "return $r10"
+        ]
+    },
+    {
+        "filename": "smt\\method-com.efficient.common.page.Page__toString__-369443075\\273.smt2",
+        "z3": {
+            "memory": 29581312,
+            "run_time": 0.11246824264526367,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  ;; universe for var1344:\r\n  ;;   var1344!val!1 var1344!val!0 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var1344!val!1 () var1344)\r\n  (declare-fun var1344!val!0 () var1344)\r\n  ;; cardinality constraint:\r\n  (forall ((x var1344)) (or (= x var1344!val!1) (= x var1344!val!0)))\r\n  ;; -----------\r\n  (define-fun var2545 () Int\r\n    (totalPage/339798309 var236))\r\n  (define-fun var2776 () String\r\n    (str.++ var2720!1\r\n        \"pageNumber : \"\r\n        (str.from_int (pageNum/339798309 var236))\r\n        \"\\npageSize : \"\r\n        (str.from_int (pageSize/339798309 var236))\r\n        \"\\ntotalPage : \"\r\n        (str.from_int (totalPage/339798309 var236))\r\n        \"\\ntotalRow : \"))\r\n  (define-fun var236 () var1344\r\n    var1344!val!0)\r\n  (define-fun var1735!1 () String\r\n    \"pageNumber : \\npageSize : \")\r\n  (define-fun var2687 () String\r\n    (str.++ var2720!1 \"pageNumber : \" (str.from_int (pageNum/339798309 var236))))\r\n  (define-fun var2720 () String\r\n    String-init)\r\n  (define-fun var1390 () String\r\n    (str.++ var2720!1\r\n        \"pageNumber : \"\r\n        (str.from_int (pageNum/339798309 var236))\r\n        \"\\npageSize : \"\r\n        (str.from_int (pageSize/339798309 var236))))\r\n  (define-fun <init>/1968657023 () String\r\n    \"\")\r\n  (define-fun var1487 () Int\r\n    (pageNum/339798309 var236))\r\n  (define-fun var1735 () String\r\n    (str.++ var2720!1\r\n        \"pageNumber : \"\r\n        (str.from_int (pageNum/339798309 var236))\r\n        \"\\npageSize : \"))\r\n  (define-fun var1341 () String\r\n    (str.++ var2720!1\r\n        \"pageNumber : \"\r\n        (str.from_int (pageNum/339798309 var236))\r\n        \"\\npageSize : \"\r\n        (str.from_int (pageSize/339798309 var236))\r\n        \"\\ntotalPage : \"\r\n        (str.from_int (totalPage/339798309 var236))))\r\n  (define-fun var2768 () String\r\n    (str.++ var2720!1\r\n        \"pageNumber : \"\r\n        (str.from_int (pageNum/339798309 var236))\r\n        \"\\npageSize : \"\r\n        (str.from_int (pageSize/339798309 var236))\r\n        \"\\ntotalPage : \"\r\n        (str.from_int (totalPage/339798309 var236))\r\n        \"\\ntotalRow : \"\r\n        (str.from_int (totalRow/339798309 var236))))\r\n  (define-fun var2617!1 () String\r\n    \"pageNumber : \\npageSize : \\ntotalPage : \")\r\n  (define-fun var2942 () Int\r\n    (pageSize/339798309 var236))\r\n  (define-fun var1762 () Int\r\n    (totalRow/339798309 var236))\r\n  (define-fun var2617 () String\r\n    (str.++ var2720!1\r\n        \"pageNumber : \"\r\n        (str.from_int (pageNum/339798309 var236))\r\n        \"\\npageSize : \"\r\n        (str.from_int (pageSize/339798309 var236))\r\n        \"\\ntotalPage : \"))\r\n  (define-fun var2776!1 () String\r\n    \"pageNumber : \\npageSize : \\ntotalPage : \\ntotalRow : \")\r\n  (define-fun null-var1344 () var1344\r\n    var1344!val!1)\r\n  (define-fun var3261 () String\r\n    (str.++ var2720!1\r\n        \"pageNumber : \"\r\n        (str.from_int (pageNum/339798309 var236))\r\n        \"\\npageSize : \"\r\n        (str.from_int (pageSize/339798309 var236))\r\n        \"\\ntotalPage : \"\r\n        (str.from_int (totalPage/339798309 var236))\r\n        \"\\ntotalRow : \"\r\n        (str.from_int (totalRow/339798309 var236))))\r\n  (define-fun var1016 () String\r\n    (str.++ var2720!1 \"pageNumber : \"))\r\n  (define-fun var1016!1 () String\r\n    \"pageNumber : \")\r\n  (define-fun var2687!1 () String\r\n    \"pageNumber : \\npageSize : \")\r\n  (define-fun var2720!2 () String\r\n    \"pageNumber : \")\r\n  (define-fun var2720!1 () String\r\n    \"\")\r\n  (define-fun var1341!1 () String\r\n    \"pageNumber : \\npageSize : \\ntotalPage : \\ntotalRow : \")\r\n  (define-fun var1390!1 () String\r\n    \"pageNumber : \\npageSize : \\ntotalPage : \")\r\n  (define-fun String-init () String\r\n    \"\")\r\n  (define-fun pageNum/339798309 ((x!0 var1344)) Int\r\n    (- 2))\r\n  (define-fun pageSize/339798309 ((x!0 var1344)) Int\r\n    (- 40))\r\n  (define-fun totalPage/339798309 ((x!0 var1344)) Int\r\n    (- 7721))\r\n  (define-fun totalRow/339798309 ((x!0 var1344)) Int\r\n    0)\r\n)\r\n(error \"line 66 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 13942784,
+            "run_time": 0.046198129653930664,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var1344 is 2\r\n; rep: (as @var1344_0 var1344)\r\n; rep: (as @var1344_1 var1344)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun String-init () String \"\")\r\n(define-fun pageNum/339798309 ((_arg_1 var1344)) Int (- 1))\r\n(define-fun pageSize/339798309 ((_arg_1 var1344)) Int (- 1))\r\n(define-fun totalPage/339798309 ((_arg_1 var1344)) Int (- 1))\r\n(define-fun totalRow/339798309 ((BOUND_VARIABLE_3376 var1344)) Int 0)\r\n(define-fun null-var1344 () var1344 (as @var1344_0 var1344))\r\n(define-fun var236 () var1344 (as @var1344_1 var1344))\r\n(define-fun var2720!1 () String \"\")\r\n(define-fun var2720!2 () String \"pageNumber : \")\r\n(define-fun var1016!1 () String \"pageNumber : \")\r\n(define-fun var2687!1 () String \"pageNumber : \\u{5c}npageSize : \")\r\n(define-fun var1735!1 () String \"pageNumber : \\u{5c}npageSize : \")\r\n(define-fun var1390!1 () String \"pageNumber : \\u{5c}npageSize : \\u{5c}ntotalPage : \")\r\n(define-fun var2617!1 () String \"pageNumber : \\u{5c}npageSize : \\u{5c}ntotalPage : \")\r\n(define-fun var1341!1 () String \"pageNumber : \\u{5c}npageSize : \\u{5c}ntotalPage : \\u{5c}ntotalRow : \")\r\n(define-fun var2776!1 () String \"pageNumber : \\u{5c}npageSize : \\u{5c}ntotalPage : \\u{5c}ntotalRow : \")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 455860224,
+            "run_time": 60.01462650299072,
+            "is_sat": "timeout",
+            "stdout": "",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 203632640,
+            "run_time": 2.2419817447662354,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(model\r\n  (define-fun var2776!1 () String \"pageNumber : \\u{5c}npageSize : \\u{5c}ntotalPage : \\u{5c}ntotalRow : \")\r\n  (define-fun var1341!1 () String \"pageNumber : \\u{5c}npageSize : \\u{5c}ntotalPage : \\u{5c}ntotalRow : \")\r\n  (define-fun var2617!1 () String \"pageNumber : \\u{5c}npageSize : \\u{5c}ntotalPage : \")\r\n  (define-fun var1390!1 () String \"pageNumber : \\u{5c}npageSize : \\u{5c}ntotalPage : \")\r\n  (define-fun var1735!1 () String \"pageNumber : \\u{5c}npageSize : \")\r\n  (define-fun var2687!1 () String \"pageNumber : \\u{5c}npageSize : \")\r\n  (define-fun var1016!1 () String \"pageNumber : \")\r\n  (define-fun var2720!2 () String \"pageNumber : \")\r\n  (define-fun var2720!1 () String \"\")\r\n  (define-fun var236 () var1344 var1344!248)\r\n  (define-fun null-var1344 () var1344 var1344!246)\r\n  (define-fun abbrev_109 ((x!0 Int)) String (ite (= x!0 0) \"pageNumber : \\u{5c}npageSize : \\u{5c}ntotalPage : \\u{5c}ntotalRow : \" \"\"))\r\n  (define-fun abbrev_108 ((x!0 Int)) String (ite (= x!0 0) \"pageNumber : \\u{5c}npageSize : \" \"\"))\r\n  (define-fun totalPage/339798309 ((x!0 var1344)) Int (ite (= x!0 var1344!248) (- 6) 0))\r\n  (define-fun pageSize/339798309 ((x!0 var1344)) Int (ite (= x!0 var1344!248) (- 6) 0))\r\n  (define-fun pageNum/339798309 ((x!0 var1344)) Int (ite (= x!0 var1344!248) (- 6) 0))\r\n)\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": ""
+        },
+        "undefined_function_count": 5,
+        "assertion_count": 20,
+        "api_sequence": [
+            "<java.lang.StringBuilder: void <init>()>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+            "<java.lang.StringBuilder: java.lang.String toString()>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: void <init>()>": 1,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 4,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(int)>": 4,
+            "<java.lang.StringBuilder: java.lang.String toString()>": 1
+        },
+        "jimple_statements": [
+            "r1 := @this: com.efficient.common.page.Page",
+            "$r0 = new java.lang.StringBuilder",
+            "specialinvoke $r0.<java.lang.StringBuilder: void <init>()>()",
+            "$r2 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"pageNumber : \")",
+            "$i0 = r1.<com.efficient.common.page.Page: int pageNum>",
+            "$r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0)",
+            "$r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"\\npageSize : \")",
+            "$i1 = r1.<com.efficient.common.page.Page: int pageSize>",
+            "$r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1)",
+            "$r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"\\ntotalPage : \")",
+            "$i2 = r1.<com.efficient.common.page.Page: int totalPage>",
+            "$r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2)",
+            "$r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"\\ntotalRow : \")",
+            "$i3 = r1.<com.efficient.common.page.Page: int totalRow>",
+            "$r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3)",
+            "r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>()",
+            "return r10"
+        ]
+    },
+    {
+        "filename": "smt\\method-com.efficient.common.entity.Page__toString__356928617\\274.smt2",
+        "z3": {
+            "memory": 32825344,
+            "run_time": 0.17947053909301758,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n  ;; universe for var114:\r\n  ;;   var114!val!1 var114!val!0 \r\n  ;; -----------\r\n  ;; definitions for universe elements:\r\n  (declare-fun var114!val!1 () var114)\r\n  (declare-fun var114!val!0 () var114)\r\n  ;; cardinality constraint:\r\n  (forall ((x var114)) (or (= x var114!val!1) (= x var114!val!0)))\r\n  ;; -----------\r\n  (define-fun var2322!1 () String\r\n    \"pageNumber : \\npageSize : \")\r\n  (define-fun var1314 () String\r\n    (str.++ var165!1 \"pageNumber : \"))\r\n  (define-fun var1314!1 () String\r\n    \"pageNumber : \")\r\n  (define-fun var976!1 () String\r\n    \"pageNumber : \\npageSize : \\ntotalPage : \\ntotalRow : \")\r\n  (define-fun var2322 () String\r\n    (str.++ var165!1\r\n        \"pageNumber : \"\r\n        (str.from_int (pageNum/-358458735 var3220))\r\n        \"\\npageSize : \"))\r\n  (define-fun var2531 () String\r\n    (str.++ var165!1\r\n        \"pageNumber : \"\r\n        (str.from_int (pageNum/-358458735 var3220))\r\n        \"\\npageSize : \"\r\n        (str.from_int (pageSize/-358458735 var3220))\r\n        \"\\ntotalPage : \"\r\n        (str.from_int (totalPage/-358458735 var3220))\r\n        \"\\ntotalRow : \"\r\n        (str.from_int (totalRow/-358458735 var3220))))\r\n  (define-fun <init>/1968657023 () String\r\n    \"\")\r\n  (define-fun var165 () String\r\n    String-init)\r\n  (define-fun var2964 () String\r\n    (str.++ var165!1\r\n        \"pageNumber : \"\r\n        (str.from_int (pageNum/-358458735 var3220))\r\n        \"\\npageSize : \"\r\n        (str.from_int (pageSize/-358458735 var3220))))\r\n  (define-fun var373 () String\r\n    (str.++ var165!1\r\n        \"pageNumber : \"\r\n        (str.from_int (pageNum/-358458735 var3220))\r\n        \"\\npageSize : \"\r\n        (str.from_int (pageSize/-358458735 var3220))\r\n        \"\\ntotalPage : \"))\r\n  (define-fun var1942 () String\r\n    (str.++ var165!1\r\n        \"pageNumber : \"\r\n        (str.from_int (pageNum/-358458735 var3220))\r\n        \"\\npageSize : \"\r\n        (str.from_int (pageSize/-358458735 var3220))\r\n        \"\\ntotalPage : \"\r\n        (str.from_int (totalPage/-358458735 var3220))\r\n        \"\\ntotalRow : \"\r\n        (str.from_int (totalRow/-358458735 var3220))))\r\n  (define-fun var1762 () String\r\n    (str.++ var165!1\r\n        \"pageNumber : \"\r\n        (str.from_int (pageNum/-358458735 var3220))\r\n        \"\\npageSize : \"\r\n        (str.from_int (pageSize/-358458735 var3220))\r\n        \"\\ntotalPage : \"\r\n        (str.from_int (totalPage/-358458735 var3220))))\r\n  (define-fun var3220 () var114\r\n    var114!val!0)\r\n  (define-fun var1813 () Int\r\n    (totalRow/-358458735 var3220))\r\n  (define-fun var3316 () Int\r\n    (pageSize/-358458735 var3220))\r\n  (define-fun var373!1 () String\r\n    \"pageNumber : \\npageSize : \\ntotalPage : \")\r\n  (define-fun null-var114 () var114\r\n    var114!val!1)\r\n  (define-fun var1774 () String\r\n    (str.++ var165!1 \"pageNumber : \" (str.from_int (pageNum/-358458735 var3220))))\r\n  (define-fun var2627 () Int\r\n    (pageNum/-358458735 var3220))\r\n  (define-fun var976 () String\r\n    (str.++ var165!1\r\n        \"pageNumber : \"\r\n        (str.from_int (pageNum/-358458735 var3220))\r\n        \"\\npageSize : \"\r\n        (str.from_int (pageSize/-358458735 var3220))\r\n        \"\\ntotalPage : \"\r\n        (str.from_int (totalPage/-358458735 var3220))\r\n        \"\\ntotalRow : \"))\r\n  (define-fun var3224 () Int\r\n    (totalPage/-358458735 var3220))\r\n  (define-fun var165!1 () String\r\n    \"\")\r\n  (define-fun var1762!1 () String\r\n    \"pageNumber : \\npageSize : \\ntotalPage : \\ntotalRow : \")\r\n  (define-fun var2964!1 () String\r\n    \"pageNumber : \\npageSize : \\ntotalPage : \")\r\n  (define-fun var1774!1 () String\r\n    \"pageNumber : \\npageSize : \")\r\n  (define-fun var165!2 () String\r\n    \"pageNumber : \")\r\n  (define-fun String-init () String\r\n    \"\")\r\n  (define-fun pageNum/-358458735 ((x!0 var114)) Int\r\n    (- 2))\r\n  (define-fun pageSize/-358458735 ((x!0 var114)) Int\r\n    (- 40))\r\n  (define-fun totalPage/-358458735 ((x!0 var114)) Int\r\n    (- 7721))\r\n  (define-fun totalRow/-358458735 ((x!0 var114)) Int\r\n    0)\r\n)\r\n(error \"line 66 column 15: unsat core is not available\")\r\n",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 14508032,
+            "run_time": 0.04654431343078613,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var114 is 2\r\n; rep: (as @var114_0 var114)\r\n; rep: (as @var114_1 var114)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun String-init () String \"\")\r\n(define-fun pageNum/-358458735 ((_arg_1 var114)) Int (- 1))\r\n(define-fun pageSize/-358458735 ((_arg_1 var114)) Int (- 1))\r\n(define-fun totalPage/-358458735 ((_arg_1 var114)) Int (- 1))\r\n(define-fun totalRow/-358458735 ((BOUND_VARIABLE_3376 var114)) Int 0)\r\n(define-fun null-var114 () var114 (as @var114_0 var114))\r\n(define-fun var3220 () var114 (as @var114_1 var114))\r\n(define-fun var165!1 () String \"\")\r\n(define-fun var165!2 () String \"pageNumber : \")\r\n(define-fun var1314!1 () String \"pageNumber : \")\r\n(define-fun var1774!1 () String \"pageNumber : \\u{5c}npageSize : \")\r\n(define-fun var2322!1 () String \"pageNumber : \\u{5c}npageSize : \")\r\n(define-fun var2964!1 () String \"pageNumber : \\u{5c}npageSize : \\u{5c}ntotalPage : \")\r\n(define-fun var373!1 () String \"pageNumber : \\u{5c}npageSize : \\u{5c}ntotalPage : \")\r\n(define-fun var1762!1 () String \"pageNumber : \\u{5c}npageSize : \\u{5c}ntotalPage : \\u{5c}ntotalRow : \")\r\n(define-fun var976!1 () String \"pageNumber : \\u{5c}npageSize : \\u{5c}ntotalPage : \\u{5c}ntotalRow : \")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 450818048,
+            "run_time": 60.01305413246155,
+            "is_sat": "timeout",
+            "stdout": "",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 206516224,
+            "run_time": 2.3081865310668945,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(model\r\n  (define-fun var976!1 () String \"pageNumber : \\u{5c}npageSize : \\u{5c}ntotalPage : \\u{5c}ntotalRow : \")\r\n  (define-fun var1762!1 () String \"pageNumber : \\u{5c}npageSize : \\u{5c}ntotalPage : \\u{5c}ntotalRow : \")\r\n  (define-fun var373!1 () String \"pageNumber : \\u{5c}npageSize : \\u{5c}ntotalPage : \")\r\n  (define-fun var2964!1 () String \"pageNumber : \\u{5c}npageSize : \\u{5c}ntotalPage : \")\r\n  (define-fun var2322!1 () String \"pageNumber : \\u{5c}npageSize : \")\r\n  (define-fun var1774!1 () String \"pageNumber : \\u{5c}npageSize : \")\r\n  (define-fun var1314!1 () String \"pageNumber : \")\r\n  (define-fun var165!2 () String \"pageNumber : \")\r\n  (define-fun var165!1 () String \"\")\r\n  (define-fun var3220 () var114 var114!248)\r\n  (define-fun null-var114 () var114 var114!246)\r\n  (define-fun abbrev_109 ((x!0 Int)) String (ite (= x!0 0) \"pageNumber : \\u{5c}npageSize : \\u{5c}ntotalPage : \\u{5c}ntotalRow : \" \"\"))\r\n  (define-fun abbrev_108 ((x!0 Int)) String (ite (= x!0 0) \"pageNumber : \\u{5c}npageSize : \" \"\"))\r\n  (define-fun totalPage/-358458735 ((x!0 var114)) Int (ite (= x!0 var114!248) (- 6) 0))\r\n  (define-fun pageSize/-358458735 ((x!0 var114)) Int (ite (= x!0 var114!248) (- 6) 0))\r\n  (define-fun pageNum/-358458735 ((x!0 var114)) Int (ite (= x!0 var114!248) (- 6) 0))\r\n)\r\n(error \"no unsatisfiable core available\")\r\n",
+            "stderr": ""
+        },
+        "undefined_function_count": 5,
+        "assertion_count": 20,
+        "api_sequence": [
+            "<java.lang.StringBuilder: void <init>()>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+            "<java.lang.StringBuilder: java.lang.String toString()>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: void <init>()>": 1,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 4,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(int)>": 4,
+            "<java.lang.StringBuilder: java.lang.String toString()>": 1
+        },
+        "jimple_statements": [
+            "r1 := @this: com.efficient.common.entity.Page",
+            "$r0 = new java.lang.StringBuilder",
+            "specialinvoke $r0.<java.lang.StringBuilder: void <init>()>()",
+            "$r2 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"pageNumber : \")",
+            "$i0 = r1.<com.efficient.common.entity.Page: int pageNum>",
+            "$r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0)",
+            "$r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"\\npageSize : \")",
+            "$i1 = r1.<com.efficient.common.entity.Page: int pageSize>",
+            "$r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1)",
+            "$r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"\\ntotalPage : \")",
+            "$i2 = r1.<com.efficient.common.entity.Page: int totalPage>",
+            "$r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2)",
+            "$r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"\\ntotalRow : \")",
+            "$i3 = r1.<com.efficient.common.entity.Page: int totalRow>",
+            "$r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3)",
+            "r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>()",
+            "return r10"
+        ]
+    },
+    {
+        "filename": "smt\\method-com.efficient.common.entity.TreeNode__toString__1942210010\\838.smt2",
+        "z3": {
+            "memory": 32153600,
+            "run_time": 60.00478529930115,
+            "is_sat": "timeout",
+            "stdout": "",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 14204928,
+            "run_time": 0.045786142349243164,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var2095 is 2\r\n; rep: (as @var2095_0 var2095)\r\n; rep: (as @var2095_1 var2095)\r\n; cardinality of var2346 is 4\r\n; rep: (as @var2346_0 var2346)\r\n; rep: (as @var2346_1 var2346)\r\n; rep: (as @var2346_2 var2346)\r\n; rep: (as @var2346_3 var2346)\r\n; cardinality of var1720 is 2\r\n; rep: (as @var1720_0 var1720)\r\n; rep: (as @var1720_1 var1720)\r\n; cardinality of var3735 is 1\r\n; rep: (as @var3735_0 var3735)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun String-init () String \"\")\r\n(define-fun getId/-1980942621 ((_arg_1 var2095)) String \"\")\r\n(define-fun getParentId/1008104345 ((_arg_1 var2095)) String \"\")\r\n(define-fun getCode/-1673301871 ((_arg_1 var2095)) String \"\")\r\n(define-fun getName/-893192397 ((_arg_1 var2095)) String \"\")\r\n(define-fun getOrder/1094141721 ((_arg_1 var2095)) Int 1)\r\n(define-fun append/-1031950772 ((_arg_1 String) (_arg_2 var2346)) String \"\")\r\n(define-fun cast-from-Int-to-var2346 ((_arg_1 Int)) var2346 (as @var2346_0 var2346))\r\n(define-fun getIsLeaf/-653459217 ((_arg_1 var2095)) var1720 (as @var1720_0 var1720))\r\n(define-fun cast-from-var1720-to-var2346 ((_arg_1 var1720)) var2346 (ite (= (as @var1720_0 var1720) _arg_1) (as @var2346_1 var2346) (as @var2346_2 var2346)))\r\n(define-fun getIsRoot/676233451 ((_arg_1 var2095)) var1720 (as @var1720_1 var1720))\r\n(define-fun getChildren/2082502822 ((_arg_1 var2095)) var3735 (as @var3735_0 var3735))\r\n(define-fun cast-from-var3735-to-var2346 ((_arg_1 var3735)) var2346 (as @var2346_3 var2346))\r\n(define-fun getInfo/-2026026430 ((BOUND_VARIABLE_3833 var2095)) var2346 (as @var2346_0 var2346))\r\n(define-fun null-var2095 () var2095 (as @var2095_0 var2095))\r\n(define-fun var607 () var2095 (as @var2095_1 var2095))\r\n(define-fun var3901!1 () String \"\")\r\n(define-fun var3901!2 () String \"TreeNode(id=\")\r\n(define-fun var1228!1 () String \"TreeNode(id=\")\r\n(define-fun var2134!1 () String \"TreeNode(id=, parentId=\")\r\n(define-fun var3008!1 () String \"TreeNode(id=, parentId=\")\r\n(define-fun var1467!1 () String \"TreeNode(id=, parentId=, code=\")\r\n(define-fun var779!1 () String \"TreeNode(id=, parentId=, code=\")\r\n(define-fun var1291!1 () String \"TreeNode(id=, parentId=, code=, name=\")\r\n(define-fun var1928!1 () String \"TreeNode(id=, parentId=, code=, name=\")\r\n(define-fun var1761!1 () String \"TreeNode(id=, parentId=, code=, name=, order=\")\r\n(define-fun var103!1 () String \"TreeNode(id=, parentId=, code=, name=, order=\")\r\n(define-fun var604!1 () String \", isLeaf=\")\r\n(define-fun var672!1 () String \", isLeaf=\")\r\n(define-fun var370!1 () String \", isRoot=\")\r\n(define-fun var343!1 () String \", isRoot=\")\r\n(define-fun var1738!1 () String \", children=\")\r\n(define-fun var3077!1 () String \", children=\")\r\n(define-fun var1047!1 () String \", info=\")\r\n(define-fun var932!1 () String \", info=\")\r\n(define-fun var1946!1 () String \")\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 34574336,
+            "run_time": 0.060785770416259766,
+            "is_sat": "unknown",
+            "stdout": "unknown\n(error \"line 134 column 10: model is not available, did you forget to enable model generation with ''model=true'?\")\n(error \"line 135 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 245260288,
+            "run_time": 60.015779972076416,
+            "is_sat": "timeout",
+            "stdout": "",
+            "stderr": ""
+        },
+        "undefined_function_count": 14,
+        "assertion_count": 51,
+        "api_sequence": [
+            "<java.lang.StringBuilder: void <init>()>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.String toString()>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: void <init>()>": 1,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 14,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 5,
+            "<java.lang.StringBuilder: java.lang.String toString()>": 1
+        },
+        "jimple_statements": [
+            "r1 := @this: com.efficient.common.entity.TreeNode",
+            "$r0 = new java.lang.StringBuilder",
+            "specialinvoke $r0.<java.lang.StringBuilder: void <init>()>()",
+            "$r3 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"TreeNode(id=\")",
+            "$r2 = virtualinvoke r1.<com.efficient.common.entity.TreeNode: java.lang.String getId()>()",
+            "$r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2)",
+            "$r6 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", parentId=\")",
+            "$r5 = virtualinvoke r1.<com.efficient.common.entity.TreeNode: java.lang.String getParentId()>()",
+            "$r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5)",
+            "$r9 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", code=\")",
+            "$r8 = virtualinvoke r1.<com.efficient.common.entity.TreeNode: java.lang.String getCode()>()",
+            "$r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8)",
+            "$r12 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", name=\")",
+            "$r11 = virtualinvoke r1.<com.efficient.common.entity.TreeNode: java.lang.String getName()>()",
+            "$r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r11)",
+            "$r15 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", order=\")",
+            "$r14 = virtualinvoke r1.<com.efficient.common.entity.TreeNode: java.lang.Long getOrder()>()",
+            "$r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r14)",
+            "$r18 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", isLeaf=\")",
+            "$r17 = virtualinvoke r1.<com.efficient.common.entity.TreeNode: java.lang.Boolean getIsLeaf()>()",
+            "$r19 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r17)",
+            "$r21 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", isRoot=\")",
+            "$r20 = virtualinvoke r1.<com.efficient.common.entity.TreeNode: java.lang.Boolean getIsRoot()>()",
+            "$r22 = virtualinvoke $r21.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r20)",
+            "$r24 = virtualinvoke $r22.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", children=\")",
+            "$r23 = virtualinvoke r1.<com.efficient.common.entity.TreeNode: java.util.List getChildren()>()",
+            "$r25 = virtualinvoke $r24.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r23)",
+            "$r27 = virtualinvoke $r25.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", info=\")",
+            "$r26 = virtualinvoke r1.<com.efficient.common.entity.TreeNode: java.lang.Object getInfo()>()",
+            "$r28 = virtualinvoke $r27.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r26)",
+            "$r29 = virtualinvoke $r28.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\")\")",
+            "$r30 = virtualinvoke $r29.<java.lang.StringBuilder: java.lang.String toString()>()",
+            "return $r30"
+        ]
+    },
+    {
+        "filename": "smt\\method-com.efficient.common.auth.UserTicket__toString__-145738580\\343.smt2",
+        "z3": {
+            "memory": 33939456,
+            "run_time": 60.00362730026245,
+            "is_sat": "timeout",
+            "stdout": "",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 14471168,
+            "run_time": 0.07674479484558105,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var1700 is 2\r\n; rep: (as @var1700_0 var1700)\r\n; rep: (as @var1700_1 var1700)\r\n; cardinality of var2602 is 3\r\n; rep: (as @var2602_0 var2602)\r\n; rep: (as @var2602_1 var2602)\r\n; rep: (as @var2602_2 var2602)\r\n; cardinality of var2543 is 2\r\n; rep: (as @var2543_0 var2543)\r\n; rep: (as @var2543_1 var2543)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun String-init () String \"\")\r\n(define-fun getToken/1639760757 ((_arg_1 var1700)) String \"\")\r\n(define-fun getUserId/-528464698 ((_arg_1 var1700)) String \"\")\r\n(define-fun getUserUnitId/1524562850 ((_arg_1 var1700)) String \"\")\r\n(define-fun getZwddId/412159828 ((_arg_1 var1700)) String \"\")\r\n(define-fun getAccount/-1294717311 ((_arg_1 var1700)) String \"\")\r\n(define-fun getUsername/1704034422 ((_arg_1 var1700)) String \"\")\r\n(define-fun getCreateTime/1376105100 ((_arg_1 var1700)) Int 1)\r\n(define-fun append/-901862667 ((_arg_1 String) (_arg_2 Int)) String \"\")\r\n(define-fun getLoginIp/2035510110 ((_arg_1 var1700)) String \"\")\r\n(define-fun getLoginType/-1357896892 ((_arg_1 var1700)) Int (- 1))\r\n(define-fun append/-1031950772 ((_arg_1 String) (_arg_2 var2602)) String \"\")\r\n(define-fun cast-from-Int-to-var2602 ((_arg_1 Int)) var2602 (as @var2602_0 var2602))\r\n(define-fun getPermissionList/116386758 ((_arg_1 var1700)) var2543 (as @var2543_0 var2543))\r\n(define-fun cast-from-var2543-to-var2602 ((_arg_1 var2543)) var2602 (ite (= (as @var2543_0 var2543) _arg_1) (as @var2602_1 var2602) (as @var2602_2 var2602)))\r\n(define-fun getOperationList/-772828862 ((_arg_1 var1700)) var2543 (as @var2543_1 var2543))\r\n(define-fun getExtendInfo/887655414 ((BOUND_VARIABLE_4290 var1700)) var2602 (as @var2602_0 var2602))\r\n(define-fun null-var1700 () var1700 (as @var1700_0 var1700))\r\n(define-fun var1020 () var1700 (as @var1700_1 var1700))\r\n(define-fun var2107!1 () String \"\")\r\n(define-fun var2107!2 () String \"UserTicket(token=\")\r\n(define-fun var1578!1 () String \"UserTicket(token=\")\r\n(define-fun var2005!1 () String \"UserTicket(token=, userId=\")\r\n(define-fun var2678!1 () String \"UserTicket(token=, userId=\")\r\n(define-fun var220!1 () String \"UserTicket(token=, userId=, userUnitId=\")\r\n(define-fun var2805!1 () String \"UserTicket(token=, userId=, userUnitId=\")\r\n(define-fun var1236!1 () String \"UserTicket(token=, userId=, userUnitId=, zwddId=\")\r\n(define-fun var2203!1 () String \"UserTicket(token=, userId=, userUnitId=, zwddId=\")\r\n(define-fun var3300!1 () String \"UserTicket(token=, userId=, userUnitId=, zwddId=, account=\")\r\n(define-fun var1610!1 () String \"UserTicket(token=, userId=, userUnitId=, zwddId=, account=\")\r\n(define-fun var3741!1 () String \"UserTicket(token=, userId=, userUnitId=, zwddId=, account=, username=\")\r\n(define-fun var148!1 () String \"UserTicket(token=, userId=, userUnitId=, zwddId=, account=, username=\")\r\n(define-fun var699!1 () String \"UserTicket(token=, userId=, userUnitId=, zwddId=, account=, username=, createTime=\")\r\n(define-fun var3693!1 () String \"UserTicket(token=, userId=, userUnitId=, zwddId=, account=, username=, createTime=\")\r\n(define-fun var1149!1 () String \", loginIp=\")\r\n(define-fun var769!1 () String \", loginIp=\")\r\n(define-fun var1157!1 () String \", loginIp=, loginType=\")\r\n(define-fun var1547!1 () String \", loginIp=, loginType=\")\r\n(define-fun var1794!1 () String \", permissionList=\")\r\n(define-fun var257!1 () String \", permissionList=\")\r\n(define-fun var1443!1 () String \", operationList=\")\r\n(define-fun var2832!1 () String \", operationList=\")\r\n(define-fun var3101!1 () String \", extendInfo=\")\r\n(define-fun var1748!1 () String \", extendInfo=\")\r\n(define-fun var3841!1 () String \")\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 36675584,
+            "run_time": 0.060785770416259766,
+            "is_sat": "unknown",
+            "stdout": "unknown\n(error \"line 166 column 10: model is not available, did you forget to enable model generation with ''model=true'?\")\n(error \"line 167 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 394100736,
+            "run_time": 60.01485228538513,
+            "is_sat": "timeout",
+            "stdout": "",
+            "stderr": ""
+        },
+        "undefined_function_count": 17,
+        "assertion_count": 66,
+        "api_sequence": [
+            "<java.lang.StringBuilder: void <init>()>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(long)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.String toString()>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: void <init>()>": 1,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 20,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(long)>": 1,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 4,
+            "<java.lang.StringBuilder: java.lang.String toString()>": 1
+        },
+        "jimple_statements": [
+            "r1 := @this: com.efficient.common.auth.UserTicket",
+            "$r0 = new java.lang.StringBuilder",
+            "specialinvoke $r0.<java.lang.StringBuilder: void <init>()>()",
+            "$r3 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"UserTicket(token=\")",
+            "$r2 = virtualinvoke r1.<com.efficient.common.auth.UserTicket: java.lang.String getToken()>()",
+            "$r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2)",
+            "$r6 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", userId=\")",
+            "$r5 = virtualinvoke r1.<com.efficient.common.auth.UserTicket: java.lang.String getUserId()>()",
+            "$r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5)",
+            "$r9 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", userUnitId=\")",
+            "$r8 = virtualinvoke r1.<com.efficient.common.auth.UserTicket: java.lang.String getUserUnitId()>()",
+            "$r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8)",
+            "$r12 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", zwddId=\")",
+            "$r11 = virtualinvoke r1.<com.efficient.common.auth.UserTicket: java.lang.String getZwddId()>()",
+            "$r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r11)",
+            "$r15 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", account=\")",
+            "$r14 = virtualinvoke r1.<com.efficient.common.auth.UserTicket: java.lang.String getAccount()>()",
+            "$r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r14)",
+            "$r18 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", username=\")",
+            "$r17 = virtualinvoke r1.<com.efficient.common.auth.UserTicket: java.lang.String getUsername()>()",
+            "$r19 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r17)",
+            "$r20 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", createTime=\")",
+            "$l0 = virtualinvoke r1.<com.efficient.common.auth.UserTicket: long getCreateTime()>()",
+            "$r21 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l0)",
+            "$r23 = virtualinvoke $r21.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", loginIp=\")",
+            "$r22 = virtualinvoke r1.<com.efficient.common.auth.UserTicket: java.lang.String getLoginIp()>()",
+            "$r24 = virtualinvoke $r23.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r22)",
+            "$r26 = virtualinvoke $r24.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", loginType=\")",
+            "$r25 = virtualinvoke r1.<com.efficient.common.auth.UserTicket: java.lang.Integer getLoginType()>()",
+            "$r27 = virtualinvoke $r26.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r25)",
+            "$r29 = virtualinvoke $r27.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", permissionList=\")",
+            "$r28 = virtualinvoke r1.<com.efficient.common.auth.UserTicket: java.util.List getPermissionList()>()",
+            "$r30 = virtualinvoke $r29.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r28)",
+            "$r32 = virtualinvoke $r30.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", operationList=\")",
+            "$r31 = virtualinvoke r1.<com.efficient.common.auth.UserTicket: java.util.List getOperationList()>()",
+            "$r33 = virtualinvoke $r32.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r31)",
+            "$r35 = virtualinvoke $r33.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", extendInfo=\")",
+            "$r34 = virtualinvoke r1.<com.efficient.common.auth.UserTicket: java.lang.Object getExtendInfo()>()",
+            "$r36 = virtualinvoke $r35.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r34)",
+            "$r37 = virtualinvoke $r36.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\")\")",
+            "$r38 = virtualinvoke $r37.<java.lang.StringBuilder: java.lang.String toString()>()",
+            "return $r38"
+        ]
+    },
+    {
+        "filename": "smt\\method-com.efficient.common.entity.TreeNode$TreeNodeBuilder__toString__-2100968559\\212.smt2",
+        "z3": {
+            "memory": 32374784,
+            "run_time": 60.01052975654602,
+            "is_sat": "timeout",
+            "stdout": "",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 14196736,
+            "run_time": 0.045786142349243164,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var2298 is 2\r\n; rep: (as @var2298_0 var2298)\r\n; rep: (as @var2298_1 var2298)\r\n; cardinality of var1892 is 4\r\n; rep: (as @var1892_0 var1892)\r\n; rep: (as @var1892_1 var1892)\r\n; rep: (as @var1892_2 var1892)\r\n; rep: (as @var1892_3 var1892)\r\n; cardinality of var2879 is 2\r\n; rep: (as @var2879_0 var2879)\r\n; rep: (as @var2879_1 var2879)\r\n; cardinality of var2194 is 1\r\n; rep: (as @var2194_0 var2194)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun String-init () String \"\")\r\n(define-fun id/-399655495 ((_arg_1 var2298)) String \"\")\r\n(define-fun parentId/-399655495 ((_arg_1 var2298)) String \"\")\r\n(define-fun code/-399655495 ((_arg_1 var2298)) String \"\")\r\n(define-fun name/-399655495 ((_arg_1 var2298)) String \"\")\r\n(define-fun order/-399655495 ((_arg_1 var2298)) Int 1)\r\n(define-fun append/-1031950772 ((_arg_1 String) (_arg_2 var1892)) String \"\")\r\n(define-fun cast-from-Int-to-var1892 ((_arg_1 Int)) var1892 (as @var1892_0 var1892))\r\n(define-fun isLeaf/-399655495 ((_arg_1 var2298)) var2879 (as @var2879_0 var2879))\r\n(define-fun cast-from-var2879-to-var1892 ((_arg_1 var2879)) var1892 (ite (= (as @var2879_0 var2879) _arg_1) (as @var1892_1 var1892) (as @var1892_2 var1892)))\r\n(define-fun isRoot/-399655495 ((_arg_1 var2298)) var2879 (as @var2879_1 var2879))\r\n(define-fun children/-399655495 ((_arg_1 var2298)) var2194 (as @var2194_0 var2194))\r\n(define-fun cast-from-var2194-to-var1892 ((_arg_1 var2194)) var1892 (as @var1892_3 var1892))\r\n(define-fun info/-399655495 ((BOUND_VARIABLE_3837 var2298)) var1892 (as @var1892_0 var1892))\r\n(define-fun null-var2298 () var2298 (as @var2298_0 var2298))\r\n(define-fun var1263 () var2298 (as @var2298_1 var2298))\r\n(define-fun var463!1 () String \"\")\r\n(define-fun var463!2 () String \"TreeNode.TreeNodeBuilder(id=\")\r\n(define-fun var1083!1 () String \"TreeNode.TreeNodeBuilder(id=\")\r\n(define-fun var2625!1 () String \"TreeNode.TreeNodeBuilder(id=, parentId=\")\r\n(define-fun var2333!1 () String \"TreeNode.TreeNodeBuilder(id=, parentId=\")\r\n(define-fun var2289!1 () String \"TreeNode.TreeNodeBuilder(id=, parentId=, code=\")\r\n(define-fun var1088!1 () String \"TreeNode.TreeNodeBuilder(id=, parentId=, code=\")\r\n(define-fun var936!1 () String \"TreeNode.TreeNodeBuilder(id=, parentId=, code=, name=\")\r\n(define-fun var2824!1 () String \"TreeNode.TreeNodeBuilder(id=, parentId=, code=, name=\")\r\n(define-fun var2374!1 () String \"TreeNode.TreeNodeBuilder(id=, parentId=, code=, name=, order=\")\r\n(define-fun var2372!1 () String \"TreeNode.TreeNodeBuilder(id=, parentId=, code=, name=, order=\")\r\n(define-fun var3453!1 () String \", isLeaf=\")\r\n(define-fun var3796!1 () String \", isLeaf=\")\r\n(define-fun var3340!1 () String \", isRoot=\")\r\n(define-fun var1664!1 () String \", isRoot=\")\r\n(define-fun var1732!1 () String \", children=\")\r\n(define-fun var2881!1 () String \", children=\")\r\n(define-fun var242!1 () String \", info=\")\r\n(define-fun var1656!1 () String \", info=\")\r\n(define-fun var137!1 () String \")\")\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 34557952,
+            "run_time": 0.060785770416259766,
+            "is_sat": "unknown",
+            "stdout": "unknown\n(error \"line 125 column 10: model is not available, did you forget to enable model generation with ''model=true'?\")\n(error \"line 126 column 15: unsat core is not available\")\n",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 248020992,
+            "run_time": 60.01485228538513,
+            "is_sat": "timeout",
+            "stdout": "",
+            "stderr": ""
+        },
+        "undefined_function_count": 14,
+        "assertion_count": 42,
+        "api_sequence": [
+            "<java.lang.StringBuilder: void <init>()>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>",
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+            "<java.lang.StringBuilder: java.lang.String toString()>"
+        ],
+        "api_count": {
+            "<java.lang.StringBuilder: void <init>()>": 1,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 14,
+            "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 5,
+            "<java.lang.StringBuilder: java.lang.String toString()>": 1
+        },
+        "jimple_statements": [
+            "r1 := @this: com.efficient.common.entity.TreeNode$TreeNodeBuilder",
+            "$r0 = new java.lang.StringBuilder",
+            "specialinvoke $r0.<java.lang.StringBuilder: void <init>()>()",
+            "$r3 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\"TreeNode.TreeNodeBuilder(id=\")",
+            "$r2 = r1.<com.efficient.common.entity.TreeNode$TreeNodeBuilder: java.lang.String id>",
+            "$r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r2)",
+            "$r6 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", parentId=\")",
+            "$r5 = r1.<com.efficient.common.entity.TreeNode$TreeNodeBuilder: java.lang.String parentId>",
+            "$r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5)",
+            "$r9 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", code=\")",
+            "$r8 = r1.<com.efficient.common.entity.TreeNode$TreeNodeBuilder: java.lang.String code>",
+            "$r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r8)",
+            "$r12 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", name=\")",
+            "$r11 = r1.<com.efficient.common.entity.TreeNode$TreeNodeBuilder: java.lang.String name>",
+            "$r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r11)",
+            "$r15 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", order=\")",
+            "$r14 = r1.<com.efficient.common.entity.TreeNode$TreeNodeBuilder: java.lang.Long order>",
+            "$r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r14)",
+            "$r18 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", isLeaf=\")",
+            "$r17 = r1.<com.efficient.common.entity.TreeNode$TreeNodeBuilder: java.lang.Boolean isLeaf>",
+            "$r19 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r17)",
+            "$r21 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", isRoot=\")",
+            "$r20 = r1.<com.efficient.common.entity.TreeNode$TreeNodeBuilder: java.lang.Boolean isRoot>",
+            "$r22 = virtualinvoke $r21.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r20)",
+            "$r24 = virtualinvoke $r22.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", children=\")",
+            "$r23 = r1.<com.efficient.common.entity.TreeNode$TreeNodeBuilder: java.util.List children>",
+            "$r25 = virtualinvoke $r24.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r23)",
+            "$r27 = virtualinvoke $r25.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\", info=\")",
+            "$r26 = r1.<com.efficient.common.entity.TreeNode$TreeNodeBuilder: java.lang.Object info>",
+            "$r28 = virtualinvoke $r27.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r26)",
+            "$r29 = virtualinvoke $r28.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(\")\")",
+            "$r30 = virtualinvoke $r29.<java.lang.StringBuilder: java.lang.String toString()>()",
+            "return $r30"
+        ]
+    },
+    {
+        "filename": "smt\\method-com.efficient.common.util.IdUtil__generateBatchNumber__1146992552\\89.smt2",
+        "z3": {
+            "memory": 31944704,
+            "run_time": 60.011884927749634,
+            "is_sat": "timeout",
+            "stdout": "",
+            "stderr": ""
+        },
+        "cvc5": {
+            "memory": 11726848,
+            "run_time": 0.030138254165649414,
+            "is_sat": "sat",
+            "stdout": "sat\r\n(\r\n; cardinality of var127 is 1\r\n; rep: (as @var127_0 var127)\r\n; cardinality of var3766 is 1\r\n; rep: (as @var3766_0 var3766)\r\n; cardinality of void is 1\r\n; rep: (as @void_0 void)\r\n; cardinality of Iterator is 1\r\n; rep: (as @Iterator_0 Iterator)\r\n; cardinality of ClassObject is 1\r\n; rep: (as @ClassObject_0 ClassObject)\r\n(define-fun var127_currentTimeMillis/630293680 () Int 946684800001)\r\n(define-fun Int_toString/1940348007 ((BOUND_VARIABLE_739 Int) (BOUND_VARIABLE_740 Int)) String \"\")\r\n(define-fun var3766-sequence () Int 0)\r\n)\r\n(error \"Cannot get unsat core unless in unsat mode.\")\r\n",
+            "stderr": ""
+        },
+        "z3-noodler": {
+            "memory": 36605952,
+            "run_time": 60.01532578468323,
+            "is_sat": "timeout",
+            "stdout": "",
+            "stderr": ""
+        },
+        "ostrich": {
+            "memory": 139948032,
+            "run_time": 0.5526180267333984,
+            "is_sat": "error",
+            "stdout": "error\r\n",
+            "stderr": "Loading C:\\Users\\yyzha\\Desktop\\jars\\dataset_w\\efficient-boot-common\\smt\\method-com.efficient.common.util.IdUtil__generateBatchNumber__1146992552\\89.smt2 ...\r\n\r\nLoading OSTRICH 1.3.5, a solver for string constraints\r\n(c) Matthew Hague, Denghang Hu, Philipp Rmmer, 2018-2024\r\nWith contributions by Riccardo De Masellis, Zhilei Han, Oliver Markgraf.\r\nFor more information, see https://github.com/uuverifiers/ostrich\r\n\r\n\r\n341ms\r\nSymbol ^ not declared\r\n"
+        },
+        "undefined_function_count": 2,
+        "assertion_count": 2,
+        "api_sequence": [
+            "<java.lang.Long: java.lang.String toString(long,int)>",
+            "<java.lang.String: java.lang.String toUpperCase()>"
+        ],
+        "api_count": {
+            "<java.lang.String: java.lang.String toUpperCase()>": 1
+        },
+        "jimple_statements": [
+            "$l0 = staticinvoke <java.lang.System: long currentTimeMillis()>()",
+            "l1 = $l0 - 946684800000L",
+            "$b2 = l1 cmp 0L",
+            "$i8 = (int) $b2",
+            "if $i8 >= 0 goto $l6 = l1 << 20",
+            "$l6 = l1 << 20",
+            "$l3 = <com.efficient.common.util.IdUtil: long sequence>",
+            "$l4 = $l3 + 1L",
+            "<com.efficient.common.util.IdUtil: long sequence> = $l4",
+            "$l5 = $l3 & 1048575L",
+            "l7 = $l6 | $l5",
+            "$r0 = staticinvoke <java.lang.Long: java.lang.String toString(long,int)>(l7, 36)",
+            "$r1 = virtualinvoke $r0.<java.lang.String: java.lang.String toUpperCase()>()",
+            "return $r1"
+        ]
+    }
+]

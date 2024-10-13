@@ -1,0 +1,54 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var3147 0)
+(declare-sort var2831 0)
+(declare-sort var1966 0)
+(declare-sort var1757 0)
+(declare-sort var2197 0)
+(declare-sort var141 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun var3147_getCallSiteDescriptor/-488476513 (var3147) var2831)
+(declare-fun cast-from-var2831-to-var1966 (var2831) var1966)
+(declare-fun getFirstOperator/-1683874211 (var1966) String)
+(declare-fun hashCode/-467973558 (String) Int)
+(declare-fun arr-String-init () (Array Int String))
+(declare-fun var1757_getArgument/-145490988 (var3147) String)
+(declare-fun var141_typeError/-1487832051 (String (Array Int String)) var2197)
+(declare-const null-var3147 var3147)
+(declare-const null-__Array__Int__String__ (Array Int String))
+(declare-const var3141 var3147) ; Statement: r0 := @parameter0: jdk.internal.dynalink.linker.LinkRequest 
+(assert (not (= var3141 null-var3147)))
+(define-const var335 var2831 (var3147_getCallSiteDescriptor/-488476513 var3141)) ; Statement: $r1 = interfaceinvoke r0.<jdk.internal.dynalink.linker.LinkRequest: jdk.internal.dynalink.CallSiteDescriptor getCallSiteDescriptor()>() 
+(define-const var3258 var1966 (cast-from-var2831-to-var1966 var335)) ; Statement: r2 = (jdk.nashorn.internal.runtime.linker.NashornCallSiteDescriptor) $r1 
+(assert true)
+(define-const var1967 String (getFirstOperator/-1683874211 var3258)) ; Statement: r3 = virtualinvoke r2.<jdk.nashorn.internal.runtime.linker.NashornCallSiteDescriptor: java.lang.String getFirstOperator()>() 
+(define-const var60 Int (- 1)) ; Statement: b1 = -1 
+(assert true)
+(define-const var3890 Int (hashCode/-467973558 var1967)) ; Statement: $i0 = virtualinvoke r3.<java.lang.String: int hashCode()>() 
+ ; Statement: lookupswitch($i0) {     case -75566075: goto $z7 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("getElem");     case -75232295: goto $z6 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("getProp");     case 108960: goto $z5 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("new");     case 3045982: goto $z4 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("call");     case 618460119: goto $z3 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("getMethod");     case 1402960095: goto $z2 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("callMethod");     case 1984543505: goto $z1 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("setElem");     case 1984877285: goto $z0 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("setProp");     default: goto tableswitch(b1) {     case 0: goto $r13 = newarray (java.lang.String)[1];     case 1: goto $r13 = newarray (java.lang.String)[1];     case 2: goto $r10 = newarray (java.lang.String)[2];     case 3: goto $r10 = newarray (java.lang.String)[2];     case 4: goto $r7 = newarray (java.lang.String)[2];     case 5: goto $r7 = newarray (java.lang.String)[2];     case 6: goto $r4 = newarray (java.lang.String)[2];     case 7: goto $r4 = newarray (java.lang.String)[2];     default: goto $r15 = new java.lang.AssertionError; }; } 
+(assert (and (not (= var3890 1984877285)) (and (not (= var3890 1984543505)) (and (not (= var3890 1402960095)) (and (not (= var3890 618460119)) (and (not (= var3890 3045982)) (and (not (= var3890 108960)) (and (not (= var3890 (- 75232295))) (and (not (= var3890 (- 75566075))) true))))))))) ; Intersect: Negate: Cond: $i0 == 1984877285   and Intersect: Negate: Cond: $i0 == 1984543505   and Intersect: Negate: Cond: $i0 == 1402960095   and Intersect: Negate: Cond: $i0 == 618460119   and Intersect: Negate: Cond: $i0 == 3045982   and Intersect: Negate: Cond: $i0 == 108960   and Intersect: Negate: Cond: $i0 == -75232295   and Intersect: Negate: Cond: $i0 == -75566075   and Non Conditional        
+ ; Statement: tableswitch(b1) {     case 0: goto $r13 = newarray (java.lang.String)[1];     case 1: goto $r13 = newarray (java.lang.String)[1];     case 2: goto $r10 = newarray (java.lang.String)[2];     case 3: goto $r10 = newarray (java.lang.String)[2];     case 4: goto $r7 = newarray (java.lang.String)[2];     case 5: goto $r7 = newarray (java.lang.String)[2];     case 6: goto $r4 = newarray (java.lang.String)[2];     case 7: goto $r4 = newarray (java.lang.String)[2];     default: goto $r15 = new java.lang.AssertionError; } 
+(assert (and (= var60 6) (and (not (= var60 5)) (and (not (= var60 4)) (and (not (= var60 3)) (and (not (= var60 2)) (and (not (= var60 1)) (and (not (= var60 0)) true)))))))) ; Intersect: Cond: b1 == 6  and Intersect: Negate: Cond: b1 == 5   and Intersect: Negate: Cond: b1 == 4   and Intersect: Negate: Cond: b1 == 3   and Intersect: Negate: Cond: b1 == 2   and Intersect: Negate: Cond: b1 == 1   and Intersect: Negate: Cond: b1 == 0   and Non Conditional       
+(define-const var509 (Array Int String) arr-String-init) ; Statement: $r4 = newarray (java.lang.String)[2] 
+(define-const var1330 String (var1757_getArgument/-145490988 var3141)) ; Statement: $r5 = staticinvoke <jdk.nashorn.internal.runtime.linker.NashornBottomLinker: java.lang.String getArgument(jdk.internal.dynalink.linker.LinkRequest)>(r0) 
+(declare-const var509!1 (Array Int String))
+(assert (not (= var509!1 null-__Array__Int__String__)))
+(assert (= (select var509!1 0) var1330)) ; Statement: $r4[0] = $r5 
+(declare-const var509!2 (Array Int String))
+(assert (not (= var509!2 null-__Array__Int__String__)))
+(assert (= (select var509!2 1) "null")) ; Statement: $r4[1] = "null" 
+(define-const var2632 var2197 (var141_typeError/-1487832051 "cant.set.property" var509!2)) ; Statement: $r6 = staticinvoke <jdk.nashorn.internal.runtime.ECMAErrors: jdk.nashorn.internal.runtime.ECMAException typeError(java.lang.String,java.lang.String[])>("cant.set.property", $r4) 
+ ; Statement: throw $r6 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {var3147_getCallSiteDescriptor/-488476513=([jdk.internal.dynalink.linker.LinkRequest], jdk.internal.dynalink.CallSiteDescriptor), cast-from-var2831-to-var1966=([jdk.internal.dynalink.CallSiteDescriptor], jdk.nashorn.internal.runtime.linker.NashornCallSiteDescriptor), getFirstOperator/-1683874211=([jdk.nashorn.internal.runtime.linker.NashornCallSiteDescriptor], java.lang.String), hashCode/-467973558=([java.lang.String], int), arr-String-init=([], java.lang.String[]), var1757_getArgument/-145490988=([jdk.internal.dynalink.linker.LinkRequest], java.lang.String), var141_typeError/-1487832051=([java.lang.String, java.lang.String[]], jdk.nashorn.internal.runtime.ECMAException)}
+; {var3147=jdk.internal.dynalink.linker.LinkRequest, var3141=r0, var2831=jdk.internal.dynalink.CallSiteDescriptor, var335=$r1, var1966=jdk.nashorn.internal.runtime.linker.NashornCallSiteDescriptor, var3258=r2, var1967=r3, var60=b1, var3890=$i0, var509=$r4, var1757=jdk.nashorn.internal.runtime.linker.NashornBottomLinker, var1330=$r5, var2197=jdk.nashorn.internal.runtime.ECMAException, var141=jdk.nashorn.internal.runtime.ECMAErrors, var2632=$r6}
+; {jdk.internal.dynalink.linker.LinkRequest=var3147, r0=var3141, jdk.internal.dynalink.CallSiteDescriptor=var2831, $r1=var335, jdk.nashorn.internal.runtime.linker.NashornCallSiteDescriptor=var1966, r2=var3258, r3=var1967, b1=var60, $i0=var3890, $r4=var509, jdk.nashorn.internal.runtime.linker.NashornBottomLinker=var1757, $r5=var1330, jdk.nashorn.internal.runtime.ECMAException=var2197, jdk.nashorn.internal.runtime.ECMAErrors=var141, $r6=var2632}
+;seq <java.lang.String: int hashCode()>
+;cnt {"<java.lang.String: int hashCode()>": 1}
+;stmts r0 := @parameter0: jdk.internal.dynalink.linker.LinkRequest;	$r1 = interfaceinvoke r0.<jdk.internal.dynalink.linker.LinkRequest: jdk.internal.dynalink.CallSiteDescriptor getCallSiteDescriptor()>();	r2 = (jdk.nashorn.internal.runtime.linker.NashornCallSiteDescriptor) $r1;	r3 = virtualinvoke r2.<jdk.nashorn.internal.runtime.linker.NashornCallSiteDescriptor: java.lang.String getFirstOperator()>();	b1 = -1;	$i0 = virtualinvoke r3.<java.lang.String: int hashCode()>();	lookupswitch($i0) {     case -75566075: goto $z7 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("getElem");     case -75232295: goto $z6 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("getProp");     case 108960: goto $z5 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("new");     case 3045982: goto $z4 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("call");     case 618460119: goto $z3 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("getMethod");     case 1402960095: goto $z2 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("callMethod");     case 1984543505: goto $z1 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("setElem");     case 1984877285: goto $z0 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("setProp");     default: goto tableswitch(b1) {     case 0: goto $r13 = newarray (java.lang.String)[1];     case 1: goto $r13 = newarray (java.lang.String)[1];     case 2: goto $r10 = newarray (java.lang.String)[2];     case 3: goto $r10 = newarray (java.lang.String)[2];     case 4: goto $r7 = newarray (java.lang.String)[2];     case 5: goto $r7 = newarray (java.lang.String)[2];     case 6: goto $r4 = newarray (java.lang.String)[2];     case 7: goto $r4 = newarray (java.lang.String)[2];     default: goto $r15 = new java.lang.AssertionError; }; };	tableswitch(b1) {     case 0: goto $r13 = newarray (java.lang.String)[1];     case 1: goto $r13 = newarray (java.lang.String)[1];     case 2: goto $r10 = newarray (java.lang.String)[2];     case 3: goto $r10 = newarray (java.lang.String)[2];     case 4: goto $r7 = newarray (java.lang.String)[2];     case 5: goto $r7 = newarray (java.lang.String)[2];     case 6: goto $r4 = newarray (java.lang.String)[2];     case 7: goto $r4 = newarray (java.lang.String)[2];     default: goto $r15 = new java.lang.AssertionError; };	$r4 = newarray (java.lang.String)[2];	$r5 = staticinvoke <jdk.nashorn.internal.runtime.linker.NashornBottomLinker: java.lang.String getArgument(jdk.internal.dynalink.linker.LinkRequest)>(r0);	$r4[0] = $r5;	$r4[1] = "null";	$r6 = staticinvoke <jdk.nashorn.internal.runtime.ECMAErrors: jdk.nashorn.internal.runtime.ECMAException typeError(java.lang.String,java.lang.String[])>("cant.set.property", $r4);	throw $r6
+;block_num 3

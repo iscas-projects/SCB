@@ -1,0 +1,115 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var3990 0)
+(declare-sort var1369 0)
+(declare-sort var2505 0)
+(declare-sort var1636 0)
+(declare-sort var161 0)
+(declare-sort var3825 0)
+(declare-sort var2430 0)
+(declare-sort var2064 0)
+(declare-sort var680 0)
+(declare-sort var2592 0)
+(declare-sort var3133 0)
+(declare-sort var2890 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-const var680!class ClassObject)
+(declare-fun var2505-init () var2505)
+(declare-fun factory/-113976271 (var161) var1636)
+(declare-fun cast-from-var3990-to-var161 (var3990) var161)
+(declare-fun var1636_getServiceRegistry/762402722 (var1636) var3825)
+(declare-fun var2064_getService/-972330729 (var2064 ClassObject) var2430)
+(declare-fun cast-from-var3825-to-var2064 (var3825) var2064)
+(declare-fun cast-from-var2430-to-var680 (var2430) var680)
+(declare-fun var680_getDialect/1253253595 (var680) var2592)
+(declare-fun <init>/-788839310 (var2505 var2592) void)
+(declare-fun setTableName/-1458401973 (var2505 String) var2505)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(define-fun cast-from-__Array__Int__String__-to-__Array__Int__String__ ((arg (Array Int String))) (Array Int String) arg)
+(declare-fun String_join/-1520935655 (String (Array Int String)) String)
+(define-fun cast-from-String-to-String ((arg String)) String arg)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-fun setWhere/-1237671395 (var2505 String) var2505)
+(declare-fun var2890_getSessionFactoryOptions/-1909602825 (var2890) var3133)
+(declare-fun cast-from-var1636-to-var2890 (var1636) var2890)
+(declare-fun var3133_isCommentsEnabled/348952998 (var3133) Bool)
+(declare-const null-var3990 var3990)
+(declare-const null-String String)
+(declare-const null-__Array__Int__String__ (Array Int String))
+(declare-const var2074 var3990) ; Statement: r1 := @this: org.hibernate.hql.spi.id.inline.AbstractInlineIdsUpdateHandlerImpl 
+(assert (not (= var2074 null-var3990)))
+(declare-const var1054 String) ; Statement: r7 := @parameter0: java.lang.String 
+(assert (not (= var1054 null-String)))
+(declare-const var1400 (Array Int String)) ; Statement: r9 := @parameter1: java.lang.String[] 
+(assert (not (= var1400 null-__Array__Int__String__)))
+(declare-const var169 String) ; Statement: r14 := @parameter2: java.lang.String 
+(assert (not (= var169 null-String)))
+(declare-const var703 String) ; Statement: r23 := @parameter3: java.lang.String 
+(assert (not (= var703 null-String)))
+(define-const var3086 var2505 var2505-init) ; Statement: $r0 = new org.hibernate.sql.Update 
+(assert true)
+(define-const var3397 var1636 (factory/-113976271 (cast-from-var3990-to-var161 var2074))) ; Statement: $r2 = virtualinvoke r1.<org.hibernate.hql.spi.id.inline.AbstractInlineIdsUpdateHandlerImpl: org.hibernate.engine.spi.SessionFactoryImplementor factory()>() 
+(define-const var3389 var3825 (var1636_getServiceRegistry/762402722 var3397)) ; Statement: $r3 = interfaceinvoke $r2.<org.hibernate.engine.spi.SessionFactoryImplementor: org.hibernate.service.spi.ServiceRegistryImplementor getServiceRegistry()>() 
+(define-const var2874 var2430 (var2064_getService/-972330729 (cast-from-var3825-to-var2064 var3389) var680!class)) ; Statement: $r4 = interfaceinvoke $r3.<org.hibernate.service.spi.ServiceRegistryImplementor: org.hibernate.service.Service getService(java.lang.Class)>(class "Lorg/hibernate/engine/jdbc/spi/JdbcServices;") 
+(define-const var1768 var680 (cast-from-var2430-to-var680 var2874)) ; Statement: $r5 = (org.hibernate.engine.jdbc.spi.JdbcServices) $r4 
+(define-const var1101 var2592 (var680_getDialect/1253253595 var1768)) ; Statement: $r6 = interfaceinvoke $r5.<org.hibernate.engine.jdbc.spi.JdbcServices: org.hibernate.dialect.Dialect getDialect()>() 
+(assert true)
+;(assert (<init>/-788839310 var3086 var1101)) ; Statement: specialinvoke $r0.<org.hibernate.sql.Update: void <init>(org.hibernate.dialect.Dialect)>($r6) 
+
+(declare-const var3086!1 var2505)
+(declare-const var1101!1 var2592)
+(assert true)
+(define-const var1157 var2505 (setTableName/-1458401973 var3086!1 var1054)) ; Statement: $r19 = virtualinvoke $r0.<org.hibernate.sql.Update: org.hibernate.sql.Update setTableName(java.lang.String)>(r7) 
+(define-const var92 String String-init) ; Statement: $r8 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var92)) ; Statement: specialinvoke $r8.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var92!1 String)
+(assert (= var92!1 ""))
+(assert true)
+(define-const var2736 String (append/672562846 var92!1 "(")) ; Statement: $r12 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("(") 
+(declare-const var92!2 String)
+(assert (= var92!2 (str.++ var92!1 "(")))
+(define-const var1013 (Array Int String) (cast-from-__Array__Int__String__-to-__Array__Int__String__ var1400)) ; Statement: $r10 = (java.lang.CharSequence[]) r9 
+(define-const var2645 String (String_join/-1520935655 (cast-from-String-to-String ", ") var1013)) ; Statement: $r11 = staticinvoke <java.lang.String: java.lang.String join(java.lang.CharSequence,java.lang.CharSequence[])>(", ", $r10) 
+(assert true)
+(define-const var255 String (append/672562846 var2736 var2645)) ; Statement: $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r11) 
+(declare-const var2736!1 String)
+(assert (= var2736!1 (str.++ var2736 var2645)))
+(assert true)
+(define-const var1670 String (append/672562846 var255 ") in (")) ; Statement: $r15 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(") in (") 
+(declare-const var255!1 String)
+(assert (= var255!1 (str.++ var255 ") in (")))
+(assert true)
+(define-const var2905 String (append/672562846 var1670 var169)) ; Statement: $r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r14) 
+(declare-const var1670!1 String)
+(assert (= var1670!1 (str.++ var1670 var169)))
+(assert true)
+(define-const var3972 String (append/672562846 var2905 ")")) ; Statement: $r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(")") 
+(declare-const var2905!1 String)
+(assert (= var2905!1 (str.++ var2905 ")")))
+(assert true)
+(define-const var44 String (toString/-2075883882 var3972)) ; Statement: $r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.String toString()>() 
+(assert true)
+(define-const var1498 var2505 (setWhere/-1237671395 var1157 var44)) ; Statement: r20 = virtualinvoke $r19.<org.hibernate.sql.Update: org.hibernate.sql.Update setWhere(java.lang.String)>($r18) 
+(assert true)
+(define-const var401 var1636 (factory/-113976271 (cast-from-var3990-to-var161 var2074))) ; Statement: $r21 = virtualinvoke r1.<org.hibernate.hql.spi.id.inline.AbstractInlineIdsUpdateHandlerImpl: org.hibernate.engine.spi.SessionFactoryImplementor factory()>() 
+(define-const var3184 var3133 (var2890_getSessionFactoryOptions/-1909602825 (cast-from-var1636-to-var2890 var401))) ; Statement: $r22 = interfaceinvoke $r21.<org.hibernate.engine.spi.SessionFactoryImplementor: org.hibernate.boot.spi.SessionFactoryOptions getSessionFactoryOptions()>() 
+(define-const var3969 Bool (var3133_isCommentsEnabled/348952998 var3184)) ; Statement: $z0 = interfaceinvoke $r22.<org.hibernate.boot.spi.SessionFactoryOptions: boolean isCommentsEnabled()>() 
+ ; Statement: if $z0 == 0 goto return r20 
+(assert (= (ite var3969 1 0) 0)) ; Cond: $z0 == 0 
+ ; Statement: return r20 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {var2505-init=([], org.hibernate.sql.Update), factory/-113976271=([org.hibernate.hql.spi.id.AbstractTableBasedBulkIdHandler], org.hibernate.engine.spi.SessionFactoryImplementor), cast-from-var3990-to-var161=([org.hibernate.hql.spi.id.inline.AbstractInlineIdsUpdateHandlerImpl], org.hibernate.hql.spi.id.AbstractTableBasedBulkIdHandler), var1636_getServiceRegistry/762402722=([org.hibernate.engine.spi.SessionFactoryImplementor], org.hibernate.service.spi.ServiceRegistryImplementor), var2064_getService/-972330729=([org.hibernate.service.ServiceRegistry, java.lang.Class], org.hibernate.service.Service), cast-from-var3825-to-var2064=([org.hibernate.service.spi.ServiceRegistryImplementor], org.hibernate.service.ServiceRegistry), cast-from-var2430-to-var680=([org.hibernate.service.Service], org.hibernate.engine.jdbc.spi.JdbcServices), var680_getDialect/1253253595=([org.hibernate.engine.jdbc.spi.JdbcServices], org.hibernate.dialect.Dialect), <init>/-788839310=([org.hibernate.sql.Update, org.hibernate.dialect.Dialect], void), setTableName/-1458401973=([org.hibernate.sql.Update, java.lang.String], org.hibernate.sql.Update), String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), cast-from-__Array__Int__String__-to-__Array__Int__String__=([java.lang.String[]], java.lang.CharSequence[]), String_join/-1520935655=([java.lang.CharSequence, java.lang.CharSequence[]], java.lang.String), cast-from-String-to-String=([java.lang.String], java.lang.CharSequence), toString/-2075883882=([java.lang.StringBuilder], java.lang.String), setWhere/-1237671395=([org.hibernate.sql.Update, java.lang.String], org.hibernate.sql.Update), var2890_getSessionFactoryOptions/-1909602825=([org.hibernate.SessionFactory], org.hibernate.boot.spi.SessionFactoryOptions), cast-from-var1636-to-var2890=([org.hibernate.engine.spi.SessionFactoryImplementor], org.hibernate.SessionFactory), var3133_isCommentsEnabled/348952998=([org.hibernate.boot.spi.SessionFactoryOptions], boolean)}
+; {var3990=org.hibernate.hql.spi.id.inline.AbstractInlineIdsUpdateHandlerImpl, var2074=r1, var1054=r7, var1369=null_type, var1400=r9, var169=r14, var703=r23, var2505=org.hibernate.sql.Update, var3086=$r0, var1636=org.hibernate.engine.spi.SessionFactoryImplementor, var161=org.hibernate.hql.spi.id.AbstractTableBasedBulkIdHandler, var3397=$r2, var3825=org.hibernate.service.spi.ServiceRegistryImplementor, var3389=$r3, var2430=org.hibernate.service.Service, var2064=org.hibernate.service.ServiceRegistry, var680=org.hibernate.engine.jdbc.spi.JdbcServices, var2874=$r4, var1768=$r5, var2592=org.hibernate.dialect.Dialect, var1101=$r6, var1157=$r19, var92=$r8, var2736=$r12, var1013=$r10, var2645=$r11, var255=$r13, var1670=$r15, var2905=$r16, var3972=$r17, var44=$r18, var1498=r20, var401=$r21, var3133=org.hibernate.boot.spi.SessionFactoryOptions, var2890=org.hibernate.SessionFactory, var3184=$r22, var3969=$z0}
+; {org.hibernate.hql.spi.id.inline.AbstractInlineIdsUpdateHandlerImpl=var3990, r1=var2074, r7=var1054, null_type=var1369, r9=var1400, r14=var169, r23=var703, org.hibernate.sql.Update=var2505, $r0=var3086, org.hibernate.engine.spi.SessionFactoryImplementor=var1636, org.hibernate.hql.spi.id.AbstractTableBasedBulkIdHandler=var161, $r2=var3397, org.hibernate.service.spi.ServiceRegistryImplementor=var3825, $r3=var3389, org.hibernate.service.Service=var2430, org.hibernate.service.ServiceRegistry=var2064, org.hibernate.engine.jdbc.spi.JdbcServices=var680, $r4=var2874, $r5=var1768, org.hibernate.dialect.Dialect=var2592, $r6=var1101, $r19=var1157, $r8=var92, $r12=var2736, $r10=var1013, $r11=var2645, $r13=var255, $r15=var1670, $r16=var2905, $r17=var3972, $r18=var44, r20=var1498, $r21=var401, org.hibernate.boot.spi.SessionFactoryOptions=var3133, org.hibernate.SessionFactory=var2890, $r22=var3184, $z0=var3969}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.String: java.lang.String join(java.lang.CharSequence,java.lang.CharSequence[])>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 5,"<java.lang.String: java.lang.String join(java.lang.CharSequence,java.lang.CharSequence[])>": 1,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r1 := @this: org.hibernate.hql.spi.id.inline.AbstractInlineIdsUpdateHandlerImpl;	r7 := @parameter0: java.lang.String;	r9 := @parameter1: java.lang.String[];	r14 := @parameter2: java.lang.String;	r23 := @parameter3: java.lang.String;	$r0 = new org.hibernate.sql.Update;	$r2 = virtualinvoke r1.<org.hibernate.hql.spi.id.inline.AbstractInlineIdsUpdateHandlerImpl: org.hibernate.engine.spi.SessionFactoryImplementor factory()>();	$r3 = interfaceinvoke $r2.<org.hibernate.engine.spi.SessionFactoryImplementor: org.hibernate.service.spi.ServiceRegistryImplementor getServiceRegistry()>();	$r4 = interfaceinvoke $r3.<org.hibernate.service.spi.ServiceRegistryImplementor: org.hibernate.service.Service getService(java.lang.Class)>(class "Lorg/hibernate/engine/jdbc/spi/JdbcServices;");	$r5 = (org.hibernate.engine.jdbc.spi.JdbcServices) $r4;	$r6 = interfaceinvoke $r5.<org.hibernate.engine.jdbc.spi.JdbcServices: org.hibernate.dialect.Dialect getDialect()>();	specialinvoke $r0.<org.hibernate.sql.Update: void <init>(org.hibernate.dialect.Dialect)>($r6);	$r19 = virtualinvoke $r0.<org.hibernate.sql.Update: org.hibernate.sql.Update setTableName(java.lang.String)>(r7);	$r8 = new java.lang.StringBuilder;	specialinvoke $r8.<java.lang.StringBuilder: void <init>()>();	$r12 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("(");	$r10 = (java.lang.CharSequence[]) r9;	$r11 = staticinvoke <java.lang.String: java.lang.String join(java.lang.CharSequence,java.lang.CharSequence[])>(", ", $r10);	$r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r11);	$r15 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(") in (");	$r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r14);	$r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(")");	$r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.String toString()>();	r20 = virtualinvoke $r19.<org.hibernate.sql.Update: org.hibernate.sql.Update setWhere(java.lang.String)>($r18);	$r21 = virtualinvoke r1.<org.hibernate.hql.spi.id.inline.AbstractInlineIdsUpdateHandlerImpl: org.hibernate.engine.spi.SessionFactoryImplementor factory()>();	$r22 = interfaceinvoke $r21.<org.hibernate.engine.spi.SessionFactoryImplementor: org.hibernate.boot.spi.SessionFactoryOptions getSessionFactoryOptions()>();	$z0 = interfaceinvoke $r22.<org.hibernate.boot.spi.SessionFactoryOptions: boolean isCommentsEnabled()>();	if $z0 == 0 goto return r20;	return r20
+;block_num 2

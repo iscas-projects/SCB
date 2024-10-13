@@ -1,0 +1,95 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var1093 0)
+(declare-sort var390 0)
+(declare-sort var823 0)
+(declare-sort var2996 0)
+(declare-sort var517 0)
+(declare-sort var2686 0)
+(declare-sort var3353 0)
+(declare-sort var1544 0)
+(declare-sort var1674 0)
+(declare-sort var1729 0)
+(declare-sort var3266 0)
+(declare-sort var1878 0)
+(declare-sort var1361 0)
+(declare-sort var2588 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-const var2588!class ClassObject)
+(declare-fun var390_getValue/1809189437 (var390) var823)
+(declare-fun cast-from-var823-to-var2996 (var823) var2996)
+(declare-fun var390_getScaleOrLength/-620558396 (var390) Int)
+(declare-fun cast-from-var2996-to-var517 (var2996) var517)
+(declare-fun getScaled/575983753 (var2686 var2996 Int) var2996)
+(declare-fun cast-from-var1093-to-var2686 (var1093) var2686)
+(declare-fun var390_getMysqlType/-215853011 (var390) var1544)
+(declare-fun ordinal/-291641772 (var1674) Int)
+(declare-fun cast-from-var1544-to-var1674 (var1544) var1674)
+(declare-fun arr-var823-init () (Array Int var823))
+(declare-fun getClass/1258963082 (var823) ClassObject)
+(declare-fun getName/-1958580599 (ClassObject) String)
+(declare-fun cast-from-String-to-var823 (String) var823)
+(declare-fun toString/1761020461 (var1674) String)
+(declare-fun var1729_getString/1500902777 (String (Array Int var823)) String)
+(declare-fun exceptionInterceptor/-791602078 (var2686) var3266)
+(declare-fun var1361_createException/-988168188 (ClassObject String var3266) var1878)
+(declare-fun cast-from-var1878-to-var2588 (var1878) var2588)
+(declare-const null-var1093 var1093)
+(declare-const null-var390 var390)
+(declare-const var3353-$SwitchMap$com$mysql$cj$MysqlType (Array Int Int))
+(declare-const null-__Array__Int__var823__ (Array Int var823))
+(declare-const var2237 var1093) ; Statement: r20 := @this: com.mysql.cj.protocol.a.NumberValueEncoder 
+(assert (not (= var2237 null-var1093)))
+(declare-const var1883 var390) ; Statement: r0 := @parameter0: com.mysql.cj.BindValue 
+(assert (not (= var1883 null-var390)))
+(define-const var1810 var823 (var390_getValue/1809189437 var1883)) ; Statement: $r1 = interfaceinvoke r0.<com.mysql.cj.BindValue: java.lang.Object getValue()>() 
+(define-const var120 Bool false) ; Statement: $z0 = $r1 instanceof java.math.BigDecimal 
+ ; Statement: if $z0 == 0 goto $r2 = interfaceinvoke r0.<com.mysql.cj.BindValue: java.lang.Object getValue()>() 
+(assert (not (= (ite var120 1 0) 0))) ; Negate: Cond: $z0 == 0  
+(define-const var1368 var823 (var390_getValue/1809189437 var1883)) ; Statement: $r25 = interfaceinvoke r0.<com.mysql.cj.BindValue: java.lang.Object getValue()>() 
+(define-const var1910 var2996 (cast-from-var823-to-var2996 var1368)) ; Statement: $r26 = (java.math.BigDecimal) $r25 
+(define-const var1660 Int (var390_getScaleOrLength/-620558396 var1883)) ; Statement: $l6 = interfaceinvoke r0.<com.mysql.cj.BindValue: long getScaleOrLength()>() 
+(assert true)
+(define-const var1924 var517 (cast-from-var2996-to-var517 (getScaled/575983753 (cast-from-var1093-to-var2686 var2237) var1910 var1660))) ; Statement: $r27 = virtualinvoke r20.<com.mysql.cj.protocol.a.NumberValueEncoder: java.math.BigDecimal getScaled(java.math.BigDecimal,long)>($r26, $l6) 
+ ; Statement: goto [?= $r3 = <com.mysql.cj.protocol.a.NumberValueEncoder$1: int[] $SwitchMap$com$mysql$cj$MysqlType>] 
+(assert true) ; Non Conditional
+(define-const var430 (Array Int Int) var3353-$SwitchMap$com$mysql$cj$MysqlType) ; Statement: $r3 = <com.mysql.cj.protocol.a.NumberValueEncoder$1: int[] $SwitchMap$com$mysql$cj$MysqlType> 
+(define-const var318 var1544 (var390_getMysqlType/-215853011 var1883)) ; Statement: $r4 = interfaceinvoke r0.<com.mysql.cj.BindValue: com.mysql.cj.MysqlType getMysqlType()>() 
+(assert true)
+(define-const var1705 Int (ordinal/-291641772 (cast-from-var1544-to-var1674 var318))) ; Statement: $i0 = virtualinvoke $r4.<com.mysql.cj.MysqlType: int ordinal()>() 
+(define-const var923 Int (select var430 var1705)) ; Statement: $i1 = $r3[$i0] 
+ ; Statement: tableswitch($i1) {     case 1: goto return "null";     case 2: goto $l4 = virtualinvoke $r27.<java.lang.Number: long longValue()>();     case 3: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 4: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 5: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 6: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 7: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 8: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 9: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 10: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 11: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 12: goto $l2 = virtualinvoke $r27.<java.lang.Number: long longValue()>();     case 13: goto $l2 = virtualinvoke $r27.<java.lang.Number: long longValue()>();     case 14: goto $l2 = virtualinvoke $r27.<java.lang.Number: long longValue()>();     case 15: goto $f0 = virtualinvoke $r27.<java.lang.Number: float floatValue()>();     case 16: goto $f0 = virtualinvoke $r27.<java.lang.Number: float floatValue()>();     case 17: goto $d0 = virtualinvoke $r27.<java.lang.Number: double doubleValue()>();     case 18: goto $d0 = virtualinvoke $r27.<java.lang.Number: double doubleValue()>();     case 19: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 20: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 21: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 22: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 23: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 24: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 25: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 26: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 27: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 28: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 29: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 30: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 31: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 32: goto $z1 = $r27 instanceof java.math.BigDecimal;     default: goto $r14 = newarray (java.lang.Object)[2]; } 
+(assert (and (not (= var923 32)) (and (not (= var923 31)) (and (not (= var923 30)) (and (not (= var923 29)) (and (not (= var923 28)) (and (not (= var923 27)) (and (not (= var923 26)) (and (not (= var923 25)) (and (not (= var923 24)) (and (not (= var923 23)) (and (not (= var923 22)) (and (not (= var923 21)) (and (not (= var923 20)) (and (not (= var923 19)) (and (not (= var923 18)) (and (not (= var923 17)) (and (not (= var923 16)) (and (not (= var923 15)) (and (not (= var923 14)) (and (not (= var923 13)) (and (not (= var923 12)) (and (not (= var923 11)) (and (not (= var923 10)) (and (not (= var923 9)) (and (not (= var923 8)) (and (not (= var923 7)) (and (not (= var923 6)) (and (not (= var923 5)) (and (not (= var923 4)) (and (not (= var923 3)) (and (not (= var923 2)) (and (not (= var923 1)) true))))))))))))))))))))))))))))))))) ; Intersect: Negate: Cond: $i1 == 32   and Intersect: Negate: Cond: $i1 == 31   and Intersect: Negate: Cond: $i1 == 30   and Intersect: Negate: Cond: $i1 == 29   and Intersect: Negate: Cond: $i1 == 28   and Intersect: Negate: Cond: $i1 == 27   and Intersect: Negate: Cond: $i1 == 26   and Intersect: Negate: Cond: $i1 == 25   and Intersect: Negate: Cond: $i1 == 24   and Intersect: Negate: Cond: $i1 == 23   and Intersect: Negate: Cond: $i1 == 22   and Intersect: Negate: Cond: $i1 == 21   and Intersect: Negate: Cond: $i1 == 20   and Intersect: Negate: Cond: $i1 == 19   and Intersect: Negate: Cond: $i1 == 18   and Intersect: Negate: Cond: $i1 == 17   and Intersect: Negate: Cond: $i1 == 16   and Intersect: Negate: Cond: $i1 == 15   and Intersect: Negate: Cond: $i1 == 14   and Intersect: Negate: Cond: $i1 == 13   and Intersect: Negate: Cond: $i1 == 12   and Intersect: Negate: Cond: $i1 == 11   and Intersect: Negate: Cond: $i1 == 10   and Intersect: Negate: Cond: $i1 == 9   and Intersect: Negate: Cond: $i1 == 8   and Intersect: Negate: Cond: $i1 == 7   and Intersect: Negate: Cond: $i1 == 6   and Intersect: Negate: Cond: $i1 == 5   and Intersect: Negate: Cond: $i1 == 4   and Intersect: Negate: Cond: $i1 == 3   and Intersect: Negate: Cond: $i1 == 2   and Intersect: Negate: Cond: $i1 == 1   and Non Conditional                                
+(define-const var2528 (Array Int var823) arr-var823-init) ; Statement: $r14 = newarray (java.lang.Object)[2] 
+(define-const var1587 var823 (var390_getValue/1809189437 var1883)) ; Statement: $r15 = interfaceinvoke r0.<com.mysql.cj.BindValue: java.lang.Object getValue()>() 
+(assert true)
+(define-const var1645 ClassObject (getClass/1258963082 var1587)) ; Statement: $r16 = virtualinvoke $r15.<java.lang.Object: java.lang.Class getClass()>() 
+(assert true)
+(define-const var2909 String (getName/-1958580599 var1645)) ; Statement: $r17 = virtualinvoke $r16.<java.lang.Class: java.lang.String getName()>() 
+(declare-const var2528!1 (Array Int var823))
+(assert (not (= var2528!1 null-__Array__Int__var823__)))
+(assert (= (select var2528!1 0) (cast-from-String-to-var823 var2909))) ; Statement: $r14[0] = $r17 
+(define-const var770 var1544 (var390_getMysqlType/-215853011 var1883)) ; Statement: $r18 = interfaceinvoke r0.<com.mysql.cj.BindValue: com.mysql.cj.MysqlType getMysqlType()>() 
+(assert true)
+(define-const var2430 String (toString/1761020461 (cast-from-var1544-to-var1674 var770))) ; Statement: $r19 = virtualinvoke $r18.<com.mysql.cj.MysqlType: java.lang.String toString()>() 
+(declare-const var2528!2 (Array Int var823))
+(assert (not (= var2528!2 null-__Array__Int__var823__)))
+(assert (= (select var2528!2 1) (cast-from-String-to-var823 var2430))) ; Statement: $r14[1] = $r19 
+(define-const var510 String (var1729_getString/1500902777 "PreparedStatement.67" var2528!2)) ; Statement: $r22 = staticinvoke <com.mysql.cj.Messages: java.lang.String getString(java.lang.String,java.lang.Object[])>("PreparedStatement.67", $r14) 
+(define-const var589 var3266 (exceptionInterceptor/-791602078 (cast-from-var1093-to-var2686 var2237))) ; Statement: $r21 = r20.<com.mysql.cj.protocol.a.NumberValueEncoder: com.mysql.cj.exceptions.ExceptionInterceptor exceptionInterceptor> 
+(define-const var2024 var1878 (var1361_createException/-988168188 var2588!class var510 var589)) ; Statement: $r23 = staticinvoke <com.mysql.cj.exceptions.ExceptionFactory: com.mysql.cj.exceptions.CJException createException(java.lang.Class,java.lang.String,com.mysql.cj.exceptions.ExceptionInterceptor)>(class "Lcom/mysql/cj/exceptions/WrongArgumentException;", $r22, $r21) 
+(define-const var2425 var2588 (cast-from-var1878-to-var2588 var2024)) ; Statement: $r24 = (com.mysql.cj.exceptions.WrongArgumentException) $r23 
+ ; Statement: throw $r24 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {var390_getValue/1809189437=([com.mysql.cj.BindValue], java.lang.Object), cast-from-var823-to-var2996=([java.lang.Object], java.math.BigDecimal), var390_getScaleOrLength/-620558396=([com.mysql.cj.BindValue], long), cast-from-var2996-to-var517=([java.math.BigDecimal], java.lang.Number), getScaled/575983753=([com.mysql.cj.protocol.a.AbstractValueEncoder, java.math.BigDecimal, long], java.math.BigDecimal), cast-from-var1093-to-var2686=([com.mysql.cj.protocol.a.NumberValueEncoder], com.mysql.cj.protocol.a.AbstractValueEncoder), var390_getMysqlType/-215853011=([com.mysql.cj.BindValue], com.mysql.cj.MysqlType), ordinal/-291641772=([java.lang.Enum], int), cast-from-var1544-to-var1674=([com.mysql.cj.MysqlType], java.lang.Enum), arr-var823-init=([], java.lang.Object[]), getClass/1258963082=([java.lang.Object], java.lang.Class), getName/-1958580599=([java.lang.Class], java.lang.String), cast-from-String-to-var823=([java.lang.String], java.lang.Object), toString/1761020461=([java.lang.Enum], java.lang.String), var1729_getString/1500902777=([java.lang.String, java.lang.Object[]], java.lang.String), exceptionInterceptor/-791602078=([com.mysql.cj.protocol.a.AbstractValueEncoder], com.mysql.cj.exceptions.ExceptionInterceptor), var1361_createException/-988168188=([java.lang.Class, java.lang.String, com.mysql.cj.exceptions.ExceptionInterceptor], com.mysql.cj.exceptions.CJException), cast-from-var1878-to-var2588=([com.mysql.cj.exceptions.CJException], com.mysql.cj.exceptions.WrongArgumentException)}
+; {var1093=com.mysql.cj.protocol.a.NumberValueEncoder, var2237=r20, var390=com.mysql.cj.BindValue, var1883=r0, var823=java.lang.Object, var1810=$r1, var120=$z0, var1368=$r25, var2996=java.math.BigDecimal, var1910=$r26, var1660=$l6, var517=java.lang.Number, var2686=com.mysql.cj.protocol.a.AbstractValueEncoder, var1924=$r27, var3353=com.mysql.cj.protocol.a.NumberValueEncoder$1, var430=$r3, var1544=com.mysql.cj.MysqlType, var318=$r4, var1674=java.lang.Enum, var1705=$i0, var923=$i1, var2528=$r14, var1587=$r15, var1645=$r16, var2909=$r17, var770=$r18, var2430=$r19, var1729=com.mysql.cj.Messages, var510=$r22, var3266=com.mysql.cj.exceptions.ExceptionInterceptor, var589=$r21, var1878=com.mysql.cj.exceptions.CJException, var1361=com.mysql.cj.exceptions.ExceptionFactory, var2588=com.mysql.cj.exceptions.WrongArgumentException, var2024=$r23, var2425=$r24}
+; {com.mysql.cj.protocol.a.NumberValueEncoder=var1093, r20=var2237, com.mysql.cj.BindValue=var390, r0=var1883, java.lang.Object=var823, $r1=var1810, $z0=var120, $r25=var1368, java.math.BigDecimal=var2996, $r26=var1910, $l6=var1660, java.lang.Number=var517, com.mysql.cj.protocol.a.AbstractValueEncoder=var2686, $r27=var1924, com.mysql.cj.protocol.a.NumberValueEncoder$1=var3353, $r3=var430, com.mysql.cj.MysqlType=var1544, $r4=var318, java.lang.Enum=var1674, $i0=var1705, $i1=var923, $r14=var2528, $r15=var1587, $r16=var1645, $r17=var2909, $r18=var770, $r19=var2430, com.mysql.cj.Messages=var1729, $r22=var510, com.mysql.cj.exceptions.ExceptionInterceptor=var3266, $r21=var589, com.mysql.cj.exceptions.CJException=var1878, com.mysql.cj.exceptions.ExceptionFactory=var1361, com.mysql.cj.exceptions.WrongArgumentException=var2588, $r23=var2024, $r24=var2425}
+;seq <java.lang.Enum: java.lang.String toString()>
+;cnt {}
+;stmts r20 := @this: com.mysql.cj.protocol.a.NumberValueEncoder;	r0 := @parameter0: com.mysql.cj.BindValue;	$r1 = interfaceinvoke r0.<com.mysql.cj.BindValue: java.lang.Object getValue()>();	$z0 = $r1 instanceof java.math.BigDecimal;	if $z0 == 0 goto $r2 = interfaceinvoke r0.<com.mysql.cj.BindValue: java.lang.Object getValue()>();	$r25 = interfaceinvoke r0.<com.mysql.cj.BindValue: java.lang.Object getValue()>();	$r26 = (java.math.BigDecimal) $r25;	$l6 = interfaceinvoke r0.<com.mysql.cj.BindValue: long getScaleOrLength()>();	$r27 = virtualinvoke r20.<com.mysql.cj.protocol.a.NumberValueEncoder: java.math.BigDecimal getScaled(java.math.BigDecimal,long)>($r26, $l6);	goto [?= $r3 = <com.mysql.cj.protocol.a.NumberValueEncoder$1: int[] $SwitchMap$com$mysql$cj$MysqlType>];	$r3 = <com.mysql.cj.protocol.a.NumberValueEncoder$1: int[] $SwitchMap$com$mysql$cj$MysqlType>;	$r4 = interfaceinvoke r0.<com.mysql.cj.BindValue: com.mysql.cj.MysqlType getMysqlType()>();	$i0 = virtualinvoke $r4.<com.mysql.cj.MysqlType: int ordinal()>();	$i1 = $r3[$i0];	tableswitch($i1) {     case 1: goto return "null";     case 2: goto $l4 = virtualinvoke $r27.<java.lang.Number: long longValue()>();     case 3: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 4: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 5: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 6: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 7: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 8: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 9: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 10: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 11: goto $i3 = virtualinvoke $r27.<java.lang.Number: int intValue()>();     case 12: goto $l2 = virtualinvoke $r27.<java.lang.Number: long longValue()>();     case 13: goto $l2 = virtualinvoke $r27.<java.lang.Number: long longValue()>();     case 14: goto $l2 = virtualinvoke $r27.<java.lang.Number: long longValue()>();     case 15: goto $f0 = virtualinvoke $r27.<java.lang.Number: float floatValue()>();     case 16: goto $f0 = virtualinvoke $r27.<java.lang.Number: float floatValue()>();     case 17: goto $d0 = virtualinvoke $r27.<java.lang.Number: double doubleValue()>();     case 18: goto $d0 = virtualinvoke $r27.<java.lang.Number: double doubleValue()>();     case 19: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 20: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 21: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 22: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 23: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 24: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 25: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 26: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 27: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 28: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 29: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 30: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 31: goto $z1 = $r27 instanceof java.math.BigDecimal;     case 32: goto $z1 = $r27 instanceof java.math.BigDecimal;     default: goto $r14 = newarray (java.lang.Object)[2]; };	$r14 = newarray (java.lang.Object)[2];	$r15 = interfaceinvoke r0.<com.mysql.cj.BindValue: java.lang.Object getValue()>();	$r16 = virtualinvoke $r15.<java.lang.Object: java.lang.Class getClass()>();	$r17 = virtualinvoke $r16.<java.lang.Class: java.lang.String getName()>();	$r14[0] = $r17;	$r18 = interfaceinvoke r0.<com.mysql.cj.BindValue: com.mysql.cj.MysqlType getMysqlType()>();	$r19 = virtualinvoke $r18.<com.mysql.cj.MysqlType: java.lang.String toString()>();	$r14[1] = $r19;	$r22 = staticinvoke <com.mysql.cj.Messages: java.lang.String getString(java.lang.String,java.lang.Object[])>("PreparedStatement.67", $r14);	$r21 = r20.<com.mysql.cj.protocol.a.NumberValueEncoder: com.mysql.cj.exceptions.ExceptionInterceptor exceptionInterceptor>;	$r23 = staticinvoke <com.mysql.cj.exceptions.ExceptionFactory: com.mysql.cj.exceptions.CJException createException(java.lang.Class,java.lang.String,com.mysql.cj.exceptions.ExceptionInterceptor)>(class "Lcom/mysql/cj/exceptions/WrongArgumentException;", $r22, $r21);	$r24 = (com.mysql.cj.exceptions.WrongArgumentException) $r23;	throw $r24
+;block_num 4

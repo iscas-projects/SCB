@@ -1,0 +1,91 @@
+(set-option :produce-unsat-cores true) ; enable generation of unsat cores
+(set-option :produce-models true) ; enable model generation
+(set-logic ALL)
+(declare-sort var418 0)
+(declare-sort var2054 0)
+(declare-sort var3197 0)
+(declare-sort void 0)
+(declare-sort Iterator 0)
+(declare-sort ClassObject 0)
+(declare-fun String-init () String)
+(define-fun <init>/1968657023 () String "")
+(define-fun append/672562846 ((s String) (tail String)) String (str.++ s tail))
+(declare-fun key/1219881201 (var418) var2054)
+(declare-fun append/-1031950772 (String var2054) String)
+(declare-fun obj/1219881201 (var418) var2054)
+(declare-fun lastAccess/1219881201 (var418) Int)
+(declare-fun append/-901862667 (String Int) String)
+(declare-fun accessCount/1219881201 (var418) var3197)
+(declare-fun cast-from-var3197-to-var2054 (var3197) var2054)
+(declare-fun ttl/1219881201 (var418) Int)
+(define-fun toString/-2075883882 ((s String)) String s)
+(declare-const null-var418 var418)
+(declare-const var1279 var418) ; Statement: r1 := @this: cn.hutool.cache.impl.CacheObj 
+(assert (not (= var1279 null-var418)))
+(define-const var721 String String-init) ; Statement: $r0 = new java.lang.StringBuilder 
+(assert true)
+;(assert (<init>/1968657023 var721)) ; Statement: specialinvoke $r0.<java.lang.StringBuilder: void <init>()>() 
+(declare-const var721!1 String)
+(assert (= var721!1 ""))
+(assert true)
+(define-const var1452 String (append/672562846 var721!1 "CacheObj [key=")) ; Statement: $r3 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("CacheObj [key=") 
+(declare-const var721!2 String)
+(assert (= var721!2 (str.++ var721!1 "CacheObj [key=")))
+(define-const var1366 var2054 (key/1219881201 var1279)) ; Statement: $r2 = r1.<cn.hutool.cache.impl.CacheObj: java.lang.Object key> 
+(assert true)
+(define-const var894 String (append/-1031950772 var1452 var1366)) ; Statement: $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r2) 
+(declare-const var1452!1 String)
+(assert (str.prefixof var1452 var1452!1))
+(assert true)
+(define-const var3020 String (append/672562846 var894 ", obj=")) ; Statement: $r6 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", obj=") 
+(declare-const var894!1 String)
+(assert (= var894!1 (str.++ var894 ", obj=")))
+(define-const var3423 var2054 (obj/1219881201 var1279)) ; Statement: $r5 = r1.<cn.hutool.cache.impl.CacheObj: java.lang.Object obj> 
+(assert true)
+(define-const var3329 String (append/-1031950772 var3020 var3423)) ; Statement: $r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r5) 
+(declare-const var3020!1 String)
+(assert (str.prefixof var3020 var3020!1))
+(assert true)
+(define-const var625 String (append/672562846 var3329 ", lastAccess=")) ; Statement: $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", lastAccess=") 
+(declare-const var3329!1 String)
+(assert (= var3329!1 (str.++ var3329 ", lastAccess=")))
+(define-const var804 Int (lastAccess/1219881201 var1279)) ; Statement: $l0 = r1.<cn.hutool.cache.impl.CacheObj: long lastAccess> 
+(assert true)
+(define-const var1136 String (append/-901862667 var625 var804)) ; Statement: $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l0) 
+(declare-const var625!1 String)
+(assert (str.prefixof var625 var625!1))
+(assert true)
+(define-const var3678 String (append/672562846 var1136 ", accessCount=")) ; Statement: $r11 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", accessCount=") 
+(declare-const var1136!1 String)
+(assert (= var1136!1 (str.++ var1136 ", accessCount=")))
+(define-const var1530 var3197 (accessCount/1219881201 var1279)) ; Statement: $r10 = r1.<cn.hutool.cache.impl.CacheObj: java.util.concurrent.atomic.AtomicLong accessCount> 
+(assert true)
+(define-const var3192 String (append/-1031950772 var3678 (cast-from-var3197-to-var2054 var1530))) ; Statement: $r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r10) 
+(declare-const var3678!1 String)
+(assert (str.prefixof var3678 var3678!1))
+(assert true)
+(define-const var3686 String (append/672562846 var3192 ", ttl=")) ; Statement: $r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", ttl=") 
+(declare-const var3192!1 String)
+(assert (= var3192!1 (str.++ var3192 ", ttl=")))
+(define-const var1014 Int (ttl/1219881201 var1279)) ; Statement: $l1 = r1.<cn.hutool.cache.impl.CacheObj: long ttl> 
+(assert true)
+(define-const var1406 String (append/-901862667 var3686 var1014)) ; Statement: $r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l1) 
+(declare-const var3686!1 String)
+(assert (str.prefixof var3686 var3686!1))
+(assert true)
+(define-const var3184 String (append/672562846 var1406 "]")) ; Statement: $r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("]") 
+(declare-const var1406!1 String)
+(assert (= var1406!1 (str.++ var1406 "]")))
+(assert true)
+(define-const var1123 String (toString/-2075883882 var3184)) ; Statement: $r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>() 
+ ; Statement: return $r16 
+(check-sat)
+(get-model)
+(get-unsat-core)
+; {String-init=([], java.lang.StringBuilder), <init>/1968657023=([java.lang.StringBuilder], void), append/672562846=([java.lang.StringBuilder, java.lang.String], java.lang.StringBuilder), key/1219881201=([cn.hutool.cache.impl.CacheObj], java.lang.Object), append/-1031950772=([java.lang.StringBuilder, java.lang.Object], java.lang.StringBuilder), obj/1219881201=([cn.hutool.cache.impl.CacheObj], java.lang.Object), lastAccess/1219881201=([cn.hutool.cache.impl.CacheObj], long), append/-901862667=([java.lang.StringBuilder, long], java.lang.StringBuilder), accessCount/1219881201=([cn.hutool.cache.impl.CacheObj], java.util.concurrent.atomic.AtomicLong), cast-from-var3197-to-var2054=([java.util.concurrent.atomic.AtomicLong], java.lang.Object), ttl/1219881201=([cn.hutool.cache.impl.CacheObj], long), toString/-2075883882=([java.lang.StringBuilder], java.lang.String)}
+; {var418=cn.hutool.cache.impl.CacheObj, var1279=r1, var721=$r0, var1452=$r3, var2054=java.lang.Object, var1366=$r2, var894=$r4, var3020=$r6, var3423=$r5, var3329=$r7, var625=$r8, var804=$l0, var1136=$r9, var3678=$r11, var3197=java.util.concurrent.atomic.AtomicLong, var1530=$r10, var3192=$r12, var3686=$r13, var1014=$l1, var1406=$r14, var3184=$r15, var1123=$r16}
+; {cn.hutool.cache.impl.CacheObj=var418, r1=var1279, $r0=var721, $r3=var1452, java.lang.Object=var2054, $r2=var1366, $r4=var894, $r6=var3020, $r5=var3423, $r7=var3329, $r8=var625, $l0=var804, $r9=var1136, $r11=var3678, java.util.concurrent.atomic.AtomicLong=var3197, $r10=var1530, $r12=var3192, $r13=var3686, $l1=var1014, $r14=var1406, $r15=var3184, $r16=var1123}
+;seq <java.lang.StringBuilder: void <init>()>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(long)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(long)>;	<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>;	<java.lang.StringBuilder: java.lang.String toString()>
+;cnt {"<java.lang.StringBuilder: void <init>()>": 1,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>": 6,"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>": 3,"<java.lang.StringBuilder: java.lang.StringBuilder append(long)>": 2,"<java.lang.StringBuilder: java.lang.String toString()>": 1}
+;stmts r1 := @this: cn.hutool.cache.impl.CacheObj;	$r0 = new java.lang.StringBuilder;	specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();	$r3 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("CacheObj [key=");	$r2 = r1.<cn.hutool.cache.impl.CacheObj: java.lang.Object key>;	$r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r2);	$r6 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", obj=");	$r5 = r1.<cn.hutool.cache.impl.CacheObj: java.lang.Object obj>;	$r7 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r5);	$r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", lastAccess=");	$l0 = r1.<cn.hutool.cache.impl.CacheObj: long lastAccess>;	$r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l0);	$r11 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", accessCount=");	$r10 = r1.<cn.hutool.cache.impl.CacheObj: java.util.concurrent.atomic.AtomicLong accessCount>;	$r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r10);	$r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", ttl=");	$l1 = r1.<cn.hutool.cache.impl.CacheObj: long ttl>;	$r14 = virtualinvoke $r13.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l1);	$r15 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("]");	$r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.String toString()>();	return $r16
+;block_num 1
